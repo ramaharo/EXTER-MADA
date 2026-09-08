@@ -273,7 +273,7 @@ PARAMETER
 PARAMETER
 MCS(*,*,*,*);
 
-$CALL GDXXRW.EXE Exter-Mada.xlsx par=MCS rng=MCS!A1:Ak37 Rdim=2 Cdim=2
+$CALL GDXXRW.EXE i="..\data\Exter-Mada.xlsx" par=MCS rng=MCS!A1:Ak37 Rdim=2 Cdim=2
 $GDXIN Exter-Mada.gdx
 $LOAD MCS
 $GDXIN
@@ -1192,4 +1192,4 @@ DISPLAY
     
 display lambda_TRA;
 
-$include EXter-Mada_resultats.gms
+*$include EXter-Mada_resultats.gms
