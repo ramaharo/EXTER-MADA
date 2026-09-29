@@ -2,8 +2,8 @@
 
 Ce projet est publié sous la licence **Creative Commons Attribution - Pas d'Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International**.
 
-- Résumé explicatif : [https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr])
-- Texte juridique : [https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.fr](hhttps://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.fr)
+- Résumé explicatif : [https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr)
+- Texte juridique : [https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.fr](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.fr)
 
 ---
 
