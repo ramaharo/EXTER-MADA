@@ -8,7 +8,7 @@ $STITLE   ECONOMIE OUVERTE AVEC GOUVERNEMENT
 *                                                                                   *
 * Ce modèle est basé sur l'architecture des modèles EXTER et PEP (version 2.1)      *
 *                                                                                   *
-* Sous licence : http://creativecommons.org/licenses/by-nc-sa/3.0/                  *
+* Sous licence : https://creativecommons.org/licenses/by-nc-sa/4.0/                  *
 *                                                                                   *
 * Vous êtes libre de partager, copier, distribuer et transmettre ce travail         *
 * selon les conditions suivantes :                                                  *
