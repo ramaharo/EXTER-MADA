@@ -1,4 +1,4 @@
-# Modèle d'Équilibre Général Calculable — EXTER-MADA
+# Modèle d'Équilibre Général Calculable - EXTER-MADA
 
 Ce projet vise à modéliser et simuler l'impact de politiques économiques et de chocs macroéconomiques à Madagascar à l'aide d'un modèle d'équilibre général calculable (MEGC) fondé sur le cadre pédagogique EXTER et enrichi par les structures du modèle PEP. Le projet s'appuie sur la Matrice de Comptabilité Sociale (MCS) issue du TRE 2019 de l'INSTAT.
 
@@ -21,7 +21,7 @@ Pour exécuter les modèles de ce projet, vous devez disposer du logiciel suivan
 
 1. Cloner le dépôt :
     ```sh
-    git clone [https://github.com/votre-compte/exter-mada.git](https://github.com/votre-compte/exter-mada.git)
+    git clone https://github.com/ramaharo/EXTER-MADA.git
     cd exter-mada
     ```
 
