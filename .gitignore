@@ -3,3 +3,6 @@
 *.lxi
 *.gdx
 *.BACKUP
+*.aux
+*.synctex.gz
+*.xlsx.BACKUP

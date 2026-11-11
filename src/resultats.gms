@@ -1,128 +1,162 @@
-SET
-
-SCEN Scenarios
-/
- BASE            Valeurs initiales
- SIM             Valeurs apres choc
- VAR             Variation en poucentage
-/
+PARAMETER
+    valCAB(scen)            "Solde du compte courant de la balance des paiements"
+    valCH(tr,h,scen)        "Consommation finale du menage h en produit tr"
+    valCH_nom(tr,h,scen)    "Valeur nominale de la consommation finale du menage h en produit tr"
+    valCI(i,scen)           "Consommation intermediaire totale de la branche j"
+    valCI_nom(i,scen)       "Valeur nominale de la consommation intermediaire totale de la branche j"
+    valCTH(h,scen)          "Budget total de consommation du menage h"
+    valCTH_reel(h,scen)     "Consommation totale reelle du menage h (deflatee)"
+    valDD(tr,scen)          "Demande interieure pour le produit local tr"
+    valDI(tr,i,scen)        "Consommation intermediaire en produit tr de la branche j"
+    valDI_nom(tr,i,scen)    "Valeur nominale de la consommation intermediaire en produit tr de la branche j"
+    valDIT(tr,scen)         "Demande intermediaire totale pour le produit tr"
+    valDS(tr,trj,scen)      "Offre de produit tr par la branche trj sur le marche local"
+    valDX(trj,scen)         "Production de la branche trj destinee au marche local"
+    vale(scen)              "Taux de change nominal (monnaie locale par unite de devise)"
+    valEX(tr,scen)          "Volume des exportations du produit tr"
+    valEX_nom(tr,scen)      "Valeur nominale des exportations du produit tr"
+    valEXTOT(scen)          "Valeur totale des exportations"
+    valFBCF(scen)           "Formation brute de capital fixe (Volume)"
+    valFBCF_reel(scen)      "Formation brute de capital fixe reelle"
+    valFROWK(scen)          "Flux de capitaux lies au capital (RDM)"
+    valFROWL(scen)          "Flux de capitaux lies au travail (RDM)"
+    valCTG(scen)            "Depenses de consommation finale de l'Administration centrale"
+    valCTNGO(scen)          "Depenses de consommation finale des autres APU et des ISBLSM"
+    valCG(scen)             "Consommation finale de l'Administration centrale"
+    valCNGO(scen)           "Consommation finale des autres APU et des ISBLSM"
+    valIM(tr,scen)          "Volume des importations du produit tr"
+    valIM_nom(tr,scen)      "Valeur nominale des importations du produit tr"
+    valIMTOT(scen)          "Valeur totale des importations"
+    valINV(tr,scen)         "Demande finale en produit tr pour l'investissement"
+    valINV_nom(tr,scen)     "Valeur nominale de l'investissement en produit tr"
+    valIT(scen)             "Investissement total (FBCF et variation de stocks)"
+    valKD(tr,scen)          "Demande de capital de la branche tr"
+    valKD_nom(tr,scen)      "Valeur nominale du stock de capital de la branche tr"
+    valKD_R(scen)           "Revenus du capital verses par le reste du monde (RDM)"
+    valKS(trj,scen)         "Offre de capital a la branche tr"
+    valLD(i,scen)           "Demande de travail de la branche j(i)"
+    valLD_nom(i,scen)       "Valeur nominale de la masse salariale de la branche j(i)"
+    valLD_R(scen)           "Demande de travail du RDM"
+    valLEON(scen)           "Variable de bouclage (Equilibre du marche des services - Loi de Walras)"
+    valLS(scen)             "Offre totale de travail de l'economie"
+    valMRGCOM(bns,scen)     "Volume des services de marge commerciale pour le produit bns"
+    valMRGTRP(bns,scen)     "Volume des services de marge de transport pour le produit bns"
+    valNTXF(scen)           "Recettes non fiscales provenant des Societes"
+    valNTXH(h,scen)         "Recettes non fiscales provenant du menage h"
+    valNTXHH(agntr,scen)    "Recettes non fiscales provenant des menages a l'agent agntr"
+    valP(i,scen)            "Prix de la production (prix au producteur) de la branche j"
+    valPC(tr,scen)          "Prix du produit composite tr (incluant taxes et marges)"
+    valPCI(j,scen)          "Indice du prix du panier de consommation intermediaire de la branche j"
+    valPD(tr,scen)          "Prix du produit local tr (toutes taxes et marges comprises)"
+    valPE(tr,scen)          "Prix du produit exporte tr en monnaie locale (prix FOB)"
+    valPIB_BP(scen)         "PIB aux prix de base"
+    valPIB_BP_reel(scen)    "PIB reel aux prix de base"
+    valPIB_FD(scen)         "PIB par l'approche de la demande finale"
+    valPIB_IB(scen)         "PIB par l'approche des revenus"
+    valPIB_MP(scen)         "PIB aux prix du marche"
+    valPIB_MP_reel(scen)    "PIB reel aux prix du marche"
+    valPIXCON(scen)         "Indice des prix a la consommation"
+    valPIXPIB(scen)         "Indice general des prix (deflateur du PIB)"
+    valPIXINV(scen)         "Indice des prix de l'investissement"
+    valPL(tr,scen)          "Prix de la production locale du produit tr hors taxes indirectes"
+    valPM(tr,scen)          "Prix du produit importe tr (toutes taxes droits et marges compris)"
+    valPPD(tr,scen)         "Prix du produit local tr incluant les taxes indirectes (hors marges)"
+    valPPM(tr,scen)         "Prix du produit importe tr incluant les droits et taxes (hors marges)"
+    valPVA(j,scen)          "Prix de la valeur ajoutee de la branche j"
+    valPWE(tr,scen)         "Prix mondial des exportations du produit tr (en devises)"
+    valPWM(tr,scen)         "Prix mondial des importations du produit tr (en devises prix CAF)"
+    valQ(tr,scen)           "Volume de la demande en produit composite tr"
+    valR(tr,scen)           "Taux de rendement du capital dans la branche tr"
+    valR_R(scen)            "Taux de rendement du capital a l'etranger (en devises)"
+    valSF(scen)             "Epargne brute des entreprises"
+    valSG(scen)             "Epargne brute de l'Administration centrale"
+    valSH(h,scen)           "Epargne brute du menage h"
+    valSNGO(scen)           "Epargne des autres administrations publiques et des ISBLSM"
+    valSROW(scen)           "Epargne du reste du monde (equivalent au deficit courant)"
+    valTDF(scen)            "Recettes des impots directs sur le revenu des entreprises"
+    valTDH(h,scen)          "Recettes des impots directs sur le revenu du menage h"
+    valTI(tr,scen)          "Recettes des taxes indirectes sur le produit tr"
+    valTIF(scen)            "Recettes des autres taxes indirectes a la charge des entreprises"
+    valTIM(tr,scen)         "Recettes des droits de douane sur le produit tr"
+    valTIMF(scen)           "Autres droits et tarifs douaniers verses par les entreprises"
+    valTRA(ag,agj,scen)     "Transferts nets du RDM vers les entreprises"
+    valVA(i,scen)           "Valeur ajoutee reelle de la branche j"
+    valVA_nom(i,scen)       "Valeur ajoutee nominale de la branche j"
+    valVSTK(bns,scen)       "Variation des stocks du produit bns (Volume)"
+    valVSTK_nom(bns,scen)   "Valeur nominale de la variation des stocks du produit bns"
+    valW(scen)              "Taux de salaire nominal moyen"
+    valW_R(scen)            "Taux de salaire international (en devises)"
+    valXS(i,scen)           "Production totale en volume de la branche j"
+    valXS_nom(i,scen)       "Valeur nominale de la production de la branche j"
+    valYDF(scen)            "Revenu disponible des entreprises"
+    valYDH(h,scen)          "Revenu disponible du menage h"
+    valYF(scen)             "Revenu total des entreprises"
+    valYFK(scen)            "Revenu du capital percu par les entreprises"
+    valYG(scen)             "Revenu total de l'Administration centrale"
+    valYGNTX(scen)          "Revenus non fiscaux du gouvernement"
+    valYGTRA(scen)          "Revenus non fiscaux du gouvernement"
+    valYGTX(scen)           "Revenus fiscaux du gouvernement"
+    valYH(h,scen)           "Revenu total du menage h"
+    valYHK(h,scen)          "Revenu du capital percu par le menage h"
+    valYHL(h,scen)          "Revenu du travail (salaires) du menage h"
+    valYHTRA(h,scen)        "Revenu de transfert du menage h"
+    valYNGO(scen)           "Revenu des autres APU et des ISBLSM"
+    valYROW(scen)           "Revenu du reste du monde (en monnaie locale)"
+    valYROWK(scen)          "Revenu du capital du reste du monde"
+    valYROWL(scen)          "Revenu du travail du reste du monde"
 ;
 
+*---- Bloc financier ------
 PARAMETER
-    valCAB(scen)         "Solde du compte courant de la balance des paiements"
-    valCH(tr,h,scen)     "Consommation finale du menage h en produit tr"
-    valCH_nom(tr,h,scen) "Valeur nominale de la consommation finale du menage h en produit tr"
-    valCI(i,scen)        "Consommation intermediaire totale de la branche j"
-    valCI_nom(i,scen)    "Valeur nominale de la consommation intermediaire totale de la branche j"
-    valCTH(h,scen)       "Budget total de consommation du menage h"
-    valCTH_reel(h,scen)  "Consommation totale reelle du menage h (deflatee)"
-    valDD(tr,scen)       "Demande interieure pour le produit local tr"
-    valDI(tr,i,scen)     "Consommation intermediaire en produit tr de la branche j"
-    valDI_nom(tr,i,scen) "Valeur nominale de la consommation intermediaire en produit tr de la branche j"
-    valDIT(tr,scen)      "Demande intermediaire totale pour le produit tr"
-    valDS(tr,trj,scen)   "Offre de produit tr par la branche trj sur le marche local"
-    valDX(trj,scen)      "Production de la branche trj destinee au marche local"
-    vale(scen)           "Taux de change nominal (monnaie locale par unite de devise)"
-    valEX(tr,scen)       "Volume des exportations du produit tr"
-    valEX_nom(tr,scen)   "Valeur nominale des exportations du produit tr"
-    valEXTOT(scen)       "Valeur totale des exportations"
-    valFBCF(scen)        "Formation brute de capital fixe (Volume)"
-    valFBCF_reel(scen)   "Formation brute de capital fixe reelle"
-    valFROWK(scen)       "Flux de capitaux lies au capital (RDM)"
-    valFROWL(scen)       "Flux de capitaux lies au travail (RDM)"
-    valG(ntr,scen)       "Depenses publiques de consommation finale (Administrations publiques)"
-    valG_reel(ntr,scen)  "Depenses publiques de consommation finale reelle"
-    valIM(tr,scen)       "Volume des importations du produit tr"
-    valIM_nom(tr,scen)   "Valeur nominale des importations du produit tr"
-    valIMTOT(scen)       "Valeur totale des importations"
-    valINV(tr,scen)      "Demande finale en produit tr pour l'investissement"
-    valINV_nom(tr,scen)  "Valeur nominale de l'investissement en produit tr"
-    valIT(scen)          "Investissement total (FBCF et variation de stocks)"
-    valKD(tr,scen)       "Demande de capital de la branche tr"
-    valKD_nom(tr,scen)   "Valeur nominale du stock de capital de la branche tr"
-    valKD_R(scen)        "Revenus du capital verses par le reste du monde (RDM)"
-    valKS(trj,scen)      "Offre de capital a la branche tr"
-    valLD(i,scen)        "Demande de travail de la branche j"
-    valLD_nom(i,scen)    "Valeur nominale de la masse salariale de la branche j"
-    valLD_R(scen)        "Revenus du travail verses par le RDM"
-    valLEON(scen)        "Variable de bouclage (Equilibre du marche des services - Loi de Walras)"
-    valLS(scen)          "Offre totale de travail de l'economie"
-    valMRGCOM(bns,scen)  "Volume des services de marge commerciale pour le produit bns"
-    valMRGTRP(bns,scen)  "Volume des services de marge de transport pour le produit bns"
-    valNTXF(scen)        "Recettes non fiscales provenant des Societes"
-    valNTXH(h,scen)      "Recettes non fiscales provenant du menage h"
-    valNTXHH(agpub,scen) "Recettes non fiscales provenant des menages a  agent agpub"
-    valP(i,scen)         "Prix de la production (prix au producteur) de la branche j"
-    valPC(tr,scen)       "Prix du produit composite tr (incluant taxes et marges)"
-    valPCI(j,scen)       "Indice du prix du panier de consommation intermediaire de la branche j"
-    valPD(tr,scen)       "Prix du produit local tr (toutes taxes et marges comprises)"
-    valPE(tr,scen)       "Prix du produit exporte tr en monnaie locale (prix FOB)"
-    valPIB_BP(scen)      "PIB aux prix de base"
-    valPIB_BP_reel(scen) "PIB reel aux prix de base"
-    valPIB_FD(scen)      "PIB par l'approche de la demande finale"
-    valPIB_IB(scen)      "PIB par l'approche des revenus"
-    valPIB_MP(scen)      "PIB aux prix du marche"
-    valPIB_MP_reel(scen) "PIB reel aux prix du marche"
-    valPIXCON(scen)      "Indice des prix a la consommation"
-    valPIXPIB(scen)      "Indice general des prix (deflateur du PIB)"
-    valPIXINV(scen)      "Indice des prix de l'investissement"
-    valPL(tr,scen)       "Prix de la production locale du produit tr hors taxes indirectes"
-    valPM(tr,scen)       "Prix du produit importe tr (toutes taxes droits et marges compris)"
-    valPPD(tr,scen)      "Prix du produit local tr incluant les taxes indirectes (hors marges)"
-    valPPM(tr,scen)      "Prix du produit importe tr incluant les droits et taxes (hors marges)"
-    valPVA(j,scen)       "Prix de la valeur ajoutee de la branche j"
-    valPWE(tr,scen)      "Prix mondial des exportations du produit tr (en devises)"
-    valPWM(tr,scen)      "Prix mondial des importations du produit tr (en devises prix CAF)"
-    valQ(tr,scen)        "Volume de la demande en produit composite tr"
-    valR(tr,scen)        "Taux de rendement du capital dans la branche tr"
-    valR_R(scen)         "Taux de rendement du capital a l'etranger (en devises)"
-    valSF(scen)          "Epargne brute des entreprises"
-    valSG(scen)          "Epargne brute de l'Administration centrale"
-    valSH(h,scen)        "Epargne brute du menage h"
-    valSNGO(scen)        "Epargne des autres administrations publiques et des ISBLSM"
-    valSROW(scen)        "Epargne du reste du monde (equivalent au deficit courant)"
-    valTDF(scen)         "Recettes des impots directs sur le revenu des entreprises"
-    valTDH(h,scen)       "Recettes des impots directs sur le revenu du menage h"
-    valTI(tr,scen)       "Recettes des taxes indirectes sur le produit tr"
-    valTIF(scen)         "Recettes des autres taxes indirectes a la charge des entreprises"
-    valTIM(tr,scen)      "Recettes des droits de douane sur le produit tr"
-    valTIMF(scen)        "Autres droits et tarifs douaniers verses par les entreprises"
-    valTRA(ag,agj,scen)  "Transferts nets du RDM vers les entreprises"
-    valVA(i,scen)        "Valeur ajoutee reelle de la branche j"
-    valVA_nom(i,scen)    "Valeur ajoutee nominale de la branche j"
-    valVSTK(bns,scen)    "Variation des stocks du produit bns (Volume)"
-    valVSTK_nom(bns,scen)"Valeur nominale de la variation des stocks du produit bns"
-    valW(scen)           "Taux de salaire nominal moyen"
-    valW_R(scen)         "Taux de salaire international (en devises)"
-    valXS(i,scen)        "Production totale en volume de la branche j"
-    valXS_nom(i,scen)    "Valeur nominale de la production de la branche j"
-    valYDF(scen)         "Revenu disponible des entreprises"
-    valYDH(h,scen)       "Revenu disponible du menage h"
-    valYF(scen)          "Revenu total des entreprises"
-    valYFK(scen)         "Revenu du capital percu par les entreprises"
-    valYG(scen)          "Revenu total de l'Administration centrale"
-    valYGNTX(scen)       "Revenus non fiscaux du gouvernement"
-    valYGTRA(scen)       "Revenus non fiscaux du gouvernement"
-    valYGTX(scen)        "Revenus fiscaux du gouvernement"
-    valYH(h,scen)        "Revenu total du menage h"
-    valYHK(h,scen)       "Revenu du capital percu par le menage h"
-    valYHL(h,scen)       "Revenu du travail (salaires) du menage h"
-    valYHTRA(h,scen)     "Revenu de transfert du menage h"
-    valYNGO(scen)        "Revenu des autres APU et des ISBLSM"
-    valYROW(scen)        "Revenu du reste du monde (en monnaie locale)"
-    valYROWK(scen)       "Revenu du capital du reste du monde"
-    valYROWL(scen)       "Revenu du travail du reste du monde"
+    ValAMORTG(scen)         "Amortissement de la dette publique"
+    ValBRG(scen)            "Besoin de financement de l'Administration centrale"
+    ValDEBTG(scen)          "(Stock de la) dette publique totale"
+    ValDINVG(scen)          "Investissement public sur financement interieur"
+    ValD_BG(scen)           "Emprunt de l'Administration centrale aupres du secteur prive"
+    ValD_DCG(scen)          "Variation des credits bancaires a l'Etat"
+    ValD_DCP(scen)          "Variation des credits bancaires au secteur prive"
+    ValD_ER(scen)           "Variation du taux de change de fin de periode"
+    ValD_MD(scen)           "Variation de la demande de monnaie"
+    ValD_MS(scen)           "Variation de l'offre de monnaie"
+    ValD_NFDG(scen)         "Financement exterieur net total de l'administration centrale"
+    ValD_NFDG_PRG(scen)     "Financement exterieur net - Prets programmes"
+    ValD_NFDG_PRJ(scen)     "Financement exterieur net - Prets projets"
+    ValD_NFDP(scen)         "Financement exterieur net du secteur prive"
+    ValD_RES(scen)          "Variation des reserves internationales"
+    ValDCG(scen)            "Credit bancaire a l'Etat (Stock)"
+    ValDCP(scen)            "Credit bancaire au secteur prive (Stock)"
+    ValER(scen)             "Taux de change de fin de periode (Annee t)"
+    ValFDI_IN(scen)         "Entrees brutes d'IDE (Flux entrants)"
+    ValFDI_NET(scen)        "Flux nets d'Investissements Directs Etrangers (IDE)"
+    ValFDI_OUT(scen)        "Sorties brutes d'IDE (Flux sortants)"
+    ValFINVG(scen)          "Investissement public sur financement exterieur"
+    ValINVG(scen)           "Investissement public total (Depenses en capital)"
+    ValINVP(scen)           "Investissement du secteur prive"
+    ValKTRAG(scen)          "Transferts de capital recus par l'Etat (Dons en capital)"
+    ValLEONF(scen)          "Equilibre du marche financier du secteur prive"
+    ValMD(scen)             "Demande de monnaie (Masse monetaire)"
+    ValMS(scen)             "Offre de monnaie"
+    ValNDDG(scen)           "(Stock de la) dette publique interieure"
+    ValNFDG(scen)           "(Stock de la) dette publique exterieure"
+    ValOTHKTRA(scen)        "Transferts de capital recus par le secteur prive"
+    ValRES(scen)            "Stock de reserves internationales (Avoirs exterieurs nets)"
+    ValSP(scen)             "Epargne du secteur prive"
+    ValTOTG(scen)           "Depenses publiques totales"
 ;
 
 * --- Assignation des valeurs de référence au scénario 'base' ---
-
+* --- Bloc reel ---
     valCAB('base')          = CABO;
+    valCG('base')           = CGO;
     valCH(tr,h,'base')      = CHO(tr,h);
     valCH_nom(tr,h,'base')  = PCO(tr)*CHO(tr,h);
     valCI(j,'base')         = CIO(j);
     valCI_nom(j,'base')     = PCIO(j)*CIO(j);
+    valCTG('base')          = CTGO;
     valCTH(h,'base')        = CTHO(h);
     valCTH_reel(h,'base')   = CTH_reelO(h);
+    valCTNGO('base')        = CTNGOO;
+    valCNGO('base')         = CNGOO;
     valDD(tr,'base')        = DDO(tr);
     valDI(tr,j,'base')      = DIO(tr,j);
     valDI_nom(tr,j,'base')  = DIO(tr,j)*PCO(tr);
@@ -132,16 +166,14 @@ PARAMETER
     vale('base')            = eO;
     valEX(tr,'base')        = EXO(tr);
     valEX_nom(tr,'base')    = PEO(tr)*EXO(tr);
-    valEXTOT('base')        = SUM[tr, PEO(tr)*EXO(tr)];
+    valEXTOT('base')        = EO*SUM[tr, PEO(tr)*EXO(tr)];
     valFBCF('base')         = FBCFO;
     valFBCF_reel('base')    = FBCF_reelO;
-    valFROWK('base')        = eO*R_RO*KD_RO;
-    valFROWL('base')        = eO*W_RO*LD_RO;
-    valG(ntr,'base')        = GO(ntr);
-    valG_reel(ntr,'base')   = G_reelO(ntr);
+    valFROWK('base')        = EO*R_RO*KD_RO;
+    valFROWL('base')        = EO*W_RO*LD_RO;
     valIM(tr,'base')        = IMO(tr);
     valIM_nom(tr,'base')    = PMO(tr)*IMO(tr);
-    valIMTOT('base')        = SUM[tr, PMO(tr)*IMO(tr)];
+    valIMTOT('base')        = EO*SUM[tr, PMO(tr)*IMO(tr)];
     valINV(tr,'base')       = INVO(tr);
     valINV_nom(tr,'base')   = PCO(tr)*INVO(tr);
     valIT('base')           = ITO;
@@ -158,7 +190,7 @@ PARAMETER
     valMRGTRP(bns,'base')   = MRGTRPO(bns);
     valNTXF('base')         = NTXFO;
     valNTXH(h,'base')       = NTXHO(h);
-    valNTXHH(agpub,'base')  = NTXHHO(agpub);
+    valNTXHH(agntr,'base')  = NTXHHO(agntr);
     valP(i,'base')          = PO(i);
     valPC(tr,'base')        = PCO(tr);
     valPCI(j,'base')        = PCIO(j);
@@ -220,230 +252,341 @@ PARAMETER
     valYROWK('base')        = YROWKO;
     valYROWL('base')        = YROWLO;
 
-
-
+* --- Bloc financier ---
+    ValAMORTG('base')       = AMORTGO;
+    ValBRG('base')          = BRGO;
+    ValDEBTG('base')        = DEBTGO;
+    ValDINVG('base')        = DINVGO;
+    ValD_BG('base')         = D_BGO;
+    ValD_DCG('base')        = D_DCGO;
+    ValD_DCP('base')        = D_DCPO;
+    ValD_ER('base')         = D_ERO;
+    ValD_MD('base')         = D_MDO;
+    ValD_MS('base')         = D_MSO;
+    ValD_NFDG('base')       = D_NFDGO;
+    ValD_NFDG_PRG('base')   = D_NFDG_PRGO;
+    ValD_NFDG_PRJ('base')   = D_NFDG_PRJO;
+    ValD_NFDP('base')       = D_NFDPO;
+    ValD_RES('base')        = D_RESO;
+    ValDCG('base')          = DCGO;
+    ValDCP('base')          = DCPO;
+    ValER('base')           = ERO;
+    ValFDI_IN('base')       = FDI_INO;
+    ValFDI_NET('base')      = FDI_NETO;
+    ValFDI_OUT('base')      = FDI_OUTO;
+    ValFINVG('base')        = FINVGO;
+    ValINVG('base')         = INVGO;
+    ValINVP('base')         = INVPO;
+    ValKTRAG('base')         = KTRAGO;
+    ValLEONF('base')        = D_DCPO + EO*D_NFDPO  + EO*FDI_NETO + EO*OTHKTRAO + RESOO*D_ERO + (ERO - EO)*D_RESO + SPO - D_MDO - D_BGO - INVPO;
+    ValMD('base')           = MDO;
+    ValMS('base')           = MSO;
+    ValNDDG('base')         = NDDGO;
+    ValNFDG('base')         = NFDGO;
+    ValOTHKTRA('base')       = OTHKTRAO;
+    ValRES('base')          = RESO;
+    ValSP('base')           = SPO;
+    ValTOTG('base')         = TOTGO;
 
 * --- Assignation des valeurs après simulation au scénario 'sim' ---
-    valCAB('sim')                       = CAB.l;
-    valCH(tr,h,'sim')                   = CH.l(tr,h);
-    valCH_nom(tr,h,'sim')               = PC.l(tr)*CH.l(tr,h);
-    valCI(j,'sim')                      = CI.l(j);
-    valCI_nom(j,'sim')                  = PCI.l(j)*CI.l(j);
-    valCTH(h,'sim')                     = CTH.l(h);
-    valCTH_reel(h,'sim')                = CTH_reel.l(h);
-    valDD(tr,'sim')                     = DD.l(tr);
-    valDI(tr,j,'sim')                   = DI.l(tr,j);
-    valDI_nom(tr,j,'sim')               = DI.l(tr,j)*PC.l(tr);
-    valDIT(tr,'sim')                    = DIT.l(tr);
-    valDS(tr,trj,'sim')                 = DS.l(tr,trj);
-    valDX(trj,'sim')                    = DX.l(trj);
-    vale('sim')                         = e.l;
-    valEX(tr,'sim')                     = EX.l(tr);
-    valEX_nom(tr,'sim')                 = PE.l(tr)*EX.l(tr);
-    valEXTOT('sim')                     = SUM(tr, PE.l(tr)*EX.l(tr));
-    valFBCF('sim')                      = FBCF.l;
-    valFBCF_reel('sim')                 = FBCF_reel.l;
-    valFROWK('sim')                     = e.l*R_R.l*KD_R.l;
-    valFROWL('sim')                     = e.l*W_R.l*LD_R.l;
-    valG(ntr,'sim')                     = G.l(ntr);
-    valG_reel(ntr,'sim')                = G_reel.l(ntr);
-    valIM(tr,'sim')                     = IM.l(tr);
-    valIM_nom(tr,'sim')                 = PM.l(tr)*IM.l(tr);
-    valIMTOT('sim')                     = SUM[tr, PM.l(tr)*IM.l(tr)];
-    valINV(tr,'sim')                    = INV.l(tr);
-    valINV_nom(tr,'sim')                = PC.l(tr)*INV.l(tr);
-    valIT('sim')                        = IT.l;
-    valKD(trj,'sim')                    = KD.l(trj);
-    valKD_nom(trj,'sim')                = R.l(trj)*KD.l(trj);
-    valKD_R('sim')                      = KD_R.l;
-    valKS(trj,'sim')                    = KS.l(trj);
-    valLD(j,'sim')                      = LD.l(j);
-    valLD_nom(j,'sim')                  = W.l*LD.l(j);
-    valLD_R('sim')                      = LD_R.l;
-    valLEON('sim')                      = LEON.l;
-    valLS('sim')                        = LS.l;
-    valMRGCOM(bns,'sim')                = MRGCOM.l(bns);
-    valMRGTRP(bns,'sim')                = MRGTRP.l(bns);
-    valNTXF('sim')                      = NTXF.l;
-    valNTXH(h,'sim')                    = NTXH.l(h);
-    valNTXHH(agpub,'sim')               = NTXHH.l(agpub);
-    valP(j,'sim')                       = P.l(j);
-    valPC(tr,'sim')                     = PC.l(tr);
-    valPCI(j,'sim')                     = PCI.l(j);
-    valPD(tr,'sim')                     = PD.l(tr);
-    valPE(tr,'sim')                     = PE.l(tr);
-    valPIB_BP('sim')                    = PIB_BP.l;
-    valPIB_BP_reel('sim')               = PIB_BP_reel.l;
-    valPIB_FD('sim')                    = PIB_FD.l;
-    valPIB_IB('sim')                    = PIB_IB.l;
-    valPIB_MP('sim')                    = PIB_MP.l;
-    valPIB_MP_reel('sim')               = PIB_MP_reel.l;
-    valPIXCON('sim')                    = PIXCON.l;
-    valPIXPIB('sim')                    = PIXPIB.l;
-    valPIXINV('sim')                    = PIXINV.l;
-    valPL(tr,'sim')                     = PL.l(tr);
-    valPM(tr,'sim')                     = PM.l(tr);
-    valPPD(tr,'sim')                    = PPD.l(tr);
-    valPPM(tr,'sim')                    = PPM.l(tr);
-    valPVA(j,'sim')                     = PVA.l(j);
-    valPWE(tr,'sim')                    = PWE.l(tr);
-    valPWM(tr,'sim')                    = PWM.l(tr);
-    valQ(tr,'sim')                      = Q.l(tr);
-    valR(trj,'sim')                     = R.l(trj);
-    valR_R('sim')                       = R_R.l;
-    valSF('sim')                        = SF.l;
-    valSG('sim')                        = SG.l;
-    valSH(h,'sim')                      = SH.l(h);
-    valSNGO('sim')                      = SNGO.l;
-    valSROW('sim')                      = SROW.l;
-    valTDF('sim')                       = TDF.l;
-    valTDH(h,'sim')                     = TDH.l(h);
-    valTI(tr,'sim')                     = TI.l(tr);
-    valTIF('sim')                       = TIF.l;
-    valTIM(tr,'sim')                    = TIM.l(tr);
-    valTIMF('sim')                      = TIMF.l;
-    valTRA(ag,agj,'sim')$TRAO(ag,agj)   = TRA.l(ag,agj);
-    valVA(j,'sim')                      = VA.l(j);
-    valVA_nom(j,'sim')                  = PVA.l(j)*VA.l(j);
-    valVSTK(bns,'sim')                  = VSTK.l(bns);
-    valVSTK_nom(bns,'sim')              = PC.l(bns)*VSTK.l(bns);
-    valW('sim')                         = W.l;
-    valW_R('sim')                       = W_R.l;
-    valXS(j,'sim')                      = XS.l(j);
-    valXS_nom(j,'sim')                  = P.l(j)*XS.l(j);
-    valYDF('sim')                       = YDF.l;
-    valYDH(h,'sim')                     = YDH.l(h);
-    valYF('sim')                        = YF.l;
-    valYFK('sim')                       = YFK.l;
-    valYG('sim')                        = YG.l;
-    valYGNTX('sim')                     = YGNTX.l;
-    valYGTRA('sim')                     = YGTRA.l;
-    valYGTX('sim')                      = YGTX.l;
-    valYH(h,'sim')                      = YH.l(h);
-    valYHK(h,'sim')                     = YHK.l(h);
-    valYHL(h,'sim')                     = YHL.l(h);
-    valYHTRA(h,'sim')                   = YHTRA.l(h);
-    valYNGO('sim')                      = YNGO.l;
-    valYROW('sim')                      = YROW.l;
-    valYROWK('sim')                     = YROWK.l;
-    valYROWL('sim')                     = YROWL.l;
+    valCAB('sim')           = CAB.l;
+    valCG('sim')            = CG.l;
+    valCH(tr,h,'sim')       = CH.l(tr,h);
+    valCH_nom(tr,h,'sim')   = PC.l(tr)*CH.l(tr,h);
+    valCI(j,'sim')          = CI.l(j);
+    valCI_nom(j,'sim')      = PCI.l(j)*CI.l(j);
+    valCTH(h,'sim')         = CTH.l(h);
+    valCTH_reel(h,'sim')    = CTH_reel.l(h);
+    valCNGO('sim')          = CNGO.l;
+    valCTG('sim')           = CTG.l;
+    valCTNGO('sim')         = CTNGO.l;
+    valDD(tr,'sim')         = DD.l(tr);
+    valDI(tr,j,'sim')       = DI.l(tr,j);
+    valDI_nom(tr,j,'sim')   = DI.l(tr,j)*PC.l(tr);
+    valDIT(tr,'sim')        = DIT.l(tr);
+    valDS(tr,trj,'sim')     = DS.l(tr,trj);
+    valDX(trj,'sim')        = DX.l(trj);
+    vale('sim')             = E.l;
+    valEX(tr,'sim')         = EX.l(tr);
+    valEX_nom(tr,'sim')     = PE.l(tr)*EX.l(tr);
+    valEXTOT('sim')         = E.L*SUM[tr, PE.l(tr)*EX.l(tr)];
+    valFBCF('sim')          = FBCF.l;
+    valFBCF_reel('sim')     = FBCF_reel.l;
+    valFROWK('sim')         = E.l*R_R.l*KD_R.l;
+    valFROWL('sim')         = E.l*W_R.l*LD_R.l;
+    valIM(tr,'sim')         = IM.l(tr);
+    valIM_nom(tr,'sim')     = PM.l(tr)*IM.l(tr);
+    valIMTOT('sim')         = E.L*SUM[tr, PM.l(tr)*IM.l(tr)];
+    valINV(tr,'sim')        = INV.l(tr);
+    valINV_nom(tr,'sim')    = PC.l(tr)*INV.l(tr);
+    valIT('sim')            = IT.l;
+    valKD(trj,'sim')        = KD.l(trj);
+    valKD_nom(trj,'sim')    = R.l(trj)*KD.l(trj);
+    valKD_R('sim')          = KD_R.l;
+    valKS(trj,'sim')        = KS.l(trj);
+    valLD(j,'sim')          = LD.l(j);
+    valLD_nom(j,'sim')      = W.l*LD.l(j);
+    valLD_R('sim')          = LD_R.l;
+    valLEON('sim')          = LEON.l;
+    valLS('sim')            = LS.l;
+    valMRGCOM(bns,'sim')    = MRGCOM.l(bns);
+    valMRGTRP(bns,'sim')    = MRGTRP.l(bns);
+    valNTXF('sim')          = NTXF.l;
+    valNTXH(h,'sim')        = NTXH.l(h);
+    valNTXHH(agntr,'sim')   = NTXHH.l(agntr);
+    valP(j,'sim')           = P.l(j);
+    valPC(tr,'sim')         = PC.l(tr);
+    valPCI(j,'sim')         = PCI.l(j);
+    valPD(tr,'sim')         = PD.l(tr);
+    valPE(tr,'sim')         = PE.l(tr);
+    valPIB_BP('sim')        = PIB_BP.l;
+    valPIB_BP_reel('sim')   = PIB_BP_reel.l;
+    valPIB_FD('sim')        = PIB_FD.l;
+    valPIB_IB('sim')        = PIB_IB.l;
+    valPIB_MP('sim')        = PIB_MP.l;
+    valPIB_MP_reel('sim')   = PIB_MP_reel.l;
+    valPIXCON('sim')        = PIXCON.l;
+    valPIXPIB('sim')        = PIXPIB.l;
+    valPIXINV('sim')        = PIXINV.l;
+    valPL(tr,'sim')         = PL.l(tr);
+    valPM(tr,'sim')         = PM.l(tr);
+    valPPD(tr,'sim')        = PPD.l(tr);
+    valPPM(tr,'sim')        = PPM.l(tr);
+    valPVA(j,'sim')         = PVA.l(j);
+    valPWE(tr,'sim')        = PWE.l(tr);
+    valPWM(tr,'sim')        = PWM.l(tr);
+    valQ(tr,'sim')          = Q.l(tr);
+    valR(trj,'sim')         = R.l(trj);
+    valR_R('sim')           = R_R.l;
+    valSF('sim')            = SF.l;
+    valSG('sim')            = SG.l;
+    valSH(h,'sim')          = SH.l(h);
+    valSNGO('sim')          = SNGO.l;
+    valSROW('sim')          = SROW.l;
+    valTDF('sim')           = TDF.l;
+    valTDH(h,'sim')         = TDH.l(h);
+    valTI(tr,'sim')         = TI.l(tr);
+    valTIF('sim')           = TIF.l;
+    valTIM(tr,'sim')        = TIM.l(tr);
+    valTIMF('sim')          = TIMF.l;
+    valTRA(ag,agj,'sim')    = TRA.l(ag,agj);
+    valVA(j,'sim')          = VA.l(j);
+    valVA_nom(j,'sim')      = PVA.l(j)*VA.l(j);
+    valVSTK(bns,'sim')      = VSTK.l(bns);
+    valVSTK_nom(bns,'sim')  = PC.l(bns)*VSTK.l(bns);
+    valW('sim')             = W.l;
+    valW_R('sim')           = W_R.l;
+    valXS(j,'sim')          = XS.l(j);
+    valXS_nom(j,'sim')      = P.l(j)*XS.l(j);
+    valYDF('sim')           = YDF.l;
+    valYDH(h,'sim')         = YDH.l(h);
+    valYF('sim')            = YF.l;
+    valYFK('sim')           = YFK.l;
+    valYG('sim')            = YG.l;
+    valYGNTX('sim')         = YGNTX.l;
+    valYGTRA('sim')         = YGTRA.l;
+    valYGTX('sim')          = YGTX.l;
+    valYH(h,'sim')          = YH.l(h);
+    valYHK(h,'sim')         = YHK.l(h);
+    valYHL(h,'sim')         = YHL.l(h);
+    valYHTRA(h,'sim')       = YHTRA.l(h);
+    valYNGO('sim')          = YNGO.l;
+    valYROW('sim')          = YROW.l;
+    valYROWK('sim')         = YROWK.l;
+    valYROWL('sim')         = YROWL.l;
     
-
-
+* --- Bloc financier ---
+    ValAMORTG('sim')        = AMORTG.l;
+    ValBRG('sim')           = BRG.l;
+    ValDEBTG('sim')         = DEBTG.l;
+    ValDINVG('sim')         = DINVG.l;
+    ValD_BG('sim')          = D_BG.l;
+    ValD_DCG('sim')         = D_DCG.l;
+    ValD_DCP('sim')         = D_DCP.l;
+    ValD_ER('sim')          = D_ER.l;
+    ValD_MD('sim')          = D_MD.l;
+    ValD_MS('sim')          = D_MS.l;
+    ValD_NFDG('sim')        = D_NFDG.l;
+    ValD_NFDG_PRG('sim')    = D_NFDG_PRG.l;
+    ValD_NFDG_PRJ('sim')    = D_NFDG_PRJ.l;
+    ValD_NFDP('sim')        = D_NFDP.l;
+    ValD_RES('sim')         = D_RES.l;
+    ValDCG('sim')           = DCG.l;
+    ValDCP('sim')           = DCP.l;
+    ValER('sim')            = ER.l;
+    ValFDI_IN('sim')        = FDI_IN.l;
+    ValFDI_NET('sim')       = FDI_NET.l;
+    ValFDI_OUT('sim')       = FDI_OUT.l;
+    ValFINVG('sim')         = FINVG.l;
+    ValINVG('sim')          = INVG.l;
+    ValINVP('sim')          = INVP.l;
+    ValKTRAG('sim')         = KTRAG.l;
+    ValLEONF('sim')         = LEONF.l;
+    ValMD('sim')            = MD.l;
+    ValMS('sim')            = MS.l;
+    ValNDDG('sim')          = NDDG.l;
+    ValNFDG('sim')          = NFDG.l;
+    ValOTHKTRA('sim')       = OTHKTRA.l;
+    ValRES('sim')           = RES.l;
+    ValSP('sim')            = SP.l;
+    ValTOTG('sim')          = TOTG.L;
+    
 * --- Calcul des variations en pourcentage (%) pour le scénario 'var' ---
-valCAB('var')           $valCAB('base')             = (valCAB('sim')            / valCAB('base')            - 1)*100;           
-valCH(tr,h,'var')       $valCH(tr,h,'base')         = (valCH(tr,h,'sim')        / valCH(tr,h,'base')        - 1)*100;                           
-valCH_nom(tr,h,'var')   $valCH_nom(tr,h,'base')     = (valCH_nom(tr,h,'sim')    / valCH_nom(tr,h,'base')    - 1)*100;                                           
-valCI(j,'var')          $valCI(j,'base')            = (valCI(j,'sim')           / valCI(j,'base')           - 1)*100;               
-valCI_nom(j,'var')      $valCI_nom(j,'base')        = (valCI_nom(j,'sim')       / valCI_nom(j,'base')       - 1)*100;                               
-valCTH(h,'var')         $valCTH(h,'base')           = (valCTH(h,'sim')          / valCTH(h,'base')          - 1)*100;               
-valCTH_reel(h,'var')    $valCTH_reel(h,'base')      = (valCTH_reel(h,'sim')     / valCTH_reel(h,'base')     - 1)*100;                                   
-valDD(tr,'var')         $valDD(tr,'base')           = (valDD(tr,'sim')          / valDD(tr,'base')          - 1)*100;               
-valDI(tr,j,'var')       $valDI(tr,j,'base')         = (valDI(tr,j,'sim')        / valDI(tr,j,'base')        - 1)*100;                           
-valDI_nom(tr,j,'var')   $valDI_nom(tr,j,'base')     = (valDI_nom(tr,j,'sim')    / valDI_nom(tr,j,'base')    - 1)*100;                                           
-valDIT(tr,'var')        $valDIT(tr,'base')          = (valDIT(tr,'sim')         / valDIT(tr,'base')         - 1)*100;                   
-valDS(tr,trj,'var')     $valDS(tr,trj,'base')       = (valDS(tr,trj,'sim')      / valDS(tr,trj,'base')      - 1)*100;                               
-valDX(trj,'var')        $valDX(trj,'base')          = (valDX(trj,'sim')         / valDX(trj,'base')         - 1)*100;                   
-vale('var')             $vale('base')               = (vale('sim')              / vale('base')              - 1)*100;
-valEX(tr,'var')         $valEX(tr,'base')           = (valEX(tr,'sim')          / valEX(tr,'base')          - 1)*100;               
-valEX_nom(tr,'var')     $valEX_nom(tr,'base')       = (valEX_nom(tr,'sim')      / valEX_nom(tr,'base')      - 1)*100;                               
-valEXTOT('var')         $valEXTOT('base')           = (valEXTOT('sim')          / valEXTOT('base')          - 1)*100;               
-valFBCF('var')          $valFBCF('base')            = (valFBCF('sim')           / valFBCF('base')           - 1)*100;               
-valFBCF_reel('var')     $valFBCF_reel('base')       = (valFBCF_reel('sim')      / valFBCF_reel('base')      - 1)*100;                               
-valFROWK('var')         $valFROWK('base')           = (valFROWK('sim')          / valFROWK('base')          - 1)*100;               
-valFROWL('var')         $valFROWL('base')           = (valFROWL('sim')          / valFROWL('base')          - 1)*100;               
-valG(ntr,'var')         $valG(ntr,'base')           = (valG(ntr,'sim')          / valG(ntr,'base')          - 1)*100;               
-valG_reel(ntr,'var')    $valG_reel(ntr,'base')      = (valG_reel(ntr,'sim')     / valG_reel(ntr,'base')     - 1)*100;                                   
-valIM(tr,'var')         $valIM(tr,'base')           = (valIM(tr,'sim')          / valIM(tr,'base')          - 1)*100;               
-valIM_nom(tr,'var')     $valIM_nom(tr,'base')       = (valIM_nom(tr,'sim')      / valIM_nom(tr,'base')      - 1)*100;                               
-valIMTOT('var')         $valIMTOT('base')           = (valIMTOT('sim')          / valIMTOT('base')          - 1)*100;               
-valINV(tr,'var')        $valINV(tr,'base')          = (valINV(tr,'sim')         / valINV(tr,'base')         - 1)*100;                   
-valINV_nom(tr,'var')    $valINV_nom(tr,'base')      = (valINV_nom(tr,'sim')     / valINV_nom(tr,'base')     - 1)*100;                                   
-valIT('var')            $valIT('base')              = (valIT('sim')             / valIT('base')             - 1)*100;   
-valKD(tr,'var')         $valKD(tr,'base')           = (valKD(tr,'sim')          / valKD(tr,'base')          - 1)*100;               
-valKD_nom(tr,'var')     $valKD_nom(tr,'base')       = (valKD_nom(tr,'sim')      / valKD_nom(tr,'base')      - 1)*100;                               
-valKD_R('var')          $valKD_R('base')            = (valKD_R('sim')           / valKD_R('base')           - 1)*100;               
-valKS(trj,'var')        $valKS(trj,'base')          = (valKS(trj,'sim')         / valKS(trj,'base')         - 1)*100;                   
-valLD(j,'var')          $valLD(j,'base')            = (valLD(j,'sim')           / valLD(j,'base')           - 1)*100;               
-valLD_nom(j,'var')      $valLD_nom(j,'base')        = (valLD_nom(j,'sim')       / valLD_nom(j,'base')       - 1)*100;                               
-valLD_R('var')          $valLD_R('base')            = (valLD_R('sim')           / valLD_R('base')           - 1)*100;               
-valLEON('var')                                      = (valLEON('sim')           - valLEON('base')              )    ;               
-valLS('var')            $valLS('base')              = (valLS('sim')             / valLS('base')             - 1)*100;   
-valMRGCOM(bns,'var')    $valMRGCOM(bns,'base')      = (valMRGCOM(bns,'sim')     / valMRGCOM(bns,'base')     - 1)*100;                                   
-valMRGTRP(bns,'var')    $valMRGTRP(bns,'base')      = (valMRGTRP(bns,'sim')     / valMRGTRP(bns,'base')     - 1)*100;                                   
-valNTXF('var')          $valNTXF('base')            = (valNTXF('sim')           / valNTXF('base')           - 1)*100;               
-valNTXH(h,'var')        $valNTXH(h,'base')          = (valNTXH(h,'sim')         / valNTXH(h,'base')         - 1)*100;                   
-valNTXHH(agpub,'var')   $valNTXHH(agpub,'base')     = (valNTXHH(agpub,'sim')    / valNTXHH(agpub,'base')    - 1)*100;                                           
-valP(j,'var')           $valP(j,'base')             = (valP(j,'sim')            / valP(j,'base')            - 1)*100;           
-valPC(tr,'var')         $valPC(tr,'base')           = (valPC(tr,'sim')          / valPC(tr,'base')          - 1)*100;               
-valPCI(j,'var')         $valPCI(j,'base')           = (valPCI(j,'sim')          / valPCI(j,'base')          - 1)*100;               
-valPD(tr,'var')         $valPD(tr,'base')           = (valPD(tr,'sim')          / valPD(tr,'base')          - 1)*100;               
-valPE(tr,'var')         $valPE(tr,'base')           = (valPE(tr,'sim')          / valPE(tr,'base')          - 1)*100;               
-valPIB_BP('var')        $valPIB_BP('base')          = (valPIB_BP('sim')         / valPIB_BP('base')         - 1)*100;                   
-valPIB_BP_reel('var')   $valPIB_BP_reel('base')     = (valPIB_BP_reel('sim')    / valPIB_BP_reel('base')    - 1)*100;                                           
-valPIB_FD('var')        $valPIB_FD('base')          = (valPIB_FD('sim')         / valPIB_FD('base')         - 1)*100;                   
-valPIB_IB('var')        $valPIB_IB('base')          = (valPIB_IB('sim')         / valPIB_IB('base')         - 1)*100;                   
-valPIB_MP('var')        $valPIB_MP('base')          = (valPIB_MP('sim')         / valPIB_MP('base')         - 1)*100;                   
-valPIB_MP_reel('var')   $valPIB_MP_reel('base')     = (valPIB_MP_reel('sim')    / valPIB_MP_reel('base')    - 1)*100;                                           
-valPIXCON('var')        $valPIXCON('base')          = (valPIXCON('sim')         / valPIXCON('base')         - 1)*100;                   
-valPIXPIB('var')        $valPIXPIB('base')          = (valPIXPIB('sim')         / valPIXPIB('base')         - 1)*100;                   
-valPIXINV('var')        $valPIXINV('base')          = (valPIXINV('sim')         / valPIXINV('base')         - 1)*100;                   
-valPL(tr,'var')         $valPL(tr,'base')           = (valPL(tr,'sim')          / valPL(tr,'base')          - 1)*100;               
-valPM(tr,'var')         $valPM(tr,'base')           = (valPM(tr,'sim')          / valPM(tr,'base')          - 1)*100;               
-valPPD(tr,'var')        $valPPD(tr,'base')          = (valPPD(tr,'sim')         / valPPD(tr,'base')         - 1)*100;                   
-valPPM(tr,'var')        $valPPM(tr,'base')          = (valPPM(tr,'sim')         / valPPM(tr,'base')         - 1)*100;                   
-valPVA(j,'var')         $valPVA(j,'base')           = (valPVA(j,'sim')          / valPVA(j,'base')          - 1)*100;               
-valPWE(tr,'var')        $valPWE(tr,'base')          = (valPWE(tr,'sim')         / valPWE(tr,'base')         - 1)*100;                   
-valPWM(tr,'var')        $valPWM(tr,'base')          = (valPWM(tr,'sim')         / valPWM(tr,'base')         - 1)*100;                   
-valQ(tr,'var')          $valQ(tr,'base')            = (valQ(tr,'sim')           / valQ(tr,'base')           - 1)*100;               
-valR(trj,'var')         $valR(trj,'base')           = (valR(trj,'sim')          / valR(trj,'base')          - 1)*100;               
-valR_R('var')           $valR_R('base')             = (valR_R('sim')            / valR_R('base')            - 1)*100;           
-valSF('var')            $valSF('base')              = (valSF('sim')             / valSF('base')             - 1)*100;   
-valSG('var')            $valSG('base')              = (valSG('sim')             / valSG('base')             - 1)*100;   
-valSH(h,'var')          $valSH(h,'base')            = (valSH(h,'sim')           / valSH(h,'base')           - 1)*100;               
-valSNGO('var')          $valSNGO('base')            = (valSNGO('sim')           / valSNGO('base')           - 1)*100;               
-valSROW('var')          $valSROW('base')            = (valSROW('sim')           / valSROW('base')           - 1)*100;               
-valTDF('var')           $valTDF('base')             = (valTDF('sim')            / valTDF('base')            - 1)*100;           
-valTDH(h,'var')         $valTDH(h,'base')           = (valTDH(h,'sim')          / valTDH(h,'base')          - 1)*100;               
-valTI(tr,'var')         $valTI(tr,'base')           = (valTI(tr,'sim')          / valTI(tr,'base')          - 1)*100;               
-valTIF('var')           $valTIF('base')             = (valTIF('sim')            / valTIF('base')            - 1)*100;           
-valTIM(tr,'var')        $valTIM(tr,'base')          = (valTIM(tr,'sim')         / valTIM(tr,'base')         - 1)*100;                   
-valTIMF('var')          $valTIMF('base')            = (valTIMF('sim')           / valTIMF('base')           - 1)*100;               
-valTRA(ag,agj,'var')    $valTRA(ag,agj,'base')      = (valTRA(ag,agj,'sim')     / valTRA(ag,agj,'base')     - 1)*100;                                   
-valVA(j,'var')          $valVA(j,'base')            = (valVA(j,'sim')           / valVA(j,'base')           - 1)*100;               
-valVA_nom(j,'var')      $valVA_nom(j,'base')        = (valVA_nom(j,'sim')       / valVA_nom(j,'base')       - 1)*100;                               
-valVSTK(bns,'var')      $valVSTK(bns,'base')        = (valVSTK(bns,'sim')       / valVSTK(bns,'base')       - 1)*100;                               
-valVSTK_nom(bns,'var')  $valVSTK_nom(bns,'base')    = (valVSTK_nom(bns,'sim')   / valVSTK_nom(bns,'base')   - 1)*100;                                               
-valW('var')             $valW('base')               = (valW('sim')              / valW('base')              - 1)*100;
-valW_R('var')           $valW_R('base')             = (valW_R('sim')            / valW_R('base')            - 1)*100;           
-valXS(j,'var')          $valXS(j,'base')            = (valXS(j,'sim')           / valXS(j,'base')           - 1)*100;               
-valXS_nom(j,'var')      $valXS_nom(j,'base')        = (valXS_nom(j,'sim')       / valXS_nom(j,'base')       - 1)*100;                               
-valYDF('var')           $valYDF('base')             = (valYDF('sim')            / valYDF('base')          - 1)*100;               
-valYDH(h,'var')         $valYDH(h,'base')           = (valYDH(h,'sim')          / valYDH(h,'base')          - 1)*100;               
-valYF('var')            $valYF('base')              = (valYF('sim')             / valYF('base')             - 1)*100;   
-valYFK('var')           $valYFK('base')             = (valYFK('sim')            / valYFK('base')            - 1)*100;           
-valYG('var')            $valYG('base')              = (valYG('sim')             / valYG('base')             - 1)*100;   
-valYGNTX('var')         $valYGNTX('base')           = (valYGNTX('sim')          / valYGNTX('base')          - 1)*100;               
-valYGTRA('var')         $valYGTRA('base')           = (valYGTRA('sim')          / valYGTRA('base')          - 1)*100;               
-valYGTX('var')          $valYGTX('base')            = (valYGTX('sim')           / valYGTX('base')           - 1)*100;               
-valYH(h,'var')          $valYH(h,'base')            = (valYH(h,'sim')           / valYH(h,'base')           - 1)*100;               
-valYHK(h,'var')         $valYHK(h,'base')           = (valYHK(h,'sim')          / valYHK(h,'base')          - 1)*100;               
-valYHL(h,'var')         $valYHL(h,'base')           = (valYHL(h,'sim')          / valYHL(h,'base')          - 1)*100;               
-valYHTRA(h,'var')       $valYHTRA(h,'base')         = (valYHTRA(h,'sim')        / valYHTRA(h,'base')        - 1)*100;                           
-valYNGO('var')          $valYNGO('base')            = (valYNGO('sim')           / valYNGO('base')           - 1)*100;               
-valYROW('var')          $valYROW('base')            = (valYROW('sim')           / valYROW('base')           - 1)*100;               
-valYROWK('var')         $valYROWK('base')           = (valYROWK('sim')          / valYROWK('base')          - 1)*100;               
-valYROWL('var')         $valYROWL('base')           = (valYROWL('sim')          / valYROWL('base')          - 1)*100; 
+** --- BLOC REEL ---
+ValCG('var')             $ValCG('base')               = (ValCG('sim')              / ValCG('base')              - 1) * 100;
+ValCNGO('var')             $ValCNGO('base')               = (ValCNGO('sim')              / ValCNGO('base')              - 1) * 100;
+ValCTG('var')             $ValCTG('base')               = (ValCTG('sim')              / ValCTG('base')              - 1) * 100;
+ ValCTNGO('var')             $ValCTNGO('base')               = (ValCTNGO('sim')              / ValCTNGO('base')              - 1) * 100;
+ 
+
+valCAB('var')           $valCAB('base')             = (valCAB('sim')            / valCAB('base')            - 1) * 100;           
+valCH(tr,h,'var')       $valCH(tr,h,'base')         = (valCH(tr,h,'sim')        / valCH(tr,h,'base')        - 1) * 100;                           
+valCH_nom(tr,h,'var')   $valCH_nom(tr,h,'base')     = (valCH_nom(tr,h,'sim')    / valCH_nom(tr,h,'base')    - 1) * 100;                                           
+valCI(j,'var')          $valCI(j,'base')            = (valCI(j,'sim')           / valCI(j,'base')           - 1) * 100;               
+valCI_nom(j,'var')      $valCI_nom(j,'base')        = (valCI_nom(j,'sim')       / valCI_nom(j,'base')       - 1) * 100;                               
+valCTH(h,'var')         $valCTH(h,'base')           = (valCTH(h,'sim')          / valCTH(h,'base')          - 1) * 100;               
+valCTH_reel(h,'var')    $valCTH_reel(h,'base')      = (valCTH_reel(h,'sim')     / valCTH_reel(h,'base')     - 1) * 100;                                   
+valDD(tr,'var')         $valDD(tr,'base')           = (valDD(tr,'sim')          / valDD(tr,'base')          - 1) * 100;               
+valDI(tr,j,'var')       $valDI(tr,j,'base')         = (valDI(tr,j,'sim')        / valDI(tr,j,'base')        - 1) * 100;                           
+valDI_nom(tr,j,'var')   $valDI_nom(tr,j,'base')     = (valDI_nom(tr,j,'sim')    / valDI_nom(tr,j,'base')    - 1) * 100;                                           
+valDIT(tr,'var')        $valDIT(tr,'base')          = (valDIT(tr,'sim')         / valDIT(tr,'base')         - 1) * 100;                   
+valDS(tr,trj,'var')     $valDS(tr,trj,'base')       = (valDS(tr,trj,'sim')      / valDS(tr,trj,'base')      - 1) * 100;                               
+valDX(trj,'var')        $valDX(trj,'base')          = (valDX(trj,'sim')         / valDX(trj,'base')         - 1) * 100;                   
+vale('var')             $vale('base')               = (vale('sim')              / vale('base')              - 1) * 100;
+valEX(tr,'var')         $valEX(tr,'base')           = (valEX(tr,'sim')          / valEX(tr,'base')          - 1) * 100;               
+valEX_nom(tr,'var')     $valEX_nom(tr,'base')       = (valEX_nom(tr,'sim')      / valEX_nom(tr,'base')      - 1) * 100;                               
+valEXTOT('var')         $valEXTOT('base')           = (valEXTOT('sim')          / valEXTOT('base')          - 1) * 100;               
+valFBCF('var')          $valFBCF('base')            = (valFBCF('sim')           / valFBCF('base')           - 1) * 100;               
+valFBCF_reel('var')     $valFBCF_reel('base')       = (valFBCF_reel('sim')      / valFBCF_reel('base')      - 1) * 100;                               
+valFROWK('var')         $valFROWK('base')           = (valFROWK('sim')          / valFROWK('base')          - 1) * 100;               
+valFROWL('var')         $valFROWL('base')           = (valFROWL('sim')          / valFROWL('base')          - 1) * 100;               
+valIM(tr,'var')         $valIM(tr,'base')           = (valIM(tr,'sim')          / valIM(tr,'base')          - 1) * 100;               
+valIM_nom(tr,'var')     $valIM_nom(tr,'base')       = (valIM_nom(tr,'sim')      / valIM_nom(tr,'base')      - 1) * 100;                               
+valIMTOT('var')         $valIMTOT('base')           = (valIMTOT('sim')          / valIMTOT('base')          - 1) * 100;               
+valINV(tr,'var')        $valINV(tr,'base')          = (valINV(tr,'sim')         / valINV(tr,'base')         - 1) * 100;                   
+valINV_nom(tr,'var')    $valINV_nom(tr,'base')      = (valINV_nom(tr,'sim')     / valINV_nom(tr,'base')     - 1) * 100;                                   
+valIT('var')            $valIT('base')              = (valIT('sim')             / valIT('base')             - 1) * 100;   
+valKD(tr,'var')         $valKD(tr,'base')           = (valKD(tr,'sim')          / valKD(tr,'base')          - 1) * 100;               
+valKD_nom(tr,'var')     $valKD_nom(tr,'base')       = (valKD_nom(tr,'sim')      / valKD_nom(tr,'base')      - 1) * 100;                               
+valKD_R('var')          $valKD_R('base')            = (valKD_R('sim')           / valKD_R('base')           - 1) * 100;               
+valKS(trj,'var')        $valKS(trj,'base')          = (valKS(trj,'sim')         / valKS(trj,'base')         - 1) * 100;                   
+valLD(j,'var')          $valLD(j,'base')            = (valLD(j,'sim')           / valLD(j,'base')           - 1) * 100;               
+valLD_nom(j,'var')      $valLD_nom(j,'base')        = (valLD_nom(j,'sim')       / valLD_nom(j,'base')       - 1) * 100;                               
+valLD_R('var')          $valLD_R('base')            = (valLD_R('sim')           / valLD_R('base')           - 1) * 100;               
+valLEON('var')                                      = (valLEON('sim')           - valLEON('base')              )      ;               
+valLS('var')            $valLS('base')              = (valLS('sim')             / valLS('base')             - 1) * 100;   
+valMRGCOM(bns,'var')    $valMRGCOM(bns,'base')      = (valMRGCOM(bns,'sim')     / valMRGCOM(bns,'base')     - 1) * 100;                                   
+valMRGTRP(bns,'var')    $valMRGTRP(bns,'base')      = (valMRGTRP(bns,'sim')     / valMRGTRP(bns,'base')     - 1) * 100;                                   
+valNTXF('var')          $valNTXF('base')            = (valNTXF('sim')           / valNTXF('base')           - 1) * 100;               
+valNTXH(h,'var')        $valNTXH(h,'base')          = (valNTXH(h,'sim')         / valNTXH(h,'base')         - 1) * 100;                   
+valNTXHH(agntr,'var')   $valNTXHH(agntr,'base')     = (valNTXHH(agntr,'sim')    / valNTXHH(agntr,'base')    - 1) * 100;                                           
+valP(j,'var')           $valP(j,'base')             = (valP(j,'sim')            / valP(j,'base')            - 1) * 100;           
+valPC(tr,'var')         $valPC(tr,'base')           = (valPC(tr,'sim')          / valPC(tr,'base')          - 1) * 100;               
+valPCI(j,'var')         $valPCI(j,'base')           = (valPCI(j,'sim')          / valPCI(j,'base')          - 1) * 100;               
+valPD(tr,'var')         $valPD(tr,'base')           = (valPD(tr,'sim')          / valPD(tr,'base')          - 1) * 100;               
+valPE(tr,'var')         $valPE(tr,'base')           = (valPE(tr,'sim')          / valPE(tr,'base')          - 1) * 100;               
+valPIB_BP('var')        $valPIB_BP('base')          = (valPIB_BP('sim')         / valPIB_BP('base')         - 1) * 100;                   
+valPIB_BP_reel('var')   $valPIB_BP_reel('base')     = (valPIB_BP_reel('sim')    / valPIB_BP_reel('base')    - 1) * 100;                                           
+valPIB_FD('var')        $valPIB_FD('base')          = (valPIB_FD('sim')         / valPIB_FD('base')         - 1) * 100;                   
+valPIB_IB('var')        $valPIB_IB('base')          = (valPIB_IB('sim')         / valPIB_IB('base')         - 1) * 100;                   
+valPIB_MP('var')        $valPIB_MP('base')          = (valPIB_MP('sim')         / valPIB_MP('base')         - 1) * 100;                   
+valPIB_MP_reel('var')   $valPIB_MP_reel('base')     = (valPIB_MP_reel('sim')    / valPIB_MP_reel('base')    - 1) * 100;                                           
+valPIXCON('var')        $valPIXCON('base')          = (valPIXCON('sim')         / valPIXCON('base')         - 1) * 100;                   
+valPIXPIB('var')        $valPIXPIB('base')          = (valPIXPIB('sim')         / valPIXPIB('base')         - 1) * 100;                   
+valPIXINV('var')        $valPIXINV('base')          = (valPIXINV('sim')         / valPIXINV('base')         - 1) * 100;                   
+valPL(tr,'var')         $valPL(tr,'base')           = (valPL(tr,'sim')          / valPL(tr,'base')          - 1) * 100;               
+valPM(tr,'var')         $valPM(tr,'base')           = (valPM(tr,'sim')          / valPM(tr,'base')          - 1) * 100;               
+valPPD(tr,'var')        $valPPD(tr,'base')          = (valPPD(tr,'sim')         / valPPD(tr,'base')         - 1) * 100;                   
+valPPM(tr,'var')        $valPPM(tr,'base')          = (valPPM(tr,'sim')         / valPPM(tr,'base')         - 1) * 100;                   
+valPVA(j,'var')         $valPVA(j,'base')           = (valPVA(j,'sim')          / valPVA(j,'base')          - 1) * 100;               
+valPWE(tr,'var')        $valPWE(tr,'base')          = (valPWE(tr,'sim')         / valPWE(tr,'base')         - 1) * 100;                   
+valPWM(tr,'var')        $valPWM(tr,'base')          = (valPWM(tr,'sim')         / valPWM(tr,'base')         - 1) * 100;                   
+valQ(tr,'var')          $valQ(tr,'base')            = (valQ(tr,'sim')           / valQ(tr,'base')           - 1) * 100;               
+valR(trj,'var')         $valR(trj,'base')           = (valR(trj,'sim')          / valR(trj,'base')          - 1) * 100;               
+valR_R('var')           $valR_R('base')             = (valR_R('sim')            / valR_R('base')            - 1) * 100;           
+valSF('var')            $valSF('base')              = (valSF('sim')             / valSF('base')             - 1) * 100;   
+valSG('var')            $valSG('base')              = (valSG('sim')             / valSG('base')             - 1) * 100;   
+valSH(h,'var')          $valSH(h,'base')            = (valSH(h,'sim')           / valSH(h,'base')           - 1) * 100;               
+valSNGO('var')          $valSNGO('base')            = (valSNGO('sim')           / valSNGO('base')           - 1) * 100;               
+valSROW('var')          $valSROW('base')            = (valSROW('sim')           / valSROW('base')           - 1) * 100;               
+valTDF('var')           $valTDF('base')             = (valTDF('sim')            / valTDF('base')            - 1) * 100;           
+valTDH(h,'var')         $valTDH(h,'base')           = (valTDH(h,'sim')          / valTDH(h,'base')          - 1) * 100;               
+valTI(tr,'var')         $valTI(tr,'base')           = (valTI(tr,'sim')          / valTI(tr,'base')          - 1) * 100;               
+valTIF('var')           $valTIF('base')             = (valTIF('sim')            / valTIF('base')            - 1) * 100;           
+valTIM(tr,'var')        $valTIM(tr,'base')          = (valTIM(tr,'sim')         / valTIM(tr,'base')         - 1) * 100;                   
+valTIMF('var')          $valTIMF('base')            = (valTIMF('sim')           / valTIMF('base')           - 1) * 100;               
+valTRA(ag,agj,'var')    $valTRA(ag,agj,'base')      = (valTRA(ag,agj,'sim')     / valTRA(ag,agj,'base')     - 1) * 100;                                   
+valVA(j,'var')          $valVA(j,'base')            = (valVA(j,'sim')           / valVA(j,'base')           - 1) * 100;               
+valVA_nom(j,'var')      $valVA_nom(j,'base')        = (valVA_nom(j,'sim')       / valVA_nom(j,'base')       - 1) * 100;                               
+valVSTK(bns,'var')      $valVSTK(bns,'base')        = (valVSTK(bns,'sim')       / valVSTK(bns,'base')       - 1) * 100;                               
+valVSTK_nom(bns,'var')  $valVSTK_nom(bns,'base')    = (valVSTK_nom(bns,'sim')   / valVSTK_nom(bns,'base')   - 1) * 100;                                               
+valW('var')             $valW('base')               = (valW('sim')              / valW('base')              - 1) * 100;
+valW_R('var')           $valW_R('base')             = (valW_R('sim')            / valW_R('base')            - 1) * 100;           
+valXS(j,'var')          $valXS(j,'base')            = (valXS(j,'sim')           / valXS(j,'base')           - 1) * 100;               
+valXS_nom(j,'var')      $valXS_nom(j,'base')        = (valXS_nom(j,'sim')       / valXS_nom(j,'base')       - 1) * 100;                               
+valYDF('var')           $valYDF('base')             = (valYDF('sim')            / valYDF('base')            - 1) * 100;               
+valYDH(h,'var')         $valYDH(h,'base')           = (valYDH(h,'sim')          / valYDH(h,'base')          - 1) * 100;               
+valYF('var')            $valYF('base')              = (valYF('sim')             / valYF('base')             - 1) * 100;   
+valYFK('var')           $valYFK('base')             = (valYFK('sim')            / valYFK('base')            - 1) * 100;           
+valYG('var')            $valYG('base')              = (valYG('sim')             / valYG('base')             - 1) * 100;   
+valYGNTX('var')         $valYGNTX('base')           = (valYGNTX('sim')          / valYGNTX('base')          - 1) * 100;               
+valYGTRA('var')         $valYGTRA('base')           = (valYGTRA('sim')          / valYGTRA('base')          - 1) * 100;               
+valYGTX('var')          $valYGTX('base')            = (valYGTX('sim')           / valYGTX('base')           - 1) * 100;               
+valYH(h,'var')          $valYH(h,'base')            = (valYH(h,'sim')           / valYH(h,'base')           - 1) * 100;               
+valYHK(h,'var')         $valYHK(h,'base')           = (valYHK(h,'sim')          / valYHK(h,'base')          - 1) * 100;               
+valYHL(h,'var')         $valYHL(h,'base')           = (valYHL(h,'sim')          / valYHL(h,'base')          - 1) * 100;               
+valYHTRA(h,'var')       $valYHTRA(h,'base')         = (valYHTRA(h,'sim')        / valYHTRA(h,'base')        - 1) * 100;                           
+valYNGO('var')          $valYNGO('base')            = (valYNGO('sim')           / valYNGO('base')           - 1) * 100;               
+valYROW('var')          $valYROW('base')            = (valYROW('sim')           / valYROW('base')           - 1) * 100;               
+valYROWK('var')         $valYROWK('base')           = (valYROWK('sim')          / valYROWK('base')          - 1) * 100;               
+valYROWL('var')         $valYROWL('base')           = (valYROWL('sim')          / valYROWL('base')          - 1) * 100; 
                                                             
+** --- BLOC FINANCIER ---
+ValAMORTG('var')        $ValAMORTG('base')          = (ValAMORTG('sim')         / ValAMORTG('base')         - 1) * 100;
+ValBRG('var')           $ValBRG('base')             = (ValBRG('sim')            / ValBRG('base')            - 1) * 100;
+ValDEBTG('var')         $ValDEBTG('base')           = (ValDEBTG('sim')          / ValDEBTG('base')          - 1) * 100;
+ValDINVG('var')         $ValDINVG('base')           = (ValDINVG('sim')          / ValDINVG('base')          - 1) * 100;
+ValD_BG('var')          $ValD_BG('base')            = (ValD_BG('sim')           / ValD_BG('base')           - 1) * 100;
+ValD_DCG('var')         $ValD_DCG('base')           = (ValD_DCG('sim')          / ValD_DCG('base')          - 1) * 100;
+ValD_DCP('var')         $ValD_DCP('base')           = (ValD_DCP('sim')          / ValD_DCP('base')          - 1) * 100;
+ValD_ER('var')          $ValD_ER('base')            = (ValD_ER('sim')           / ValD_ER('base')           - 1) * 100;
+ValD_MD('var')          $ValD_MD('base')            = (ValD_MD('sim')           / ValD_MD('base')           - 1) * 100;
+ValD_MS('var')          $ValD_MS('base')            = (ValD_MS('sim')           / ValD_MS('base')           - 1) * 100;
+ValD_NFDG('var')        $ValD_NFDG('base')          = (ValD_NFDG('sim')         / ValD_NFDG('base')         - 1) * 100;
+ValD_NFDG_PRG('var')    $ValD_NFDG_PRG('base')      = (ValD_NFDG_PRG('sim')     / ValD_NFDG_PRG('base')     - 1) * 100;
+ValD_NFDG_PRJ('var')    $ValD_NFDG_PRJ('base')      = (ValD_NFDG_PRJ('sim')     / ValD_NFDG_PRJ('base')     - 1) * 100;
+ValD_NFDP('var')        $ValD_NFDP('base')          = (ValD_NFDP('sim')         / ValD_NFDP('base')         - 1) * 100;
+ValD_RES('var')         $ValD_RES('base')           = (ValD_RES('sim')          / ValD_RES('base')          - 1) * 100;
+ValDCG('var')           $ValDCG('base')             = (ValDCG('sim')            / ValDCG('base')            - 1) * 100;
+ValDCP('var')           $ValDCP('base')             = (ValDCP('sim')            / ValDCP('base')            - 1) * 100;
+ValER('var')            $ValER('base')              = (ValER('sim')             / ValER('base')             - 1) * 100;
+ValFDI_IN('var')        $ValFDI_IN('base')          = (ValFDI_IN('sim')         / ValFDI_IN('base')         - 1) * 100;
+ValFDI_NET('var')       $ValFDI_NET('base')         = (ValFDI_NET('sim')        / ValFDI_NET('base')        - 1) * 100;
+ValFDI_OUT('var')       $ValFDI_OUT('base')         = (ValFDI_OUT('sim')        / ValFDI_OUT('base')        - 1) * 100;
+ValFINVG('var')         $ValFINVG('base')           = (ValFINVG('sim')          / ValFINVG('base')          - 1) * 100;
+ValINVG('var')          $ValINVG('base')            = (ValINVG('sim')           / ValINVG('base')           - 1) * 100;
+ValINVP('var')          $ValINVP('base')            = (ValINVP('sim')           / ValINVP('base')           - 1) * 100;
+ValKTRAG('var')          $ValKTRAG('base')            = (ValKTRAG('sim')           / ValKTRAG('base')           - 1) * 100;
+valLEONF('var')                                     = (valLEONF('sim')          - valLEONF('base')             )      ;               
+ValMD('var')            $ValMD('base')              = (ValMD('sim')             / ValMD('base')             - 1) * 100;
+ValMS('var')            $ValMS('base')              = (ValMS('sim')             / ValMS('base')             - 1) * 100;
+ValNDDG('var')          $ValNDDG('base')            = (ValNDDG('sim')           / ValNDDG('base')           - 1) * 100;
+ValNFDG('var')          $ValNFDG('base')            = (ValNFDG('sim')           / ValNFDG('base')           - 1) * 100;
+ValOTHKTRA('var')        $ValOTHKTRA('base')          = (ValOTHKTRA('sim')         / ValOTHKTRA('base')         - 1) * 100;
+ValRES('var')           $ValRES('base')             = (ValRES('sim')            / ValRES('base')            - 1) * 100;
+ValSP('var')            $ValSP('base')              = (ValSP('sim')             / ValSP('base')             - 1) * 100;
+ValTOTG('var')          $ValTOTG('base')            = (ValTOTG('sim')           / ValTOTG('base')           - 1) * 100;
 
 *$onText
 execute_unload "Resultats",
-    valCAB,         valCH,          valCH_nom,      valCI,          valCI_nom,      
-    valCTH,         valCTH_reel,    valDD,          valDI,          valDI_nom,      
-    valDIT,         valDS,          valDX,          vale,           
-    valEX,          valEX_nom,      valEXTOT,       valFBCF,        valFBCF_reel,   
-    valFROWK,       valFROWL,       valG,           valG_reel,      valIM,          
-    valIM_nom,      valIMTOT,       valINV,         valINV_nom,     valIT,          
+    valCAB,         valCH,          valCG,          valCH_nom,      valCNGO,
+    valCI,          valCI_nom,
+    valCTG,         valCTH,         valCTH_reel,    valCTNGO,       valDD,
+    valDI,          valDI_nom,      valDIT,         valDS,          valDX,
+    vale,           valER,
+    valEX,          valEX_nom,      valEXTOT,
+    valFBCF,        valFBCF_reel,   valFROWK,       valFROWL,
+    valIM,          valIM_nom,      valIMTOT,       valINV,         valINV_nom,     valIT,          
     valKD,          valKD_nom,      valKD_R,        valKS,          valLD,          
     valLD_nom,      valLD_R,        valLS,          valMRGCOM,      valMRGTRP,
     valNTXF,        valNTXH,        valNTXHH,
@@ -457,11 +600,17 @@ execute_unload "Resultats",
     valVA_nom,      valVSTK,        valVSTK_nom,    valW,           valW_R,         
     valXS,          valXS_nom,      valYDF,         valYDH,         valYF,          valYFK,         
     valYG,          valYGTX,        valYGNTX,       valYH,          valYHK,
-    valYHL,         valYHTRA,       valYNGO,        valYROW,        valYROWK,
-    valYROWL
+    valYHL,         valYHTRA,       valYNGO,        valYROW,        valYROWK,       valYROWL,
+* --- Bloc financier --
+    ValAMORTG,      ValBRG,         ValDEBTG,       ValDINVG,       ValD_BG,
+    ValD_DCG,       ValD_DCP,       ValD_ER,        ValD_MD,        ValD_MS,    ValD_NFDG,
+    ValD_NFDG_PRG,  ValD_NFDG_PRJ,  ValD_NFDP,      ValD_RES,       ValER,      ValFDI_IN,
+    ValFDI_NET,     ValFDI_OUT,     ValFINVG,       ValINVG,        ValINVP,    ValKTRAG,
+    ValMD,          ValMS,          ValNDDG,        ValNFDG,        ValOTHKTRA,
+    ValRES,         ValSP,          ValTOTG
     ;
-
 execute '=gdx2xls resultats.gdx "../output/resultats.xlsx"';
+
 
 
 execute_unload "Parameters",
@@ -471,13 +620,17 @@ execute_unload "Parameters",
     gamma_CH,       gamma_INV,
     io,
     lambda,         lambda_R,       lambda_TRA,     
-    m_G,            mu_D,           mu_E,
+    mu_CTNGO,       mu_D,           mu_E,
     ntyf,           ntyh,
     phi,            psi,
     rho_E,          rho_M,          
     sigma_E,        sigma_M,        sntx,           syfi,           syfm,
     theta,          tm,             tmgc,           tmgt,           tx,             tyf,    tyh,
-    v
+    v,
+* --- Bloc financier --
+    g_ER,           
+    psi_BG,         psi_DCP,        psi_EX
+    vel
     ;
 
 
@@ -495,55 +648,53 @@ PUT "RAPPORT ANALYTIQUE : COMPARAISON DES SCENARIOS" //;
 PUT  @ 2 'DATE:' system.Date      @ 40 'HEURE:' SYSTEM.TIME///;
 PUT "DESCRIPTION" @55 "SYMBOLE" @90 "BASE":>10:3 @105 "SIMULATIOM":>10:3 @120"VARIATION (%)":>10:3 /;
 PUT "=================================================================================================================================" //;
-PUT @2 "EQUILIBRE (LOI DE WALRAS)"              @55 "LEON"                  @90 valLEON('base'):>10:3           @105 valLEON('sim'):>10:3           @120 valLEON('var'):>10:3//;    
+PUT @2 "EQUILIBRE (LOI DE WALRAS)"/;
+PUT @4 "BLOC REEL"                                  @55 "LEON"                  @90 valLEON('base'):>10:3                   @105 valLEON('sim'):>10:3                   @120 valLEON('var'):>10:3/;    
+PUT @4 "BLOC FINANCIER"                             @55 "LEONF"                 @90 valLEONF('base'):>10:3                  @105 valLEONF('sim'):>10:3                  @120 valLEONF('var'):>10:3//;   
 PUT "=================================================================================================================================" //;
 
 PUT "COMPTE DES MENAGES" /;
 LOOP(h,
    PUT @2 h.te(h) /;
-   PUT @4 "Ressources/Emplois tot."             @55 "YH"                    @90 valYH(h,'base'):>10:3           @105 valYH(h,'sim'):>10:3           @120 valYH(h,'var'):>10:3 /;
+   PUT @4 "Ressources/Emplois tot."                 @55 "YH"                    @90 valYH(h,'base'):>10:3                   @105 valYH(h,'sim'):>10:3                   @120 valYH(h,'var'):>10:3 /;
    PUT /;
    
    PUT @4 "Ressources"                             /;
-   PUT @6 "Revenus du Travail"                  @55 "YHL"                   @90 valYHL(h,'base'):>10:3          @105 valYHL(h,'sim'):>10:3          @120 valYHL(h,'var'):>10:3 /;
-   PUT @6 "Revenus du Capital"                  @55 "YHK"                   @90 valYHK(h,'base'):>10:3          @105 valYHK(h,'sim'):>10:3          @120 valYHK(h,'var'):>10:3 /;
-   PUT @6 "Transferts recus"                    @55 "YHTR"                  @90 valYHTRA(h,'base'):>10:3        @105 valYHTRA(h,'sim'):>10:3        @120 valYHTRA(h,'var'):>10:3 /;
+   PUT @6 "Revenus du Travail"                      @55 "YHL"                   @90 valYHL(h,'base'):>10:3                  @105 valYHL(h,'sim'):>10:3                  @120 valYHL(h,'var'):>10:3 /;
+   PUT @6 "Revenus du Capital"                      @55 "YHK"                   @90 valYHK(h,'base'):>10:3                  @105 valYHK(h,'sim'):>10:3                  @120 valYHK(h,'var'):>10:3 /;
+   PUT @6 "Transferts recus"                        @55 "YHTR"                  @90 valYHTRA(h,'base'):>10:3                @105 valYHTRA(h,'sim'):>10:3                @120 valYHTRA(h,'var'):>10:3 /;
    PUT /;
    
    PUT @4 "Emplois"                                /;
-   PUT @6 "Impots sur le revenu"                @55 "TDH"                   @90 valTDH(h,'base'):>10:3          @105 valTDH(h,'sim'):>10:3          @120 valTDH(h,'var'):>10:3 /;
-   PUT @6 "Prelevements non fiscaux"            @55 "NTXH(" h.TL:0 ")"      @90 valNTXH(h,'base'):>10:3         @105 valNTXH(h,'sim'):>10:3         @120 valNTXH(h,'var'):>10:3 /;
-   PUT @6 "Consommation Finale"                 @55 "CTH"                   @90 valCTH(h,'base'):>10:3          @105 valCTH(h,'sim'):>10:3          @120 valCTH(h,'var'):>10:3 /; 
-   PUT @6 "Epargne"                             @55 "SH"                    @90 valSH(h,'base'):>10:3           @105 valSH(h,'sim'):>10:3           @120 valSH(h,'var'):>10:3 /;
+   PUT @6 "Impots sur le revenu"                    @55 "TDH"                   @90 valTDH(h,'base'):>10:3                  @105 valTDH(h,'sim'):>10:3                  @120 valTDH(h,'var'):>10:3 /;
+   PUT @6 "Prelevements non fiscaux"                @55 "NTXH(" h.TL:0 ")"      @90 valNTXH(h,'base'):>10:3                 @105 valNTXH(h,'sim'):>10:3                 @120 valNTXH(h,'var'):>10:3 /;
+   PUT @6 "Consommation Finale"                     @55 "CTH"                   @90 valCTH(h,'base'):>10:3                  @105 valCTH(h,'sim'):>10:3                  @120 valCTH(h,'var'):>10:3 /; 
+   PUT @6 "Epargne"                                 @55 "SH"                    @90 valSH(h,'base'):>10:3                   @105 valSH(h,'sim'):>10:3                   @120 valSH(h,'var'):>10:3 /;
    PUT /;
 );
 
 PUT "=================================================================================================================================" //;
 
 PUT "COMPTE DES SOCIETES" /;
-PUT @4 "Ressources/Emplois tot."                @55 "YF"                    @90 valYF('base'):>10:3             @105 valYF('sim'):>10:3          @120 valYF('var'):>10:3 /;
+PUT @4 "Ressources/Emplois tot."                    @55 "YF"                    @90 valYF('base'):>10:3                                 @105 valYF('sim'):>10:3                                 @120 valYF('var'):>10:3 /;
 PUT /;
 
 PUT @4 "Ressources"     /;                          
-PUT @6 "Transf. recus du RDM"                   @55 "TRA(firm,row)"         @90 valTRA('firm','row','base'):>10:3           @105 valTRA('firm','row','sim'):>10:3      @120 valTRA('firm','row','var'):>10:3 /;
-PUT @6 "Transf. recus de l'Adm. centrale"       @55 "TRA(firm,gvt)"         @90 valTRA('firm','gvt','base'):>10:3           @105 valTRA('firm','gvt','sim'):>10:3      @120 valTRA('firm','gvt','var'):>10:3 /;
-PUT @6 "Revenu du capital"                      @55 "YFK"                   @90 valYFK('base'):>10:3                        @105 valYFK('sim'):>10:3                   @120 valYFK('var'):>10:3 /;
+PUT @6 "Transf. recus du RDM"                       @55 "E*TRA(firm,row)"       @90 (ValE('base')*valTRA('firm','row','base')):>10:3    @105 (ValE('sim')*valTRA('firm','row','sim')):>10:3     @120 ([{ValE('var')/100 + 1}*{valTRA('firm','row','var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Transf. recus de l'Adm. centrale"           @55 "TRA(firm,gvt)"         @90 valTRA('firm','gvt','base'):>10:3                   @105 valTRA('firm','gvt','sim'):>10:3                   @120 valTRA('firm','gvt','var'):>10:3 /;
+PUT @6 "Revenu du capital"                          @55 "YFK"                   @90 valYFK('base'):>10:3                                @105 valYFK('sim'):>10:3                                @120 valYFK('var'):>10:3 /;
 PUT /;
 
 PUT @4 "Emplois"      /;                         
-PUT @6 "Impots sur le revenu"                   @55 "TDF"                   @90 valTDF('base'):>10:3            @105 valTDF('sim'):>10:3        @120 valTDF('var'):>10:3 /;
-PUT @6 "Autres impots indirects"                @55 "TIF"                   @90 valTIF('base'):>10:3            @105 valTIF('sim'):>10:3        @120 valTIF('var'):>10:3 /;
-PUT @6 "Autres droits de douanes"               @55 "TIMF"                  @90 valTIMF('base'):>10:3           @105 valTIMF('sim'):>10:3       @120 valTIMF('var'):>10:3 /;
-PUT @6 "Prelevements fiscaux"                   @55 "NTXF"                  @90 valNTXF('base'):>10:3           @105 valNTXF('sim'):>10:3       @120 valNTXF('var'):>10:3 /;
-PUT @6 "Transf. aux autres APU et ISBLSM"       @55 "TRA(ngo,firm)"         @90 valTRA('ngo','firm','base'):>10:3
-                                                                                                                @105 valTRA('ngo','firm','sim'):>10:3
-                                                                                                                                                @120 valTRA('ngo','firm','var'):>10:3 /;
+PUT @6 "Impots sur le revenu"                       @55 "TDF"                   @90 valTDF('base'):>10:3                                @105 valTDF('sim'):>10:3                                @120 valTDF('var'):>10:3 /;
+PUT @6 "Autres impots indirects"                    @55 "TIF"                   @90 valTIF('base'):>10:3                                @105 valTIF('sim'):>10:3                                @120 valTIF('var'):>10:3 /;
+PUT @6 "Autres droits de douanes"                   @55 "TIMF"                  @90 valTIMF('base'):>10:3                               @105 valTIMF('sim'):>10:3                               @120 valTIMF('var'):>10:3 /;
+PUT @6 "Prelevements fiscaux"                       @55 "NTXF"                  @90 valNTXF('base'):>10:3                               @105 valNTXF('sim'):>10:3                               @120 valNTXF('var'):>10:3 /;
+PUT @6 "Transf. aux autres APU et ISBLSM"           @55 "TRA(ngo,firm)"         @90 valTRA('ngo','firm','base'):>10:3                   @105 valTRA('ngo','firm','sim'):>10:3                   @120 valTRA('ngo','firm','var'):>10:3 /;
 LOOP(h,
-    PUT @6 "Transf. aux "  h.TE(h)              @55 "TRA(" h.TL:0 ",firm)"  @90 valTRA(h,'firm','base'):>10:3
-                                                                                                                @105 valTRA(h,'firm','sim'):>10:3
-                                                                                                                                                @120 valTRA(h,'firm','var'):>10:3 /;
+    PUT @6 "Transf. aux "  h.TE(h)                  @55 "TRA(" h.TL:0 ",firm)"  @90 valTRA(h,'firm','base'):>10:3                       @105 valTRA(h,'firm','sim'):>10:3                       @120 valTRA(h,'firm','var'):>10:3 /;
 );                                                                                                                                                
-PUT @6 "Epargne"                                @55 "SF"                   @90 valSF('base'):>10:3             @105 valSF('sim'):>10:3          @120 valSF('var'):>10:3 /;
+PUT @6 "Epargne"                                    @55 "SF"                    @90 valSF('base'):>10:3                                 @105 valSF('sim'):>10:3                                 @120 valSF('var'):>10:3 /;
 
 
 PUT /;
@@ -551,96 +702,94 @@ PUT /;
 PUT "=================================================================================================================================" //;
 
 PUT "COMPTE DE l'ADMINISTRATION CENTRALE" /;
-PUT @4"Ressources/Emplois tot."                 @55 "YG"                    @90 valYG('base'):>10:3             @105 valYG('sim'):>10:3             @120 valYG('var'):>10:3 /;
+PUT @4"Ressources/Emplois tot."                     @55 "YG"                    @90 valYG('base'):>10:3                                 @105 valYG('sim'):>10:3                                 @120 valYG('var'):>10:3 /;
 PUT /;
 PUT @4 "Ressources"     /;
 PUT @6 "Impots indirects "  /;           
 LOOP(tr,
-    PUT @8  tr.TE(tr)                           @55 "TI(" tr.TL:0 ")"       @90 valTI(tr,'base'):>10:3          @105 valTI(tr,'sim'):>10:3          @120 valTI(tr,'var'):>10:3 /;
+    PUT @8  tr.TE(tr)                               @55 "TI(" tr.TL:0 ")"       @90 valTI(tr,'base'):>10:3                              @105 valTI(tr,'sim'):>10:3                              @120 valTI(tr,'var'):>10:3 /;
 );
-PUT @8 "Autres impots indirects"                @55 "TIF"                   @90 valTIF('base'):>10:3            @105 valTIF('sim'):>10:3            @120 valTIF('var'):>10:3 /;
+PUT @8 "Autres impots indirects"                    @55 "TIF"                   @90 valTIF('base'):>10:3                                @105 valTIF('sim'):>10:3                                @120 valTIF('var'):>10:3 /;
 PUT /;
 
 PUT @6 "Droits de douanes"   /;           
 LOOP(tr,
-    PUT @8 tr.TE(tr)                            @55 "TIM(" tr.TL:0 ")"      @90 valTIM(tr,'base'):>10:3         @105 valTIM(tr,'sim'):>10:3         @120 valTIM(tr,'var'):>10:3 /;
+    PUT @8 tr.TE(tr)                                @55 "TIM(" tr.TL:0 ")"      @90 valTIM(tr,'base'):>10:3                             @105 valTIM(tr,'sim'):>10:3                             @120 valTIM(tr,'var'):>10:3 /;
 );
-PUT @8 "Autres droits de douanes"               @55 "TIMF"                  @90 valTIMF('base'):>10:3           @105 valTIMF('sim'):>10:3           @120 valTIMF('var'):>10:3 /;
+PUT @8 "Autres droits de douanes"                   @55 "TIMF"                  @90 valTIMF('base'):>10:3                               @105 valTIMF('sim'):>10:3                               @120 valTIMF('var'):>10:3 /;
 PUT /;
 
 PUT @6 "Impots sur le revenu "   /;           
 LOOP(h,
-    PUT @8  h.TE(h)                             @55 "TDH(" h.TL:0 ")"       @90 valTDH(h,'base'):>10:3          @105 valTDH(h,'sim'):>10:3          @120 valTDH(h,'var'):>10:3 /;
+    PUT @8  h.TE(h)                                 @55 "TDH(" h.TL:0 ")"       @90 valTDH(h,'base'):>10:3                              @105 valTDH(h,'sim'):>10:3                              @120 valTDH(h,'var'):>10:3 /;
 );
-PUT @8 "Societes"                               @55 "TDF"                   @90 valTDF('base'):>10:3            @105 valTDF('sim'):>10:3            @120 valTDF('var'):>10:3 /;
+PUT @8 "Societes"                                   @55 "TDF"                   @90 valTDF('base'):>10:3                                @105 valTDF('sim'):>10:3                                @120 valTDF('var'):>10:3 /;
 PUT /;
 
-PUT @6 "Revenu des transferts"                  @55 "YGTRA"                 @90 valYGTRA('base'):>10:3                  @105 valYGTRA('sim'):>10:3                  @120 valYGTRA('var'):>10:3 /;
-PUT @8 "Reste du monde"                         @55 "TRA(gvt,row)"          @90 valTRA('gvt','row','base'):>10:3        @105 valTRA('gvt','row','sim'):>10:3        @120 valTRA('gvt','row','var'):>10:3 /;
+PUT @6 "Revenu des transferts"                      @55 "YGTRA"                 @90 valYGTRA('base'):>10:3                              @105 valYGTRA('sim'):>10:3                              @120 valYGTRA('var'):>10:3 /;
+PUT @8 "Reste du monde"                             @55 "E*TRA(gvt,row)"        @90 (ValE('base')*valTRA('gvt','row','base')):>10:3     @105 (ValE('sim')*valTRA('gvt','row','sim')):>10:3      @120 ([{ValE('var')/100 + 1}*{valTRA('gvt','row','var')/100 + 1} - 1]*100):>10:3 /;
 PUT /;
 
-PUT @6 "Revenu des recettes non fiscales"       @55 "YGNTX"                 @90 valYGNTX('base'):>10:3                  @105 valYGNTX('sim'):>10:3                  @120 valYGNTX('var'):>10:3 /;
-PUT @8 "Societes"                               @55 "NTXF"                  @90 valNTXF('base'):>10:3                   @105 valNTXF('sim'):>10:3                   @120 valNTXF('var'):>10:3 /;
+PUT @6 "Revenu des recettes non fiscales"           @55 "YGNTX"                 @90 valYGNTX('base'):>10:3                              @105 valYGNTX('sim'):>10:3                              @120 valYGNTX('var'):>10:3 /;
+PUT @8 "Societes"                                   @55 "NTXF"                  @90 valNTXF('base'):>10:3                               @105 valNTXF('sim'):>10:3                               @120 valNTXF('var'):>10:3 /;
 LOOP(h,
-   PUT @8 h.te(h)                               @55 "NTXH(" h.TL:0 ")"      @90 {sntx('gvt')*valNTXH(h,'base')}:>10:3   @105 {sntx('gvt')*valNTXH(h,'sim')}:>10:3   @120 valNTXH(h,'var'):>10:3 /;
+   PUT @8 h.te(h)                                   @55 "NTXH(" h.TL:0 ")"      @90 {sntx('gvt')*valNTXH(h,'base')}:>10:3               @105 {sntx('gvt')*valNTXH(h,'sim')}:>10:3               @120 valNTXH(h,'var'):>10:3 /;
 );
 PUT /;
 
 PUT @4 "Emplois"     /;                 
 LOOP(h, 
-    PUT @6 "Transf. aux "  h.TE(h):<15          @55 "TRA(" h.TL:0 ",gvt)"   @90 valTRA(h,'gvt','base'):>10:3        @105 valTRA(h,'gvt','sim'):>10:3        @120 valTRA(h,'gvt','var'):>10:3 /;
+    PUT @6 "Transf. aux "  h.TE(h):<15              @55 "TRA(" h.TL:0 ",gvt)"   @90 valTRA(h,'gvt','base'):>10:3                        @105 valTRA(h,'gvt','sim'):>10:3                        @120 valTRA(h,'gvt','var'):>10:3 /;
 );
-PUT @6 "Transf. aux Autres APU et aux ISBLSM"   @55 "TRA(ngo,gvt)"          @90 valTRA('ngo','gvt','base'):>10:3    @105 valTRA('ngo','gvt','sim'):>10:3    @120 valTRA('ngo','gvt','var'):>10:3 /;
-PUT @6 "Transf. aux Entreprises"                @55 "TRA(firm,gvt)"         @90 valTRA('firm','gvt','base'):>10:3   @105 valTRA('firm','gvt','sim'):>10:3   @120 valTRA('firm','gvt','var'):>10:3 /;
-PUT @6 "Transf. au RDM"                         @55 "TRA(row,gvt)"          @90 valTRA('row','gvt','base'):>10:3    @105 valTRA('row','gvt','sim'):>10:3    @120 valTRA('row','gvt','var'):>10:3 /;
-PUT @6 "Budget de consommation publique"        @55 "G(pub)"                @90 valG('pub', 'base'):>10:3           @105 valG('pub','sim'):>10:3            @120 valG('pub','var'):>10:3 /;
-PUT @6 "Epargne publique"                       @55 "SG"                    @90 valSG('base'):>10:3                 @105 valSG('sim'):>10:3                 @120valSG('var'):>10:3 /;
+PUT @6 "Transf. aux Autres APU et aux ISBLSM"       @55 "TRA(ngo,gvt)"          @90 valTRA('ngo','gvt','base'):>10:3                    @105 valTRA('ngo','gvt','sim'):>10:3                    @120 valTRA('ngo','gvt','var'):>10:3 /;
+PUT @6 "Transf. aux Entreprises"                    @55 "TRA(firm,gvt)"         @90 valTRA('firm','gvt','base'):>10:3                   @105 valTRA('firm','gvt','sim'):>10:3                   @120 valTRA('firm','gvt','var'):>10:3 /;
+PUT @6 "Transf. au RDM"                             @55 "E*TRA(row,gvt)"        @90 (ValE('base')*valTRA('row','gvt','base')):>10:3     @105 (ValE('sim')*valTRA('row','gvt','sim')):>10:3      @120 ([{ValE('var')/100 + 1}*{valTRA('row','gvt','var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Budget de consommation publique"            @55 "CTG"                   @90 valCTG('base'):>10:3                                @105 valCTG('sim'):>10:3                                @120 valCTG('var'):>10:3 /;
+PUT @6 "Epargne publique"                           @55 "SG"                    @90 valSG('base'):>10:3                                 @105 valSG('sim'):>10:3                                 @120valSG('var'):>10:3 /;
 PUT /;
 
 PUT "=================================================================================================================================" //;
 
 PUT "COMPTE DES AUTRES APU ET DES ISBLSM" /;
-PUT @4 "Ressources/Emplois tot."                @55 "YNGO"                  @90 valYNGO('base'):>10:3               @105 valYNGO('sim'):>10:3               @120 valYNGO('var'):>10:3 /;
+PUT @4 "Ressources/Emplois tot."                    @55 "YNGO"                  @90 valYNGO('base'):>10:3                               @105 valYNGO('sim'):>10:3                           @120 valYNGO('var'):>10:3 /;
 PUT /;
 PUT @4 "Ressources"     /;                 
-PUT @6 "Transf. recus du de l'adm. centrale"    @55 "TRA(ngo,gvt)"          @90 valTRA('ngo','gvt','base'):>10:3    @105 valTRA('ngo','gvt','sim'):>10:3    @120 valTRA('ngo','gvt','var'):>10:3 /;
-PUT @6 "Transf. recus du RDM"                   @55 "TRA(row,gvt)"          @90 valTRA('ngo','row','base'):>10:3    @105 valTRA('ngo','row','sim'):>10:3    @120 valTRA('ngo','row','var'):>10:3 /;
-PUT @6 "Transf. recus des Soc."                 @55 "TRA(ngo,firm)"         @90 valTRA('ngo','firm','base'):>10:3   @105 valTRA('ngo','firm','sim'):>10:3   @120 valTRA('ngo','firm','var'):>10:3 /;
-PUT @6 "Revenus non fiscaux venant des menages" @55 "NTXHH(ngo)"            @90 valNTXHH('ngo','base'):>10:3        @105 valNTXHH('ngo','sim'):>10:3        @120 valNTXHH('ngo','var'):>10:3 /;
+PUT @6 "Transf. recus du de l'adm. centrale"        @55 "TRA(ngo,gvt)"          @90 valTRA('ngo','gvt','base'):>10:3                    @105 valTRA('ngo','gvt','sim'):>10:3                @120 valTRA('ngo','gvt','var'):>10:3 /;
+PUT @6 "Transf. recus du RDM"                       @55 "E*TRA(row,gvt)"        @90 (ValE('base')*valTRA('ngo','row','base')):>10:3     @105 (ValE('sim')*valTRA('ngo','row','sim')):>10:3  @120 ([{ValE('var')/100 + 1}*{valTRA('ngo','row','var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Transf. recus des Soc."                     @55 "TRA(ngo,firm)"         @90 valTRA('ngo','firm','base'):>10:3                   @105 valTRA('ngo','firm','sim'):>10:3               @120 valTRA('ngo','firm','var'):>10:3 /;
+PUT @6 "Revenus non fiscaux venant des menages"     @55 "NTXHH(ngo)"            @90 valNTXHH('ngo','base'):>10:3                        @105 valNTXHH('ngo','sim'):>10:3                    @120 valNTXHH('ngo','var'):>10:3 /;
 PUT /;
 PUT @4 "Emplois"     /;                 
 LOOP(h,
-    PUT @6 "Transf. aux " h.TE(h):<30           @55 "TRA(" h.TL:0 ",ngo)"   @90 valTRA(h,'ngo','base'):>10:3        @105 valTRA(h,'ngo','sim'):>10:3        @120 valTRA(h,'ngo','var'):>10:3 /;
+    PUT @6 "Transf. aux " h.TE(h):<30               @55 "TRA(" h.TL:0 ",ngo)"   @90 valTRA(h,'ngo','base'):>10:3                        @105 valTRA(h,'ngo','sim'):>10:3                    @120 valTRA(h,'ngo','var'):>10:3 /;
 );
-PUT @6 "Budget de consommation"                 @55 "G(ontr)"               @90 valG('ontr','base'):>10:3           @105 valG('ontr','sim'):>10:3           @120 valG('ontr','var'):>10:3 /;
-PUT @6 "Epargne"                                @55 "SNGO"                  @90 valSNGO('base'):>10:3               @105 valSNGO('sim'):>10:3               @120 valSNGO('var'):>10:3 /;
+PUT @6 "Budget de consommation"                     @55 "CTNGO"                 @90 valCTNGO('base'):>10:3                              @105 valCTNGO('sim'):>10:3                          @120 valCTNGO('var'):>10:3 /;
+PUT @6 "Epargne"                                    @55 "SNGO"                  @90 valSNGO('base'):>10:3                               @105 valSNGO('sim'):>10:3                           @120 valSNGO('var'):>10:3 /;
 PUT /;
 
 PUT "=================================================================================================================================" //;
 
 PUT "COMPTE DU RESTE DU MONDE" /;
-PUT @4 "Ressources/Emplois tot."                @55 "YROW"                  @90 valYROW('base'):>10:3               @105 valYROW('sim'):>10:3                @120 valYROW('var'):>10:3 /;
+PUT @4 "Ressources/Emplois tot."                    @55 "E*YROW"                                @90 (ValE('base')*valYROW('base')):>10:3                @105 (ValE('sim')*valYROW('sim')):>10:3                 @120 ([{ValE('var')/100 + 1}*{valYROW('var')/100 + 1} - 1]*100):>10:3 /;
 PUT /;
 PUT @4 "Ressources"     /;
-PUT @6 "Remuner. des employes non-residents"    @55 "YROWL"                 @90 valYROWL('base'):>10:3              @105 valYROWL('sim'):>10:3              @120 valYROWL('var'):>10:3 /;
-PUT @6 "Remuner. du capital des non-residents"  @55 "YROWK"                 @90 valYROWK('base'):>10:3              @105 valYROWK('sim'):>10:3              @120 valYROWK('var'):>10:3 /;
-PUT @6 "Transf. recus de l'Adm. cent."          @55 "TRA(row,gvt)"          @90 valTRA('row','gvt','base'):>10:3    @105 valTRA('row','gvt','sim'):>10:3    @120 valTRA('row','gvt','var'):>10:3 /;
-PUT @6 "Importations de biens et services"      @55 "e*SUM[tr, PWM(tr)*IM(tr)]"
-                                                                            @90 valIMTOT('base'):>10:3              @105 valIMTOT('sim'):>10:3              @120 valIMTOT('var'):>10:3 /;
+PUT @6 "Remuner. des employes non-residents"        @55 "E*YROWL"                               @90 (ValE('base')*valYROWL('base')):>10:3               @105 (ValE('sim')*valYROWL('sim')):>10:3                @120 ([{ValE('var')/100 + 1}*{valYROWL('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Remuner. du capital des non-residents"      @55 "E*YROWK"                               @90 (ValE('base')*valYROWK('base')):>10:3               @105 (ValE('sim')*valYROWK('sim')):>10:3                @120 ([{ValE('var')/100 + 1}*{valYROWK('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Transf. recus de l'Adm. cent."              @55 "E*TRA(row,gvt)"                        @90 (ValE('base')*valTRA('row','gvt','base')):>10:3     @105 (ValE('sim')*valTRA('row','gvt','sim')):>1         @120 ([{ValE('var')/100 + 1}*{valTRA('row','gvt','var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Importations de biens et services"          @55 "E*SUM[tr, PWM(tr)*IM(tr)]"             @90 valIMTOT('base'):>10:3                              @105 valIMTOT('sim'):>10:3                              @120 valIMTOT('var'):>10:3 /;
 PUT /;
 
 PUT @4 "Emplois"     /;
-PUT @6 "Remuner. des employes residents"        @55 "e*W_R*LD_R"            @90 valFROWL('base'):>10:3              @105 valFROWL('sim'):>10:3              @120 valFROWL('var'):>10:3 /;
-PUT @6 "Remuner. du capital des residents"      @55 "e*R_R*KD_R"            @90 valFROWK('base'):>10:3              @105 valFROWK('sim'):>10:3              @120 valFROWK('var'):>10:3 /;
+PUT @6 "Remuner. des employes residents"            @55 "E*W_R*LD_R"                            @90 valFROWL('base'):>10:3                              @105 valFROWL('sim'):>10:3                              @120 valFROWL('var'):>10:3 /;
+PUT @6 "Remuner. du capital des residents"          @55 "E*R_R*KD_R"                            @90 valFROWK('base'):>10:3                              @105 valFROWK('sim'):>10:3                              @120 valFROWK('var'):>10:3 /;
 LOOP(h,
-    PUT @6 "Transf. aux "  h.TE(h):<15          @55 "TRA(" h.TL:0 ",row)"   @90 valTRA(h,'row','base'):>10:3        @105 valTRA(h,'row','sim'):>10:3        @120 valTRA(h,'row','var'):>10:3 /;
+    PUT @6 "Transf. aux "  h.TE(h):<15              @55 "E*TRA(" h.TL:0 ",row)"                 @90 (ValE('base')*valTRA(h,'row','base')):>10:3         @105 (ValE('sim')*valTRA(h,'row','sim')):>10:3          @120 ([{ValE('var')/100 + 1}*{valTRA(h,'row','var')/100 + 1} - 1]*100):>10:3 /;
 )
-PUT @6 "Transf. a l'Adm. centrale"              @55 "TRA(gvt,row)"          @90 valTRA('gvt','row','base'):>10:3    @105 valTRA('gvt','row','sim'):>10:3    @120 valTRA('gvt','row','var'):>10:3 /;
-PUT @6 "Transf. aux autres APU et aux ISBLSM"   @55 "TRA(ngo,row)"          @90 valTRA('ngo','row','base'):>10:3    @105 valTRA('ngo','row','sim'):>10:3    @120 valTRA('ngo','row','var'):>10:3 /;
-PUT @6 "Transf. aux Entreprises"                @55 "TRA(firm,row)"         @90 valTRA('firm','row','base'):>10:3   @105 valTRA('firm','row','sim'):>10:3   @120 valTRA('firm','row','var'):>10:3 /;
-PUT @6 "Exportations de biens et services"      @55 "e*SUM[tr, PWE(tr)*EX(tr)]"
-                                                                            @90 valEXTOT('base'):>10:3              @105 valEXTOT('sim'):>10:3              @120 valEXTOT('var'):>10:3 /;
-PUT @6 "Epargne"                                @55 "SROW"                  @90 valSROW('base'):>10:3               @105 valSROW('sim'):>10:3               @120 valSROW('var'):>10:3 /;
+PUT @6 "Transf. a l'Adm. centrale"                  @55 "E*TRA(gvt,row)"                        @90 (ValE('base')*valTRA('gvt','row','base')):>10:3     @105 (ValE('sim')*valTRA('gvt','row','sim')):>10:3      @120 ([{ValE('var')/100 + 1}*{valTRA('gvt','row','var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Transf. aux autres APU et aux ISBLSM"       @55 "E*TRA(ngo,row)"                        @90 (ValE('base')*valTRA('ngo','row','base')):>10:3     @105 (ValE('sim')*valTRA('ngo','row','sim')):>10:3      @120 ([{ValE('var')/100 + 1}*{valTRA('ngo','row','var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Transf. aux Entreprises"                    @55 "E*TRA(firm,row)"                       @90 (ValE('base')*valTRA('firm','row','base')):>10:3    @105 (ValE('sim')*valTRA('firm','row','sim')):>10:3     @120 ([{ValE('var')/100 + 1}*{valTRA('firm','row','var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Exportations de biens et services"          @55 "E*SUM[tr, PWE(tr)*EX(tr)]"             @90 valEXTOT('base'):>10:3                              @105 valEXTOT('sim'):>10:3                              @120 valEXTOT('var'):>10:3 /;
+PUT @6 "Epargne"                                    @55 "E*SROW"                                @90 (ValE('base')*valSROW('base')):>10:3                @105 (ValE('sim')*valSROW('sim')):>10:3                 @120 ([{ValE('var')/100 + 1}*{valSROW('var')/100 + 1} - 1]*100):>10:3 /;
 PUT /;
 
 PUT "=================================================================================================================================" //;
@@ -648,115 +797,107 @@ PUT "===========================================================================
 PUT "COMPTE NATIONAUX" /;
 
 PUT @2 "Valeurs reelles" /;
-PUT @4 "PIB reel aux prix de base"                  @55 "PIB_BP_reel"                          @90 valPIB_BP_reel('base'):>10:3     @105 valPIB_BP_reel('sim'):>10:3   @120 valPIB_BP_reel('var'):>10:3 /;
-PUT @4 "PIB reel aux prix du marche"                @55 "PIB_MP_reel"                          @90 valPIB_MP_reel('base'):>10:3     @105 valPIB_MP_reel('sim'):>10:3   @120 valPIB_MP_reel('var'):>10:3 /;
-PUT /;
-
-LOOP(h, PUT @4 "Cons. tot. finale des " h.TE(h):<15 @55 "CTH_reel(" h.TL:0 ")"                 @90 valCTH_reel(h,'base'):>10:3      @105 valCTH_reel(h,'sim'):>10:3    @120 valCTH_reel(h,'var'):>10:3 /;
-    );
+PUT @4 "PIB reel aux prix de base"                  @55 "PIB_BP_reel"                           @90 valPIB_BP_reel('base'):>10:3     @105 valPIB_BP_reel('sim'):>10:3   @120 valPIB_BP_reel('var'):>10:3 /;
+PUT @4 "PIB reel aux prix du marche"                @55 "PIB_MP_reel"                           @90 valPIB_MP_reel('base'):>10:3     @105 valPIB_MP_reel('sim'):>10:3   @120 valPIB_MP_reel('var'):>10:3 /;
 PUT /;
 
 
 LOOP(trj,
-    PUT @4 trj.TE(trj):<20                          @55 "XS(" trj.TL:0 ")"                    @90 valXS(trj,'base'):>10:3          @105 valXS(trj,'sim'):>10:3        @120 valXS(trj,'var'):>10:3 /;
-    PUT @6 "Valeur ajoutee"                         @55 "VA(" trj.TL:0 ")"                    @90 valVA(trj,'base'):>10:3          @105 valVA(trj,'sim'):>10:3        @120 valVA(trj,'var'):>10:3 /;
-    PUT @8 "Travail"                                @55 "LD(" trj.TL:0 ")"                    @90 valLD(trj,'base'):>10:3          @105 valLD(trj,'sim'):>10:3        @120 valLD(trj,'var'):>10:3 /;
-    PUT @8 "Capital"                                @55 "KD(" trj.TL:0 ")"                    @90 valKD(trj,'base'):>10:3          @105 valKD(trj,'sim'):>10:3        @120 valKD(trj,'var'):>10:3 /;
+    PUT @4 trj.TE(trj):<20                          @55 "XS(" trj.TL:0 ")"                      @90 valXS(trj,'base'):>10:3          @105 valXS(trj,'sim'):>10:3        @120 valXS(trj,'var'):>10:3 /;
+    PUT @6 "Valeur ajoutee"                         @55 "VA(" trj.TL:0 ")"                      @90 valVA(trj,'base'):>10:3          @105 valVA(trj,'sim'):>10:3        @120 valVA(trj,'var'):>10:3 /;
+    PUT @8 "Travail"                                @55 "LD(" trj.TL:0 ")"                      @90 valLD(trj,'base'):>10:3          @105 valLD(trj,'sim'):>10:3        @120 valLD(trj,'var'):>10:3 /;
+    PUT @8 "Capital"                                @55 "KD(" trj.TL:0 ")"                      @90 valKD(trj,'base'):>10:3          @105 valKD(trj,'sim'):>10:3        @120 valKD(trj,'var'):>10:3 /;
     PUt /;
     
-    PUT @6 "Consommation intermediaire "            @55 "CI(" trj.TL:0 ")"                    @90 valCI(trj,'base'):>10:3          @105 valCI(trj,'sim'):>10:3        @120 valCI(trj,'var'):>10:3 /;
+    PUT @6 "Consommation intermediaire "            @55 "CI(" trj.TL:0 ")"                      @90 valCI(trj,'base'):>10:3          @105 valCI(trj,'sim'):>10:3        @120 valCI(trj,'var'):>10:3 /;
     LOOP(tr,
-        PUT @8 "Demande intermediare en : " tr.TE(tr)                        
-                                                    @55 "DI(" tr.TL:0 "," trj.TL:0 ")"        @90 valDI(tr,trj,'base'):>10:3       @105 valDI(tr,trj,'sim'):>10:3     @120 valDI(tr,trj,'var'):>10:3 /;
+        PUT @8 tr.TE(tr)                            @55 "DI(" tr.TL:0 "," trj.TL:0 ")"          @90 valDI(tr,trj,'base'):>10:3       @105 valDI(tr,trj,'sim'):>10:3     @120 valDI(tr,trj,'var'):>10:3 /;
     );
     PUt /;
     
-    LOOP(h, PUT @6 "Cons. finale des " h.TE(h):<15  @55 "CH(" trj.TL:0 "," h.TL:0 ")"         @90 valCH(trj,h,'base'):>10:3        @105 valCH(trj,h,'sim'):>10:3      @120 valCH(trj,h,'var'):>10:3 /;
+    LOOP(h, PUT @6 "Cons. finale des " h.TE(h):<15  @55 "CH(" trj.TL:0 "," h.TL:0 ")"           @90 valCH(trj,h,'base'):>10:3        @105 valCH(trj,h,'sim'):>10:3      @120 valCH(trj,h,'var'):>10:3 /;
     );
-    PUT @6 "Investissement "                        @55 "INV(" trj.TL:0 ")"                   @90 valINV(trj,'base'):>10:3         @105 valINV(trj,'sim'):>10:3       @120 valINV(trj,'var'):>10:3 /;
+    PUT @6 "Investissement "                        @55 "INV(" trj.TL:0 ")"                     @90 valINV(trj,'base'):>10:3         @105 valINV(trj,'sim'):>10:3       @120 valINV(trj,'var'):>10:3 /;
     LOOP(bns$(sameas(bns, trj)),
-        PUT @6 "Variation de stock  "               @55 "VSTK(" trj.TL:0 ")"                  @90 valVSTK(bns,'base'):>10:3        @105 valVSTK(bns,'sim'):>10:3      @120 valVSTK(bns,'var'):>10:3 /;
+        PUT @6 "Variation de stocks "               @55 "VSTK(" trj.TL:0 ")"                    @90 valVSTK(bns,'base'):>10:3        @105 valVSTK(bns,'sim'):>10:3      @120 valVSTK(bns,'var'):>10:3 /;
     );
-    PUT @6 "Exportations "                          @55 "EX(" trj.TL:0 ")"                    @90 valEX(trj,'base'):>10:3          @105 valEX(trj,'sim'):>10:3        @120 valEX(trj,'var'):>10:3 /;
-    PUT @6 "Importations "                          @55 "IM(" trj.TL:0 ")"                    @90 valIM(trj,'base'):>10:3          @105 valIM(trj,'sim'):>10:3        @120 valIM(trj,'var'):>10:3 /;
+    PUT @6 "Exportations "                          @55 "EX(" trj.TL:0 ")"                      @90 valEX(trj,'base'):>10:3          @105 valEX(trj,'sim'):>10:3        @120 valEX(trj,'var'):>10:3 /;
+    PUT @6 "Importations "                          @55 "IM(" trj.TL:0 ")"                      @90 valIM(trj,'base'):>10:3          @105 valIM(trj,'sim'):>10:3        @120 valIM(trj,'var'):>10:3 /;
     PUt /;
 );
 
 
 LOOP(ntr,
-    PUT @4 ntr.TE(ntr)                              @55 "XS(" ntr.TL:0 ")"                    @90 valXS(ntr,'base'):>10:3          @105 valXS(ntr,'sim'):>10:3       @120 valXS(ntr,'var'):>10:3 /;
-    PUT @6 "Valeur ajoutee"                         @55 "VA(" ntr.TL:0 ")"                    @90 valVA(ntr,'base'):>10:3          @105 valVA(ntr,'sim'):>10:3       @120 valVA(ntr,'var'):>10:3 /;
-    PUT @8 "Travail"                                @55 "LD(" ntr.TL:0 ")"                    @90 valLD(ntr,'base'):>10:3          @105 valLD(ntr,'sim'):>10:3       @120 valLD(ntr,'var'):>10:3 /;
+    PUT @4 ntr.TE(ntr)                              @55 "XS(" ntr.TL:0 ")"                      @90 valXS(ntr,'base'):>10:3          @105 valXS(ntr,'sim'):>10:3       @120 valXS(ntr,'var'):>10:3 /;
+    PUT @6 "Valeur ajoutee"                         @55 "VA(" ntr.TL:0 ")"                      @90 valVA(ntr,'base'):>10:3          @105 valVA(ntr,'sim'):>10:3       @120 valVA(ntr,'var'):>10:3 /;
+    PUT @8 "Travail"                                @55 "LD(" ntr.TL:0 ")"                      @90 valLD(ntr,'base'):>10:3          @105 valLD(ntr,'sim'):>10:3       @120 valLD(ntr,'var'):>10:3 /;
     PUt /;
     
-    PUT @6 "Consommation intermediaire "            @55 "CI(" ntr.TL:0 ")"                    @90 valCI(ntr,'base'):>10:3          @105 valCI(ntr,'sim'):>10:3       @120 valCI(ntr,'var'):>10:3 /;
+    PUT @6 "Consommation intermediaire "            @55 "CI(" ntr.TL:0 ")"                      @90 valCI(ntr,'base'):>10:3          @105 valCI(ntr,'sim'):>10:3       @120 valCI(ntr,'var'):>10:3 /;
     LOOP(trj,
-        PUT @8 "Demande intermediare en : " trj.TE(trj)                        
-                                                    @55 "DI(" trj.TL:0 "," ntr.TL:0 ")"       @90 valDI(trj,ntr,'base'):>10:3      @105 valDI(trj,ntr,'sim'):>10:3   @120 valDI(trj,ntr,'var'):>10:3 /;
+        PUT @8 trj.TE(trj)                          @55 "DI(" trj.TL:0 "," ntr.TL:0 ")"         @90 valDI(trj,ntr,'base'):>10:3      @105 valDI(trj,ntr,'sim'):>10:3   @120 valDI(trj,ntr,'var'):>10:3 /;
     );
     PUt /;
-    
-    PUT @6 "Cons. finale des " ntr.TE(ntr):<15      @55 "G_reel(" ntr.TL:0 ")"                @90 valG_reel(ntr,'base'):>10:3      @105 valG_reel(ntr,'sim'):>10:3   @120 valG_reel(ntr,'var'):>10:3 /;
-        PUT /;
 );
+PUT @4 "Cons. fin. de l'Adm. Centrale"              @55 "CG"                                    @90 valCG('base'):>10:3             @105 valCG('sim'):>10:3          @120 valCG('var'):>10:3 /;
+PUT @4 "Cons. fin. des autres APU et des ISBLSM"    @55 "CNGO"                                  @90 valCNGO('base'):>10:3           @105 valCNGO('sim'):>10:3        @120 valCNGO('var'):>10:3 /;
+PUT /;
+    
+        
 PUT "---------------------------------------------------------------------------------------------------------------------------------" //;
 PUT @2 "Valeurs nominales" /;
-PUT @4 "PIB aux prix de base"                       @55 "PIB_BP"                              @90 valPIB_BP('base'):>10:3          @105 valPIB_BP('sim'):>10:3        @120 valPIB_BP('var'):>10:3 /;
-PUT @4 "PIB aux prix du marche"                     @55 "PIB_MP"                              @90 valPIB_MP('base'):>10:3          @105 valPIB_MP('sim'):>10:3        @120 valPIB_MP('var'):>10:3 /;
-PUT @4 "PIB aux prix du marche (approche revenue)"  @55 "PIB_IB"                              @90 valPIB_IB('base'):>10:3          @105 valPIB_IB('sim'):>10:3        @120 valPIB_IB('var'):>10:3 /;
-PUT @4 "PIB aux prix du marche (approche demande)"  @55 "PIB_FD"                              @90 valPIB_FD('base'):>10:3          @105 valPIB_FD('sim'):>10:3        @120 valPIB_FD('var'):>10:3 /;
+PUT @4 "PIB aux prix de base"                       @55 "PIB_BP"                                            @90 valPIB_BP('base'):>10:3          @105 valPIB_BP('sim'):>10:3        @120 valPIB_BP('var'):>10:3 /;
+PUT @4 "PIB aux prix du marche"                     @55 "PIB_MP"                                            @90 valPIB_MP('base'):>10:3          @105 valPIB_MP('sim'):>10:3        @120 valPIB_MP('var'):>10:3 /;
+PUT @4 "PIB aux prix du marche (approche revenue)"  @55 "PIB_IB"                                            @90 valPIB_IB('base'):>10:3          @105 valPIB_IB('sim'):>10:3        @120 valPIB_IB('var'):>10:3 /;
+PUT @4 "PIB aux prix du marche (approche demande)"  @55 "PIB_FD"                                            @90 valPIB_FD('base'):>10:3          @105 valPIB_FD('sim'):>10:3        @120 valPIB_FD('var'):>10:3 /;
 PUT /;
 
-LOOP(h, PUT @4 "Cons. tot. finale des " h.TE(h):<15 @55 "CTH(" h.TL:0 ")"                     @90 valCTH(h,'base'):>10:3           @105 valCTH(h,'sim'):>10:3         @120 valCTH(h,'var'):>10:3 /;
+LOOP(h, PUT @4 "Cons. tot. finale des " h.TE(h):<15 @55 "CTH(" h.TL:0 ")"                                   @90 valCTH(h,'base'):>10:3           @105 valCTH(h,'sim'):>10:3         @120 valCTH(h,'var'):>10:3 /;
     );
 PUT /;
-PUT @4 "Investissement total"                       @55 "IT"                                  @90 valIT('base'):>10:3              @105 valIT('sim'):>10:3            @120 valIT('var'):>10:3 /;
-PUT @4 "Formation Brute de Capital Fixe"            @55 "FBCF"                                @90 valFBCF('base'):>10:3            @105 valFBCF('sim'):>10:3          @120 valFBCF('var'):>10:3 /;
+PUT @4 "Investissement total"                       @55 "IT"                                                @90 valIT('base'):>10:3              @105 valIT('sim'):>10:3            @120 valIT('var'):>10:3 /;
+PUT @4 "Formation Brute de Capital Fixe"            @55 "FBCF"                                              @90 valFBCF('base'):>10:3            @105 valFBCF('sim'):>10:3          @120 valFBCF('var'):>10:3 /;
 PUT /;
 
 LOOP(trj,
-    PUT @4 trj.TE(trj):<20                          @55 "P(" trj.TL:0 ")*XS(" trj.TL:0 ")"    @90 valXS_nom(trj,'base'):>10:3      @105 valXS_nom(trj,'sim'):>10:3    @120 valXS_nom(trj,'var'):>10:3 /;
-    PUT @6 "Valeur ajoutee"                         @55 "PVA(" trj.TL:0 ")*VA(" trj.TL:0 ")"  @90 valVA_nom(trj,'base'):>10:3      @105 valVA_nom(trj,'sim'):>10:3    @120 valVA_nom(trj,'var'):>10:3 /;
-    PUT @8 "Travail"                                @55 "W*LD(" trj.TL:0 ")"                  @90 valLD_nom(trj,'base'):>10:3      @105 valLD_nom(trj,'sim'):>10:3    @120 valLD_nom(trj,'var'):>10:3 /;
-    PUT @8 "Capital"                                @55 "R(" trj.TL:0 ")*KD(" trj.TL:0 ")"    @90 valKD_nom(trj,'base'):>10:3      @105 valKD_nom(trj,'sim'):>10:3    @120 valKD_nom(trj,'var'):>10:3 /;
+    PUT @4 trj.TE(trj):<20                          @55 "P(" trj.TL:0 ")*XS(" trj.TL:0 ")"                  @90 valXS_nom(trj,'base'):>10:3      @105 valXS_nom(trj,'sim'):>10:3    @120 valXS_nom(trj,'var'):>10:3 /;
+    PUT @6 "Valeur ajoutee"                         @55 "PVA(" trj.TL:0 ")*VA(" trj.TL:0 ")"                @90 valVA_nom(trj,'base'):>10:3      @105 valVA_nom(trj,'sim'):>10:3    @120 valVA_nom(trj,'var'):>10:3 /;
+    PUT @8 "Travail"                                @55 "W*LD(" trj.TL:0 ")"                                @90 valLD_nom(trj,'base'):>10:3      @105 valLD_nom(trj,'sim'):>10:3    @120 valLD_nom(trj,'var'):>10:3 /;
+    PUT @8 "Capital"                                @55 "R(" trj.TL:0 ")*KD(" trj.TL:0 ")"                  @90 valKD_nom(trj,'base'):>10:3      @105 valKD_nom(trj,'sim'):>10:3    @120 valKD_nom(trj,'var'):>10:3 /;
     PUt /;
     
-    PUT @6 "Consommation intermediaire "            @55 "PCI(" trj.TL:0 ")*CI(" trj.TL:0 ")"  @90 valCI_nom(trj,'base'):>10:3      @105 valCI_nom(trj,'sim'):>10:3    @120 valCI_nom(trj,'var'):>10:3 /;
+    PUT @6 "Consommation intermediaire "            @55 "PCI(" trj.TL:0 ")*CI(" trj.TL:0 ")"                @90 valCI_nom(trj,'base'):>10:3      @105 valCI_nom(trj,'sim'):>10:3    @120 valCI_nom(trj,'var'):>10:3 /;
     LOOP(tr,
-        PUT @8 "Demande intermediare en : " tr.TE(tr)                        
-                                                    @55 "PC(" trj.TL:0 ")*DI(" tr.TL:0 "," trj.TL:0 ")"       
-                                                                                              @90 valDI_nom(tr,trj,'base'):>10:3   @105 valDI_nom(tr,trj,'sim'):>10:3 @120 valDI_nom(tr,trj,'var'):>10:3 /;
+        PUT @8 tr.TE(tr)                            @55 "PC(" trj.TL:0 ")*DI(" tr.TL:0 "," trj.TL:0 ")"     @90 valDI_nom(tr,trj,'base'):>10:3   @105 valDI_nom(tr,trj,'sim'):>10:3 @120 valDI_nom(tr,trj,'var'):>10:3 /;
     );
     PUT /;
     
-    LOOP(h, PUT @6 "Cons. finale des " h.TE(h):<15  @55 "PC(" trj.TL:0 ")*CH(" trj.TL:0 "," h.TL:0 ")"   
-                                                                                              @90 valCH_nom(trj,h,'base'):>10:3    @105 valCH_nom(trj,h,'sim'):>10:3  @120 valCH_nom(trj,h,'var'):>10:3 /;
+    LOOP(h, PUT @6 "Cons. finale des " h.TE(h):<15  @55 "PC(" trj.TL:0 ")*CH(" trj.TL:0 "," h.TL:0 ")"      @90 valCH_nom(trj,h,'base'):>10:3    @105 valCH_nom(trj,h,'sim'):>10:3  @120 valCH_nom(trj,h,'var'):>10:3 /;
     );
-    PUT @6 "Investissement "                        @55 "PC(" trj.TL:0 ")*INV(" trj.TL:0 ")"  @90 valINV_nom(trj,'base'):>10:3     @105 valINV_nom(trj,'sim'):>10:3   @120 valINV_nom(trj,'var'):>10:3 /;
+    PUT @6 "Investissement "                        @55 "PC(" trj.TL:0 ")*INV(" trj.TL:0 ")"                @90 valINV_nom(trj,'base'):>10:3     @105 valINV_nom(trj,'sim'):>10:3   @120 valINV_nom(trj,'var'):>10:3 /;
     LOOP(bns$(sameas(bns, trj)),
-        PUT @6 "Variation de stock "                @55 "PC(" trj.TL:0 ")*VSTK(" trj.TL:0 ")" @90 valVSTK_nom(bns,'base'):>10:3    @105 valVSTK_nom(bns,'sim'):>10:3  @120 valVSTK_nom(bns,'var'):>10:3 /;
+        PUT @6 "Variation de stocks"                @55 "PC(" trj.TL:0 ")*VSTK(" trj.TL:0 ")"               @90 valVSTK_nom(bns,'base'):>10:3    @105 valVSTK_nom(bns,'sim'):>10:3  @120 valVSTK_nom(bns,'var'):>10:3 /;
     );
-    PUT @6 "Exportations "                          @55 "PE(" trj.TL:0 ")*EX(" trj.TL:0 ")"   @90 valEX_nom(trj,'base'):>10:3      @105 valEX_nom(trj,'sim'):>10:3    @120 valEX_nom(trj,'var'):>10:3 /;
-    PUT @6 "Importations "                          @55 "PM(" trj.TL:0 ")*IM(" trj.TL:0 ")"   @90 valIM_nom(trj,'base'):>10:3      @105 valIM_nom(trj,'sim'):>10:3    @120 valIM_nom(trj,'var'):>10:3 /;
+    PUT @6 "Exportations "                          @55 "PE(" trj.TL:0 ")*EX(" trj.TL:0 ")"                 @90 valEX_nom(trj,'base'):>10:3      @105 valEX_nom(trj,'sim'):>10:3    @120 valEX_nom(trj,'var'):>10:3 /;
+    PUT @6 "Importations "                          @55 "PM(" trj.TL:0 ")*IM(" trj.TL:0 ")"                 @90 valIM_nom(trj,'base'):>10:3      @105 valIM_nom(trj,'sim'):>10:3    @120 valIM_nom(trj,'var'):>10:3 /;
     PUt /;
 );
 
 LOOP(ntr,
-    PUT @4 ntr.TE(ntr)                              @55 "P(" ntr.TL:0 ")*XS(" ntr.TL:0 ")"    @90 valXS_nom(ntr,'base'):>10:3      @105 valXS_nom(ntr,'sim'):>10:3    @120 valXS_nom(ntr,'var'):>10:3 /;
-    PUT @6 "Valeur ajoutee"                         @55 "PVA(" ntr.TL:0 ")*VA(" ntr.TL:0 ")"  @90 valVA_nom(ntr,'base'):>10:3      @105 valVA_nom(ntr,'sim'):>10:3    @120 valVA_nom(ntr,'var'):>10:3 /;
-    PUT @8 "Travail"                                @55 "W*LD(" ntr.TL:0 ")"                  @90 valLD_nom(ntr,'base'):>10:3      @105 valLD_nom(ntr,'sim'):>10:3    @120 valLD_nom(ntr,'var'):>10:3 /;
+    PUT @4 ntr.TE(ntr)                              @55 "P(" ntr.TL:0 ")*XS(" ntr.TL:0 ")"                  @90 valXS_nom(ntr,'base'):>10:3      @105 valXS_nom(ntr,'sim'):>10:3    @120 valXS_nom(ntr,'var'):>10:3 /;
+    PUT @6 "Valeur ajoutee"                         @55 "PVA(" ntr.TL:0 ")*VA(" ntr.TL:0 ")"                @90 valVA_nom(ntr,'base'):>10:3      @105 valVA_nom(ntr,'sim'):>10:3    @120 valVA_nom(ntr,'var'):>10:3 /;
+    PUT @8 "Travail"                                @55 "W*LD(" ntr.TL:0 ")"                                @90 valLD_nom(ntr,'base'):>10:3      @105 valLD_nom(ntr,'sim'):>10:3    @120 valLD_nom(ntr,'var'):>10:3 /;
     PUt /;
     
-    PUT @6 "Consommation intermediaire "            @55 "PCI(" ntr.TL:0 ")*CI(" ntr.TL:0 ")"  @90 valCI_nom(ntr,'base'):>10:3      @105 valCI_nom(ntr,'sim'):>10:3    @120 valCI_nom(ntr,'var'):>10:3 /;
+    PUT @6 "Consommation intermediaire "            @55 "PCI(" ntr.TL:0 ")*CI(" ntr.TL:0 ")"                @90 valCI_nom(ntr,'base'):>10:3      @105 valCI_nom(ntr,'sim'):>10:3    @120 valCI_nom(ntr,'var'):>10:3 /;
     LOOP(trj,
-        PUT @8 "Demande intermediare en : " trj.TE(trj)                       
-                                                    @55 "PC(" ntr.TL:0 ")*DI(" trj.TL:0 "," ntr.TL:0 ")"        
-                                                                                              @90 valDI_nom(trj,ntr,'base'):>10:3  @105 valDI_nom(trj,ntr,'sim'):>10:3 @120 valDI_nom(trj,ntr,'var'):>10:3 /;
+        PUT @8 trj.TE(trj)                          @55 "PC(" ntr.TL:0 ")*DI(" trj.TL:0 "," ntr.TL:0 ")"    @90 valDI_nom(trj,ntr,'base'):>10:3  @105 valDI_nom(trj,ntr,'sim'):>10:3 @120 valDI_nom(trj,ntr,'var'):>10:3 /;
     );
     PUt /;
     
-    PUT @6 "Cons. finale des " ntr.TE(ntr):<15      @55 "G(" ntr.TL:0 ")"                     @90 valG(ntr,'base'):>10:3           @105 valG(ntr,'sim'):>10:3         @120 valG(ntr,'var'):>10:3 /;
-        PUT /;
+PUT @4 "Cons. fin. de l'Adm. Centrale"              @55 "CTG"                                               @90 valCTG('base'):>10:3             @105 valCTG('sim'):>10:3          @120 valCTG('var'):>10:3 /;
+PUT @4 "Cons. fin. des autres APU et des ISBLSM"    @55 "CTNGO"                                             @90 valCTNGO('base'):>10:3           @105 valCTNGO('sim'):>10:3        @120 valCTNGO('var'):>10:3 /;
+PUT /;
 );
 
 PUT "=================================================================================================================================" //;
@@ -846,12 +987,12 @@ PUT @6 "Taux de change nominal"                     @55 "e"                     
 PUT @6 "Remun. capital RDM (devise)"                @55 "R_R"                       @90 valR_R('base'):>10:3        @105 valR_R('sim'):>10:3        @120 valR_R('var'):>10:3 /;
 PUT @6 "Rwmun. travail RDM (devise)"                @55 "W_R"                       @90 valW_R('base'):>10:3        @105 valW_R('sim'):>10:3        @120 valW_R('var'):>10:3 /;
 PUT /;
-PUT @6 "Prix mondial importations"                  @55 "PWM" /;
+PUT @6 "Prix mondiaux: importations"                @55 "PWM" /;
 LOOP(tr,
     PUT @8 tr.TE(tr)                                @55 "PWM(" tr.TL:0 ")"          @90 valPWM(tr,'base'):>10:3      @105 valPWM(tr,'sim'):>10:3      @120 valPWM(tr,'var'):>10:3 /;
 );
 PUT /;
-PUT @6 "Prix mondial exportations"                  @55 "PWE"    /;
+PUT @6 "Prix mondiaux: exportations"                @55 "PWE"    /;
 LOOP(tr,
     PUT @8 tr.TE(tr)                                @55 "PWE(" tr.TL:0 ")"          @90 valPWE(tr,'base'):>10:3      @105 valPWE(tr,'sim'):>10:3      @120 valPWE(tr,'var'):>10:3 /;
 );
@@ -906,28 +1047,28 @@ PUT /;
 
 
 PUT "3. MÉNAGES ET DEMANDE FINALE" /;
-PUT                                             @55                             @75 LOOP(tr, PUT @pos tr.TL:>10;            pos = pos + 15;  );     pos = 75;       PUT /;
+PUT                                                 @55                             @75 LOOP(tr, PUT @pos tr.TL:>10;            pos = pos + 15;  );     pos = 75;       PUT /;
 LOOP (h,
-    PUT "Part budget cons. des " h.TE(h)        @55 "gamma_CH("  h.Tl:0 ")"     @75 LOOP(tr, PUT @pos gamma_CH(tr,h):>10:3; pos = pos + 15; );      pos = 75;       PUT /;
+    PUT "Part budget cons. des " h.TE(h)            @55 "gamma_CH("  h.Tl:0 ")"     @75 LOOP(tr, PUT @pos gamma_CH(tr,h):>10:3; pos = pos + 15; );      pos = 75;       PUT /;
     );
-PUT "Part investissement"                       @55 "gamma_INV"                 @75 LOOP(tr, PUT @pos gamma_INV(tr):>10:3;  pos = pos + 15; );      pos = 75;       PUT /;
+PUT "Part investissement"                           @55 "gamma_INV"                 @75 LOOP(tr, PUT @pos gamma_INV(tr):>10:3;  pos = pos + 15; );      pos = 75;       PUT /;
 PUT //;
 
 PUT "4. PARAMETRES SOCIO-ECONOMIQUES" /;
-PUT                                            @55                     @75 LOOP(h, PUT @pos h.TL:>10;          pos = pos + 15;  );     pos = 75;   PUT @105 "FIRM":>10;    PUT @120"RDM":>10 /;
-PUT "Propension a epargner"                    @55 "psi"               @75 LOOP(h, PUT @pos psi(h):>10:3;      pos = pos + 15;  );     pos = 75;   PUT /;
-PUT "Propension a verser des rec. non fisc."   @55 "ntyh/ntyf"         @75 LOOP(h, PUT @pos ntyh(h):>10:3;     pos = pos + 15;  );     pos = 75;   PUT @105ntyf:>10:3       PUT /;
+PUT                                                 @55                     @75 LOOP(h, PUT @pos h.TL:>10;          pos = pos + 15;  );     pos = 75;   PUT @105 "FIRM":>10;    PUT @120"RDM":>10 /;
+PUT "Propension a epargner"                         @55 "psi"               @75 LOOP(h, PUT @pos psi(h):>10:3;      pos = pos + 15;  );     pos = 75;   PUT /;
+PUT "Propension a verser des rec. non fisc."        @55 "ntyh/ntyf"         @75 LOOP(h, PUT @pos ntyh(h):>10:3;     pos = pos + 15;  );     pos = 75;   PUT @105ntyf:>10:3       PUT /;
 
-PUT "Part revenu du travail"                   @55 "phi"               @75 LOOP(h, PUT @pos phi(h):>10:3;      pos = pos + 15;  );     pos = 75;   PUT /;
-PUT "Part revenu du capital"                   @55 "lambda/lambda_R"   @75 LOOP(h, PUT @pos lambda(h):>10:3;   pos = pos + 15;  );     pos = 75;   PUT @105 "":>10;        PUT @120 lambda_R:>10:3 /;
-PUT "Taux de taxe directe"                     @55 "tyh/tyf"           @75 LOOP(h, PUT @pos tyh(h):>10:3;      pos = pos + 15;  );     pos = 75;   PUT @105tyf:>10:3       PUT /;
-PUT "Taux autres taxes sur les B. & S."        @55 "sifi"              @75 LOOP(h, PUT @pos "";                pos = pos + 15;  );     pos = 75;   PUT @105syfi:>10:3      PUT /;
-PUT "Taux autres droits de douanes"            @55 "sifm"              @75 LOOP(h, PUT @pos "";                pos = pos + 15;  );     pos = 75;   PUT @105syfm:>10:3      PUT /;
+PUT "Part revenu du travail"                        @55 "phi"               @75 LOOP(h, PUT @pos phi(h):>10:3;      pos = pos + 15;  );     pos = 75;   PUT /;
+PUT "Part revenu du capital"                        @55 "lambda/lambda_R"   @75 LOOP(h, PUT @pos lambda(h):>10:3;   pos = pos + 15;  );     pos = 75;   PUT @105 "":>10;        PUT @120 lambda_R:>10:3 /;
+PUT "Taux de taxe directe"                          @55 "tyh/tyf"           @75 LOOP(h, PUT @pos tyh(h):>10:3;      pos = pos + 15;  );     pos = 75;   PUT @105tyf:>10:3       PUT /;
+PUT "Taux autres taxes sur les B. & S."             @55 "sifi"              @75 LOOP(h, PUT @pos "";                pos = pos + 15;  );     pos = 75;   PUT @105syfi:>10:3      PUT /;
+PUT "Taux autres droits de douanes"                 @55 "sifm"              @75 LOOP(h, PUT @pos "";                pos = pos + 15;  );     pos = 75;   PUT @105syfm:>10:3      PUT /;
 
 PUT //;
 
 PUT "5. FONCTIONS DE TRANSFERTS" /;
-PUT                                            @55 "lambda_TRA"        @75 LOOP(agd, PUT @pos agd.TL:>10;      pos = pos + 15;  );     pos = 75;  PUT /;
+PUT                                                 @55 "lambda_TRA"        @75 LOOP(agd, PUT @pos agd.TL:>10;      pos = pos + 15;  );     pos = 75;  PUT /;
 LOOP(ag,
     PUT  ag.TE(ag) @55 ag.TL:0 ;
     
@@ -949,7 +1090,7 @@ PUT /;
 PUT "6. AUTRES PARAMETRES" /;
 PUT                                                                                         @75 "Valeur":>10 /;
 PUT "Elasticite d'indexation des transferts"                        @55 "eta"               @75 eta:>10:3 /;
-PUT "Part des autres APU et ISBLSM dans la dep. cons. pub."         @55 "m_G"               @75 m_G:>10:3 /;
+PUT "Part des autres APU et ISBLSM dans la dep. cons. pub."         @55 "mu_CTNGO"             @75 mu_CTNGO:>10:3 /;
 PUT /;
 
 * Parametres du secteur petrolier
@@ -962,6 +1103,85 @@ PUT /;
 PUT "Cle de repartition des ressources non fisc. des menages :" /;
 PUT "  Part captee par l'Administration centrale"                   @55 "sntx_gvt"          @75 sntx('gvt'):>10:3 /;
 PUT "  Part captee par les autres APU et les ISBLSM"                @55 "sntx_ngo"          @75 sntx('ngo'):>10:3 /;
+PUT /;
+
+PUT "6. PARAMETRES DU BLOC FINANCIER" /;
+PUT                                                                                         
+PUT "Vitesse de circulation de la monnaie"                          @55 "vel"               @75 vel:>10:3 /;
+PUT "Part des autres APU et ISBLSM dans la dep. cons. pub."         @55 "mu_CTNGO"          @75 mu_CTNGO:>10:3 /;
+PUT "Propension du sec. prive a souscrire aux titres pub."          @55 "psi_BG"            @75 psi_BG:>10:3 /;
+PUT "Ratio de fin. de l'inv. prive par le credit bancaire"          @55 "psi_DCG"           @75 psi_DCP:>10:3 /;
+PUT "Ratio dette publique exterieure - exportations"                @55 "psi_EX"            @75 psi_EX:>10:3 /;
+PUT /;
+
+PUT "===============================================================================================================================================================" //;
+
+PUT "BLOC FINANCIER" /;
+PUT "--------------" /;
+PUT /;
+PUT "FINANCE PUBLIQUE" /;
+
+PUT "Epargne publique"                      @55 "SG"                @90 valSG('base'):>10:3                         @105 valSG('sim'):>10:3                         @120 valSG('var'):>10:3 /;
+PUT "Investissement publique"               @55 "INVG"              @90 valINVG('base'):>10:3                       @105 valINVG('sim'):>10:3                       @120 valINVG('var'):>10:3 /;
+PUT @4 "Fin. interieur"                     @55 "DINVG"             @90 valDINVG('base'):>10:3                      @105 valDINVG('sim'):>10:3                      @120 valDINVG('var'):>10:3 /;
+PUT @4 "Fin. exterieur"                     @55 "E*FINVG"           @90 (ValE('base')*valFINVG('base')):>10:3       @105 (ValE('sim')*valFINVG('sim')):>10:3        @120 ([{ValE('var')/100 + 1}*{valFINVG('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Transf. de capital"                 @55 "E*KTRAG"           @90 (ValE('base')*valKTRAG('base')):>10:3       @105 (ValE('sim')*valKTRAG('sim')):>10:3        @120 ([{ValER('var')/100 + 1}*{valKTRAG('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Pret projet"                        @55 "E*D_NFDG_PRJ"      @90 (ValE('base')*ValD_NFDG_PRJ('base')):>10:3  @105 (ValE('sim')*ValD_NFDG_PRJ('sim')):>10:3   @120 ([{ValER('var')/100 + 1}*{ValD_NFDG_PRJ('var')/100 + 1} - 1]*100):>10:3 /;
+
+
+PUT "Besoin de financement"                 @55 "BRG"               @90 valBRG('base'):>10:3                        @105 valBRG('sim'):>10:3                        @120 valBRG('var'):>10:3 /;
+PUT "Financement externe" /;
+PUT @4 "Pret projet"                        @55 "E*D_NFDG_PRJ"      @90 (ValE('base')*ValD_NFDG_PRJ('base')):>10:3  @105 (ValE('sim')*ValD_NFDG_PRJ('sim')):>10:3   @120 ([{ValER('var')/100 + 1}*{ValD_NFDG_PRJ('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @4 "Pret programme"                     @55 "E*D_NFDG_PRG"      @90 (ValE('base')*ValD_NFDG_PRG('base')):>10:3  @105 (ValE('sim')*ValD_NFDG_PRG('sim')):>10:3   @120 ([{ValER('var')/100 + 1}*{ValD_NFDG_PRG('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @4 "Amortissement (-)"                  @55 "E*AMORTG"          @90 (ValE('base')*ValAMORTG('base')):>10:3      @105 (ValE('sim')*ValAMORTG('sim')):>10:3       @120 ([{ValER('var')/100 + 1}*{ValAMORTG('var')/100 + 1} - 1]*100):>10:3 /;
+PUT "Financement interne" /;
+PUT @4 "Fin. bancaire"                      @55 "D_DCG"             @90 ValD_DCG('base'):>10:3                      @105 ValD_DCG('sim'):>10:3                      @120 ValD_DCG('var'):>10:3 /;
+PUT @4 "Fin. non bancaire"                  @55 "D_BG"              @90 ValD_BG('base'):>10:3                       @105 ValD_BG('sim'):>10:3                       @120 ValD_BG('var'):>10:3 /;
+
+PUT /;
+PUT "BALANCE DES PAIEMENTS" /;
+PUT "Balance courante"                      @55 "E*CAB"             @90 (ValE('base')*valCAB('base')):>10:3         @105 (ValE('sim')*valCAB('sim')):>10:3          @120 ([{ValER('var')/100 + 1}*{valCAB('var')/100 + 1} - 1]*100):>10:3 /;
+PUT "Compte de capital"/;
+PUT @4 "Prive"                              @55 "E*OTHKTRA"         @90 (ValE('base')*ValOTHKTRA('base')):>10:3     @105 (ValE('sim')*ValOTHKTRA('sim')):>10:3      @120 ([{ValER('var')/100 + 1}*{ValOTHKTRA('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @4 "Public"                             @55 "E*KTRAG"           @90 (ValE('base')*ValKTRAG('base')):>10:3       @105 (ValE('sim')*ValKTRAG('sim')):>10:3        @120 ([{ValER('var')/100 + 1}*{ValKTRAG('var')/100 + 1} - 1]*100):>10:3 /;
+PUT "Compte financier"/;
+PUT @4 "IDE"                                @55 "E*FDI_NET"         @90 (ValE('base')*ValFDI_NET('base')):>10:3     @105 (ValE('sim')*ValFDI_NET('sim')):>10:3      @120 ([{ValER('var')/100 + 1}*{ValFDI_NET('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Entrant"                            @55 "E*FDI_IN"          @90 (ValE('base')*ValFDI_IN('base')):>10:3      @105 (ValE('sim')*ValFDI_IN('sim')):>10:3       @120 ([{ValER('var')/100 + 1}*{ValFDI_IN('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Sortant"                            @55 "E*FDI_OUT"         @90 (ValE('base')*ValFDI_OUT('base')):>10:3     @105 (ValE('sim')*ValFDI_OUT('sim')):>10:3      @120 ([{ValER('var')/100 + 1}*{ValFDI_OUT('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @4 "Financement" /;          
+PUT @6 "Public"                             @55 "E*D_NFDG"          @90 (ValE('base')*ValD_NFDG('base')):>10:3      @105 (ValE('sim')*ValD_NFDG('sim')):>10:3       @120 ([{ValER('var')/100 + 1}*{ValD_NFDG('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Prive"                              @55 "E*D_NFDP"          @90 (ValE('base')*ValD_NFDP('base')):>10:3      @105 (ValE('sim')*ValD_NFDP('sim')):>10:3       @120 ([{ValER('var')/100 + 1}*{ValD_NFDP('var')/100 + 1} - 1]*100):>10:3 /;
+PUT "Balance globale (var. des reserves)"   @55 "E*D_RES"           @90 (ValE('base')*ValD_RES('base')):>10:3       @105 (ValE('sim')*ValD_RES('sim')):>10:3        @120 ([{ValER('var')/100 + 1}*{ValD_RES('var')/100 + 1} - 1]*100):>10:3 /;
+PUT /;
+
+PUT "SITUATION MONETAIRE" /;
+PUT "(Flux)" /;
+PUT @2 "Masse monetaire"                    @55 "D_MD"              @90 valD_MD('base'):>10:3                       @105 valD_MD('sim'):>10:3                       @120 valD_MD('var'):>10:3 /;
+PUT @4 "Avoirs exterieurs nets "            @55 "ER*D_RES"          @90 (ValER('base')*ValD_RES('base')):>10:3      @105 (ValER('sim')*ValD_RES('sim')):>10:3       @120 ([{ValER('var')/100 + 1}*{ValD_RES('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @4 "Avoirs interieurs nets" /;
+PUT @6 "Credit bancaire au sect. pub."      @55 "D_DCG"             @90 valD_DCG('base'):>10:3                      @105 valD_DCG('sim'):>10:3                      @120 valD_DCG('var'):>10:3 /;
+PUT @6 "Credit bancaire au sect. prive"     @55 "D_DCP"             @90 valD_DCP('base'):>10:3                      @105 valD_DCP('sim'):>10:3                      @120 valD_DCP('var'):>10:3 /;
+PUT "(Stock)" /;
+PUT @2 "Masse monetaire"                    @55 "MD = MS"           @90 valMD('base'):>10:3                         @105 valMD('sim'):>10:3                         @120 valMD('var'):>10:3 /;
+PUT @4 "Avoirs exterieurs nets "            @55 "ER*RES"            @90 (ValER('base')*ValRES('base')):>10:3        @105 (ValER('sim')*ValRES('sim')):>10:3         @120 ([{ValER('var')/100 + 1}*{ValRES('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @4 "Avoirs interieurs nets" /;
+PUT @6 "Credit bancaire au sect. pub."      @55 "DCG"               @90 valDCG('base'):>10:3                        @105 valDCG('sim'):>10:3                        @120 valDCG('var'):>10:3 /;
+PUT @6 "Credit bancaire au secteur prive"   @55 "DCP"               @90 valDCP('base'):>10:3                        @105 valDCP('sim'):>10:3                        @120 valDCP('var'):>10:3 /;
+PUT /;
+
+PUT "DETTE PUBLIQUE" /;
+PUT "Dette publique totale"                 @55 "DEBTG"             @90 ValDEBTG('base'):>10:3                      @105 ValDEBTG('sim'):>10:3                      @120 ValDEBTG('var'):>10:3 /;
+PUT @4 "Dette publique ext."                @55 "ER*NFDG"           @90 (ValER('base')*ValNFDG('base')):>10:3       @105 (ValER('sim')*ValNFDG('sim')):>10:3        @120 ([{ValER('var')/100 + 1}*{ValNFDG('var')/100 + 1} - 1]*100):>10:3 /;
+PUT @4 "Dette publique int."                @55 "NDDG"              @90 ValNDDG('base'):>10:3                       @105 ValNDDG('sim'):>10:3                       @120 ValNDDG('var'):>10:3 /;
+PUT /;
+
+PUT "INDICATEURS" /;
+PUT "Deficit budgetaire"                    @55 "DEFG_PIB"          @90 DEFG_PIB('base'):>10:3                      @105 DEFG_PIB('sim'):>10:3                      @120 DEFG_PIB('var'):>10:3 /;
+PUT "Taux de pression fiscale"              @55 "YGTX_PIB"          @90 YGTX_PIB('base'):>10:3                      @105 YGTX_PIB('sim'):>10:3                      @120 YGTX_PIB('var'):>10:3 /;
+PUT "Taux de croissance"                    @55 "growth_PIB"        @90 growth_PIB('base'):>10:3                    @105 growth_PIB('sim'):>10:3                    @120 growth_PIB('var'):>10:3 /;
+PUT "Reserves en mois d'importations"       @55 "mu_RES"            @90 mu_RES('base'):>10:3                        @105 mu_RES('sim'):>10:3                        @120 mu_RES('var'):>10:3 /;
+PUT "Taux d'endettement"                    @55 "DEBTG_PIB"         @90 DEBTG_PIB('base'):>10:3                     @105 DEBTG_PIB('sim'):>10:3                     @120 DEBTG_PIB('var'):>10:3 /;
+PUT "Depenses totales"                      @55 "TOTG_PIB"          @90 TOTG_PIB('base'):>10:3                      @105 TOTG_PIB('sim'):>10:3                      @120 TOTG_PIB('var'):>10:3 /;
 PUT /;
 PUT "===============================================================================================================================================================" //;
 PUTCLOSE REPCMP;

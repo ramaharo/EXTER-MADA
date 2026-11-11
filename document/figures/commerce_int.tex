@@ -1,0 +1,427 @@
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, matrix, calc,decorations.pathreplacing, fit, backgrounds}
+
+% Style des boîtes colorées
+\tikzset{
+	box red/.style={draw=red!80!black, thick, inner sep=2pt, fill=white},
+	box black/.style={draw=black, thick, inner sep=2pt, fill=white},
+	box fuchsia/.style={draw=Fuchsia, thick, inner sep=2pt, fill=white},
+	box green/.style={draw=green!80!black, thick, inner sep=2pt, fill=white},
+	box blue/.style={draw=blue!80!black, thick, inner sep=2pt, fill=white},
+	box orange/.style={draw=orange!50!black, thick, inner sep=2pt, fill=white},
+	box gray/.style={draw=black!70, fill=gray!20, rectangle, align=center, inner sep=4pt, text width=6.5cm},
+	label txt/.style={font=\small},
+	brace style/.style={decorate, decoration={brace, amplitude=6pt}, thick}
+}
+
+
+\refstepcounter{figure}
+\label{fig:relRDM}
+\begin{adjustbox}{center}
+\begin{tikzpicture}[scale = .9, transform shape, >=Stealth, font=\small]
+	
+	% -----------------------------------------------------------------
+	% TOP LEFT: TREES (CET)
+	% -----------------------------------------------------------------
+	
+	% Block AGR
+	\node[box red] (XSagr) at (-1, 0) {$XS_{\agr}$};
+	\node[left=0.1cm of XSagr] {$P_{\agr}$};
+	\node[box red] (EXagr) at (-2.8, -1.5) {$EX_{\agr}$};
+	\node[box black] (DXagr) at (0.8, -1.5) {$DX_{\agr}$};
+	\draw (XSagr) -- (EXagr);
+	\draw (XSagr) -- (DXagr);
+	\node[left=0.0cm of EXagr, align=center] (PEagr) {$PE_{\agr}$};
+	\node[below=0.0cm of PEagr, align=center]  {$\mathrel{\rotatebox{90}{=}}$\\$e \cdot \PWE_{\agr}$};
+	\node[left = 0.0cm of DXagr, align=center] (PDagr) {$\PLD_{\agr}$};
+	
+	% Block FOOD
+	\node[box green] (XSfood) at (-1, -4) {$\XS_{\food}$};
+	\node[left=0.1cm of XSfood] {$P_{\food}$};
+	\node[box green] (EXfood) at (-2.8, -5.5) {$\EX_{\food}$};
+	\node[box black] (DXfood) at (0.8, -5.5) {$\DX_{\food}$};
+	\draw (XSfood) -- (EXfood);
+	\draw (XSfood) -- (DXfood);
+	\node[left=0.0cm of EXfood, align=center] (PEfood) {$\PE_{\food}$};
+	\node[below=0.0cm of PEfood, align=center]  {$\mathrel{\rotatebox{90}{=}}$\\$e \cdot \PWE_{\food}$};
+	\node[left = 0.0cm of DXfood, align=center] (PDfood) {$\PLD_{\food}$};
+	%			
+	%			% Block SER
+	\node[box blue] (XSothind) at (-1, -8) {$XS_{\othind}$};
+	\node[left=0.1cm of XSothind] {$P_{\othind}$};
+	\node[box blue] (EXothind) at (-2.8, -9.5) {$EX_{\othind}$};
+	\node[box black] (DXothind) at (0.8, -9.5) {$DX_{\othind}$};
+	\draw (XSothind) -- (EXothind);
+	\draw (XSothind) -- (DXothind);
+	\node[left=0.0cm of EXothind, align=center] (PEothind) {$\PE_{\othind}$};
+	\node[below=0.0cm of PEothind, align=center] {$\mathrel{\rotatebox{90}{=}}$\\$e \cdot \PWE_{\othind}$};
+	\node[left = 0.0cm of DXothind, align=center] (PDothind) {$\PLD_{\othind}$};
+	
+	%			% Block SER
+	\node[box orange] (XSser) at (-1, -12) {$XS_{\ser}$};
+	\node[left=0.1cm of XSser] {$P_{\ser}$};
+	\node[box orange] (EXser) at (-2.8, -13.5) {$EX_{\ser}$};
+	\node[box black] (DXser) at (0.8, -13.5) {$DX_{\ser}$};
+	\draw (XSser) -- (EXser);
+	\draw (XSser) -- (DXser);
+	\node[left=0.0cm of EXser, align=center] (PEser) {$\PE_{\ser}$};
+		\node[below=0.0cm of PEser, align=center]  {$\mathrel{\rotatebox{90}{=}}$\\$e \cdot \PWE_{\ser}$};
+		\node[left = 0.0cm of DXser, align=center] (PDser) {$ \PLD_{\ser}$};
+		
+		\draw [thin] 
+		([yshift=-1.2cm+6pt]EXser.south west) -- ([yshift=-1.2cm]EXser.south west) 
+		-- ([yshift=-1.2cm]DXser.south east) node[midway, below=10pt] {\textbf{CET}}
+		-- ([yshift=-1.2cm+6pt]DXser.south east);
+		
+		%\draw [decorate, decoration={brace, amplitude=10pt, mirror}] 
+		%([yshift=-1.2cm]EXser.south west) -- ([yshift=-1.2cm]DXser.south east) 
+		%node[midway, below=12pt] {\textbf{CET}};
+		
+		
+		%			
+		
+		%	%			
+		%	%			% -----------------------------------------------------------------
+		%	%			% TOP RIGHT: MATRIX (Leontief / DS)
+		%	%			% -----------------------------------------------------------------
+		%	%			
+		%			% Matrix DS
+		\matrix (DS) [matrix of math nodes, column sep=1.0cm, row sep=2.6cm, nodes={font=\small}] at (8.6, -9.7) {
+			|[box red]| DS_{\agr,\agr} 		& |[box green]| DS_{\food,\agr} 	& |[box blue]| DS_{\othind,\agr} 	& |[box orange]| DS_{\ser,\agr} \\
+			|[box red]| DS_{\agr,\food} 	& |[box green]| DS_{\food,\food} 	& |[box blue]| DS_{\othind,\food} 	& |[box orange]| DS_{\ser,\food} \\
+			|[box red]| DS_{\agr,\othind} 	& |[box green]| DS_{\food,\othind} 	& |[box blue]| DS_{\othind,\othind} & |[box orange]| DS_{\ser,\othind} \\
+			|[box red]| DS_{\agr,\ser} 		& |[box green]| DS_{\food,\ser} 	& |[box blue]| DS_{\othind,\ser} 	& |[box orange]| DS_{\ser,\ser} \\
+		};
+		
+		\node[right = 0.0cm of DXagr]  {\colorbox{white}{\textbf{Leontief}}};
+		\node[right = 0.0cm of DXfood]  {\colorbox{white}{\textbf{Leontief}}};
+		\node[right = 0.0cm of DXothind]  {\colorbox{white}{\textbf{Leontief}}};
+		\node[right = 0.0cm of DXser]  {\colorbox{white}{\textbf{Leontief}}};
+		
+		\begin{scope}[on background layer]
+			\draw [shorten >=-1pt](DXagr.east) -- (DS-1-1.north);
+			\draw [shorten >=-1pt](DXagr.east) -- (DS-1-2.north);
+			\draw [shorten >=-1pt](DXagr.east) -- (DS-1-3.north);
+			\draw [shorten >=-1pt](DXagr.east) -- (DS-1-4.north);
+			
+			\draw [shorten >=-1pt](DXfood.east) -- (DS-2-1.north);
+			\draw [shorten >=-1pt](DXfood.east) -- (DS-2-2.north);
+			\draw [shorten >=-1pt](DXfood.east) -- (DS-2-3.north);
+			\draw [shorten >=-1pt](DXfood.east) -- (DS-2-4.north);
+			
+			\draw [shorten >=-1pt](DXothind.east) -- (DS-3-1.north);
+			\draw [shorten >=-1pt](DXothind.east) -- (DS-3-2.north);
+			\draw [shorten >=-1pt](DXothind.east) -- (DS-3-3.north);
+			\draw [shorten >=-1pt](DXothind.east) -- (DS-3-4.north);
+			
+			\draw [shorten >=-1pt](DXser.east) -- (DS-4-1.north);
+			\draw [shorten >=-1pt](DXser.east) -- (DS-4-2.north);
+			\draw [shorten >=-1pt](DXser.east) -- (DS-4-3.north);
+			\draw [shorten >=-1pt](DXser.east) -- (DS-4-4.north);
+		\end{scope}
+		%	 Accolades droites fermantes à droite de la matrice
+		%	\draw[brace style] (DS-1-3.north east) -- (DS-1-3.south east);
+		%	\draw[brace style] (DS-2-3.north east) -- (DS-2-3.south east);
+		%	\draw[brace style] (DS-3-3.north east) -- (DS-3-3.south east);
+		%	%
+		%	%% 3 Petites Accolades Leontief (une par ligne DX)
+		%	\draw [decorate,decoration={brace,amplitude=2pt,mirror,raise=+5pt}] ([yshift=+1mm]DS-1-1.north west) -- ([yshift=-1mm]DS-1-1.south west) node[midway, left=2pt ] (L1) {};
+		%	\node[above left=.0pt and .3cm of L1 ] {Leontief};
+		%	
+		%	\draw [decorate,decoration={brace,amplitude=2pt,mirror,raise=+5pt}] ([yshift=+1mm]DS-2-1.north west) -- ([yshift=-1mm]DS-2-1.south west) node[midway, left=2pt ] (L2) {};
+		%	\node[above left=.0pt and .3cm of L2 ] {Leontief};
+		%	
+		%	\draw [decorate,decoration={brace,amplitude=2pt,mirror,raise=+5pt}] ([yshift=+1mm]DS-3-1.north west) -- ([yshift=-1mm]DS-3-1.south west) node[midway, left=2pt ] (L3) {};
+		%	\node[above left=.0pt and .3cm of L3 ] {Leontief};
+		%	
+		%	%% Traits de liaison entre DX et Leontief
+		%	\draw (DXagr.east) -- (DXagr.east -| L1.west);
+		%	\draw (DXind.east) -- (DXind.east -| L2.west);
+		%	\draw (DXser.east) -- (DXser.east -| L3.west);
+		%	%			
+		%			% Plus signs between matrix columns
+		\node at ($(DS-1-1)!0.5!(DS-1-2)$) {$+$};
+		\node at ($(DS-1-2)!0.5!(DS-1-3)$) {$+$};
+		\node at ($(DS-1-3)!0.5!(DS-1-4)$) {$+$};
+		
+		\node at ($(DS-2-1)!0.5!(DS-2-2)$) {$+$};
+		\node at ($(DS-2-2)!0.5!(DS-2-3)$) {$+$};
+		\node at ($(DS-2-3)!0.5!(DS-2-4)$) {$+$};
+		
+		\node at ($(DS-3-1)!0.5!(DS-3-2)$) {$+$};
+		\node at ($(DS-3-2)!0.5!(DS-3-3)$) {$+$};
+		\node at ($(DS-3-3)!0.5!(DS-3-4)$) {$+$};
+		
+		\node at ($(DS-4-1)!0.5!(DS-4-2)$) {$+$};
+		\node at ($(DS-4-2)!0.5!(DS-4-3)$) {$+$};
+		\node at ($(DS-4-3)!0.5!(DS-4-4)$) {$+$};
+		%	%			
+		%			% Plus signs within columns
+		\node[red!80!black] at ($(DS-1-1)!0.5!(DS-2-1)$) {$+$};
+		\node[red!80!black] at ($(DS-2-1)!0.5!(DS-3-1)$) {$+$};
+		\node[red!80!black] at ($(DS-3-1)!0.5!(DS-4-1)$) {$+$};
+		%			
+		\node[green!50!black] at ($(DS-1-2)!0.5!(DS-2-2)$) {$+$};
+		\node[green!50!black] at ($(DS-2-2)!0.5!(DS-3-2)$) {$+$};
+		\node[green!50!black] at ($(DS-3-2)!0.5!(DS-4-2)$) {$+$};
+		%			
+		\node[blue!80!black] at ($(DS-1-3)!0.5!(DS-2-3)$) {$+$};
+		\node[blue!80!black] at ($(DS-2-3)!0.5!(DS-3-3)$) {$+$};
+		\node[blue!80!black] at ($(DS-3-3)!0.5!(DS-4-4)$) {$+$};
+		
+		\node[orange!50!black] at ($(DS-1-4)!0.5!(DS-2-4)$) {$+$};
+		\node[orange!50!black] at ($(DS-2-4)!0.5!(DS-3-4)$) {$+$};
+		\node[orange!50!black] at ($(DS-3-4)!0.5!(DS-4-4)$) {$+$};
+		%	%			
+		%	
+		\node[draw=red!80!black, very thin, inner sep=7pt, fit=(DS-1-1) (DS-4-1)] (rectAgr) {};
+		\node[draw=green!80!black, very thin, inner sep=7pt, fit=(DS-1-2) (DS-4-2)] (rectfood) {};
+		\node[draw=blue!80!black, very thin, inner sep=7pt, fit=(DS-1-3) (DS-4-3)] (rectothInd) {};
+		\node[draw=orange!50!black, very thin, inner sep=7pt, fit=(DS-1-4) (DS-4-4)] (rectser) {};
+		%	
+		%	%			% Top Column Labels with braces
+		%	\draw [decorate,decoration={brace,amplitude=7pt, raise = 8pt}] ([xshift=-2mm]DS-1-1.north west) -- ([xshift=+2mm]DS-1-1.north east) node[midway, above=15pt] {$PL_{\text{`agr'}}$};
+		%	\draw [decorate,decoration={brace,amplitude=7pt, raise = 8pt}] ([xshift=-2mm]DS-1-2.north west) -- ([xshift=+2mm]DS-1-2.north east) node[midway, above=15pt] {$PL_{\text{`ind'}}$};
+		%	\draw [decorate,decoration={brace,amplitude=7pt, raise = 8pt}] ([xshift=-2mm]DS-1-3.north west) -- ([xshift=+2mm]DS-1-3.north east) node[midway, above=15pt] {$PL_{\text{`ser'}}$};
+		%	%			
+		%			% Bottom Column Equations
+		\draw [decorate,decoration={brace,amplitude=7pt, raise = 10pt}] (DS-4-1.south east) -- (DS-4-1.south west);
+		\node[below=.7cm of DS-4-1, align=center] (eq_agr) {
+			$\mathrel{\rotatebox{90}{=}}$\\
+			$\PL_{\agr} \cdot \displaystyle\sum_{\tr} \DS_{\agr,\tr}$\\
+			$\mathrel{\rotatebox{90}{=}}$
+		};
+		%	%			
+		\draw [decorate,decoration={brace,amplitude=7pt, raise = 10pt}] (DS-4-2.south east) -- (DS-4-2.south west);
+		\node[below=.7cm of DS-4-2, align=center] (eq_food) {
+			$\mathrel{\rotatebox{90}{=}}$\\
+			$\PL_{\food} \cdot \displaystyle\sum_{\tr} \DS_{\food,\tr}$\\
+			$\mathrel{\rotatebox{90}{=}}$
+		};
+		
+		
+		\draw [decorate,decoration={brace,amplitude=7pt, raise = 10pt}] (DS-4-3.south east) -- (DS-4-3.south west);
+		\node[below=.7cm of DS-4-3, align=center] (eq_othind) {
+			$\mathrel{\rotatebox{90}{=}}$\\
+			$\PL_{\othind} \cdot \displaystyle\sum_{\tr} \DS_{\othind,\tr}$\\
+			$\mathrel{\rotatebox{90}{=}}$
+		};
+		
+		\draw [decorate,decoration={brace,amplitude=7pt, raise = 10pt}] (DS-4-4.south east) -- (DS-4-4.south west);
+		\node[below=.7cm of DS-4-4, align=center] (eq_ser) {
+			$\mathrel{\rotatebox{90}{=}}$\\
+			$\PL_{\ser} \cdot \displaystyle\sum_{\tr} \DS_{\ser,\tr}$\\
+			$\mathrel{\rotatebox{90}{=}}$
+		};
+		
+		
+		\node[box red, below=0.0cm of eq_agr.south] (DDagr0) {$\DD_{\agr}$};
+		\node[left=0.0cm of DDagr0]  {$\PL_{\agr}$};
+		
+		\node[box green, below=0.0cm of eq_food.south] (DDfood0) {$\DD_{\food}$};
+		\node[left=0.0cm of DDfood0]  {$\PL_{\food}$};
+		
+		\node[box blue, below=0.0cm of eq_othind.south] (DDothind0) {$\DD_{\othind}$};
+		\node[left=0.0cm of DDothind0]  {$\PL_{\othind}$};
+		
+		\node[box orange, below=0.0cm of eq_ser.south] (DDser0) {$\DD_{\ser}$};
+		\node[left=0.0cm of DDser0]  {$\PL_{\ser}$};
+		%	%			
+		%	%			% -----------------------------------------------------------------
+		%	%			% MIDDLE TAX & MARGIN BLOCKS
+		%	%			% -----------------------------------------------------------------
+		%	%			
+		\node[box gray, text width=12cm, below=3.5cm of DS] (tax1) {Impôts sur les produits: $(1 + \tx_{\tr})\cdot\PL_{\tr}$};
+		\node[box gray, text width=9.5cm, below right=0.3cm and 0cm of tax1.south west] (margin1) 	{Marges de commercialisation et de transport:\\ $(1 + \tx_{\bns})\cdot(\tmgc_{\bns} + \tmgt_{\bns})\cdot\PC_{\ser}$};
+		
+		% 2. Signe '+' entre les deux boîtes
+		\node at ($ (margin1.north) ! 0.5 ! (tax1.south) $) { $+$};
+		
+		% 3. Grande accolade à gauche embrassant les deux blocs avec le libellé
+		\draw [decorate, decoration={brace, amplitude=7pt}] 
+		([xshift=-0.1cm]tax1.south west |- margin1.south) -- ([xshift=-0.1cm]tax1.north west) 
+		node[midway, left=12pt] { $\PD_{tr} =$};
+		
+		%	%			
+		%	% Lines through tax blocks
+		\draw[-,red!80!black, thick] (DDagr0.south) -- (DDagr0.south |- tax1.north);
+		\draw[-,green!80!black, thick] (DDfood0.south) -- (DDfood0.south |- tax1.north);
+		\draw[-,blue!80!black, thick] (DDothind0.south) -- (DDothind0.south |- tax1.north);
+		\draw[-,orange!50!black, thick] (DDser0.south) -- (DDser0.south |- tax1.north);
+		
+		\draw[-,red!80!black, thick] (tax1.south -| DDagr0.south) -- (margin1.north -| DDagr0.south);
+		\draw[-,green!80!black, thick] (tax1.south -| DDfood0.south) -- (margin1.north -| DDfood0.south);
+		\draw[-,blue!80!black, thick] (tax1.south -| DDothind0.south) -- (margin1.north -| DDothind0.south);
+		
+		
+		%	\draw[->] (tax1.south -| eq_agr.south) -- (margin1.north -| eq_agr.south);
+		%	\draw[->] (tax1.south) -- (margin1.south |- margin1.north);
+		%	\draw[->] (tax1.south -| eq_ser.south) -- (margin1.north -| eq_ser.south);
+		%	%			
+		%	%			% -----------------------------------------------------------------
+		%	%			% LOWER SECTION: CES TREES
+		%	%			% -----------------------------------------------------------------
+		%	%			
+		%	% Level DD
+		\node[box red, below=0.6cm of margin1.south -| eq_agr.south] (DDagr) {$\DD_{\agr}$};
+		\node[left=0.1cm of DDagr ] {$\PD_{\agr}$};
+		%			
+		\node[box green, below=0.6cm of margin1.south -| eq_food.south] (DDfood) {$\DD_{\food}$};
+		\node[left=0.1cm of DDfood ] {$\PD_{\food}$};
+		%			
+		\node[box blue, below=0.6cm of margin1.south -| eq_othind.south] (DDothind) {$\DD_{\othind}$};
+		\node[left=0.1cm of DDothind ] {$\PD_{\ser}$};
+		
+		\node[box orange, below=0.6cm of margin1.south -| eq_ser.south] (DDser) {$\DD_{\ser}$};
+		\node[left=0.1cm of DDser ] {$\PD_{\ser}$};
+		%	%			
+		\draw[->,red!80!black, thick] (margin1.south -| DDagr0.south) -- (DDagr.north);
+		\draw[->,green!80!black, thick] (margin1.south -| DDfood0.south) -- (DDfood.north);
+		\draw[->,blue!80!black, thick] (margin1.south -| DDothind0.south) -- (DDothind.north);
+		\draw[->,orange!50!black, thick] (tax1.south -| DDser0.south) -- (DDser.north);
+		%	\draw[->] (margin1.south) -- (DDind.north);
+		%	\draw[->] (margin1.south -| eq_ser.south) -- (DDser.north);
+		%	%			
+		%	% Level Q
+		\node[box red, below left=0.6cm and 0.2cm of DDagr] (Qagr) {$Q_{\agr}$};
+		\node[left=0.1cm of Qagr] {$\PC_{\agr}$};
+		%	%			
+		\node[box green, below left=0.6cm and 0.2cm of DDfood] (Qfood) {$Q_{\food}$};
+		\node[left=0.1cm of Qfood] {$\PC_{\food}$};
+		
+		\node[box blue, below left=0.6cm and 0.2cm of DDothind] (Qothind) {$Q_{\othind}$};
+		\node[left=0.1cm of Qothind] {$\PC_{\othind}$};
+		%	
+		\node[box orange, below left=0.6cm and 0.2cm of DDser] (Qser) {$Q_{\ser}$};
+		\node[left=0.1cm of Qser] {$\PC_{\ser}$};
+		
+		\node[box fuchsia, left=2.5cm of Qagr] (Qpetr) {$Q_{\petr}$};
+		\node[left=0.1cm of Qpetr] (PCpetr) {$\PC_{\petr}$};
+		
+		
+		
+		
+		
+		
+		
+		\node[box red, below right=0.6cm and 0.2cm of Qagr] (IMagr) {$\IM_{\agr}$};
+		\node[left=0.0cm of IMagr ] (PMagr) {$\PM_{\agr}\ $};
+		
+		
+		\node[box green, below right=0.6cm and 0.2cm of Qfood] (IMfood) {$\IM_{\food}$};
+		\node[left=0.0cm of IMfood ] (PMfood) {$\PM_{\food}\  $};
+		
+		\node[box blue, below right=0.6cm and 0.2cm of Qothind] (IMothind) {$\IM_{\othind}$};
+		\node[left=0.0cm of IMothind ] (PMothind) {$\PM_{\othind}\ $};
+		%			
+		\node[box orange, below right=0.6cm and 0.2cm of Qser] (IMser) {$\IM_{\ser}$};
+		\node[left=0.0cm of IMser ] (PMser) {$\PM_{\ser}\ $};
+		
+		
+		\node[box fuchsia, left=2.5cm of IMagr] (IMpetr) {$\IM_{\petr}$};
+		\node[left=-.1cm of IMpetr] (PMpetr_bot) {$ \PM_{\petr}$};
+		%%	%			
+		%	% CES Tree connections
+		\draw (DDagr) -- (Qagr) -- (IMagr);
+		\draw (DDfood) -- (Qfood) -- (IMfood);
+		\draw (DDothind) -- (Qothind) -- (IMothind);
+		\draw (DDser) -- (Qser) -- (IMser);
+		\draw (Qpetr) -- (IMpetr);
+		
+		\draw [thin] 
+		([xshift=6pt]PCpetr.west |- DDagr.north) -- (PCpetr.west |- DDagr.north) 
+		-- (PCpetr.west |- IMagr.south) node[midway, left=10pt] {\textbf{CES}}
+		-- ([xshift=6pt]PCpetr.west |- IMagr.south);
+		
+		%	\draw [decorate, decoration={brace, amplitude=7pt, mirror}] 
+		%	(PCpetr.west |- DDagr.north) -- (PCpetr.west |- IMagr.south)
+		%	node[midway, left=10pt] {\textbf{CES}};
+		
+		%	%			
+		%	% CES Brace
+		%	\draw[brace style] (DDser.north east) -- (IMser.south east) node[midway, right=2pt] {CES};
+		%	%			
+		%	%			% -----------------------------------------------------------------
+		%	%			% BOTTOM TAX BLOCKS & IMPORT PRICES
+		%	%			% -----------------------------------------------------------------
+		%	%			
+		%\node[box gray, text width=13cm, anchor=north east] (tax2) at ([yshift=-0.3cm]margin2.south east) {Impôts sur les produits et droits de douanes: $(1 + \tx_{\tr}) \cdot (1 + \tm_{\tr})$};
+		
+		%		\node[box gray, text width=9.5cm, below right=4cm and 0cm of margin1.south west] (margin2) {Marges de commercialisation et de transport:\\ $(1 + \tmgc_{\bns} + \tmgt_{\bns})$};
+		
+		\node[box gray, text width=14.5cm, align=center, anchor=north east] (margin2) 
+		at ([yshift=-4cm]margin1.south east) 
+		{Marges de commercialisation et de transport:\\ $(1 + \tx_{\bns})\cdot(\tmgc_{\bns} + \tmgt_{\bns})\cdot\PC_{\ser}$};
+		
+		\node[box gray, text width=17.cm, below right=.3cm and 0cm of margin2.south west] (tax2) {Impôts sur les produits et droits de douanes: $(1 + \tx_{\tr}) \cdot (1 + \tm_{\tr})\cdot e\cdot\PWM_{\tr}$};
+		
+		% 2. Signe '+' entre les deux boîtes
+		\node at ($ (margin2.south) ! 0.5 ! (tax2.north) $) {$+$};
+		
+		% 3. Grande accolade à gauche embrassant les deux blocs avec le libellé
+		\draw [decorate, decoration={brace, amplitude=7pt, mirror}] 
+		([xshift=-0.1cm]tax2.north west |- margin2.north) -- ([xshift=-0.1cm]tax2.south west) 
+		node[midway, left=12pt] { $\PM_{tr} =$};
+		
+		%	\node[box gray, below=4cm of margin1, text width=13cm] (margin2) {Marges de commercialisation et de transport: $(1 + tmgc_{bns} + tmgt_{bns})$};
+		%	\node[box gray, below=0.3cm of margin2, text width=13cm] (tax2) {Impôts sur les produits et droits de douanes: $(1 + tx_{tr}) \cdot (1 + tm_{tr})$};
+		%	%			
+		% Connections to lower tax blocks (upward arrows)
+		\draw[<-, color=red!80!black, thick] (IMagr.south) -- (margin2.north -| IMagr.south);
+		\draw[<-, color=green!80!black, thick] (IMfood.south) -- (margin2.north -| IMfood.south);
+		\draw[<-, color=blue!80!black, thick] (IMothind.south) -- (margin2.north -| IMothind.south);
+		\draw[<-, color=orange!50!black, thick] (IMser.south) -- (tax2.north -| IMser.south);
+		\draw[<-, color=Fuchsia, thick] (IMpetr.south) -- (margin2.north -| IMpetr.south);
+		%	%			
+		
+		
+		\draw[color=red!80!black, thick]  (margin2.south -| IMagr.south) -- (tax2.north -| IMagr.south);
+		\draw[color=green!80!black, thick]  (margin2.south -| IMfood.south) -- (tax2.north -| IMfood.south);
+		\draw[color=blue!80!black, thick]  (margin2.south -| IMothind.south) -- (tax2.north -| IMothind.south);
+		\draw[color=Fuchsia, thick]  (margin2.south -| IMpetr.south) -- (tax2.north -| IMpetr.south);
+		%	\draw (margin2.south) -- (tax2.north);
+		%	\draw (margin2.south -| IMser.south) -- (tax2.north -| IMser.south);
+		%	%			
+		%	% Final Bottom Import Nodes
+		% 1. Définir le nouveau nœud sur la ligne horizontale de tax2.south à gauche de IMagr
+		
+		
+		\node[box red, below=0.5cm of tax2.south -| IMagr.south] (IMagr_bot) {$\IM_{\agr}$};
+		\node[below=0.5cm of tax2.south -| PMagr.south] (PMagr_bot) {$ \PWM_{\agr}$};
+		%	\node[left=0.0cm of IMagr_bot]  (PMagr_bot)  {$ \PWM_{\agr}\cdot$};
+		
+		\node[box green, below=0.5cm of tax2.south-| IMfood.south] (IMfood_bot) {$\IM_{\food}$};
+		\node[below=0.5cm of tax2.south -| PMfood.south] (PMfood_bot) {$ \PWM_{\food}$};
+		%	\node[left=0.0cm of IMfood_bot] {$ \PWM_{\food}\cdot$};
+		
+		\node[box blue, below=0.5cm of tax2.south-| IMothind.south] (IMothind_bot) {$\IM_{\othind}$};
+		\node[below=0.5cm of tax2.south -| PMothind.south] (PMothind_bot) {$ \PWM_{\othind}$};
+		%	\node[left=0.0cm of IMothind_bot] {$ \PWM_{\othind}\cdot$};
+		
+		\node[box orange, below=0.5cm of tax2.south -| IMser.south] (IMser_bot) {$\IM_{\ser}$};
+		\node[below=0.5cm of tax2.south -| PMser.south] (PMser_bot) {$ \PWM_{\ser}$};			
+		%			\node[above=0.0cm of PMser_bot.north -| PMser.south]  {$\times$};
+		
+		\node[box fuchsia, left=2.5cm of IMagr_bot] (IMpetr_bot) {$\IM_{\petr}$};
+		\node[left=-.1cm of IMpetr_bot] (PMpetr_bot) {$ \PWM_{\petr}$};
+		\node[left=.0cm of PMpetr_bot]  {$ e\cdot\Big \{$};
+		\node[right=.0cm of IMser_bot]  {$ \Big \}$};
+		
+		%	
+		\draw [color=red!80!black, thick] (tax2.south -| IMagr.south) -- (IMagr_bot.north);
+		\draw [color=green!80!black, thick](tax2.south -| IMfood.south) -- (IMfood_bot.north);
+		\draw [color=blue!80!black, thick](tax2.south -| IMothind.south) -- (IMothind_bot.north);
+		\draw [color=orange!50!black, thick](tax2.south -| IMser.south) -- (IMser_bot.north);
+		\draw [color=Fuchsia, thick](tax2.south -| IMpetr.south) -- (IMpetr_bot.north);
+		
+		%		\draw (tax2.south -| PMagr.south) -- (PMagr_bot.north);
+		%		\draw (tax2.south -| PMfood.south) -- (PMfood_bot.north);
+		%		\draw (tax2.south -| PMothind.south) -- (PMothind_bot.north);
+		%		\draw (tax2.south -| PMser.south) -- (PMser_bot.north);
+		%		\draw (tax2.south -| PMpetr.south) -- (PMpetr_bot.north);
+		%			
+		
+	\node[anchor=north east, align=right, text width=10cm, transform shape=false] (legende) 
+	at (tax2.east |- XSagr.north) 
+	{\textsc{\figurename}~\thefigure~--~Relation commerciale avec le reste du monde, et formation des prix};
+	\end{tikzpicture}
+\end{adjustbox}

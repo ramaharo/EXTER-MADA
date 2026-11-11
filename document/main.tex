@@ -22,7 +22,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{ragged2e}
 \usepackage[skip=\bigskipamount,indent]{parskip}
-
+\usepackage{float}
 \usetikzlibrary{arrows.meta}
 \hypersetup{
 	colorlinks = true,
@@ -40,206 +40,169 @@
 \usepackage{afterpage}
 \usepackage[usegeometry,DIV=15]{typearea}
 \usepackage[scale=.85]{geometry}
-\newcommand{\trj}{\mathit{trj}}
-\newcommand{\agngvt}{\mathit{agngvt}}
+
+% --- Indices
 \newcommand{\ag}{\mathit{ag}}
-\newcommand{\agj}{\mathit{agj}}
 \newcommand{\agd}{\mathit{agd}}
-
-
-
-
-
-\newcommand{\agpub}{\mathit{agpub}}
+\newcommand{\agj}{\mathit{agj}}
+\newcommand{\agngvt}{\mathit{agngvt}}
+\newcommand{\agntr}{\mathit{agntr}}
+\newcommand{\agr}{\mathsf{agr}}
+\newcommand{\aij}{\mathit{aij}}
+\newcommand{\bns}{\mathit{bns}}
+\newcommand{\firm}{\mathsf{firm}}
+\newcommand{\food}{\mathsf{food}}
+\newcommand{\gvt}{\mathsf{gvt}}
+\newcommand{\hru}{\mathsf{hru}}
+\newcommand{\hur}{\mathsf{hur}}
+\newcommand{\io}{\mathit{io}}
+\newcommand{\ngo}{\mathsf{ngo}}
+\newcommand{\npbns}{\mathit{npbns}}
+\newcommand{\ntr}{\mathit{ntr}}
+\newcommand{\ntyf}{\mathit{ntyf}}
+\newcommand{\ntyh}{\mathit{ntyh}}
+\newcommand{\othind}{\mathsf{othind}}
+\newcommand{\othntr}{\mathsf{othntr}}
+\newcommand{\petr}{\mathsf{petr}}
+\newcommand{\pub}{\mathsf{pub}}
+\newcommand{\row}{\mathsf{row}}
+\newcommand{\ser}{\mathsf{ser}}
+\newcommand{\sntx}{\mathit{sntx}}
+\newcommand{\syf}{\mathit{syf}}
+\newcommand{\syfi}{\mathit{syfi}}
+\newcommand{\syfm}{\mathit{syfm}}
+\newcommand{\syh}{\mathit{syh}}
+\newcommand{\syng}{\mathit{syng}}
+\newcommand{\tm}{\mathit{tm}}
+\newcommand{\tmgc}{\mathit{tmgc}}
+\newcommand{\tmgt}{\mathit{tmgt}}
+\newcommand{\tr}{\mathit{tr}}
+\newcommand{\trj}{\mathit{trj}}
+\newcommand{\tx}{\mathit{tx}}
+\newcommand{\tyf}{\mathit{tyf}}
+\newcommand{\tyh}{\mathit{tyh}}
 \newcommand{\vel}{\mathit{vel}}
 
-
-
-\newcommand{\secpub}{\mathit{secpub}}
-\newcommand{\ntyh}{\mathit{ntyh}}
-\newcommand{\ntyf}{\mathit{ntyf}}
-\newcommand{\gvt}{\mathsf{gvt}}
-\newcommand{\hur}{\mathsf{hur}}
-\newcommand{\hru}{\mathsf{hru}}
-\newcommand{\firm}{\mathsf{firm}}
-\newcommand{\ngo}{\mathsf{ngo}}
-\newcommand{\row}{\mathsf{row}}
-
-\newcommand{\NTX}{\mathit{NTX}}
-
-\newcommand{\YDF}{\mathit{YDF}}
-\newcommand{\YFTR}{\mathit{YFTRA}}
-\newcommand{\npbns}{\mathit{npbns}}
-\newcommand{\aij}{\mathit{aij}}
-\newcommand{\mij}{\mathit{mij}}
-\newcommand{\bns}{\mathit{bns}}
-\newcommand{\NDDG}{\mathit{NDDG}}
+% --- Variables
+\newcommand{\AMORTG}{\mathit{AMORTG}}
+\newcommand{\BG}{\mathit{BG}}
+\newcommand{\BRG}{\mathit{BRG}}
 \newcommand{\CAB}{\mathit{CAB}}
-\newcommand{\CI}{\mathit{CI}}
 \newcommand{\CG}{\mathit{CG}}
-\newcommand{\OTHNTR}{\mathit{OTHNTR}}
 \newcommand{\CH}{\mathit{CH}}
-\newcommand{\CNG}{\mathit{CNG}}
+\newcommand{\CI}{\mathit{CI}}
+\newcommand{\CNGO}{\mathit{CNGO}}
+\newcommand{\CTG}{\mathit{CTG}}
 \newcommand{\CTH}{\mathit{CTH}}
-
+\newcommand{\CTNGO}{\mathit{CTNGO}}
+\newcommand{\DCG}{\mathit{DCG}}
+\newcommand{\DCP}{\mathit{DCP}}
 \newcommand{\DD}{\mathit{DD}}
-
-\newcommand{\DX}{\mathit{DX}}
+\newcommand{\DEBTG}{\mathit{DEBTG}}
+\newcommand{\DEFG}{\mathit{DEFG}}
 \newcommand{\DI}{\mathit{DI}}
-
-\newcommand{\ontr}{\mathsf{ontr}}
-\newcommand{\sntx}{\mathit{sntx}}
+\newcommand{\DINVG}{\mathit{DINVG}}
 \newcommand{\DIT}{\mathit{DIT}}
 \newcommand{\DS}{\mathit{DS}}
-
-\newcommand{\DEFG}{\mathit{DEFG}}
+\newcommand{\DX}{\mathit{DX}}
+\newcommand{\ER}{\mathit{ER}}
 \newcommand{\EX}{\mathit{EX}}
 \newcommand{\FBCF}{\mathit{FBCF}}
-\newcommand{\BRG}{\mathit{BRG}}
+\newcommand{\FDI}{\mathit{FDI}}
+\newcommand{\FINVG}{\mathit{FINVG}}
 \newcommand{\IM}{\mathit{IM}}
-\newcommand{\TOTG}{\mathit{TOTG}}
-\newcommand{\NTXHH}{\mathit{NTXHH}}
 \newcommand{\INV}{\mathit{INV}}
+\newcommand{\INVG}{\mathit{INVG}}
+\newcommand{\INVP}{\mathit{INVP}}
 \newcommand{\IT}{\mathit{IT}}
-\newcommand{\io}{\mathit{io}}
-\newcommand{\MGTRP}{\mathit{MGTRP}}
-\newcommand{\MGCOM}{\mathit{MGCOM}}
-\newcommand{\MRGTRP}{\mathit{MRGTRP}}
-\newcommand{\MRGCOM}{\mathit{MRGCOM}}
-\newcommand{\DTH}{\mathit{DTH}}
-\newcommand{\DTF}{\mathit{DTF}}
 \newcommand{\KD}{\mathit{KD}}
 \newcommand{\KS}{\mathit{KS}}
+\newcommand{\KTRAG}{\mathit{KTRAG}}
 \newcommand{\LD}{\mathit{LD}}
 \newcommand{\LEON}{\mathit{LEON}}
 \newcommand{\LEONF}{\mathit{LEONF}}
 \newcommand{\LS}{\mathit{LS}}
-
-
-
-\newcommand{\NTR}{\mathit{NTR}}
-\newcommand{\ntr}{\mathit{ntr}}
-
-% Epargnes
-\newcommand{\othntr}{\mathsf{othntr}}
-\newcommand{\agr}{\mathsf{agr}}
-\newcommand{\food}{\mathsf{food}}
-\newcommand{\othind}{\mathsf{othind}}
-\newcommand{\ser}{\mathsf{ser}}
-
-\newcommand{\DINVG}{\mathit{DINVG}}
-\newcommand{\FINVG}{\mathit{FINVG}}
-\newcommand{\SNG}{\mathit{SNG}}
-\newcommand{\SNGO}{\mathit{SNGO}}
-\newcommand{\snb}{\mathit{snb}}
+\newcommand{\MD}{\mathit{MD}}
+\newcommand{\MGCOM}{\mathit{MGCOM}}
+\newcommand{\MGTRP}{\mathit{MGTRP}}
+\newcommand{\MRGCOM}{\mathit{MRGCOM}}
+\newcommand{\MRGTRP}{\mathit{MRGTRP}}
+\newcommand{\MS}{\mathit{MS}}
+\newcommand{\NDDG}{\mathit{NDDG}}
+\newcommand{\NFDG}{\mathit{NFDG}}
+\newcommand{\NFDP}{\mathit{NFDP}}
+\newcommand{\NTX}{\mathit{NTX}}
+\newcommand{\NTXF}{\mathit{NTXF}}
+\newcommand{\NTXH}{\mathit{NTXH}}
+\newcommand{\NTXHH}{\mathit{NTXHH}}
+\newcommand{\OTHKTRA}{\mathit{OTHKTRA}}
+\newcommand{\PC}{\mathit{PC}}
+\newcommand{\PCI}{\mathit{PCI}}
+\newcommand{\PD}{\mathit{PD}}
+\newcommand{\PE}{\mathit{PE}}
+\newcommand{\PIB}{\mathit{PIB}}
+\newcommand{\PINDEX}{\mathit{PINDEX}}
+\newcommand{\PIXCON}{\mathit{PIXCON}}
+\newcommand{\PIXINV}{\mathit{PIXINV}}
+\newcommand{\PIXPIB}{\mathit{PIXPIB}}
+\newcommand{\PL}{\mathit{PL}}
+\newcommand{\PLD}{\mathit{PLD}}
+\newcommand{\PM}{\mathit{PM}}
+\newcommand{\PPD}{\mathit{PPD}}
+\newcommand{\PPM}{\mathit{PPM}}
+\newcommand{\PVA}{\mathit{PVA}}
+\newcommand{\PWE}{\mathit{PWE}}
+\newcommand{\PWM}{\mathit{PWM}}
+\newcommand{\RES}{\mathit{RES}}
+\newcommand{\ROW}{\mathit{ROW}}
 \newcommand{\SF}{\mathit{SF}}
 \newcommand{\SG}{\mathit{SG}}
 \newcommand{\SH}{\mathit{SH}}
+\newcommand{\SNG}{\mathit{SNG}}
+\newcommand{\SNGO}{\mathit{SNGO}}
+\newcommand{\SP}{\mathit{SP}}
+\newcommand{\SROW}{\mathit{SROW}}
+\newcommand{\TCM}{\mathit{TCM}}
 \newcommand{\TD}{\mathit{TD}}
+\newcommand{\TDF}{\mathit{TDF}}
+\newcommand{\TDH}{\mathit{TDH}}
+\newcommand{\TG}{\mathit{TG}}
 \newcommand{\TI}{\mathit{TI}}
 \newcommand{\TIF}{\mathit{TIF}}
 \newcommand{\TIH}{\mathit{TIH}}
 \newcommand{\TIM}{\mathit{TIM}}
 \newcommand{\TIMF}{\mathit{TIMF}}
-\newcommand{\PE}{\mathit{PE}}
-\newcommand{\ONTR}{\mathit{ONTR}}
-\newcommand{\PC}{\mathit{PC}}
-\newcommand{\PCI}{\mathit{PCI}}
-\newcommand{\PLD}{\mathit{PLD}}
-\newcommand{\PD}{\mathit{PD}}
-\newcommand{\PPD}{\mathit{PPD}}
-\newcommand{\PDX}{\mathit{PDX}}
-\newcommand{\PINDEX}{\mathit{PINDEX}}
-\newcommand{\PIXPIB}{\mathit{PIXPIB}}
-\newcommand{\PIXCON}{\mathit{PIXCON}}
-\newcommand{\PIXINV}{\mathit{PIXINV}}
-\newcommand{\PL}{\mathit{PL}}
-\newcommand{\PM}{\mathit{PM}}
+\newcommand{\TOTG}{\mathit{TOTG}}
 \newcommand{\TRA}{\mathit{TRA}}
-\newcommand{\PPM}{\mathit{PPM}}
-\newcommand{\PWE}{\mathit{PWE}}
-\newcommand{\PWM}{\mathit{PWM}}
-\newcommand{\pub}{\mathsf{pub}}
-\newcommand{\PVA}{\mathit{PVA}}
-%\newcommand{\ser}{\mathit{ser}}
-\newcommand{\TCM}{\mathit{TCM}}
-\newcommand{\te}{\mathit{te}}
-\newcommand{\TG}{\mathit{TG}}
-\newcommand{\TR}{\mathit{TRA}}
-\newcommand{\TRG}{\mathit{TRG}}
-\newcommand{\TRH}{\mathit{TRH}}
-\newcommand{\TRNG}{\mathit{TRNG}}
-\newcommand{\TRF}{\mathit{TRF}}
-\newcommand{\syng}{\mathit{syng}}
-\newcommand{\syf}{\mathit{syf}}
-\newcommand{\petr}{\mathsf{petr}}
-\newcommand{\syfi}{\mathit{syfi}}
-\newcommand{\syfm}{\mathit{syfm}}
-\newcommand{\syh}{\mathit{syh}}
-\newcommand{\tr}{\mathit{tr}}
-\newcommand{\ytrf}{\mathit{ytrf}}
-\newcommand{\tx}{\mathit{tx}}
-\newcommand{\tm}{\mathit{tm}}
-\newcommand{\tmgc}{\mathit{tmgc}}
-\newcommand{\tmgt}{\mathit{tmgt}}
-\newcommand{\tyh}{\mathit{tyh}}
-\newcommand{\tyf}{\mathit{tyf}}
 \newcommand{\VA}{\mathit{VA}}
 \newcommand{\VSTK}{\mathit{VSTK}}
-\newcommand{\WLG}{\mathit{WLG}}
-\newcommand{\ROW}{\mathit{ROW}}
 \newcommand{\XS}{\mathit{XS}}
-\newcommand{\NTXF}{\mathit{NTXF}}
-\newcommand{\NTXH}{\mathit{NTXH}}
-\newcommand{\XD}{\mathit{XD}}
-\newcommand{\XSP}{\mathit{XSP}}
-\newcommand{\XSPT}{\mathit{XSPT}}
-\newcommand{\TDH}{\mathit{TDH}}
-\newcommand{\TDF}{\mathit{TDF}}
+\newcommand{\YDF}{\mathit{YDF}}
 \newcommand{\YDH}{\mathit{YDH}}
+\newcommand{\YF}{\mathit{YF}}
+\newcommand{\YFK}{\mathit{YFK}}
+\newcommand{\YFTR}{\mathit{YFTRA}}
+\newcommand{\YG}{\mathit{YG}}
+\newcommand{\YGNTX}{\mathit{YGNTX}}
+\newcommand{\YGT}{\mathit{YGT}}
+\newcommand{\YGTR}{\mathit{YGTRA}}
+\newcommand{\YGTX}{\mathit{YGTX}}
 \newcommand{\YH}{\mathit{YH}}
 \newcommand{\YHK}{\mathit{YHK}}
 \newcommand{\YHL}{\mathit{YHL}}
 \newcommand{\YHTR}{\mathit{YHTRA}}
-\newcommand{\YF}{\mathit{YF}}
-\newcommand{\YFK}{\mathit{YFK}}
-\newcommand{\YG}{\mathit{YG}}
-\newcommand{\YGT}{\mathit{YGT}}
-\newcommand{\YGTX}{\mathit{YGTX}}
-\newcommand{\YGNTX}{\mathit{YGNTX}}
-\newcommand{\YGTR}{\mathit{YGTRA}}
 \newcommand{\YNG}{\mathit{YNG}}
 \newcommand{\YNGO}{\mathit{YNGO}}
 \newcommand{\YROW}{\mathit{YROW}}
 \newcommand{\YROWK}{\mathit{YROWK}}
 \newcommand{\YROWL}{\mathit{YROWL}}
-\newcommand{\SROW}{\mathit{SROW}}
+
+
+
+
+
+
 \newcommand{\redparagraph}[1]{\paragraph*{\large\textcolor{Fuchsia}{#1}}}
-\newcommand{\PIB}{\mathit{PIB}}
-
-
-\newcommand{\INVG}{\mathit{INVG}}
-\newcommand{\KTRG}{\mathit{KTRG}}
-\newcommand{\NFDG}{\mathit{NFDG}}
-\newcommand{\DCG}{\mathit{DCG}}
-\newcommand{\BG}{\mathit{BG}}
-\newcommand{\AMORTG}{\mathit{AMORTG}}
-\newcommand{\SP}{\mathit{SP}}
-
-
-\newcommand{\RES}{\mathit{RES}}
-\newcommand{\OTHKTR}{\mathit{OTHKTR}}
-\newcommand{\FDI}{\mathit{FDI}}
-\newcommand{\NFDP}{\mathit{NFDP}}
-
-\newcommand{\MS}{\mathit{MS}}
-\newcommand{\MD}{\mathit{MD}}
-\newcommand{\DCP}{\mathit{DCP}}
-\newcommand{\INVP}{\mathit{INVP}}
-
-\newcommand{\ER}{\mathit{ER}}
-\newcommand{\DEBTG}{\mathit{DEBTG}}
-
 \everymath\expandafter{\the\everymath\displaystyle}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning, matrix, calc,decorations.pathreplacing, fit}
@@ -312,7 +275,7 @@
 		\item À court-moyen terme, le capital est supposé spécifique à chaque secteur d'activité (\ref{it:KS}), limitant la réallocation instantanée des capacités de production. À l'inverse, le travail est considéré comme parfaitement mobile entre les secteurs (\ref{it:LS}).
 		
 		
-		\item L'État est modélisé à travers le compte de l'Administration Centrale, qui collecte les recettes fiscales et non fiscales, et assure la fourniture des services publics.
+		\item L'État est modélisé à travers le compte de l'Administration centrale, qui collecte les recettes fiscales et non fiscales, et assure la fourniture des services publics.
 		
 		
 		\item  Les secteurs produisant des biens échangeables arbitrent entre le marché domestique et le marché d'exportation. En revanche, les secteurs de biens non échangeables (administration publics, éducation publique, santé publique) produisent exclusivement pour le marché intérieur.
@@ -333,117 +296,8 @@
 		\item[$\bullet$] \textbf{2 comptes d’accumulation} : Formation Brute de Capital Fixe (FBCF) et Variation de stocks.
 	\end{itemize}
 	
-	Les versions agrégée (MACROSAM) et désagrégée (MIDISAM) de la matrice de comptabilité sociale sont données dans les \textsc{Tableaux} \ref{tab:MACROSAM} et \ref{tab:MIDISAM}. Notons que la MACROSAM présentée dans le \textsc{Tableau}~\ref{tab:MACROSAM} est construite de manière similaire à celle de \cite{Ramaharo2022}. À partir d'un certain niveau d'agrégation, les résultats sont par construction identiques. Les  divergences statistiques peuvent être expliquées par la mise à jour des données de base ainsi que par quelques ajustements dans la définition des agrégats.
-	
-	
-	\begin{table}[!htbp]
-		\renewcommand{\arraystretch}{1.2} % Scales row height (1.0 is default)
-		\centering
-		\caption{Version aggrégée  de la Matrice de Comptabilité Sociale de Madagascar (MACROSAM). Année 2019. En Milliards d'Ariary.}
-		\makebox[0pt]{\resizebox{1.1\columnwidth}{!}{%
-				\begin{tabular}{|r|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|}
-					\cline{2-13}    \multicolumn{1}{r|}{} & \textbf{\sffamily1} & \textbf{\sffamily2} & \textbf{\sffamily3} & \textbf{\sffamily4} & \textbf{\sffamily5} & \textbf{\sffamily6} & \textbf{\sffamily7} & \textbf{\sffamily8} & \textbf{\sffamily9} & \textbf{\sffamily10} & \textbf{\sffamily11} & \textbf{\sffamily12} \\
-					\hline
-					\sffamily\textbf{1} &    &    &    &    &    & 221.6 & 47638.3 &    &    &    &    & \gras{47859.9} \\
-					\hline
-					\textbf{2} & 27522.1 &    & 677.5 & 13786.6 &    & 1266.8 &    &    &    &    &    & \gras{43253.0} \\
-					\hline
-					\sffamily\textbf{3} &    &  & 754.8 & 4331.1 & 5959.4 & 432.0 &    &    &    &    &    & \gras{11477.3} \\
-					\hline
-					\sffamily\textbf{4} & 18617.2 &    & 1292.5 &    &    & 1189.7 &    &    &    &    &    & \gras{21099.4} \\
-					\hline
-					\sffamily\textbf{5} &    & 1004.5 &    & 1557.9 &    &    &    & 3396.9 &    &    &    & \gras{5959.4} \\
-					\hline
-					\sffamily\textbf{6} & 1720.6 &    & 106.8 &    &    &    &    & 17442.3 &    &    &    & \gras{19269.7} \\
-					\hline
-					\sffamily\textbf{7} &    &    &    &    &    &    &    & 65405.2 & 14228.0 &    &    & \gras{79633.1} \\
-					\hline
-					\sffamily\textbf{8} &    & 34684.7 & 7709.4 &    &    &    & 31994.8 &    & 278.5 & 8531.2 & 11576.9 & \gras{94775.6} \\
-					\hline
-					\sffamily\textbf{9} &    &    &    &    &    & 14506.5 &    &    &    &    &    & \gras{14506.5} \\
-					\hline
-					\textbf{10} &    &    &    &    &    &    &    & 8531.2 &    &    &    & \gras{8531.2} \\
-					\hline
-					\sffamily\textbf{11} &    & 7563.8 & 936.1 & 1423.8 &    & 1653.2 &    &    &    &    & 733.0 & \gras{12309.8} \\
-					\hline
-					\sffamily\textbf{12} & \gras{47859.9} & \gras{43253.0} & \gras{11477.3} & \gras{21099.4} & \gras{5959.4} & \gras{19269.7} & \gras{79633.1} & \gras{94775.6} & \gras{14506.5} & \gras{8531.2} & \gras{12309.8} &  \\
-					\hline
-				\end{tabular}%
-		}}
-		\begin{multicols}{3}
-			\begin{enumerate}[font=\bfseries\sffamily]\sffamily\small
-				\item \textbf{Facteurs}
-				\item \textbf{Ménages}
-				\item \textbf{Administration\\ publique et ISBLSM}
-				\item \textbf{Sociétés}
-				\item \textbf{Prélèvements fiscaux et non fiscaux}
-				\item \textbf{Reste du monde}
-				\item \textbf{Activités}
-				\item \textbf{Produits domestiques}
-				\item \textbf{Produits d'exportation}
-				\item \textbf{Marges}
-				\item \textbf{Accumulation}
-				\item \textbf{Total}
-			\end{enumerate}
-		\end{multicols}
-		\label{tab:MACROSAM}%
-	\end{table}%
-	
-	
-	\begin{table}[!htbp]
-		\renewcommand{\arraystretch}{1.2} % Scales row height (1.0 is default)
-		\centering
-		\caption{Version aggrégée  de la Matrice de Comptabilité Sociale de Madagascar (MACROSAM). Année 2019. En Milliards d'Ariary.}
-		\makebox[0pt]{\resizebox{1.1\columnwidth}{!}{%
-				\begin{tabular}{|r|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|D{.}{.}{5.1}|}
-					\cline{2-13}    \multicolumn{1}{r|}{} & \textbf{\sffamily1} & \textbf{\sffamily2} & \textbf{\sffamily3} & \textbf{\sffamily4} & \textbf{\sffamily5} & \textbf{\sffamily6} & \textbf{\sffamily7} & \textbf{\sffamily8} & \textbf{\sffamily9} & \textbf{\sffamily10} & \textbf{\sffamily11} & \textbf{\sffamily12} \\
-					\hline
-					\sffamily\textbf{1} &    &    &    &    &    & 221.6 & 47638.3 &    &    &    &    & \gras{47859.9} \\
-					\hline
-					\textbf{2} & 27522.1 &    & 677.5 & 13786.6 &    & 1266.8 &    &    &    &    &    & \gras{43253.0} \\
-					\hline
-					\sffamily\textbf{3} &    &  & 754.8 & 4331.1 & 5959.4 & 432.0 &    &    &    &    &    & \gras{11477.3} \\
-					\hline
-					\sffamily\textbf{4} & 18617.2 &    & 1292.5 &    &    & 1189.7 &    &    &    &    &    & \gras{21099.4} \\
-					\hline
-					\sffamily\textbf{5} &    & 1004.5 &    & 1557.9 &    &    &    & 3396.9 &    &    &    & \gras{5959.4} \\
-					\hline
-					\sffamily\textbf{6} & $\YROWK+\YROWL$ &    & 106.8 &    &    &    &    & 17442.3 &    &    &    & \gras{19269.7} \\
-					\hline
-					\sffamily\textbf{7} &    &    &    &    &    &    &    & 65405.2 & 14228.0 &    &    & \gras{79633.1} \\
-					\hline
-					\sffamily\textbf{8} &    & 34684.7 & 7709.4 &    &    &    & 31994.8 &    & 278.5 & 8531.2 & 11576.9 & \gras{94775.6} \\
-					\hline
-					\sffamily\textbf{9} &    &    &    &    &    & 14506.5 &    &    &    &    &    & \gras{14506.5} \\
-					\hline
-					\textbf{10} &    &    &    &    &    &    &    & 8531.2 &    &    &    & \gras{8531.2} \\
-					\hline
-					\sffamily\textbf{11} &    & 7563.8 & 936.1 & 1423.8 &    & 1653.2 &    &    &    &    & 733.0 & \gras{12309.8} \\
-					\hline
-					\sffamily\textbf{12} & \gras{47859.9} & \gras{43253.0} & \gras{11477.3} & \gras{21099.4} & \gras{5959.4} & \gras{19269.7} & \gras{79633.1} & \gras{94775.6} & \gras{14506.5} & \gras{8531.2} & \gras{12309.8} &  \\
-					\hline
-				\end{tabular}%
-		}}
-		\begin{multicols}{3}
-			\begin{enumerate}[font=\bfseries\sffamily]\sffamily\small
-				\item \textbf{Facteurs}
-				\item \textbf{Ménages}
-				\item \textbf{Administration\\ publique et ISBLSM}
-				\item \textbf{Sociétés}
-				\item \textbf{Prélèvements fiscaux et non fiscaux}
-				\item \textbf{Reste du monde}
-				\item \textbf{Activités}
-				\item \textbf{Produits domestiques}
-				\item \textbf{Produits d'exportation}
-				\item \textbf{Marges}
-				\item \textbf{Accumulation}
-				\item \textbf{Total}
-			\end{enumerate}
-		\end{multicols}
-		\label{tab:MACROSAM}%
-	\end{table}%
-	
-	
+	Les versions agrégée (MACROSAM) et désagrégée (MIDISAM) de la matrice de comptabilité sociale sont données dans les \textsc{Tableaux} \ref{tab:MACROSAMValues} et \ref{tab:MIDISAM}. Notons que la MACROSAM présentée dans le \textsc{Tableau}~\ref{tab:MACROSAMValues} est construite de manière similaire à celle de \cite{Ramaharo2022}. À partir d'un certain niveau d'agrégation, les résultats sont par construction identiques. Les  divergences statistiques peuvent être expliquées par la mise à jour des données de base ainsi que par quelques ajustements dans la définition des agrégats.
+		
 	\section{Les Ménages}
 	
 	Un ménage représentatif $h$ perçoit un revenu global $\left(\YH_h\right)$ constitué, d'une part, de la rémunération des facteurs de production : ils captent respectivement une fraction $\psi_h$ de la masse salariale totale et une fraction $\lambda_h$ de la rémunération totale du capital à l'échelle de l'économie. D'autre part, ce revenu est complété par des transferts institutionnels, notamment les pensions versées par l'Administration centrale $\left(\TRA_{h,\gvt}\right)$, les transferts en provenance des autres Administrations Publiques et des ISBLSM $\left(\TRA_{h,\ngo}\right)$, des dividendes versées par les Sociétés $\left(\TRA_{h,\firm}\right)$, ainsi que les transferts courants reçus du Reste du Monde $\left(\TRA_{h,\row}\right)$.
@@ -454,74 +308,74 @@
 	\begin{gather}
 		\centerline{\textcolor{Fuchsia}{\textbf{Ressources}:}} \notag\\
 		\phi_h \left(e\cdot W^R\cdot\LD^R + \sum_{j}^{}W\cdot \LD_j\right) + \lambda_h\left(e\cdot R^R\cdot\KD^R + \sum_{\trj}^{} R_{\trj}\cdot\KD_{\trj}\right) \notag\\
-		+\TR_{h,\firm} + \TR_{h,\gvt} + \TR_{h,\ngo} + e\cdot\TR_{h,\row}\notag\\
+		+\TRA_{h,\firm} + \TRA_{h,\gvt} + \TRA_{h,\ngo} + e\cdot\TRA_{h,\row}\notag\\
 		\centerline{\textcolor{Fuchsia}{\textbf{Emplois}:}} \notag\\
 		\TDH_h + \NTXH_{h}  + \CTH_h + \SH_h. \notag
 	\end{gather}
 	
-	\section{Les Administrations publiques et les Institutions Sans But Lucratif au Service des Ménages (ISBLSM)}
+	\section{Les Administrations Publiques et les Institutions Sans But Lucratif au Service des Ménages (ISBLSM)}
 	\subsection{L'Administration centrale}
 	
 	L'Administration centrale collecte les impôts indirects sur les produits marchands ($\TI_{tr}$) ainsi que les taxes indirectes additionnelles collectées par les sociétés ($\TIF$). Elle perçoit également les droits de douane ($\TIM_{tr}$) et les prélèvements sur le commerce international versés par les sociétés ($\TIMF$). En matière de fiscalité directe, elle prélève l'impôt sur le revenu des ménages ($\TDH_h$) et celui des sociétés ($\TDF$). Ses recettes non fiscales comprennent celles versées par les ménages ($\NTXHH_{\gvt}$) et les sociétés ($\NTXF$). Son budget est complété par des aides budgétaires ($\TRA_{\gvt,\row}$) provenant de transferts versés par le Reste du monde.
 	
-	Les dépenses de l'Adminstration centrale comprennent les transferts vers les autres agents, notamment les pensions aux ménages $\left(\TRA_{h,\gvt}\right)$, les transferts privés vers les sociétés $\left(\TRA_{\firm,\gvt}\right)$ qui incluent les intérêts de la dette publique intérieure, les transferts vers les autres APU et les ISBLSM $\left(\TRA_{\ngo,\gvt}\right)$ ainsi que les transferts vers le Reste du monde $\left(\TRA_{\row,\gvt}\right)$ qui comprennent les intérêts de la dette publique extérieure . Les dépenses courantes $G_{\pub}$ servent à produire les services publics. Elles se décomposent en rémunération des salariés de l'État $W\cdot\LD_{\pub}$ ainsi que l'achat de biens et services au titre de la consommation intermédiaire $\left(\PCI_{\pub}\cdot\CI_{\pub}\right)$. L'épargne publique ($\SG$) mesure le solde courant du budget de l'État.
+	Les dépenses de l'Adminstration centrale comprennent les transferts vers les autres agents, notamment les pensions aux ménages $\left(\TRA_{h,\gvt}\right)$, les transferts privés vers les sociétés $\left(\TRA_{\firm,\gvt}\right)$ qui incluent les intérêts de la dette publique intérieure, les transferts vers les autres APU et les ISBLSM $\left(\TRA_{\ngo,\gvt}\right)$ ainsi que les transferts vers le Reste du monde $\left(\TRA_{\row,\gvt}\right)$ qui comprennent les intérêts de la dette publique extérieure. Les dépenses de consommations finales ($\CTG$) servent à produire les services publics. Elles se décomposent en rémunération des salariés de l'État $W\cdot\LD_{\pub}$ ainsi que l'achat de biens et services au titre de la consommation intermédiaire $\left(\PCI_{\pub}\cdot\CI_{\pub}\right)$. L'épargne publique ($\SG$) mesure le solde courant du budget de l'État.
 	
 	L'équilibre ressources-emplois de l'Administration centrale s'écrit		
 	\begin{gather}
 		\centerline{\textcolor{Fuchsia}{\textbf{Ressources}:}} \notag\\
 		\sum_{\tr}\TI_{\tr} + \TIF + \sum_{\tr}\TIM_{tr} + \TIMF + \TDF +  \sum_{h} \TDH_h\notag\\
-		+ \NTXF + \NTXHH_{\gvt} + e\cdot \TR_{\gvt,\row}\notag\\
+		+ \NTXF + \NTXHH_{\gvt} + e\cdot \TRA_{\gvt,\row}\notag\\
 		\centerline{\textcolor{Fuchsia}{\textbf{Emplois}:}} \notag\\
-		\CG_{\pub} + \TR_{\firm,\gvt}  + \sum_{h}\TR_{h,\gvt} + \TR_{\ngo,\gvt} + e\cdot\TR_{\row,\gvt} + \SG.\notag
+		\CTG + \TRA_{\firm,\gvt}  + \sum_{h}\TRA_{h,\gvt} + \TRA_{\ngo,\gvt} + e\cdot\TRA_{\row,\gvt} + \SG.\notag
 	\end{gather}
 	
 	En ce qui concerne la fiscalité directe, nous utilisons les taux effectifs d'imposition appliqués aux différents agents institutionnels. Ainsi, les impôts sur le revenu des ménages et des sociétés sont calculés directement sur la base des revenus perçus. Par ailleurs, nous supposons que les autres taxes à la charge des entreprises sont également indexées sur leurs revenus (\ref{it:TIF} et \ref{it:TIM}). La fiscalité indirecte est modélisée par l'application de taux spécifiques selon la nature et l'origine des flux. Le modèle intègre, d'une part, des taux de droits de douane et de taxes à l'importation ($\tm_{\tr}$) appliqués sur la valeur internationale des produits. D'autre part, il intègre des taux de taxes sur les transactions intérieures ($\tx_{\tr}$) qui s'appliquent non seulement à la production domestique, mais aussi à la valeur des produits importés après acquittement des droits de douane. Enfin, les recettes non fiscales sont modélisées comme des transferts effectués par les sociétés et les ménages dont le montant est calibré comme une proportion de leur revenu disponible et du revenu total (\ref{it:TRAGVTh} et \ref{it:TRAGVTf}, respectivement).
 	
 	\subsection{Les autres administrations publiques et les ISBLSM}
-	Le revenu des autres administrations publiques et des ISBLSM provient principalement des transferts versés par l'Administration centrale ($\TR_{\ngo,\gvt}$), des transferts versés par les sociétés ($\TR_{\ngo,\firm}$), des transferts courants reçus du Reste du Monde ($\TR_{\ngo,\row}$), ainsi que des ressources non fiscales et contributions privées versées par les ménages ($\NTXHH_{\ngo}$).
+	Le revenu des autres administrations publiques et des ISBLSM provient principalement des transferts versés par l'Administration centrale ($\TRA_{\ngo,\gvt}$), des transferts versés par les sociétés ($\TRA_{\ngo,\firm}$), des transferts courants reçus du Reste du Monde ($\TRA_{\ngo,\row}$), ainsi que des ressources non fiscales et contributions privées versées par les ménages ($\NTXHH_{\ngo}$).
 	
-	Ces revenus sont ensuite redistribués sous forme de transferts vers chaque ménage $h$ ($\TRA_{h,\ngo}$). Le solde des revenus est affecté aux dépenses de consommation finale ($G_{\othntr}$), lesquelles se décomposent en rémunération des salariés ($W\cdot\LD_{\othntr}$) et en achats de biens et services ($\PCI_{\othntr}\cdot\CI_{\othntr}$) pour la production des autres biens publics et des autres services non marchands. L'épargne ($\SNGO$) est alors déterminée de manière résiduelle, comme le solde du compte après déduction de l'ensemble des transferts versés et des dépenses de consommation courantes.
+	Ces revenus sont ensuite redistribués sous forme de transferts vers chaque ménage $h$ ($\TRA_{h,\ngo}$). Le solde des revenus est affecté aux dépenses de consommation finale ($\CTNGO$), lesquelles se décomposent en rémunération des salariés ($W\cdot\LD_{\othntr}$) et en achats de biens et services ($\PCI_{\othntr}\cdot\CI_{\othntr}$) pour la production des autres biens publics et des autres services non marchands. L'épargne ($\SNGO$) est alors déterminée de manière résiduelle, comme le solde du compte après déduction de l'ensemble des transferts versés et des dépenses de consommation courantes.
 	
 	L'équilibre ressources-emplois des autres APU et des ISBLSM s'écrit
 	\begin{gather}
 		\centerline{\textcolor{Fuchsia}{\textbf{Ressources}:}} \notag\\
-		\TR_{\ngo,\gvt}+ e\cdot\TR_{\ngo,\row} +\TR_{\ngo,\firm} + \NTXHH_{\ngo} \notag\\
+		\TRA_{\ngo,\gvt}+ e\cdot\TRA_{\ngo,\row} +\TRA_{\ngo,\firm} + \NTXHH_{\ngo} \notag\\
 		\centerline{\textcolor{Fuchsia}{\textbf{Emplois}:}} \notag\\
-		\sum_{h}\TR_{h,\ngo} + \CG_{\othntr} + \SNGO.\notag
+		\sum_{h}\TRA_{h,\ngo} + \CTNGO + \SNGO.\notag
 	\end{gather}	
 	
-	Nous émettons l'hypothèse que la part des dépenses courantes des autres APU et des ISBLSM dans les dépenses courantes publiques totales ($\CG_\pub + \CG_\othntr$) est une fraction $\mu^{\CG}$. Il en résulte ainsi l'équation (\ref{it:Gothntr}). Par ailleurs, en l'absence de données précises, nous supposons que le solde des autres APU et des ISBLSM est maintenu à zéro. En annulant le solde de ces agents secondaires, nous évitons d'introduire une épargne ou un besoin de financement artificiel dans le circuit économique. Cette hypothèse de simplification standard permet ainsi de neutraliser les biais théoriques sur le bouclage macroéconomique et de garantir que les équilibres globaux restent exclusivement pilotés par les comportements des agents majeurs.
+	Nous émettons l'hypothèse que la part des dépenses de consommations finales des autres APU et des ISBLSM dans les dépenses de consommations finales totales $\left(\sum_{h}\CTH_h + \CTG + \CTNGO\right)$ est une fraction $\mu^{\CTNGO}$. Il en résulte ainsi l'équation (\ref{it:Gothntr}). Par ailleurs, en l'absence de données précises, nous supposons que le solde des autres APU et des ISBLSM est maintenu à zéro. En annulant le solde de ces agents secondaires, nous évitons d'introduire une épargne ou un besoin de financement artificiel dans le circuit économique. Cette hypothèse de simplification standard permet ainsi de neutraliser les biais théoriques sur le bouclage macroéconomique et de garantir que les équilibres globaux restent exclusivement pilotés par les comportements des agents majeurs.
 	
 	\section{Les Sociétés}
-	Les Sociétés agissent comme un agent intermédiaire dont le revenu provient principalement de la part de la valeur ajoutée non distribuée aux autres agents. Le revenu total des sociétés $\left(\YF\right)$ est ainsi constitué par la part de l'Excédent Brut d'Exploitation (EBE) qui n'est versée ni aux ménages, ni au Reste du Monde ($\YFK$). À cette base s'ajoutent divers flux de transferts institutionnels ($\YFTR$). La firme reçoit des transferts versés par l'État qui comprennent les intérêts sur la dette publique $\left(\TR_{\firm,\gvt}\right)$. Enfin, les sociétés bénéficient de transferts courants nets en provenance du Reste du Monde $\left(\TR_{\firm,\row}\right)$.
+	Les Sociétés agissent comme un agent intermédiaire dont le revenu provient principalement de la part de la valeur ajoutée non distribuée aux autres agents. Le revenu total des sociétés $\left(\YF\right)$ est ainsi constitué par la part de l'Excédent Brut d'Exploitation (EBE) qui n'est versée ni aux ménages, ni au Reste du Monde ($\YFK$). À cette base s'ajoutent divers flux de transferts institutionnels ($\YFTR$). La firme reçoit des transferts versés par l'État qui comprennent les intérêts sur la dette publique $\left(\TRA_{\firm,\gvt}\right)$. Enfin, les sociétés bénéficient de transferts courants nets en provenance du Reste du Monde $\left(\TRA_{\firm,\row}\right)$.
 	
 	En contrepartie, la firme s'acquitte de diverses obligations fiscales et parafiscales. Elle assure notamment le paiement de l'impôt sur les sociétés ($\TDF$), ainsi que le versement à l'Administration centrale de redevances et autres ressources non fiscales ($\NTXF$). Par ailleurs, bien que collectées pour le compte de l'État, la firme supporte administrativement les autres taxes sur la production ($\TIF$) ainsi que les autres taxes sur le commerce extérieur ($\TIMF$) qui ne sont pas directement appliquées sur les produits. Les sociétés redistribuent également une partie de leur revenu disponible sous forme de transferts vers les ménages $\left(\TRA_{h,\firm}\right)$ et vers les autres administrations publiques et ISBLSM $\left(\TRA_{\ngo,\firm}\right)$. L'épargne des sociétés ($\SF$) correspond au solde du compte de revenu après déduction de l'ensemble des charges fiscales, des ressources non fiscales et des transferts versés, représentant ainsi la capacité d'autofinancement des firmes pour leurs investissements futurs.
 	
 	L'équilibre ressources-emplois des Sociétés s'écrit:
 	\begin{gather}
 		\centerline{\textcolor{Fuchsia}{\textbf{Ressources}:}} \notag\\
-		\left(1 - \lambda^R-\sum_{h}\lambda_h\right)\cdot\left(e\cdot R^R\cdot\KD^R + \sum_{\trj}^{} R_{\trj}\cdot\KD_{\trj}\right)+ \TR_{\firm,\gvt} + e\cdot\TRA_{\firm,\row} \notag\\
+		\left(1 - \lambda^R-\sum_{h}\lambda_h\right)\cdot\left(e\cdot R^R\cdot\KD^R + \sum_{\trj}^{} R_{\trj}\cdot\KD_{\trj}\right)+ \TRA_{\firm,\gvt} + e\cdot\TRA_{\firm,\row} \notag\\
 		\centerline{\textcolor{Fuchsia}{\textbf{Emplois}:}} \notag\\
 		\TDF + \TIF + \TIMF + \NTXF + \TRA_{\ngo,\firm} + \sum_{h} \TRA_{h,\firm} + \SF.\notag
 	\end{gather}
 	
 	
-	
 	\section{Le Reste du monde}
-	Le compte du Reste du Monde retrace l'ensemble des flux réels et financiers entre l'économie nationale et l'extérieur. Les ressources de cet agent correspondent aux paiements effectués par l'économie domestique vers l'étranger. Elles comprennent la rémunération des travailleurs non-résidents $(\YROWL)$, calculée comme la part de la masse salariale totale non allouée aux travailleurs résidents. Elles incluent également les dividendes versés aux non-résidents $(\YROWK)$, définis comme une fraction $\lambda^R$ du revenu total du capital de l'économie, ainsi que les intérêts sur la dette publique extérieure $\TRA_{\row,\gvt}$. À ces flux s'ajoutent les recettes issues des importations, évaluées aux prix mondiaux et converties par le taux de change $\left(\PWM_{\tr} \cdot \IM_{\tr}\right)$.
+	Le compte du Reste du Monde retrace l'ensemble des flux réels et financiers entre l'économie nationale et l'extérieur. Les ressources de cet agent correspondent aux paiements effectués par l'économie domestique vers l'étranger. Elles comprennent la rémunération des travailleurs non-résidents $(\YROWL)$, calculée comme la part de la masse salariale totale non allouée aux travailleurs résidents. Elles incluent également les dividendes versés aux non-résidents $(\YROWK)$, définis comme une fraction $\lambda^R$ du revenu total du capital de l'économie, ainsi que les intérêts sur la dette publique extérieure qui s'expriment comme des transferts  provenant de l'Administration centrale $\left(\TRA_{\row,\gvt}\right)$. À ces flux s'ajoutent les recettes issues des importations évaluées aux prix mondiaux $\left(\PWM_{\tr} \cdot \IM_{\tr}\right)$.
 	
-	En contrepartie, le Reste du Monde effectue divers versements au profit de l'économie nationale. Ces emplois incluent la compensation des employés nationaux travaillant à l'étranger $\left(W^R \cdot \LD^R\right)$ ainsi que les revenus des investissements $\left(R^R \cdot \KD^R\right)$. Le Reste du Monde assure également des transferts courants vers les autres agents institutionnels : les ménages $\left(\TRA_{h,\row}\right)$, les firmes $\left(\TRA_{\firm,\row}\right)$, l'Administration centrale $\left(\TRA_{\gvt,\row}\right)$ et les autres APU et les ISBLSM $\left(\TRA_{\ngo,\row}\right)$. Enfin, cet agent finance l'acquisition des exportations de biens marchands, dont la valeur est déterminée par le prix mondial et le taux de change $\left(\PWE_{\tr} \cdot \EX_{\tr}\right)$. Enfin, l'épargne du Reste du Monde ($\SROW$) est déterminée comme le solde entre ses ressources et ses emplois. Cette épargne correspond au déficit de la balance courante.
+	En contrepartie, le Reste du Monde effectue divers versements au profit de l'économie nationale. Ces emplois incluent la compensation des employés nationaux travaillant à l'étranger $\left(W^R \cdot \LD^R\right)$ ainsi que les revenus des investissements $\left(R^R \cdot \KD^R\right)$. Le Reste du Monde assure également des transferts courants vers les autres agents institutionnels : les ménages $\left(\TRA_{h,\row}\right)$, les sociétés $\left(\TRA_{\firm,\row}\right)$, l'Administration centrale $\left(\TRA_{\gvt,\row}\right)$ et les autres APU et les ISBLSM $\left(\TRA_{\ngo,\row}\right)$. Enfin, cet agent finance l'acquisition des exportations de biens marchands, dont la valeur est déterminée par le prix mondial $\left(\PWE_{\tr} \cdot \EX_{\tr}\right)$. Enfin, l'épargne du Reste du Monde ($\SROW$) est déterminée comme le solde entre ses ressources et ses emplois. Cette épargne correspond au déficit de la balance courante $(-\CAB)$.
 	
 	Nous adoptons l'hypothèse de petite économie ouverte, en supposant que la taille de l'économie de Madagascar n'est pas suffisamment significative pour influencer les prix mondiaux. En conséquence, les prix des biens exportés $\left(\PWE_{\tr}\right)$ et importés $\left(\PWM_{\tr}\right)$ sont considérés comme exogènes et déterminés sur le marché international.
 	
-	L'équilibre ressources-emplois du Reste du monde s'écrit (toutes les variables étant exprimées en monnaies étrangères):
+	L'équilibre ressources-emplois du Reste du monde s'écrit (les variables $W$, $\LD_{j}$, $R_{\tr}$ et $\KD_{\tr}$ sont exprimées en monnaies nationales):
+	
 	\begin{gather}
 		\centerline{\textcolor{Fuchsia}{\textbf{Ressources}:}} \notag\\
-		\sum_{\tr}^{} \PWM_{\tr}\cdot\IM_{tr} + \left(1 -\sum_{h}\phi_h\right) \cdot\left(e\cdot W^R\cdot\LD^R + \sum_{j}^{} W\cdot\LD_{j}\right) \notag\\
-		+ \lambda^R \cdot\left(R^R\cdot\KD^R + \sum_{\tr}^{} R_{\tr}\cdot\KD_{\tr}\right) + \TR_{\row,\gvt}\notag\\
+		\sum_{\tr}^{} \PWM_{\tr}\cdot\IM_{tr} + \dfrac{1}{e}\cdot\left(1 -\sum_{h}\phi_h\right) \cdot\left(e\cdot W^R\cdot\LD^R + \sum_{j}^{} W\cdot\LD_{j}\right) \notag\\
+		+ \lambda^R \cdot\dfrac{1}{e}\cdot\left(e\cdot R^R\cdot\KD^R + \sum_{\tr}^{} R_{\tr}\cdot\KD_{\tr}\right) + \TRA_{\row,\gvt}\notag\\
 		\centerline{\textcolor{Fuchsia}{\textbf{Emplois}:}} \notag\\
 		\sum_{\tr}^{} \PWE_{\tr}\cdot\EX_{\tr}  +  W^R\cdot\LD^R +  R^R\cdot\KD^R\notag\\
-		+ \sum_{h}\TR_{h,\row} + \TR_{\firm,\row} + \TR_{\gvt,\row} + \TR_{\ngo,\row} + \SROW. \notag
+		+ \sum_{h}\TRA_{h,\row} + \TRA_{\firm,\row} + \TRA_{\gvt,\row} + \TRA_{\ngo,\row} + \SROW. \notag
 	\end{gather}
 	
 	
@@ -554,16 +408,14 @@
 	L'expression de la demande optimale pour le bien $\tr$  donnée par l'équation \ref{it:CHtrh} stipule que la dépense d'investissement pour le bien $\tr$ est une fraction constante $\gamma^{\CH}_{\tr,h}$ du budget total $\CTH_h$.
 	\subsection{Les producteurs}
 	La structure de production de la branche $j$ est organisée selon une hiérarchie à plusieurs niveaux (cf.~\textsc{Figure}~\ref{fig:xsvaci}). Chaque secteur de production combine le travail et le capital avec les inputs intermédiaires pour produire un output qui peut être vendu sur le marché domestique exporté.
-	%		\incgraph[a3paper, landscape,	overlay page number at bottom][width=1.18\paperheight]{trade}
 	
 	
 	\begin{figure}[!htbp]
 		\centering
-		\input{Structure_production}
+		\input{figures/Structure_production}
 		\caption{Structure de production emboîtée du modèle}
 		\label{fig:xsvaci}
 	\end{figure}
-	
 	
 	
 	Au niveau supérieur, la production totale $\left(\XS_{j}\right)$ est modélisée par une technologie de type Leontief. Cette formulation suppose une complémentarité stricte entre la valeur ajoutée $\left(\VA_{j}\right)$ et l'agrégat des consommations intermédiaires $\left(\CI_{j}\right)$: 
@@ -597,7 +449,7 @@
 	
 	\begin{figure}[!htbp]
 		\centering
-		\input{commerce_int}
+		\input{figures/commerce_int}
 	\end{figure}
 	
 	%
@@ -639,124 +491,48 @@
 	\begin{equation*}
 		Q_{\tr} = A_{\tr}^M \cdot \bigg[\beta_{\tr}^M\cdot\IM_{\tr}^{-\rho_{\tr}^M} + \left(1 - \beta_{\tr}^M\right)\cdot\DD_{\tr}^{-\rho_{\tr}^M}\bigg]^{-\frac{1}{^{\rho_{\tr}^M}}},
 	\end{equation*}
-	où $A_{\tr}^M$ est un paramètre d'échelle, $\beta_{\tr}^M$ est le paramètre de distribution qui indique la préférence pour les importations dans la consommation totale, $\rho_{\tr}^M$ est le paramètre de substitution qui détermine la facilité avec laquelle l'agent peut remplacer le produit local par le produit importé. La résolution des conditions de premier ordre de ce programme d'optimisation permet d'aboutir à la fonction de demande optimale dont l'expression est donnée par l'équation \ref{it:IM}.
+	où $A_{\tr}^M$ est un paramètre d'échelle, $\beta_{\tr}^M$ est le paramètre de distribution qui indique la préférence pour les importations dans la consommation totale, $\rho_{\tr}^M$ est le paramètre de substitution qui détermine la facilité avec laquelle l'agent peut remplacer le produit local par le produit importé. La résolution des conditions de premier ordre de ce programme d'optimisation permet d'aboutir à la fonction de demande optimale dont l'expression est donnée par l'équation \ref{it:IM}.	
 	
+	\section{Intégration d'un bloc financier}    
+	Nous proposons d'intégrer un bloc financier au modèle. Le système du bloc réel étant déjà pleinement déterminé de l'équation \eqref{it:VAj} à l'équation \eqref{it:walras}, le bloc financier fonctionne selon une structure séquentielle (\textit{top-down}). Il prend en entrées les variables endogènes issues du bloc réel ainsi que la valeur des variables exogènes prédéterminées. Le cadre comptable assurant la cohérence d'ensemble de cette extension repose sur la \textit{Matrice de Comptabilité Sociale Financière} (FSAM). Afin de garantir la fermeture comptable et la faisabilité empirique du modèle, le \textit{secteur public} désigne exclusivement le compte de l'Administration centrale, tandis que le \textit{secteur privé} regroupe par agrégation l'ensemble des autres agents institutionnels résidents, à savoir les ménages, les sociétés ainsi que les autres APU et les ISBLSM.
 	
-	
-	
-
-	
-	
-	\section{Intégration du bloc financier}    
-	Nous proposons d'intégrer un bloc financier au modèle. Le système du bloc réel étant déjà pleinement déterminé de l'équation \eqref{it:VAj} à l'équation \eqref{it:walras}, le bloc financier fonctionne selon une structure séquentielle (\textit{top-down}). Il prend en entrées les variables endogènes issues du bloc réel ainsi que la valeur des variables exogènes prédéterminées. Le cadre comptable assurant la cohérence d'ensemble de cette extension repose sur la \textit{Matrice de Comptabilité Sociale Financière} (MCSF). Afin de garantir la fermeture comptable et la faisabilité empirique du modèle, le \textit{secteur public} désigne exclusivement le compte de l'Administration Centrale, tandis que le \textit{secteur privé} regroupe par agrégation l'ensemble des autres agents institutionnels résidents, à savoir les ménages, les sociétés non financières, les institutions financières et les ISBLSM.
-	
-	
-		% Table generated by Excel2LaTeX from sheet 'Feuil1'
-	\begin{table}[!h]
-		\renewcommand{\arraystretch}{1.5} % Scales row height (1.0 is default)
-		\centering
-		\caption{Définition des flux de capitaux et financiers dans la Matrice de Comptabilité Sociale Financière.}
-		\resizebox{\columnwidth}{!}{%
-			\begin{tabular}{|l|c|c|c|c|c|c|c|}
-				\hline
-				&\sffamily \textbf{DFIN}  &\sffamily \textbf{FFIN}  & \textbf{FFDI}  &\sffamily \textbf{GFIN}  &\sffamily \textbf{PFIN}  &\sffamily \textbf{CAPGAIN} &\sffamily \textbf{ACAP} \\[-1.5ex]
-				&\sffamily \textbf{(1)} &\sffamily \textbf{(2)}&\sffamily \textbf{(3)} &\sffamily \textbf{(4)}&\sffamily \textbf{(5) }&\sffamily \textbf{(6)}&\sffamily \textbf{(7)}\\
-				\hline
-				\sffamily\textbf{(1)}  &       &       &       &       & $\Delta\MD$ &       &       \\
-				\hline
-				\sffamily\textbf{(2)}  & $\ER\cdot\Delta\RES$ &       &       & $e\cdot\AMORTG$ &       & $\left(e - \ER\right)\cdot\Delta\RES$   & $e\cdot\SROW$  \\
-				\hline
-				\sffamily\textbf{(3)}  &       & $e\cdot\FDI^{\mathit{NET}}$ &       &       & $e\cdot\FDI^{\mathit{OUT}}$ &       &        \\
-				\hline
-				\sffamily\textbf{(4)}  & $\Delta\DCG$ & $e\cdot\Delta\NFDG^{\mathit{prg}}$   &       &       & $\Delta\BG$  & $\begin{matrix}e\cdot\KTRG\\[-1.5ex] +\\[-1.5ex] e\cdot\Delta\NFDG^{\mathit{prj}}\end{matrix}$ & $\SG$ \\
-				\hline
-				\sffamily\textbf{(5)}  & $\Delta\DCP$ & $e\cdot\Delta\NFDP$ & $e\cdot\FDI^{\mathit{IN}}$ &       &       & $
-				\begin{matrix} e\cdot\OTHKTR\\[-1.5ex] +\\[-1.5ex] \RES_{\textit{-1}}\cdot\Delta \ER\\[-1.5ex] +\\[-1.5ex] (\ER - e)\cdot\Delta\RES \end{matrix}$ & $\SP
-				$  \\
-				\hline
-				\sffamily\textbf{(6)} & $\RES_{\textit{-1}}\cdot\Delta\ER$ & $\begin{matrix}
-					e\cdot\OTHKTR \\[-1.5ex]
-					+\\[-1.5ex]
-					e\cdot\KTRG\\[-1.5ex]
-					+\\[-1.5ex]
-					e\cdot\Delta\NFDG^{\mathit{prj}}
-				\end{matrix}$ &       &       &       &       &        \\
-				\hline
-				\sffamily\textbf{(7)}  &       &       &       & $\INVG$ & $\INVP$ &       &        \\
-				\hline
-		\end{tabular}}%
-		\label{tab:FSAMformula}%
-	\end{table}%
-	
-	\begin{table}[!h]
-		\renewcommand{\arraystretch}{1.5} % Scales row height (1.0 is default)
-		\centering
-		\caption{Matrice de Comptabilité Sociale Financière de Madagascar. Année 2019. En Milliards d'Ariary.}
-		\resizebox{\columnwidth}{!}{%
-			\begin{tabular}{|l|r|r|r|r|r|r|r|r|}
-				\hline
-				&\sffamily \textbf{DFIN}  &\sffamily \textbf{FFIN}  & \textbf{FFDI}  &\sffamily \textbf{GFIN}  &\sffamily \textbf{PFIN}  &\sffamily \textbf{CAPGAIN} &\sffamily \textbf{ACAP}  &\sffamily \textbf{TOTAL} \\
-				\hline
-				\sffamily \textbf{DFIN}  &       &       &       &       & 835.7 &       &       & \textbf{835.7} \\
-				\hline
-				\sffamily \textbf{FFIN}  & -511.7 &       &       & 234.4 &       & 0.7   & 1653.2 & \textbf{1376.7} \\
-				\hline
-				\sffamily \textbf{FFDI}  &       & 1350.4 &       &       & 366.7 &       &       & \textbf{1717.1} \\
-				\hline
-				\sffamily \textbf{GFIN}  & -25.0 & 5.4   &       &       & 66.7  & 2105.9 & 936.1 & \textbf{3089.0} \\
-				\hline
-				\sffamily \textbf{PFIN}  & 1173.5 & -2085.0 & 1717.1 &       &       & 198.1 & 8987.6 & \textbf{9991.4} \\
-				\hline
-				\sffamily \textbf{CAPGAIN} & 198.8 & 2105.9 &       &       &       &       &       & \textbf{2304.7} \\
-				\hline
-				\sffamily \textbf{ACAP}  &       &       &       & 2854.6 & 8722.3 &       &       & \textbf{11576.9} \\
-				\hline
-				\sffamily \textbf{TOTAL}   & \textbf{835.7} & \textbf{1376.7 } & \textbf{1717.1} & \textbf{3089.0} & \textbf{9991.4} & \textbf{2304.7} & \textbf{11576.9} &  \\
-				\hline
-		\end{tabular}}%
-		\label{tab:FSAMvalues}%
-	\end{table}%
-	
-	
-
 	
 	\subsection{Matrice de Comptabilité Sociale Financière}
-	La MCSF utilisée dans ce projet est une version légèrement modifiée de la version agrégée présentée dans les travaux précédents de \cite{Ramaharo2022}, rendue compatible avec la MACROSAM retenue dans ce travail. 
-	
-	Les différents comptes structurant la matrice financière sont les suivants :
+	La FSAM utilisée dans ce projet est une version légèrement modifiée de la version agrégée présentée dans les travaux précédents de \cite{Ramaharo2022}, rendue compatible avec la MACROSAM retenue dans ce travail. Notre FSAM comprend :
 	\begin{itemize}
-		\item \textbf{DFIN} : Le compte financier intérieur qui retrace les avoirs et engagements monétaires et bancaires intérieurs.
-		\item \textbf{FFIN} : Le compte financier extérieur.
-		\item \textbf{FFDI} : Le compte des investissements directs étrangers (IDE).
-		\item \textbf{GFIN} et \textbf{PFIN} : Les comptes financiers respectifs du secteur public et du secteur privé.
-		\item \textbf{CAPGAIN} : Le compte de gains en capital, compte virtuel destiné à enregistrer les réévaluations d'actifs.
-		\item \textbf{ACAP} : Le compte d'accumulation ou d'investissement global.
+		\item un compte financier intérieur qui retrace les avoirs et engagements monétaires et bancaires intérieurs ;
+		\item un compte financier extérieur ;
+		\item un compte des investissements directs étrangers (IDE) ;
+		\item les comptes financiers respectifs du secteur public et du secteur privé ;
+		\item un compte de gains en capital, compte virtuel destiné à enregistrer les réévaluations d'actifs ;
+		\item un compte de transferts de capital ;
+		\item un compte d'accumulation (ou d'investissement global).
 	\end{itemize}
+	
+	Nous retenons une version agrégée de la FSAM dont les flux comptables sont présentés dans les Tableaux~\ref{tab:FSAMformula} et \ref{tab:FSAMValues}.
 	
 	\subsection{Équilibre financier du secteur public}
 	Le besoin de financement net du secteur public ($\BRG$), mesuré par l'écart entre l'investissement et l'épargne publics, est couvert par la combinaison des capitaux reçus de l'extérieur ainsi que des financements extérieurs et intérieurs nets :
 	\begin{equation*}
-		\INVG - \SG = e \cdot \KTRG + e \cdot \left(\Delta\NFDG^{\mathit{prj}} +  \Delta\NFDG^{\mathit{prg}} - \AMORTG\right) + \Delta\DCG + \Delta\BG
+		\INVG - \SG = e \cdot \KTRAG + e \cdot \left(\Delta\NFDG^{\mathit{prj}} +  \Delta\NFDG^{\mathit{prg}} - \AMORTG\right) + \Delta\DCG + \Delta\BG
 	\end{equation*}
-	Dans cette identité, $\INVG$ désigne l'investissement public et $\SG$ l'épargne publique. La variable $\KTRG$ désigne les transferts en capital reçus par le secteur public, tandis que $\Delta\NFDG^{\mathit{prj}}$ et $\Delta\NFDG^{\mathit{prg}}$ mesurent respectivement les tirages sur projets et sur programmes, et $\AMORTG$ représente l'amortissement de la dette extérieure publique. Le financement intérieur se compose du crédit bancaire net à l'État ($\Delta\DCG$) et des émissions nettes de titres publics souscrits par le secteur privé non bancaire ($\Delta\BG$). Le bouclage financier du secteur public s'effectue par le flux de crédit bancaire ($\Delta\DCG$), qui agit comme variable d'ajustement, traduisant le rôle de prêteur en dernier ressort du système bancaire (incluant la Banque Centrale). Par ailleurs, les souscriptions non bancaires sont directement prélevées sur l'épargne privée ($\SP$) selon la règle comportementale :
+	Dans cette identité, $\INVG$ désigne l'investissement public et $\SG$ l'épargne publique. La variable $\KTRAG$ désigne les transferts en capital reçus par le secteur public, tandis que $\Delta\NFDG^{\mathit{prj}}$ et $\Delta\NFDG^{\mathit{prg}}$ mesurent respectivement les tirages sur projets et sur programmes, et $\AMORTG$ représente l'amortissement de la dette extérieure publique. Le financement intérieur se compose du crédit bancaire net au secteur publique ($\Delta\DCG$) et des émissions nettes de titres publics souscrits par le secteur privé non bancaire ($\Delta\BG$). Le bouclage financier du secteur public s'effectue par le flux de crédit bancaire ($\Delta\DCG$), qui agit comme variable d'ajustement, traduisant le rôle de prêteur en dernier ressort du système bancaire (incluant la Banque Centrale). Par ailleurs, les souscriptions non bancaires sont directement prélevées sur l'épargne privée ($\SP$) selon la règle comportementale :
 	\begin{equation*}
 		\Delta\BG = \psi^{\BG} \cdot \SP,
 	\end{equation*}
-	où $\SP = \SF + \SNG + \sum_{h}\SH_h $ et $\psi^{\BG}$ représente la propension marginale du secteur privé à allouer son épargne aux titres publics.   
+	où $\SP = \SF + \SNGO + \sum_{h}\SH_h $ et $\psi^{\BG}$ représente la propension marginale du secteur privé à allouer son épargne aux titres publics.   
 	
-
-Par ailleurs, nous intégrons un bloc dédié à la dette publique. Le stock total de la dette publique ($\DEBTG$) est déterminé par l'identité comptable suivante :
-\begin{equation}
-	\DEBTG = \ER \cdot \NFDG + \NFDP,
-\end{equation} 
-où $\NFDG$ désigne le stock de la dette publique extérieure en devises, tandis que $\NFDP$ designe le stock de la dette publique intérieure. Conformément à la contrainte de soutenabilité extérieure, le secteur public contracte des engagements extérieurs dont l'encours maximal est ancré sur la capacité d'exportation de l'économie. Ainsi, le stock de dette extérieure est modélisé comme une proportion directe de la valeur totale des exportations de biens et services en devises :
-\begin{equation*}
-	\NFDG = \psi^{\EX} \cdot \sum_{\tr} \PWE_{\tr} \cdot \EX_{\tr},
-\end{equation*} 
-où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exportations, et le terme $\sum_{\tr} \PWE_{\tr} \cdot \EX_{\tr}$ capture la valeur totale des exportations au prix du marché mondial.
-
-
- 
+	
+	Par ailleurs, nous intégrons un bloc dédié à la dette publique. Le stock total de la dette publique ($\DEBTG$) est déterminé par l'identité comptable suivante :
+	\begin{equation}
+		\DEBTG = \ER \cdot \NFDG + \NFDP,
+	\end{equation} 
+	où $\NFDG$ désigne le stock de la dette publique extérieure en devises, tandis que $\NFDP$ designe le stock de la dette publique intérieure. Conformément à la contrainte de soutenabilité extérieure, le secteur public contracte des engagements extérieurs dont l'encours maximal est ancré sur la capacité d'exportation de l'économie. Ainsi, le stock de dette extérieure est modélisé comme une proportion directe de la valeur totale des exportations de biens et services en devises :
+	\begin{equation*}
+		\NFDG = \psi^{\EX} \cdot \sum_{\tr} \PWE_{\tr} \cdot \EX_{\tr},
+	\end{equation*} 
+	où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exportations, et le terme $\sum_{\tr} \PWE_{\tr} \cdot \EX_{\tr}$ capture la valeur totale des exportations au prix du marché mondial.
+	
 	
 	\subsection{Équilibre du marché monétaire}
 	L'équilibre du marché monétaire repose sur l'égalité stricte entre l'offre et la demande de monnaie. La demande de monnaie est formalisée selon une approche d'encaisses de transaction dérivée de la théorie quantitative de la monnaie :
@@ -772,9 +548,9 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 	Dans cette égalité, $\MS$ et $\MD$ désignent respectivement l'offre et la demande de monnaie, et $\RES$ représente le stock d'avoirs extérieurs nets (réserves) en devises. Le crédit intérieur net se décompose entre le stock de créances nettes du système bancaire sur le secteur public ($\DCG$) et le stock de crédit accordé au secteur privé ($\DCP$). 
 	En terme de flux, l'identité peut s'écrire
 	\begin{equation*}
-		\Delta \MD = e\cdot\Delta\RES + \Delta\DCG + \Delta \DCP + \RES_{\textit{-1}}\cdot\Delta\ER + (\ER - e)\cdot\Delta\RES,
+		\Delta \MD = e\cdot\Delta\RES + \Delta\DCG + \Delta \DCP + \RES_{-1}\cdot\Delta\ER + (\ER - e)\cdot\Delta\RES,
 	\end{equation*}
-	où $e\cdot\Delta\RES$ décrit le flux de transaction, et la quantité $\RES_{\textit{-1}}\cdot\Delta\ER + (\ER - e)\cdot\Delta\RES$ décrit l'ajustement de valeur. Dans cette notation, $\RES_{\textit{-1}}$ correspond au stock de réserves de la période précédant l'année de base.
+	où $e\cdot\Delta\RES$ décrit le flux de transaction, et la quantité $\RES_{-1}\cdot\Delta\ER + (\ER - e)\cdot\Delta\RES$ décrit l'ajustement de valeur. Dans cette notation, $\RES_{-1}$ correspond au stock de réserves de la période précédant l'année de base.
 	Le flux de crédit accordé au secteur privé ($\Delta\DCP$) est directement modélisé en fonction du niveau de l'investissement privé ($\INVP$) :
 	\begin{equation*}
 		\Delta\DCP = \psi^{\DCP} \cdot \INVP,
@@ -784,9 +560,9 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 	\subsection{Équilibre du marché extérieur et de la balance des paiements}
 	L'équilibre du marché extérieur et la dynamique des avoirs extérieurs nets découlent directement de l'identité comptable de la balance des paiements : 
 	\begin{equation*}
-		\Delta\RES = \CAB + \KTRG + \OTHKTR + \FDI^{\textit{NET}} + \Delta\NFDG^{\mathit{prg}} + \Delta\NFDG^{\mathit{prj}} - \AMORTG + \Delta\NFDP.
+		\Delta\RES = \CAB + \KTRAG + \OTHKTRA + \FDI^{\textit{NET}} + \Delta\NFDG^{\mathit{prg}} + \Delta\NFDG^{\mathit{prj}} - \AMORTG + \Delta\NFDP.
 	\end{equation*}
-	Au sein de cette identité, $\CAB = -\SROW$ désigne la balance courante, tandis que $\OTHKTR$ représente les flux nets de transferts de capital reçus par le secteur privé. Les entrées nettes d'investissements directs étrangers ($\FDI^{\mathit{NET}}$) sont définies par :
+	Au sein de cette identité, $\CAB = -\SROW$ désigne la balance courante, tandis que $\OTHKTRA$ représente les flux nets de transferts de capital reçus par le secteur privé. Les entrées nettes d'investissements directs étrangers $\left(\FDI^{\mathit{NET}}\right)$ sont définies par :
 	\begin{equation*}
 		\FDI^{\mathit{NET}} = \FDI^{\mathit{IN}} - \FDI^{\mathit{OUT}},
 	\end{equation*}
@@ -795,144 +571,15 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 	\subsection{Équilibre résiduel du secteur privé}
 	En vertu de la loi de Walras, l'équilibre financier du secteur privé est redondant. Sa capacité ou son besoin de financement net ne constitue pas une équation indépendante, car cette identité se déduit directement de la combinaison des contraintes budgétaires précédentes :
 	\begin{equation*}
-		\INVP - \SP = \Delta\DCP + e \cdot \left(\OTHKTR + \FDI^{\textit{NET}} + \Delta\NFDP\right) + \RES_{\textit{-1}} \cdot \Delta\ER + (\ER - e) \cdot \Delta\RES - \Delta\MD - \Delta\BG,
+		\INVP - \SP = \Delta\DCP + e \cdot \left(\OTHKTRA + \FDI^{\textit{NET}} + \Delta\NFDP\right) + \RES_{-1} \cdot \Delta\ER + (\ER - e) \cdot \Delta\RES - \Delta\MD - \Delta\BG,
 	\end{equation*}
 	toutes les variables composant cette identité ayant été définies dans les sections précédentes.
-	
-	
-	%    \end{description}
 
-%\begin{equation}
-%	\YH_h = \lambda_h\sum_{j}^{} W_j\LD_j + \phi_h\sum_{j}^{} R_j\KD_j + \TG_h + \TR^{ROW}_h + \TR^{NGO}_h
-%\end{equation}
-%
-%%\begin{equation}
-%%	\YDH_h = \YH_h - (\TD_h + \RNF_h)
-%%\end{equation}
-%%
-%
-%
-%\begin{table}[H]
-%	\begin{tabular}{lllll}
-	%	\toprule
-	%	\multicolumn{2}{c}{\textbf{Ressources}} && \multicolumn{2}{c}{\textbf{Emplois}}\\
-	%	\midrule
-	%Salaire	& $\lambda_h\sum_{j}^{} W\cdot\LD_j$ &  & Impots sur les revenus & $\DTH_h$  \\
-	%Revenu du capital	& $\lambda_h\sum_{j}^{} R_j\cdot\KD_j$ &  &  Recettes non fiscales &  $\RNFH_h$\\
-	%Transferts recu des ISBLSM & $\TRH^{NG}_h$ & & Dépenses en produits $ \tr$ & $C_{\tr,h}$\\
-	%Transferts recu du Reste du monde & $\TRH^{R}_h$ && Epargnes des ménages & $\SH_h$\\
-	%\bottomrule
-	%%\hline
-	%%\textbf{Total des ressources}
-	%%	\hline
-	%%	&  &  &  &  \\
-	%	\hline
-	%\end{tabular}
-	%\end{table}
-	%
-	%
-	%\section{L'administration centrale}
-	%L'administration centrale collecte les impôts indirects sur les produits (TVA, accises), les droits de douane et les autres taxes sur le commerce international. Elle perçoit également les impôts directs sur le revenu des ménages et des sociétés, ainsi que diverses recettes non fiscales. Ces ressources sont ensuite utilisées pour financer la consommation publique, qui se décompose en achats de biens et services (consommations intermédiaires) et en rémunération des salariés de la fonction publique. Ce processus permet la production de services non marchands, l'excédent des recettes sur les dépenses courantes constituant l'épargne publique.
-	%
-	%\begin{table}[H]
-	%	\begin{tabular}{lllll}
-		%		\toprule
-		%		\multicolumn{2}{c}{\textbf{Ressources}} && \multicolumn{2}{c}{\textbf{Emplois}}\\
-		%		\midrule
-		%		Taxes directs	      & $\DTH_h + \DTF$         &  & Intérêt sur dettes int         & $\INTD$  \\
-		%		Taxe indirect	      & $\TI_{\tr}+\TIF$         &  & Intérêt sur dettes EXT         & $\INTF$  \\
-		%		Taxe sur le commerce  & $\TIM_{\tr} + \TIMF_{\tr}$        &  & Transferts vers les autres APU & $\TRNG^G$\\
-		%		Recettes non fiscales & $\RNFH_h+ \RNFF$ &  & Dépenses courante          & $\XS_g$\\
-		%		Dons courants         & $\TRG^R$      &  & Achats de biens et svc         & $\BSG $\\
-		%		                      &               &  & Épargne publique                & $\SG$\\
-		%		\bottomrule
-		%		%\hline
-		%		%\textbf{Total des ressources}
-		%		%	\hline
-		%		%	&  &  &  &  \\
-		%		\hline
-		%	\end{tabular}
-	%\end{table}
-	%
-	%Les tax
-	%\section{Autres APU et ISBLSM}
-	%Les autres APU et ISBLSM receoinvent des trqnsferts due l'administration centrale  et du Reste du monde, verse des transferts aux menages et depenses en produits $i$ et fais des epargnes
-	%
-	%\begin{table}[H]
-	%	\begin{tabular}{lllll}
-		%		\toprule
-		%		\multicolumn{2}{c}{\textbf{Ressources}} && \multicolumn{2}{c}{\textbf{Emplois}}\\
-		%		\midrule
-		%		Transferts du Reste du monde	      	& $\TRNG^{R}$         	&  & Transferts vers les menages    & $\TRH^{NG}_h$  \\
-		%		Transferts de l'ADM central           	& $\TRNG^{G}$          	&  & Consommation en produits `service' & $C_{\ngo,\ser}$   \\
-		%												& 						&  & Epargnes des NGO & $SNGO$     \\
-		%														\bottomrule
-		%		%\hline
-		%		%\textbf{Total des ressources}
-		%		%	\hline
-		%		%	&  &  &  &  \\
-		%		\hline
-		%	\end{tabular}
-	%\end{table}
-	%
-	%\section{Les entreprises}
-	%Les entreprises recoivent une partie des revenus des facteurs de capital aussi bien domestique que venant du Reste du monde. Ils recoivent aussi une remboursemen du TVA. Il payenet les impots directs sur les revenus, et autres taxes sur le commerc international aisnsi que des recettes non fiscales et fais des epargnes.
-	%
-	%
-	%
-	%\begin{table}[H]
-	%	\begin{tabular}{lllll}
-		%		\toprule
-		%		\multicolumn{2}{c}{\textbf{Ressources}} && \multicolumn{2}{c}{\textbf{Emplois}}\\
-		%		\midrule
-		%		Transferts 	      	& $\TRF^{R}$         	&  & Autres taxes indirects    & $\TIF$  \\
-		%		Revenu du capital             	        & $\left(1 - \lambda^R-\sum_{h}\lambda_h\right)\sum_{j}^{} R_j\cdot\KD_j$           	&  & Autres tarifs douaniers & $\TIMF$   \\
-		%		& 						&  & Impots sur le revenu & $\DTF$     \\
-		%		& 						&  & Recettes non fiscales & $\RNFF$     \\
-		%		& 						&  & Impots sur le revenu & $\DTF$     \\
-		%		& 						&  & Epargnes & $\SF$     \\
-		%		\bottomrule
-		%		%\hline
-		%		%\textbf{Total des ressources}
-		%		%	\hline
-		%		%	&  &  &  &  \\
-		%		\hline
-		%	\end{tabular}
-	%\end{table}
-	%
-	%\section{Le Reste du monde}
-	%
-	%\textbf{Ressources}] 
-	%\begin{itemize}
-	%	\item Dividende	      	$\lambda^R\sum_{j}^{} R_j\cdot\KD_j$
-	%\end{itemize}
-	%
-	%\begin{table}[H]
-	%	\begin{tabular}{lllll}
-		%		\toprule
-		%		\multicolumn{2}{c}{\textbf{Ressources}} && \multicolumn{2}{c}{\textbf{Emplois}}\\
-		%		\midrule
-		%		Dividende	      	& $\lambda^R\sum_{j}^{} R_j\cdot\KD_j$                                               	&  & Transferts vers les menages        & $\TRH^{R}_h$  \\
-		%		Compensation des employés	      	& $\left(1 -\sum_{h}\phi_h\right) \sum_{\tr}^{} W\cdot\LD_{j}$         	&  & Transferts vers l'adm. centrale    & $\TRG^{R}$  \\
-		%		Interet sur le dette exteerieur          	& $\INTF$          	                                            &  & Transferts vers les APU et ISBLSM  & $\TRNG^{R}$  \\
-		%		Importations de biens et services          	& $\IM_{\tr}$          	                                        &  & Transferts vers les entreprises    & $\TRF^{R}$  \\
-		%		                                            &                                                               &  & Exportations de biens et services  & $\EX_{\tr}$ \\
-		%		                                            &																&  & Balance courante                   & $\CAB$\\
-		%		\bottomrule
-		%		%\hline
-		%		%\textbf{Total des ressources}
-		%		%	\hline
-		%		%	&  &  &  &  \\
-		%		\hline
-		%	\end{tabular}
-	%\end{table}
-	%
-	
 	
 	\section{Spécification du modèle}
 	\subsection{Définition des ensembles}
 	\begin{itemize}
-		\item[$\bullet$] \textbf{Tous les produits}: $i \in \mathbf{I} = \left\{\agr, \food, \othind, \petr, \ser, \pub, \ontr\right\}$
+		\item[$\bullet$] \textbf{Tous les produits}: $i \in \mathbf{I} = \left\{\agr, \food, \othind, \petr, \ser, \pub, \othntr\right\}$
 		\begin{description}[labelwidth=\widthof{\bfseries OTHIND}]
 			\item[$\agr$]	Agriculture
 			\item[$\food$] 	Alimentaire, Boisson, Tabac
@@ -943,14 +590,14 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 			\item[$\othntr$] 	Autres services non marchands
 		\end{description}
 		
-		\item[$\bullet$] \textbf{Toutes les branches d'activités}:	$j\in \mathbf{J} = \left\{\agr, \food, \othind, \ser, \pub, \ontr\right\}\subset\mathbf{I}$		
+		\item[$\bullet$] \textbf{Toutes les branches d'activités}:	$j\in \mathbf{J} = \left\{\agr, \food, \othind, \ser, \pub, \othntr\right\}\subset\mathbf{I}$		
 		\begin{description}[labelwidth=\widthof{\bfseries OTHIND}]
 			\item[$\agr$]	Agriculture
 			\item[$\food$] 	Alimentaire, Boisson, Tabac
 			\item[$\othind$] Autres industries
 			\item[$\ser$] 	Service marchand
 			\item[$\pub$] 	Administration publique
-			\item[$\othntr$] 	Autres service publiques et services non marchands
+			\item[$\othntr$] 	Autres services non marchands
 		\end{description}
 		
 		\item[$\bullet$]  \textbf{Les produits marchands}:	$\tr\in\mathbf{TR} = \left\{\agr, \food, \othind, \petr, \ser \right\}\subset\mathbf{I}$
@@ -986,7 +633,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 			\item[$\ser$] 	Service marchand
 		\end{description}
 		
-		\item[$\bullet$]  \textbf{Les Services non-marchands}:	$\ntr\in\mathbf{NTR} = \left\{\pub, \ontr\right\}\subset\mathbf{J}$
+		\item[$\bullet$]  \textbf{Les Services non-marchands}:	$\ntr\in\mathbf{NTR} = \left\{\pub, \othntr\right\}\subset\mathbf{J}$
 		\begin{description}[labelwidth=\widthof{\bfseries OTHIND}]
 			\item[$\pub$] Administration publique
 			\item[$\othntr$] Autres services non marchands
@@ -1011,7 +658,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 			\item[$\firm$] Sociétés
 		\end{description}
 		
-		\item[$\bullet$]  \textbf{Les Agents publics}:	$\agpub\in\mathbf{AGPUB} = \left\{\gvt, \ngo, \right\}\subset\mathbf{AGD}$
+		\item[$\bullet$]  \textbf{Les Agents producteurs de services non marchands}:	$\agntr\in\mathbf{AGNTR} = \left\{\gvt, \ngo \right\}\subset\mathbf{AGD}$
 		\begin{description}[labelwidth=\widthof{\bfseries OTHIND}]
 			\item[$\gvt$] Administration centrale
 			\item[$\ngo$] Autres Administrations Publiques et ISBLSM
@@ -1032,24 +679,14 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 			\item[$\hur$] Ménages urbains
 			\item[$\hru$] Ménages ruraux
 		\end{description}
-		
-		
-	\end{itemize}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+\end{itemize}
 	
 	
 	\subsection{Liste des équations}
 	
 	\redparagraph{Bloc production}\hfill \textcolor{Fuchsia}{\textbf{78}}
 	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,ref=\textbf{eq\arabic*}]
+		
 		\item $\VA_j = v_j\cdot\XS_j$ \label{it:VAj} \hfill 6
 		
 		\item $\CI_j = \io_j\cdot\XS_j $ \hfill 6
@@ -1067,6 +704,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\item $\DI_{\tr,j} = \aij_{\tr,j}\cdot \CI_j$ \hfill 30
 		
 		\item $\DS_{\tr,\trj} = \theta_{\tr,\trj}\cdot \DX_{\trj}$ \hfill 20
+		
 	\end{enumerate}
 	
 	
@@ -1094,8 +732,8 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 	
 	
 	\redparagraph{Bloc Sociétés}\hfill \textcolor{Fuchsia}{\textbf{5}}
-	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume, ref=\textbf{eq\arabic*}]
-		
+	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume, ref=\textbf{eq\arabic*}]	
+			
 		\item $\YF = \YFK + \YFTR$ \hfill 1
 		
 		\item $\YFK = \left(1 - \lambda^R-\sum_{h}\lambda_h\right)\cdot\left(e\cdot R^R\cdot\KD^R + \sum_{\trj}^{} R_{\trj}\cdot\KD_{\trj}\right)$ \hfill 1
@@ -1104,14 +742,14 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item $\YDF = \YF  - \TDF - \TIMF -\TIF  $ \hfill 1
 		
-		\item $\SF = \YDF -  \NTXF  - \TRA_{\ngo,\firm} - \sum_{h}\TRA_{h,\firm}$ \hfill 1
-		
+		\item $\SF = \YDF -  \NTXF  - \TRA_{\ngo,\firm} - \sum_{h}\TRA_{h,\firm}$ \hfill 1	
+			
 	\end{enumerate}
 	
 	
 	\redparagraph{Bloc Administration centrale}\hfill \textcolor{Fuchsia}{\textbf{23}}
 	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume]
-		
+			
 		\item $\YG = \YGTX + \YGNTX + \YGTR$   \hfill 1 
 		
 		\item $\YGTX = \sum_{\tr}\TI_{\tr} + \TIF + \sum_{\tr}\TIM_{\tr} + \TIMF + \TDF + \sum_{h} \TDH_h $ \hfill 1
@@ -1120,7 +758,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item $\YGTR = e\cdot\TRA_{\gvt, \row} $ \hfill 1
 		
-		\item $\SG = \YG - \CG_{\pub}  - \sum_{\agngvt\neq\row} \TR_{\agngvt,\gvt} - e\cdot\TR_{\row,\gvt}$ \hfill 1
+		\item $\SG = \YG - \CTG  - \sum_{\agngvt\neq\row} \TRA_{\agngvt,\gvt} - e\cdot\TRA_{\row,\gvt}$ \hfill 1
 		
 		\item $\TDF = \tyf\cdot\YF$ \hfill 1
 		
@@ -1137,61 +775,65 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item $\TIM_{\tr} = \tm_{\tr} \cdot e \cdot \PWM_{\tr}\cdot\IM_{\tr}$ \hfill 5
 		
-		\item $\TIMF = \syfm\cdot\YF$  \label{it:TIM}\hfill 1		
+		\item $\TIMF = \syfm\cdot\YF$  \label{it:TIM}\hfill 1	
+			
 		\item $\NTXF = \ntyf \cdot\YDF$ \label{it:TRAGVTf} \hfill 2
 		
-		
-		
 		\item  $\NTXHH_{\gvt} = \sntx_{\gvt} \cdot \sum_{h}\NTXH_h$  \hfill 1
+		
 	\end{enumerate}
 	
 	
 	\redparagraph{Bloc Autres APU et ISBLSM }\hfill \textcolor{Fuchsia}{\textbf{4}}
-	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume,  ref=\textbf{eq\arabic*}]
-		
-		\item $\YNGO = \TR_{\ngo,\firm} + \TR_{\ngo,\gvt} + e\cdot\TR_{\ngo,\row} + \NTXHH_{\ngo} $ \hfill 1
+	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume,  ref=\textbf{eq\arabic*}]	
+			
+		\item $\YNGO = \TRA_{\ngo,\firm} + \TRA_{\ngo,\gvt} + e\cdot\TRA_{\ngo,\row} + \NTXHH_{\ngo} $ \hfill 1
 		
 		\item  $\NTXHH_{\ngo} = \sntx_{\ngo} \cdot \sum_{h}\NTXH_h$ \hfill 1
 		
-		\item $\SNGO = \YNGO - \sum_{h}\TR_{h,\ngo}  - \CG_{\othntr}$ \hfill 1	
+		\item $\SNGO = \YNGO - \sum_{h}\TRA_{h,\ngo}  - \CTNGO$ \hfill 1	
 		
-		\item $\CG_{\othntr} = \left(\dfrac{m^{\CG}}{1-m^{\CG}}\right)\cdot \CG_{\pub}$	\label{it:Gothntr}	\hfill 1		
-		
+		\item $\CTNGO = \left(\dfrac{m^{\CTNGO}}{1-m^{\CTNGO}}\right)\cdot \left(\CTG + \sum_{h}\CTH_h\right)$	\label{it:Gothntr}	\hfill 1	
+					
 	\end{enumerate}
 	
 	\redparagraph{Bloc Reste du Monde}\hfill \textcolor{Fuchsia}{\textbf{5}}
-	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume,  ref=\textbf{eq\arabic*}]
-		
-		\item $\YROW =  \YROWL + \YROWK +\sum_{\tr}^{} \PWM_{\tr}\cdot\IM_{tr} + \TR_{\row,\gvt}$ \hfill 1
+	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume,  ref=\textbf{eq\arabic*}]	
+			
+		\item $\YROW =  \YROWL + \YROWK +\sum_{\tr}^{} \PWM_{\tr}\cdot\IM_{tr} + \TRA_{\row,\gvt}$ \hfill 1
 		
 		\item $e\cdot\YROWL = \left(1 -\sum_{h}\phi_h\right)\cdot \left(e\cdot  W^R\cdot\LD^R + \sum_{j}^{} W\cdot\LD_{j}\right) $\hfill 1
 		
 		\item $e\cdot\YROWK = \lambda^R\cdot \left(e\cdot R^R\cdot\KD^R + \sum_{\trj}^{} R_{\trj}\cdot\KD_{\trj}\right) $\hfill 1
 		
-		\item $\SROW = \YROW - \sum_{\tr}^{} \PWE_{\tr}\cdot\EX_{\tr}  -  W^R\cdot\LD^R  -  R^R\cdot\KD^R  - \sum_{\agd}\TR_{\agd,\row}$\hfill 1	
+		\item $\SROW = \YROW - \sum_{\tr}^{} \PWE_{\tr}\cdot\EX_{\tr}  -  W^R\cdot\LD^R  -  R^R\cdot\KD^R  - \sum_{\agd}\TRA_{\agd,\row}$\hfill 1	
 		
-		\item $\CAB = -\SROW$ \hfill 1
+		\item $\CAB = -\SROW$ \hfill 1		
 		
 	\end{enumerate}
 	
 	\redparagraph{Bloc Transferts entre agents}\hfill \textcolor{Fuchsia}{\textbf{15}}
-	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume,  ref=\textbf{eq\arabic*}]
+	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume,  ref=\textbf{eq\arabic*}]	
+			
+		\item $\TRA_{\agd,\row} = \PIXCON^\eta\cdot\TRA_{\agd,\row}^{O}$ \hfill 5
 		
-		\item $\TR_{\agd,\row} = \PIXCON^\eta\cdot\TR_{\agd,\row}^{O}$ \hfill 5
-		
-		\item $\TR_{\agngvt,\gvt} = \PIXCON^\eta\cdot\TR_{\agngvt,\gvt}^{O}$ \hfill 5
+		\item $\TRA_{\agngvt,\gvt} = \PIXCON^\eta\cdot\TRA_{\agngvt,\gvt}^{O}$ \hfill 5
 		
 		
-		\item $\TR_{h,\firm} = \lambda^{\TR}_{h,\firm} \cdot\YDF$ \hfill 2		
+		\item $\TRA_{h,\firm} = \lambda^{\TRA}_{h,\firm} \cdot\YDF$ \hfill 2		
 		
-		\item $\TR_{h,\ngo} = \PIXCON^\eta\cdot\TR_{h,\ngo}^{O}$ \hfill 2
+		\item $\TRA_{h,\ngo} = \PIXCON^\eta\cdot\TRA_{h,\ngo}^{O}$ \hfill 2
 		
-		\item $\TR_{\ngo,\firm} = \lambda^{\TR}_{\ngo,\firm} \cdot\YDF$  \hfill 1
-		
+		\item $\TRA_{\ngo,\firm} = \lambda^{\TRA}_{\ngo,\firm} \cdot\YDF$  \hfill 1	
+			
 	\end{enumerate}
 	
-	\redparagraph{Bloc Demande}\hfill \textcolor{Fuchsia}{\textbf{30}}
+	\redparagraph{Bloc Demande}\hfill \textcolor{Fuchsia}{\textbf{32}}
 	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume,ref=\textbf{eq\arabic*}]
+				
+		\item $P_{\pub}\cdot \CG = \CTG$ \hfill 1
+		
+		\item $P_{\othntr}\cdot \CNGO = \CTNGO$ \hfill 1
 		
 		\item $\PC_{tr}\cdot\CH_{\tr,h}  = \gamma^{\CH}_{\tr,h} \cdot \CTH_h$   \label{it:CHtrh} \hfill  10
 		
@@ -1206,7 +848,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\item $\MRGCOM_{\bns} = \tmgc_{\bns} \cdot \left(\DD_{\bns} + \IM_{\bns}\right)$ \label{it:MGCOM}  \hfill 4
 		
 		\item $\MRGTRP_{\bns} = \tmgt_{\bns} \cdot \left( \DD_{\bns} + \IM_{\bns}\right)$  \label{it:MGTRP} \hfill 4
-		
+				
 	\end{enumerate}
 	
 	
@@ -1220,14 +862,11 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\item $\EX_{\petr} = \mu^{E}_{}\cdot Q_{\petr}$ \label{it:EXpetr}\hfill 1
 		
 		\item $Q_{\trj} = A_{\trj}^M \cdot \bigg[\beta_{\trj}^M\cdot\IM_{\trj}^{-\rho_{\trj}^M} + \left(1 - \beta_{\trj}^M\right)\cdot\DD_{\trj}^{-\rho_{\trj}^M}\bigg]^{-\frac{1}{^{\rho_{\trj}^M}}}$ \label{it:Q} \hfill 4 
-		
-		
-		
+				
 		\item  $\dfrac{\IM_{\trj}}{\DD_{\trj}} = \left[\left(\dfrac{\PD_{\trj}}{\PM_{\trj}}\right)\cdot\left(\dfrac{\beta_{\trj}^E}{1-\beta_{\trj}^E}\right)\right]^{\sigma_{\trj}^M}$, avec $\sigma^M_{\trj} = \dfrac{1}{\rho_{\trj}^M+1}$ \label{it:IM}  \hfill 4
 		
 		\item $\IM_{\petr} = Q_{\petr}$ \hfill 1
-		
-		
+				
 	\end{enumerate}
 	
 	\redparagraph{Bloc Prix}\hfill \textcolor{Fuchsia}{\textbf{49}} 
@@ -1270,9 +909,9 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item $ \PC_{\petr}\cdot Q_{\petr} = \PC_{\petr}\cdot\left(\sum_{h} \CH_{\petr,h} + \DIT_{\petr}  + \INV_{\petr} + \VSTK_{\petr}\right) + \PE_{\petr}\cdot\EX_{\petr}$  \label{it:QDpetr}\hfill 1
 		
+		\item $\XS_{\pub} = \CG$ \hfill 1
 		
-		
-		\item $P_{\ntr}\cdot \XS_{\ntr} = \CG_{\ntr}$ \hfill 2
+		\item $\XS_{\othntr} = \CNGO$ \hfill 1
 		
 		\item $\sum_{\trj}\DS_{\tr,\trj} = \DD_{\tr}$ \hfill 5
 		
@@ -1280,7 +919,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item $\KS_{\trj} = \KD_{\trj}$ \label{it:KS}\hfill 4
 		
-		\item $\IT  = \sum_{h}\SH_h + \SF + \SG + \SNG + e\cdot\SROW $  \label{it:IT}\hfill 1
+		\item $\IT  = \sum_{h}\SH_h + \SF + \SG + \SNGO + e\cdot\SROW $  \label{it:IT}\hfill 1
 		
 	\end{enumerate}
 	
@@ -1294,19 +933,17 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\item $ \PIB^{\mathit{IB}} =  \sum_{j} W\cdot\LD_{j} + \sum_{\trj} R_{\trj}\cdot\KD_{\trj} + \sum_{\tr} \TIM_{\tr} +\sum_{\tr} \TI_{\tr}$ \hfill 1 
 		
 		\item $\begin{aligned}[t]
-			\PIB^{\mathit{FD}} &=  \sum_{\tr}\sum_{h} \PC_{\tr}\cdot\CH_{\tr,h} + \sum_{\ntr} \CG_{\ntr} +  \sum_{\bns}\PC_{\bns}\cdot\left(\INV_{\bns} + \VSTK_{\bns}\right)  \\
+			\PIB^{\mathit{FD}} &=  \sum_{h} \CTH_{h} + \CTG + \CTNGO +  \sum_{\bns}\PC_{\bns}\cdot\left(\INV_{\bns} + \VSTK_{\bns}\right)  \\
 			&+ \PC_{\ser}\cdot\INV_{\ser} +   e\cdot\sum_{\tr}^{} \PWE_{\tr}\cdot\EX_{\tr} - e\cdot \sum_{\tr}^{} \PWM_{\tr}\cdot\IM_{\tr}
 		\end{aligned}$   \hfill 1
 		
 	\end{enumerate}
 	
 	
-	\redparagraph{Bloc Variables réels (calculées à partir des indices de prix)}\hfill \textcolor{Fuchsia}{\textbf{7}} 
+	\redparagraph{Bloc Variables réels (calculées à partir des indices de prix)}\hfill \textcolor{Fuchsia}{\textbf{5}} 
 	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume,  ref=\textbf{eq\arabic*}]
 		
 		\item $ \CTH_h^{\mathit{reel}} = \dfrac{\CTH_h}{\PIXCON}$ \hfill 2 
-		
-		\item $ \CG_{\ntr}^{\mathit{reel}} = \dfrac{\CG_{\ntr}}{P_{\ntr}}$ \hfill 2 
 		
 		\item $ \PIB^{\mathit{BP}_\mathit{reel}} = \dfrac{\PIB^{BP}}{\PIXPIB}$ \hfill 1 
 		
@@ -1314,9 +951,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item $ \FBCF^{\mathit{reel}} = \dfrac{\FBCF}{\PIXINV}$ \hfill 1 		
 		
-	\end{enumerate}
-	
-	
+	\end{enumerate}	
 	
 	
 	\redparagraph{Loi de Walras (marché des biens et services)}\hfill \textcolor{Fuchsia}{\textbf{1}} 
@@ -1331,7 +966,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 	\redparagraph{Bloc financier}\hfill \textcolor{Fuchsia}{\textbf{26}} 
 	\begin{enumerate}[itemsep=2pt,label=\textbf{eqfin\arabic*}.,  ref=\textbf{eqfin\arabic*}]
 		
-		\item $\TOTG = \CG_{\pub} + \sum_{\agngvt\neq\row} \TR_{\agngvt,\gvt} + e\cdot\TR_{\row,\gvt} + \INVG$\hfill 1
+		\item $\TOTG = \CTG  + \sum_{\agngvt\neq\row} \TRA_{\agngvt,\gvt} + e\cdot\TRA_{\row,\gvt} + \INVG$\hfill 1
 		
 		\item $\BRG = \INVG - \SG $\hfill 1
 		
@@ -1339,55 +974,58 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item $\INVG = \DINVG + e\cdot\FINVG $\hfill 1
 		
-		\item $\FINVG = \KTRG + \Delta\NFDG^{\textit{prj}} $\hfill 1
+		\item $\FINVG = \KTRAG + \Delta\NFDG^{\mathit{prj}} $\hfill 1
 		
-		\item $\Delta\NFDG = \Delta\NFDG^{\textit{prg}} + \Delta\NFDG^{\textit{prj}} -\AMORTG$\hfill 1
+		\item $\Delta\NFDG = \Delta\NFDG^{\mathit{prg}} + \Delta\NFDG^{\mathit{prj}} -\AMORTG$\hfill 1
 		
-		\item $\BRG = e\cdot\KTRG + e\cdot\Delta\NFDG + \Delta\DCG + \Delta\BG$ \hfill 1
+		\item $\BRG = e\cdot\KTRAG + e\cdot\Delta\NFDG + \Delta\DCG + \Delta\BG$ \hfill 1
 		
-		\item $\SP = \SF + \SNG + \sum_{h} \SH_h$ \hfill 1
+		\item $\SP = \SF + \SNGO + \sum_{h} \SH_h$ \hfill 1
 		
 		\item $\Delta\BG = \psi^{\BG}\cdot \SP$ \hfill 1
+		
 		\item $\MD = \frac{1}{\vel}\cdot \PIB^{\textit{MP}}$ \hfill 1
 		
-		\item 	$\MS = \MD$	\hfill 1
+		\item $\MS = \MD$	\hfill 1
 		
-		\item 	$\Delta\MS  = \ER\cdot \Delta \RES + \Delta\DCG + \Delta\DCP + \RES_{\textit{-1}}\cdot\Delta\ER$ \hfill 1	
+		\item $\Delta\MS  = \ER\cdot \Delta \RES + \Delta\DCG + \Delta\DCP + \RES_{-1}\cdot\Delta\ER$ \hfill 1	
 		
-		\item 	$\Delta\ER  = \ER -\ER_{\textit{-1}}$ \hfill 1				
+		\item $\Delta\ER  = \ER -\ER_{-1}$ \hfill 1				
 		
-		\item 	$\MD  = \MD_{\textit{-1}} + \Delta \MD$ \hfill 1				
+		\item $\MD  = \MD_{-1} + \Delta \MD$ \hfill 1				
 		
-		\item 	$\MS  = \MS_{\textit{-1}} + \Delta \MS$ \hfill 1	
+		\item $\MS  = \MS_{-1} + \Delta \MS$ \hfill 1	
 		
-		\item 	$\DCG  = \DCG_{\textit{-1}} + \Delta \DCG$ \hfill 1		
+		\item $\DCG  = \DCG_{-1} + \Delta \DCG$ \hfill 1		
 		
-		\item 	$\DCP  = \DCP_{\textit{-1}} + \Delta \DCP$ \hfill 1												
+		\item $\DCP  = \DCP_{-1} + \Delta \DCP$ \hfill 1												
 		
-		\item 	$\RES  = \RES_{\textit{-1}} + \Delta \RES$ \hfill 1	
+		\item $\RES  = \RES_{-1} + \Delta \RES$ \hfill 1	
 		
-		\item 	$\Delta \RES = \CAB + \KTRG + \OTHKTR + \FDI^{\textit{NET}} + \Delta \NFDG + \Delta \NFDP $ \hfill 1	
+		\item $\Delta \RES = \CAB + \KTRAG + \OTHKTRA + \FDI^{\textit{NET}} + \Delta \NFDG + \Delta \NFDP $ \hfill 1	
 		
-		\item 	$\FDI^{\textit{NET}} = \FDI^{\textit{IN}} - \FDI^{\textit{OUT}} $ \hfill 1							
+		\item $\FDI^{\textit{NET}} = \FDI^{\textit{IN}} - \FDI^{\textit{OUT}} $ \hfill 1							
 		
-		\item 	$\INVP  = \IT - \INVG$ \hfill 1		
+		\item $\INVP  = \IT - \INVG$ \hfill 1		
 		
-		\item 	$\Delta\DCP = \psi^{\DCP} \cdot \INVP$ \hfill 1	
+		\item $\Delta\DCP = \psi^{\DCP} \cdot \INVP$ \hfill 1	
 		
-		\item 	$\NFDG  = \NFDG_{\textit{-1}} + \Delta \NFDG$ \hfill 1		
+		\item $\NFDG  = \NFDG_{-1} + \Delta \NFDG$ \hfill 1		
 		
-		\item 	$\NDDG  = \NDDG_{\textit{-1}} + \Delta \DCG+ \Delta \BG$ \hfill 1							
+		\item $\NDDG  = \NDDG_{-1} + \Delta \DCG+ \Delta \BG$ \hfill 1							
 		
-		\item 	$\NFDG  = \psi^{\EX} \cdot \sum_{\tr}\PWE_{\tr}\cdot\EX_{\tr}$ \hfill 1		
+		\item $\NFDG  = \psi^{\EX} \cdot \sum_{\tr}\PWE_{\tr}\cdot\EX_{\tr}$ \hfill 1		
 		
-		\item 	$\DEBTG = \ER\cdot\NFDG + \NFDP$ \hfill 1			
+		\item $\DEBTG = \ER\cdot\NFDG + \NFDP$ \hfill 1	
+				
 	\end{enumerate}
 	
 	\redparagraph{Loi de Walras (marché financier)}\hfill \textcolor{Fuchsia}{\textbf{1}} 
 	\begin{enumerate}[itemsep=2pt,label=\textbf{eqfin\arabic*}.,resume,  ref=\textbf{eqfin\arabic*}]
+		
 		\item 	$ \begin{aligned}[t]
-			\LEONF & = \SP - \INVP + \Delta\DCP + e \cdot \left(\OTHKTR + \FDI^{\textit{NET}} + \Delta\NFDP\right)\\
-			& + \RES_{\textit{-1}} \cdot \Delta \ER + (\ER - e) \cdot \Delta\RES - \Delta\MD - \Delta\BG
+			\LEONF & = \SP - \INVP + \Delta\DCP + e \cdot \left(\OTHKTRA + \FDI^{\textit{NET}} + \Delta\NFDP\right)\\
+			& + \RES_{-1} \cdot \Delta \ER + (\ER - e) \cdot \Delta\RES - \Delta\MD - \Delta\BG
 		\end{aligned}$   \hfill 1
 		
 		\hfill \textcolor{Fuchsia}{$\overline{\textbf{Total (bloc financier): 27}}$}
@@ -1397,10 +1035,11 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 	
 	\subsection{Liste des variables}
 	\redparagraph{Variables en volume}\hfill \textcolor{Fuchsia}{\textbf{148}} 
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10pt]
-		\item[$\CG_{\ntr}^{\mathit{reel}}$] Consommation réelle finale de l'agent $\ntr$ \hfill 2
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.5pt]
+		\item[$\CG$] 			Consommation réelle finale de l'Administration centrale 		\hfill 1
 		\item[$\CH_{\tr,h}$]	Consommation du ménage $h$ en produit $\tr$ 					\hfill 10
 		\item[$\CI_j$]      	Consommation intermédiaire totale de la branche $j$ 			\hfill 6
+		\item[$\CNGO$] 			Consommation réelle finale des autres APU et des ISBLSM 		\hfill 1
 		\item[$\CTH_h^{\mathit{reel}}$]	Consommation réelle finale du ménage  $h$ 				\hfill 2
 		\item[$\DD_{\tr}$]		Demande de produit local $\tr$ 									\hfill 5
 		\item[$\DI_{\tr,j}$]	Consommation intermédiaire en produit $\tr$ par la branche $j$ 	\hfill 30
@@ -1428,7 +1067,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 	\end{description}
 	%		
 	\redparagraph{Prix}\hfill \textcolor{Fuchsia}{\textbf{74}} 
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10pt]
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.5pt]
 		\item[$e$]			Taux de change nominal 					\hfill 1
 		\item[$P_j$]		Prix au producteur de la branche $j$ 	\hfill 6
 		\item[$\PC_{\tr}$]	Prix du produit composite $\tr$ 		\hfill 5
@@ -1449,21 +1088,19 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\item[$R^R$]		Taux de rémunération du capital du Reste du monde (en devises) 		\hfill 1
 		\item[$W$]			Taux de salaire des travailleurs domestiques				\hfill 1
 		\item[$W^R$]		Taux de salaire des travailleurs du Reste du monde (en devises)		\hfill 1
-		
 	\end{description}
 	%		
 	\redparagraph{Variables nominales}\hfill \textcolor{Fuchsia}{\textbf{74}} 
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10pt]
-		
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.5pt]	
 		\item[$\CAB$]	Solde du compte courant (en devises)				\hfill 1
 		\item[$\CTH_h$]	Budget de consommation du ménage $h$ 	\hfill 2
+		\item[$\CTG$]	Budget de consommation finale de l'Administration centrale	\hfill 1
+		\item[$\CTNGO$]	Budget de consommation finale des autres APU et des ISBLSM	\hfill 1
 		\item[$\FBCF$]	Formation brute de capital fixe 		\hfill 1%4
-		\item[$\CG_{\ntr}$]	Budget de consommation finale de l'agent $\ntr$	\hfill 2
 		\item[$\IT$]	Investissement total 								\hfill 1
-		\item[$\NTXF$]   Recettes non fiscales provenant des Sociétés reçus par l'Administration Centrale \hfill 1
+		\item[$\NTXF$]   Recettes non fiscales provenant des Sociétés reçus par l'Administration centrale \hfill 1
 		\item[$\NTXH_h$]  Recettes non fiscales provenant du ménages $h$ \hfill 2
-		\item[$\NTXHH_{\agpub}$] Recettes non fiscales provenant des ménages reçus par l'agent public $\agpub$ \hfill 2
-		
+		\item[$\NTXHH_{\agntr}$] Recettes non fiscales provenant des ménages reçus par l'agent $\agntr$ \hfill 2
 		\item[$\PIB^{\mathit{BP}}$]	PIB nominal aux prix de base			\hfill 1
 		\item[$\PIB^{\mathit{FD}}$]	PIB nominal (approche demande finale)	\hfill 1
 		\item[$\PIB^{\mathit{IB}}$]	PIB nominal (approche revenus)			\hfill 1
@@ -1500,12 +1137,11 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\item[$\YNG$]	Revenu total des autres APU et des ISBLSM		\hfill 1
 		\item[$\YROW$]	Revenu total du Reste du monde	(en devises)				\hfill 1
 		\item[$\YROWK$]	Revenu du capital provenant du Reste du monde (en devises)	\hfill 1
-		\item[$\YROWL$]	Revenu du travail provenant du Reste du monde (en devises)	\hfill 1%6
-		
+		\item[$\YROWL$]	Revenu du travail provenant du Reste du monde (en devises)	\hfill 1%6		
 	\end{description}
 	
 	\redparagraph{Variables financières}\hfill \textcolor{Fuchsia}{\textbf{34}} 
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10pt]
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.5pt]
 		\item[$\AMORTG$]          Amortissement de la dette publique (en devises)	\hfill 1
 		\item[$\BRG$]             Besoin de financement du secteur publique	\hfill 1
 		\item[$\DCG$]             Crédits bancaires au secteur publique (Stock)	\hfill 1
@@ -1515,7 +1151,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\item[$\DINVG$]           Investissement public sur financement intérieur	\hfill 1
 		\item[$\Delta\BG$]            Emprunt de du secteur publique auprès du secteur privé	\hfill 1
 		\item[$\Delta\DCG$]           Variation des crédits bancaires au secteur publique	\hfill 1
-		\item[$\Delta\DCP$]          Variation des crédits bancaires au secteur prive	\hfill 1
+		\item[$\Delta\DCP$]          Variation des crédits bancaires au secteur privé	\hfill 1
 		\item[$\Delta\ER$]            Variation du taux de change de fin de période	\hfill 1
 		\item[$\Delta\MD$]      Variation de la demande de monnaie	\hfill 1
 		\item[$\Delta\MS$]            Variation de l'offre de monnaie	\hfill 1
@@ -1530,20 +1166,18 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\item[$\FDI^{\mathit{OUT}}$]         Sorties brutes d'IDE (Flux sortants; en devises)	\hfill 1
 		\item[$\FINVG$]           Investissement public sur financement extérieur (en devises)	\hfill 1
 		\item[$\INVG$]            Investissement public total (Dépenses en capital)	\hfill 1
-		\item[$\INVP$]            Investissement du secteur prive	\hfill 1
-		\item[$\KTRG$]            Transferts de capital reçus par le secteur publique (Dons en capital; en devises)	\hfill 1
+		\item[$\INVP$]            Investissement du secteur privé	\hfill 1
+		\item[$\KTRAG$]            Transferts de capital reçus par le secteur publique (Dons en capital; en devises)	\hfill 1
 		\item[$\MD$]              Demande de monnaie (Masse monétaire)	\hfill 1
 		\item[$\MD$]              Offre de monnaie	\hfill 1
 		\item[$\NDDG$]            (Stock de la) dette publique intérieure	\hfill 1
 		\item[$\NFDG$]            (Stock de la) dette publique extérieure (en devises)	\hfill 1
-		\item[$\OTHKTR$]          Transferts de capital reçus par le secteur prive (en devises)	\hfill 1
+		\item[$\OTHKTRA$]          Transferts de capital reçus par le secteur privé (en devises)	\hfill 1
 		\item[$\RES$]             Stock de réserves internationales (Avoirs extérieurs nets; en devises)	\hfill 1
-		\item[$\SP$]              Epargne du secteur prive	\hfill 1
+		\item[$\SP$]              Épargne du secteur privé	\hfill 1
 		\item[$\TOTG$]            Dépenses publiques totales	\hfill 1
 	\end{description}
-	
-	
-	
+		
 	%		
 	\redparagraph{Autres variables}\hfill \textcolor{Fuchsia}{\textbf{2}} 
 	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAA}]
@@ -1556,10 +1190,10 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 	%		
 	\redparagraph{Variables exogènes (fermeture)}\hfill \textcolor{Fuchsia}{\textbf{34}}\\
 	\textcolor{Fuchsia}{\textbf{Bloc réel}}\hfill \textcolor{Fuchsia}{\textbf{26}}
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10pt]	
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.5pt]	
 		\item[$\CAB$]			Solde du compte courant  (en devises)			\hfill 1
-		\item[$e$]				Taux de change nominal 				\hfill 1
-		\item[$\CG_{\pub}$]		Budget de consommation finale de l'Administration centrale	\hfill 1
+		\item[$e$]				Taux de change nominal (moyenne période)				\hfill 1
+		\item[$\CTG$]			Budget de consommation finale de l'Administration centrale	\hfill 1
 		\item[$\KD_{\trj}$]		Demande de capital de la branche $\trj$ 		\hfill 4
 		\item[$\KD^R$]			Demande de capital du Reste du monde 	\hfill 1
 		\item[$\LS$]			Offre totale de travail  	\hfill 1
@@ -1573,13 +1207,13 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 	\end{description}
 	
 	\noindent\textcolor{Fuchsia}{\textbf{Bloc financier}}\hfill \textcolor{Fuchsia}{\textbf{8}}
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10pt]	
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.5pt]	
 		\item[$\DINVG$]           Investissement public sur financement intérieur	\hfill 1
-		\item[$\KTRG$]            Transferts de capital reçus par le secteur publique (Dons en capital; en devises)	\hfill 1
+		\item[$\KTRAG$]            Transferts de capital reçus par le secteur publique (Dons en capital; en devises)	\hfill 1
 		\item[$\AMORTG$]          Amortissement de la dette publique extérieure (en devises)	\hfill 1
-		\item[$\OTHKTR$]          Transferts de capital reçus par le secteur prive (en devises)	\hfill 1
+		\item[$\OTHKTRA$]          Transferts de capital reçus par le secteur privé (en devises)	\hfill 1
 		\item[$\Delta\NFDG^{\mathit{prg}}$]      Financement extérieur net - Prêts programmes (en devises)	\hfill 1
-		\item[$\ER$]              Taux de change de fin de période	\hfill 1
+		\item[$\ER$]              Taux de change nominal (fin de période)	\hfill 1
 		\item[$\FDI^{\mathit{IN}}$]          Entrées brutes d'IDE (Flux entrants; en devises)	\hfill 1
 		\item[$\FDI^{\mathit{OUT}}$]         Sorties brutes d'IDE (Flux sortants; en devises)	\hfill 1
 		
@@ -1588,16 +1222,18 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 	
 	
 	\redparagraph{Données d'initialisation}
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10pt]    
-		\item[$\RES_0$] Stock de réserves internationales (Avoirs extérieurs nets; en devises, fin de l'année précédant la base)
-		\item[$\DCG_0$] Crédits bancaires au secteur public (Stock de fin d'année précédente)    
-		\item[$\DCP_0$] Crédits bancaires au secteur privé (Stock de fin d'année précédente)    
-		\item[$\MD_0$]  Masse monétaire (Stock de fin d'année précédente)
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.5pt]    
+		\item[$\RES_{\mathit{-1}}$] Stock de réserves internationales (Avoirs extérieurs nets; en devises, fin de l'année précédant la base)
+		\item[$\DCG_{-1}$] Crédits bancaires au secteur public (Stock de fin d'année précédente)    
+		\item[$\DCP_{-1}$] Crédits bancaires au secteur privé (Stock de fin d'année précédente)    
+		\item[$\MD_{-1}$]  Masse monétaire (Stock de fin d'année précédente)
+		\item[$\NDDG_{-1}$] Dette publique intérieure (Stock de fin d'année précédente) 
+		\item[$\NFDG_{-1}$] Dette publique extérieure (Stock de fin d'année précédente; en devises) 
 	\end{description}
 	
 	
 	\subsection{Liste des paramètres}
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAA},parsep=10pt]
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=12pt]
 		\item[$A_{\tr}$] Paramètre d'échelle (Cobb-Douglas - \textit{}fonction de production)
 		
 		\item[$A_{\trj}^E$] Paramètre d'échelle (CET -  fonction de production)
@@ -1624,13 +1260,13 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item[$\lambda^R$] Part du revenu du capital reçue par le Reste du monde	
 		
-		\item[$\lambda^{\TR}_{\ag,\agj}$] Part du transfert à l'agent $\ag$ dans le revenu de l'agent $\agj$
+		\item[$\lambda^{\TRA}_{\ag,\agj}$] Part du transfert à l'agent $\ag$ dans le revenu de l'agent $\agj$
 		
-		\item[$\mu^{\CG}$]   Part des autres APU et des ISBLSM dans la dépense de consommation finale publique totale
+		\item[$\mu^{\CTNGO}$]   Part des autres APU et des ISBLSM dans la dépense de consommation finale publique totale
 		
-		\item[$\mu^D$] Part de l'offre de produits pétroliers allouée a la demande domestique
+		\item[$\mu^D$] Part de l'offre de produits pétroliers allouée à la demande domestique
 		
-		\item[$\mu^E$] Part de l'offre de produits pétroliers allouée a la réexportation
+		\item[$\mu^E$] Part de l'offre de produits pétroliers allouée à la réexportation
 		
 		\item[$\ntyf$] Propension des Sociétés à verser des recettes non fiscales
 		
@@ -1644,11 +1280,11 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item[$\psi_h$] Propension moyenne à épargner du ménage $h$
 		
-		\item[$\psi^{\BG}$] Propension du secteur prive a souscrire aux titres publics
+		\item[$\psi^{\BG}$] Propension du secteur privé à souscrire aux titres publics
 		
-		\item[$\psi^{\DCP}$]          Ratio de financement de l'investissement prive par le credit bancaire
+		\item[$\psi^{\DCP}$] Ratio de financement de l'investissement privé par le crédit bancaire
 		
-		\item[$\psi^{\EX}$]             Ratio dette publique extérieure - exportations
+		\item[$\psi^{\EX}$]  Ratio dette publique extérieure - exportations
 		
 		\item[$\rho_{\trj}^E$] Paramètre d'élasticité (CET - fonction de production)
 		
@@ -1658,7 +1294,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item[$\sigma_{\trj}^M$] Élasticité de transformation (CES - produit composite)
 		
-		\item[$\sntx_{\agpub}$] Part des recettes non fiscales versées par les ménages et reçues par l'agent public $\agpub$
+		\item[$\sntx_{\agntr}$] Part des recettes non fiscales versées par les ménages et reçues par l'agent $\agntr$
 		
 		\item[$\syfi$] Part des autres impôts indirects sur le revenu des Sociétés 
 		
@@ -1680,19 +1316,19 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		
 		\item[$v_j$] Coefficient (Leontief - valeur ajoutée)
 		
-		
-	\end{description}
+		\item[$\vel$] Vitesse de circulation de la monnaie
+\end{description}
 	
 	
-	\subsection{Les éléments de la MCS}
+	\subsection{Les éléments de la MIDISAM}
 	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries OTH}]
 		\item[\sffamily F] Facteurs
-		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHIND}]
+		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHNTR}]
 			\item[\sffamily LD] Travail
 			\item[\sffamily KD] Capital
 		\end{description}
 		\item[\sffamily AG] Agents économiques
-		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHIND}]
+		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHNTR}]
 			\item[\sffamily HUR] Ménages urbains
 			\item[\sffamily HRU] Ménages ruraux
 			\item[\sffamily GVT] Administration centrale
@@ -1705,26 +1341,26 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 			\item[\sffamily ROW] Reste du monde
 		\end{description}
 		\item[\sffamily J] Branches d'activités
-		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHIND}]
+		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHNTR}]
 			\item[\sffamily AGR] Agriculture
 			\item[\sffamily FOOD] Alimentaire, Boisson, Tabac
 			\item[\sffamily OTHIND] Autres Industries
 			\item[\sffamily SER] Service marchand
-			\item[\sffamily ADM] Administration publique
-			\item[\sffamily OTHNTR] Autres services publics et autres services non marchands
+			\item[\sffamily PUB] Administration publique
+			\item[\sffamily OTHNTR] Autres services non marchands
 		\end{description}
 		\item[\sffamily I] Produits domestiques
-		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHIND}]
+		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHNTR}]
 			\item[\sffamily AGR] Agriculture
 			\item[\sffamily FOOD] Alimentaire, Boisson, Tabac
 			\item[\sffamily OTHIND] Autres Industries
 			\item[\sffamily PETR] Produits pétroliers
 			\item[\sffamily SER] Service marchand
-			\item[\sffamily ADM] Administration publique
-			\item[\sffamily OTHNTR] Autres services publics et autres services non marchands
+			\item[\sffamily PUB] Administration publique
+			\item[\sffamily OTHNTR] Autres services non marchands
 		\end{description}
 		\item[\sffamily X] Produits d'exportation
-		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHIND}]
+		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHNTR}]
 			\item[\sffamily AGR] Agriculture
 			\item[\sffamily FOOD] Alimentaire, Boisson, Tabac
 			\item[\sffamily OTHIND] Autres Industries
@@ -1732,18 +1368,39 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 			\item[\sffamily SER] Service marchand
 		\end{description}
 		\item[\sffamily M] Marges
-		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHIND}]
+		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHNTR}]
 			\item[\sffamily MC] Marges de commercialisation
 			\item[\sffamily MT] Marges de transport
 		\end{description}
 		\item[\sffamily OTH] Accumulation
-		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHIND}]
+		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHNTR}]
 			\item[\sffamily INV] Investissement
-			\item[\sffamily VSTK] Variation des stocks
+			\item[\sffamily VSTK] Variation de stocks
 			\item[\sffamily TOT] Total
 		\end{description}
 	\end{description}
 	
+	\subsection{Les éléments de la FSAM}
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries OTH}]
+		\item[\sffamily F] Financement
+		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHIND}]
+			\item[\sffamily DFIN] Domestique
+			\item[\sffamily FFIN] Extérieur
+			\item[\sffamily FFDI] Investissement Direct Étranger (IDE)
+			\item[\sffamily GFIN] Secteur public
+			\item[\sffamily PFIN] Secteur privé
+		\end{description}
+		\item[\sffamily K] Capitaux
+		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHIND}]
+			\item[\sffamily KGAIN] Gains en capital
+			\item[\sffamily KTRA] Transferts de capital
+		\end{description}
+		\item[\sffamily OTH] Accumulation
+		\begin{description}[labelindent=1cm,leftmargin=1cm,labelwidth=\widthof{\bfseries OTHIND}]
+			\item[\sffamily INV] Investissement
+			\item[\sffamily TOT] Total
+		\end{description}
+	\end{description}
 	
 	\subsection{Calibration du modèle}
 	\mbox{ }
@@ -1754,7 +1411,6 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\centering
 		\caption{Paramètres de production}
 		\label{tab:param_production}
-		\small
 		\begin{tabular}{@{}l c D{.}{.}{1.3}D{.}{.}{1.3}D{.}{.}{1.3}D{.}{.}{1.3}D{.}{.}{1.3}D{.}{.}{1.3}D{.}{.}{1.3}@{}}
 			\toprule
 			Désignation & Notation & \multicolumn{1}{c}{$\agr$} &  \multicolumn{1}{c}{$\food$} &  \multicolumn{1}{c}{$\othind$}  &  \multicolumn{1}{c}{$\petr$} &  \multicolumn{1}{c}{$\ser$} &  \multicolumn{1}{c}{$\pub$} & \multicolumn{1}{c@{}}{$\othntr$} \\
@@ -1786,7 +1442,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\Centering
 		\small
 		\noindent
-		\textbf{Source}: Calculés à partir de la MCS.
+		\textbf{Source}: Calculés à partir de la MIDISAM.
 		
 	\end{table}
 	
@@ -1799,7 +1455,6 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\centering
 		\caption{Paramètres du commerce extérieur}
 		\label{tab:param_commerce}
-		\small
 		\begin{tabular}{@{}l c D{.}{.}{1.3}D{.}{.}{1.3}D{.}{.}{1.3}D{.}{.}{1.3}@{}}
 			\toprule
 			Désignation	& Notation & \multicolumn{1}{c}{$\agr$} & \multicolumn{1}{c}{$\food$} & \multicolumn{1}{c}{$\othind$} & \multicolumn{1}{c}{$\ser$} \\
@@ -1819,7 +1474,7 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\Centering
 		\small
 		\noindent
-		\textbf{Source}: Calculés à partir de la MCS; [*] \cite{Devarajanetal2023}.
+		\textbf{Source}: Calculés à partir de la MIDISAM; [*] \cite{Devarajanetal2023}.
 		
 	\end{table}
 	
@@ -1832,7 +1487,6 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\centering
 		\caption{Fiscalité. marges et structure de la demande finale}
 		\label{tab:param_fiscalite_demande}
-		\small
 		\begin{tabular}{@{}l c D{.}{.}{1.3}D{.}{.}{1.3}D{.}{.}{1.3}D{.}{.}{1.3}D{.}{.}{1.3}@{}}
 			\toprule
 			Désignation & Notation & \multicolumn{1}{c}{$\agr$} & \multicolumn{1}{c}{$\food$} & \multicolumn{1}{c}{$\othind$} & \multicolumn{1}{c}{$\petr$} & \multicolumn{1}{c}{$\ser$} \\
@@ -1854,15 +1508,13 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\Centering
 		\small
 		\noindent
-		\textbf{Source}: Calculés à partir de la MCS.
-		
+		\textbf{Source}: Calculés à partir de la MIDISAM.
 	\end{table}
 	
 	
 	
 	\begin{table}[!htbp]
 		\centering
-		\small
 		\caption{Paramètres socio-économiques}
 		\label{tab:param_socio_transferts}
 		\begin{tabular}{@{} l c D{.}{.}{1.3} D{.}{.}{1.3} D{.}{.}{1.3} D{.}{.}{1.3} @{}}
@@ -1874,28 +1526,27 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 			\quad Part du revenu du capital & $\lambda_h / \lambda^R$ & 0.038 & 0.251 & \multicolumn{1}{c}{---} & 0.057 \\[1.5ex]
 			
 			\multicolumn{6}{@{}l}{\textit{B. Fiscalité directe et prélèvements}} \\[0.5ex]
-			\quad Taux de taxe directe & $\tyh_h / \tyf$ & 0.023 & 0.008 & 0.035 & \multicolumn{1}{c}{---} \\
-			\quad Propension à verser des recettes non fiscales & $\ntyh_h / \ntyf$ & 0.011 & 0.011 & 0.005 & \multicolumn{1}{c}{---} \\
-			\quad Taux des autres taxes sur les biens et services & $\syfi$ & \multicolumn{1}{c}{---} & \multicolumn{1}{c}{---} & 0.008 & \multicolumn{1}{c}{---} \\
+			\quad Taux de taxe directe & $\tyh_h / \tyf$ & 0.023 & 0.008 & 0.044 & \multicolumn{1}{c}{---} \\
+			\quad Propension à verser des recettes non fiscales & $\ntyh_h / \ntyf$ & 0.011 & 0.011 & 0.006 & \multicolumn{1}{c}{---} \\
+			\quad Taux des autres taxes sur les biens et services & $\syfi$ & \multicolumn{1}{c}{---} & \multicolumn{1}{c}{---} & 0.007 & \multicolumn{1}{c}{---} \\
 			\quad Taux des autres droits de douane & $\syfm$ & \multicolumn{1}{c}{---} & \multicolumn{1}{c}{---} & 0.027 & \multicolumn{1}{c}{---} \\[1.5ex]
 			
 			\multicolumn{6}{@{}l}{\textit{D. Comportement d'épargne}} \\[0.5ex]
-			\quad Propension à épargner & $\psi_h$ & 0.187 & 0.176 & \multicolumn{1}{c}{---} & \multicolumn{1}{c}{---} \\
+			\quad Propension à épargner & $\psi_h$ & 0.185 & 0.174 & \multicolumn{1}{c}{---} & \multicolumn{1}{c}{---} \\
 			\bottomrule
 		\end{tabular}
-		
-		
+				
 		\smallskip
 		\Centering
 		\small
 		\noindent
-		\textbf{Source}: Calculés à partir de la MCS.
+		\textbf{Source}: Calculés à partir de la MIDISAM.
 	\end{table}
 	
 	
-	\begin{table}[!htbp]
+	\begin{table}[H]
+		\renewcommand{\arraystretch}{.9}
 		\centering
-		\small
 		\caption{Matrice des paramètres et valeurs initiales des transferts}
 		\label{tab:matrice_transferts}
 		\begin{tabular}{@{} l c D{.}{.}{4.3} D{.}{.}{4.3} D{.}{.}{4.3} D{.}{.}{4.3} @{}}
@@ -1904,18 +1555,18 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 			\cmidrule(lr){3-6}
 			Bénéficiaires & Notation & \multicolumn{1}{c}{$\firm$} & \multicolumn{1}{c}{$\gvt$} & \multicolumn{1}{c}{$\ngo$} & \multicolumn{1}{c}{$\row$} \\
 			\midrule
-			\multicolumn{6}{@{}l}{\textit{A. Propensions à partir du revenu disponible}} \\[1.5ex]
-			\quad Ménages urbains ($\hur$)       & $\lambda^{\TRA}_{\hur, \firm}$  & 0.039 & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} \\[1.5ex]
-			\quad Ménages ruraux ($\hru$)        & $\lambda^{\TRA}_{\hru, \firm}$  & 0.663 & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} \\[1.5ex]
-			\quad Autres APU et ISBLSM ($\ngo$)  & $\lambda^{\TRA}_{\ngo, \firm}$  & 0.221 & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} \\[1.5ex]
+			\multicolumn{6}{@{}l}{\textit{A. Propensions à partir du revenu disponible}} \\[1.ex]
+			\quad Ménages urbains ($\hur$)       & $\lambda^{\TRA}_{\hur, \firm}$  & 0.039 & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} \\[1.ex]
+			\quad Ménages ruraux ($\hru$)        & $\lambda^{\TRA}_{\hru, \firm}$  & 0.662 & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} \\[1.ex]
+			\quad Autres APU et ISBLSM ($\ngo$)  & $\lambda^{\TRA}_{\ngo, \firm}$  & 0.220 & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} \\[1.ex]
 			
-			\multicolumn{6}{@{}l}{\textit{B. Transferts forfaitaires initiaux (en milliards d'Ariary, année de base)}} \\[1.5ex]
-			\quad Ménages urbains ($\hur$)       & $\TRA_{\hur, \ag}^O$ & \multicolumn{1}{c}{$-$} &  257.537 & 22.968 &  524.466 \\[1.5ex]
-			\quad Ménages ruraux ($\hru$)        & $\TRA_{\hru, \ag}^O$ & \multicolumn{1}{c}{$-$} &  354.500 & 32.507 &  742.293 \\[1.5ex]
-			\quad Sociétés ($\firm$)             & $\TRA_{\firm, \ag}^O$ & \multicolumn{1}{c}{$-$} & 1292.532 & \multicolumn{1}{c}{$-$} & 1189.735 \\[1.5ex]
-			\quad Administration centrale ($\gvt$)           & $\TRA_{\gvt, \ag}^O$ & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} &  365.104 \\[1.5ex]
-			\quad Autres APU et ISBLSM ($\ngo$)  & $\TRA_{\ngo, \ag}^O$ & \multicolumn{1}{c}{$-$} &  754.849 & \multicolumn{1}{c}{$-$} &   66.891 \\[1.5ex]
-			\quad Reste du monde ($\row$)        & $\TRA_{\row, \ag}^O$ & \multicolumn{1}{c}{$-$} &  106.819 & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} \\
+			\multicolumn{6}{@{}l}{\textit{B. Transferts forfaitaires initiaux (Année 2019, en milliards d'Ariary)}} \\[1.ex]
+			\quad Ménages urbains ($\hur$)       & $\TRA_{\hur, \ag}^O$ & \multicolumn{1}{c}{$-$} &  257.537 & 22.968 &  524.466 \\[1.ex]
+			\quad Ménages ruraux ($\hru$)        & $\TRA_{\hru, \ag}^O$ & \multicolumn{1}{c}{$-$} &  364.500 & 32.507 &  742.293 \\[1.ex]
+			\quad Sociétés ($\firm$)             & $\TRA_{\firm, \ag}^O$ & \multicolumn{1}{c}{$-$} & 1535.923 & \multicolumn{1}{c}{$-$} & 1189.735 \\[1.ex]
+			\quad Administration centrale ($\gvt$)           & $\TRA_{\gvt, \ag}^O$ & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} &  365.104 \\[1.ex]
+			\quad Autres APU et ISBLSM ($\ngo$)  & $\TRA_{\ngo, \ag}^O$ & \multicolumn{1}{c}{$-$} &  754.849 & \multicolumn{1}{c}{$-$} &   66.891 \\[1.ex]
+			\quad Reste du monde ($\row$)        & $e\cdot\TRA_{\row, \ag}^O$ & \multicolumn{1}{c}{$-$} &  106.819 & \multicolumn{1}{c}{$-$} & \multicolumn{1}{c}{$-$} \\
 			\bottomrule
 		\end{tabular}
 		
@@ -1923,25 +1574,23 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\Centering
 		\small
 		\noindent
-		\textbf{Source}: Calculés à partir de la MCS.
-		
+		\textbf{Source}: Calculés à partir de la MIDISAM.		
 	\end{table}
 	
-	\begin{table}[!htbp]
+	\begin{table}[H]
+		\renewcommand{\arraystretch}{.9}
 		\centering
-		\small
-		\caption{Autres paramètres}
-		\label{tab:parametres_simplifie}
+		\caption{Autres paramètres du bloc réel}
 		\begin{tabular}{@{} l c D{.}{.}{3.3} @{}}
 			\toprule
 			Désignation & Notation & \multicolumn{1}{c}{Valeur} \\
 			\midrule
 			Élasticité d'indexation des transferts[*]  & $\eta$ & 1.000\\[0.5ex]
-			Part des autres APU et ISBLSM dans la dép.~de cons.~finale publique & $m_G$ & 0.717 \\[1.5ex]
+			Part des autres APU et ISBLSM dans la dép.~de cons.~finale publique & $\mu^{\CTNGO}$ & 0.130 \\[1.ex]
 			
 			\multicolumn{3}{@{}l}{\textit{Paramètres du secteur des produits pétroliers :}} \\[0.5ex]
 			\quad Part de l'offre allouée à la demande domestique & $\mu^D$ & 0.639 \\
-			\quad Part de l'offre allouée à la réexportation & $\mu^E$ & 0.119 \\[1.5ex]
+			\quad Part de l'offre allouée à la réexportation & $\mu^E$ & 0.119 \\[1.ex]
 			
 			\multicolumn{3}{@{}l}{\textit{Clé de répartition des ressources non fiscales des ménages :}} \\[0.5ex]
 			\quad Part captée par l'Administration centrale & $\sntx_{\gvt}$ & 0.054 \\
@@ -1955,21 +1604,62 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\Centering
 		\small
 		\noindent
-		\textbf{Source}: Calculés à partir de la MCS. [*] \cite{Decaluweetal2013}
-		
+		\textbf{Source}: Calculés à partir de la MIDISAM. [*] \cite{Decaluweetal2013}		
 	\end{table}
-	%	\section{MCS}
-	%	
-	%
-	%	
 	
-	%	
-	%	\pagestyle{plain} % Réactive les numéros de page standard en bas au centre
-	%	\sffamily
-	%	%	\includegraphics{Exter_MadaJ_cropped}
-	%	%\incgraph[a3paper, landscape,	overlay page number at bottom][width=0.2\paperheight]{MIDISAM}
+		\begin{table}[H]
+		\renewcommand{\arraystretch}{.8}
+		\centering
+		\caption{Paramètres du bloc financier}
+		\label{tab:parametres_simplifie}
+		\begin{tabular}{@{} l l D{.}{.}{3.3} @{}}
+			\toprule
+			Désignation & Notation & \multicolumn{1}{c}{Valeur} \\
+			\midrule
+			Vitesse de circulation de la monnaie  & $\vel$ & 4.031\\[0.5ex]
+			
+			Propension du secteur privé à souscrire aux titres publics & \multicolumn{1}{l}{$\psi^{\BG}$} & 0.130\\[0.5ex]
+			
+			Ratio de financement de l'investissement privé par le crédit bancaire & \multicolumn{1}{l}{$\psi^{\DCG}$} & 0.135\\[0.5ex]
+			
+			Ratio dette publique extérieure - exportations & \multicolumn{1}{l}{$\psi^{\EX}$} & 0.809 \\[0.5ex]
+			\bottomrule
+		\end{tabular}
+		
+		
+		\smallskip
+		\Centering
+		\small
+		\noindent
+		\textbf{Source}: Calculés à partir de la MIDISAM et de la FSAM.	
+	\end{table}
 	
-	\newpage
+	
+	\begin{table}[H]
+		\renewcommand{\arraystretch}{.85}
+		\centering
+		\caption{Valeurs des stocks et paramètres d'initialisation. Année de base: 2019. En Milliards d'Ariary.}
+		\begin{tabular}{@{}llr@{}}
+			\toprule
+			Désignation  &  Notation  &  Valeur  \\
+			\midrule
+			Tirage sur prêts projets  						&  $\Delta \NFDG^{\mathit{prg}}$  	&			5.358  \\
+			Stock de la masse monétaire  					&  $\MD$   							&       12659.329  \\
+			Stock des réserves internationales de devises  	&  $\RES$  							&        4614.206  \\
+			Stock de la dette publique extérieure  			&  $\NFDG$  						&       11749.427  \\
+			Stock de la dette publique intérieure 	 		&  $\NDDG$  						&      	 3656.537  \\
+			Stock du crédit bancaire au secteur public  	&  $\DCG$  							&        2074.187  \\
+			Stock du crédit bancaire au secteur privé   	&  $\DCP$  							&        5970.937  \\
+			\bottomrule
+		\end{tabular}%
+		
+		\smallskip	
+		\Centering
+		\small
+		\noindent
+		\textbf{Source}: Cadrage macroéconomique 2019 (\textit{Ministère de l'Économie et des Finances})
+	\end{table}%
+	
 	\begin{thebibliography}{99}	
 		\setlength{\itemsep}{0.25cm}
 		\bibitem[Decaluwé et al., 2001]{Decaluweetal2001}
@@ -1999,20 +1689,36 @@ où $\psi^{\EX}$ représente le ratio d'endettement extérieur rapporté aux exp
 		\bibitem[Ramaharo, 2022]{Ramaharo2022} Franck Ramaharo (2022), ``\href{https://mpra.ub.uni-muenchen.de/id/eprint/115226}{The 2019 Merged model for Madagascar}'', MPRA Paper \textbf{115226}, University Library of Munich, Germany. 
 	\end{thebibliography}	
 	
+	\clearpage
+	\KOMAoptions{paper=A4, paper=landscape, DIV=last} % Switch to A3 Landscape
+	\newgeometry{
+		top=1.5cm,       % Marge haute
+		bottom=3.25cm,    % Marge basse
+		left=3cm,      % Marge gauche
+		right=3cm      % Marge droite
+		%						scale=.825
+	}
+
+	\input{tables/MACROSAM_FSAM_2019}
 	
-	%		\clearpage
-	%		\KOMAoptions{paper=A2, paper=portrait, DIV=last} % Switch to A3 Landscape
-	%		\newgeometry{
-		%				%		top=2cm,       % Marge haute
-		%				%		bottom=4cm,    % Marge basse
-		%				%		left=2.5cm,      % Marge gauche
-		%				%		right=3cm      % Marge droite
-		%				scale=.825
-		%			}
-	%		
-	%		\input{MCS-2019}
-	%		
-	%		\clearpage
-	%		\KOMAoptions{paper=A4, paper=portrait, DIV=last} % Switch back to A4
-	%		\restoregeometry % Restore previous margins
+	\clearpage
+	\KOMAoptions{paper=A4, paper=portrait, DIV=last} % Switch back to A4
+	\restoregeometry % Restore previous margins	
+	
+	
+	\clearpage
+	\KOMAoptions{paper=A2, paper=portrait, DIV=last} % Switch to A3 Landscape
+	\newgeometry{
+		%		top=2cm,       % Marge haute
+		%		bottom=4cm,    % Marge basse
+		%		left=2.5cm,      % Marge gauche
+		%		right=3cm      % Marge droite
+		scale=.825
+	}
+	
+	\input{tables/MIDISAM2019}
+	
+	\clearpage
+	\KOMAoptions{paper=A4, paper=portrait, DIV=last} % Switch back to A4
+	\restoregeometry % Restore previous margins
 \end{document}

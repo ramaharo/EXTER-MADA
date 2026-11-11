@@ -1,0 +1,268 @@
+\begin{table}[!h]
+	\renewcommand{\arraystretch}{1.2}
+	\centering
+	\caption{Définition des flux de transactions dans la version agrégé de la Matrice de Comptabilité Sociale (MACROSAM) de Madagascar.}
+	\makebox[0pt]{\resizebox{1.2\linewidth}{!}{%
+			\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+				\cline{2-13}    \multicolumn{1}{r|}{} & \textbf{\sffamily1} & \textbf{\sffamily2} & \textbf{\sffamily3} & \textbf{\sffamily4} & \textbf{\sffamily5} & \textbf{\sffamily6} & \textbf{\sffamily7} & \textbf{\sffamily8} & \textbf{\sffamily9} & \textbf{\sffamily10} & \textbf{\sffamily11} & \textbf{\sffamily12} \\
+				\hline
+				\sffamily\textbf{1} &    &    &    &    &    & $\begin{matrix}
+					e\cdot W^R\cdot \LD^R\\[-1.5ex]
+					+\\[-1.5ex]
+					e\cdot R^R\cdot \KD^R
+				\end{matrix}$ & $\sum_{j}\PVA_j\cdot\VA_j$ &    &    &    &    & $\begin{matrix}
+					\PIB^{\mathit{BP}}\\[-1.5ex]
+					+\\[-1.5ex]
+					e\cdot W^R\cdot \LD^R\\[-1.5ex]
+					+\\[-1.5ex]
+					e\cdot R^R\cdot \KD^R
+				\end{matrix}$ \\
+				\hline
+				\textbf{2} & $\begin{matrix}
+					\sum_{h}\YHL_h\\[-1.5ex]
+					+\\[-1.5ex]
+					\sum_{h}\YHK_h
+				\end{matrix}$ &    & $\begin{matrix}
+					\sum_{h}\TRA_{h,\gvt}\\[-1.5ex]
+					+\\[-1.5ex]
+					\sum_{h}\TRA_{h,\ngo}
+				\end{matrix}$ & $\sum_{h}\TRA_{h,\firm}$ &    & $e\cdot\sum_{h}\TRA_{h,\row}$ &    &    &    &    &    & $\sum_{h}\YH_h$ \\
+				\hline
+				\sffamily\textbf{3} &    &  &$\TRA_{\ngo,\gvt}$  & $\TIMF+\TIF$ & $\begin{matrix}
+					\YGTX\\[-1.5ex]
+					+\\[-1.5ex]
+					\YGNTX\\[-1.5ex]
+					+\\[-1.5ex]
+					\NTXHH_{\ngo}
+				\end{matrix}$ & $e\cdot\sum_{\ntr}\TRA_{\agntr,\row}$ &    &    &    &    &    & $\YG+\YNGO$ \\
+				\hline
+				\sffamily\textbf{4} & $\YFK$ &    & $\TRA_{\firm,\gvt}$ &    &    & $e\cdot\TRA_{\firm,\row}$ &    &    &    &    &    & $\YF$ \\
+				\hline
+				\sffamily\textbf{5} &    & $\sum_{h}\NTXH_h$ &    & $\NTXF$ &    &    &    & $\sum_{\tr}$$\left(\TI_{\tr}+\TIM_{\tr}\right)$ &    &    &    & $\begin{matrix}
+					\YGTX\\[-1.5ex]
+					+\\[-1.5ex]
+					\YGNTX\\[-1.5ex]
+					+\\[-1.5ex]
+					\NTXHH_{\ngo}
+				\end{matrix}$ \\
+				\hline
+				\sffamily\textbf{6} & $\begin{matrix}
+					e\cdot\YROWK\\[-1.5ex]
+					+\\[-1.5ex]
+					e\cdot\YROWL
+				\end{matrix}$ &    & $e\cdot\TRA_{\row,\gvt}$ &    &    &    &    & $e\cdot\sum_{\tr}\PWM_{\tr}\cdot\IM_{\tr}$ &    &    &    & $e\cdot\YROW$ \\
+				\hline
+				\sffamily\textbf{7} &    &    &    &    &    &    &    & $\sum_{\tr}\PD_{\tr}\cdot\DD_{\tr}$ & $\sum_{\trj}\PE_{\trj}\cdot\EX_{\trj}$ &    &    & $\sum_{\trj}P_{\trj}\cdot\XS_{\trj}$ \\
+				\hline
+				\sffamily\textbf{8} &    & $\sum_{h}\CTH_h$ & $\begin{matrix}
+					\CTG\\[-1.5ex]
+					+\\[-1.5ex]
+					\CTNGO
+				\end{matrix}$ &    &    &    & $\sum_{j}\PCI_j\cdot\CI_j$ &    & $\PE_{\petr}\cdot\EX_{\petr}$ & $\begin{matrix}
+					\sum_{\bns}\MRGCOM_{\bns}\\[-1.5ex]
+					+\\[-1.5ex]
+					\sum_{\bns}\MRGTRP_{\bns}
+				\end{matrix}$ & $\begin{matrix}
+					\FBCF \\[-1.5ex]
+					+\\[-1.5ex]
+					\sum_{\bns}\PC_{\bns}\cdot\VSTK_{\bns}
+				\end{matrix}$ & $\sum_{\tr}\PC_{\tr}\cdot Q_{\tr}$ \\
+				\hline
+				\sffamily\textbf{9} &    &    &    &    &    & $e\cdot\sum_{\tr}\PWE_{\tr}\cdot\EX_{\tr}$&    &    &    &    &    & $\sum_{\tr}\PE_{\tr}\cdot\EX_{\tr}$ \\
+				\hline
+				\textbf{10} &    &    &    &    &    &    &    & $\begin{matrix}
+					\sum_{\bns}\MRGCOM_{\bns}\\[-1.5ex]
+					+\\[-1.5ex]
+					\sum_{\bns}\MRGTRP_{\bns}
+				\end{matrix}$ &    &    &    & $\begin{matrix}
+					\sum_{\bns}\MRGCOM_{\bns}\\[-1.5ex]
+					+\\[-1.5ex]
+					\sum_{\bns}\MRGTRP_{\bns}
+				\end{matrix}$ \\
+				\hline
+				\sffamily\textbf{11} &    & $\sum_{h}\SH_h$ & $\SG+\SNGO$ & $\SF$ &    & $e\cdot\SROW$ &    &    &    &    &$\sum_{\bns}\PC_{\bns}\cdot\VSTK_{\bns}$  & $\IT$ \\
+				\hline
+				\sffamily\textbf{12} & $\begin{matrix}
+					\PIB^{\mathit{BP}}\\[-1.5ex]
+					+\\[-1.5ex]
+					e\cdot W^R\cdot \LD^R\\[-1.5ex]
+					+\\[-1.5ex]
+					e\cdot R^R\cdot \KD^R
+				\end{matrix}$ & $\sum_{h}\YH_h$ & $\YG+\YNGO$ & $\YF$ & $\begin{matrix}
+					\YGTX\\[-1.5ex]
+					+\\[-1.5ex]
+					\YGNTX\\[-1.5ex]
+					+\\[-1.5ex]
+					\NTXHH_{\ngo}
+				\end{matrix}$ & $e\cdot\YROW$ & $\sum_{j}P_j\cdot\XS_j$ & $\sum_{\tr}\PC_{\tr}\cdot Q_{\tr}$ & $\sum_{\tr}\PE_{\tr}\cdot\EX_{\tr}$ & $\begin{matrix}
+					\sum_{\bns}\MRGCOM_{\bns}\\[-1.5ex]
+					+\\[-1.5ex]
+					\sum_{\bns}\MRGTRP_{\bns}
+				\end{matrix}$ & $\IT$ & \multicolumn{1}{c}{} \\
+				\cline{1-12}
+			\end{tabular}%
+	}}
+	\begin{multicols}{4}
+		\begin{enumerate}[font=\bfseries\sffamily]\sffamily\small
+			\item \textbf{Facteurs}
+			\item \textbf{Ménages}
+			\item \textbf{Administration\\ publique et ISBLSM}
+			\item \textbf{Sociétés}
+			\item \textbf{Prélèvements fiscaux et non fiscaux}
+			\item \textbf{Reste du monde}
+			\item \textbf{Activités}
+			\item \textbf{Produits domestiques}
+			\item \textbf{Produits d'exportation}
+			\item \textbf{Marges}
+			\item \textbf{Accumulation}
+			\item \textbf{Total}
+		\end{enumerate}
+	\end{multicols}
+	\label{tab:MACROSAMFORMULA}%
+\end{table}%
+
+\newpage
+
+\begin{table}[!h]
+	\renewcommand{\arraystretch}{1.5}
+	\centering
+	\caption{Définition des flux de capitaux et financiers dans la Matrice de Comptabilité Sociale Financière (FSAM) de Madagascar.}
+	\makebox[0pt]{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+			\cline{3-11}
+			\multicolumn{2}{r|}{}&\sffamily \textbf{F}  &\sffamily \textbf{F}  & \textbf{F}  &\sffamily \textbf{F}  &\sffamily \textbf{F}  &\sffamily \textbf{K} &\sffamily \textbf{K} &\sffamily \textbf{OTH}&\sffamily \textbf{OTH}\\
+			\cline{3-11}
+			\multicolumn{2}{r|}{}&\sffamily \textbf{DFIN}  &\sffamily \textbf{FFIN}  & \textbf{FFDI}  &\sffamily \textbf{GFIN}  &\sffamily \textbf{PFIN}  &\sffamily \textbf{KGAIN} &\sffamily \textbf{KTRA} &\sffamily \textbf{INV}&\sffamily \textbf{TOT}\\
+			\hline
+			\sffamily \textbf{F} &\sffamily\textbf{DFIN}  &       &       &       &       & $\Delta\MD$ &       &      & & \sffamily \textbf{(i)} \\
+			\hline
+			\sffamily \textbf{F} &\sffamily\textbf{FFIN}  & $\ER\cdot\Delta\RES$ &       &       & $e\cdot\AMORTG$ &       & $\left(e - \ER\right)\cdot\Delta\RES$   && $e\cdot\SROW$  & \sffamily \textbf{(ii)} \\
+			\hline
+			\sffamily \textbf{F} &\sffamily\textbf{FFDI}  &       & $e\cdot\FDI^{\mathit{NET}}$ &       &       & $e\cdot\FDI^{\mathit{OUT}}$ &       &        && \sffamily \textbf{(iii)} \\
+			\hline
+			\sffamily \textbf{F} &\sffamily\textbf{GFIN}  & $\Delta\DCG$ & $e\cdot\Delta\NFDG^{\mathit{prg}}+e\cdot\Delta\NFDG^{\mathit{prj}}$   &       &       & $\Delta\BG$  && $e\cdot\KTRAG  $ & $\SG$ & \sffamily \textbf{(iv)} \\
+			\hline
+			\sffamily \textbf{F} &\sffamily\textbf{PFIN}  & $\Delta\DCP$ & $e\cdot\Delta\NFDP$ & $e\cdot\FDI^{\mathit{IN}}$ &       &       & $
+			\RES_{\textit{-1}}\cdot\Delta \ER  +  (\ER - e)\cdot\Delta\RES $ &$ e\cdot\OTHKTRA$ & $\SP
+			$  & \sffamily \textbf{(v)} \\
+			\hline
+			\sffamily \textbf{K} &\sffamily\textbf{KGAIN} & $\RES_{\textit{-1}}\cdot\Delta\ER$ & &       &       &       &       &        && \sffamily \textbf{(vi)} \\
+			\hline
+			\sffamily \textbf{K} &\sffamily\textbf{KTRA} &  & $e\cdot\KTRAG +e\cdot\OTHKTRA$ &&       &       &       &       &        & \sffamily \textbf{(vii)} \\
+			\hline
+			\sffamily \textbf{OTH} &\sffamily\textbf{INV}  &       &       &       & $\INVG$ & $\INVP$ &       &        && \sffamily \textbf{(viii)} \\
+			\hline
+			\sffamily \textbf{OTH} &\sffamily\textbf{TOT}  &   \sffamily \textbf{(a)}    &    \sffamily \textbf{(b)}   &  \sffamily \textbf{(c)}     & \sffamily \textbf{(d)} & \sffamily \textbf{(e)} &   \sffamily \textbf{(f)}    &    \sffamily \textbf{(g)}    &\sffamily \textbf{(h)}& \multicolumn{1}{r}{} \\
+			\cline{1-10} 
+	\end{tabular}}
+	\begin{multicols}{3}
+		\begin{itemize}[leftmargin=!,labelwidth=3.5em,itemsep=4pt,parsep=0pt,topsep=0pt]
+			\item[\sffamily\textbf{DFIN}] : Compte financier intérieur.
+			\item[\sffamily\textbf{FFIN}] : Compte financier extérieur.
+			\item[\sffamily\textbf{FFDI}] : Compte des IDE.
+			\item[\sffamily\textbf{GFIN}] : Compte du secteur public.
+			\item[\sffamily\textbf{PFIN}] : Compte du secteur privé.
+			\item[\sffamily\textbf{KGAIN}] : Gains en capital.
+			\item[\sffamily\textbf{KTRA}] : Transferts de capital.
+			\item[\sffamily\textbf{INV}] : Compte d'accumulation.
+		\end{itemize}
+		
+		\columnbreak
+		
+		\begin{enumerate}[font=\bfseries\sffamily,label=(\alph*),itemsep=4pt,parsep=0pt,topsep=0pt,leftmargin=*] 
+			\item Offre de monnaie
+			\item Offre de devises
+			\item Offre d'IDE
+			\item Demande d'actifs publics
+			\item Demande d'actifs privés
+			\item Réévaluation des réserves
+			\item Ventilation des transferts
+			\item Épargne totale
+		\end{enumerate}
+		
+		\columnbreak
+		
+		\begin{enumerate}[font=\bfseries\sffamily,label=(\roman*),itemsep=4pt,parsep=0pt,topsep=0pt,leftmargin=*] 
+			\item Demande de monnaie
+			\item Demande de devises
+			\item Demande d'IDE
+			\item Offre d'actifs publics
+			\item Offre d'actifs privés
+			\item Réévaluation des réserves
+			\item Réception des transferts
+			\item Investissement total
+		\end{enumerate}
+	\end{multicols}
+	\label{tab:FSAMformula}%
+\end{table}%
+
+\begin{table}[!h]
+	\renewcommand{\arraystretch}{1.175} % Scales row height (1.0 is default)
+	\centering
+	\caption{Version agrégée  de la Matrice de Comptabilité Sociale (MACROSAM) de Madagascar. Année 2019. En Milliards d'Ariary.}
+	\makebox[0pt]{
+		\begin{tabular}{@{\vrule width 1.5pt}|c|l@{\vrule width 1.5pt}|r|r|r|r|r|r|r|r|r|r|r|r|@{\vrule width 1.5pt}}
+			\Xcline{3-14}{1.5pt}    \multicolumn{1}{c}{} &       & \multicolumn{1}{c|}{\sffamily\textbf{1}} & \multicolumn{1}{c|}{\sffamily\textbf{2}} & \multicolumn{1}{c|}{\sffamily\textbf{3}} & \multicolumn{1}{c|}{\sffamily\textbf{4}} & \multicolumn{1}{c|}{\sffamily\textbf{5}} & \multicolumn{1}{c|}{\sffamily\textbf{6}} & \multicolumn{1}{c|}{\sffamily\textbf{7}} & \multicolumn{1}{c|}{\sffamily\textbf{8}} & \multicolumn{1}{c|}{\sffamily\textbf{9}} & \multicolumn{1}{c|}{\sffamily\textbf{10}} & \multicolumn{1}{c|}{\sffamily\textbf{11}} & \multicolumn{1}{c|@{\vrule width 1.5pt}}{\sffamily\textbf{12}} \\
+			\Xhline{1.5pt}
+			\sffamily\textbf{1} & \sffamily Facteurs &       &       &       &       &       & 221.6 & 47638.3 &       &       &       &       & \textbf{47859.9} \\
+			\hline
+			\sffamily\textbf{2} & \sffamily Ménages & 27522.1 &       & 677.5 & 13786.6 &       & 1266.8 &       &       &       &       &       & \textbf{43253.0} \\
+			\hline
+			\sffamily\textbf{3} & \sffamily Adm.~Pub et ISBLSM &       &       & 754.8 & 4331.1 & 6202.7 & 432.0 &       &       &       &       &       & \textbf{11720.7} \\
+			\hline
+			\sffamily\textbf{4} & \sffamily Sociétés & 18617.2 &       & 1535.9 &       &       & 1189.7 &       &       &       &       &       & \textbf{21342.8} \\
+			\hline
+			\sffamily\textbf{5} & \sffamily Prél.~fiscaux et non fiscaux \mbox{ } &       & 1004.5 &       & 1801.3 &       &       &       & 3396.9 &       &       &       & \textbf{6202.7} \\
+			\hline
+			\sffamily\textbf{6} & \sffamily Reste du monde & 1720.6 &       & 106.8 &       &       &       &       & 17442.3 &       &       &       & \textbf{19269.7} \\
+			\hline
+			\textbf{7} & Activités &       &       &       &       &       &       &       & 65405.2 & 14228.0 &       &       & \textbf{79633.1} \\
+			\hline
+			\sffamily\textbf{8} & \sffamily Produits domestiques &       & 34684.7 & 7709.4 &       &       &       & 31994.8 &       & 278.5 & 8531.2 & 11576.9 & \textbf{94775.6} \\
+			\hline
+			\sffamily\textbf{9} & \sffamily Produits d'exportation &       &       &       &       &       & 14506.5 &       &       &       &       &       & \textbf{14506.5} \\
+			\hline
+			\sffamily\textbf{10} & \sffamily Marges &       &       &       &       &       &       &       & 8531.2 &       &       &       & \textbf{8531.2} \\
+			\hline
+			\sffamily\textbf{11} & \sffamily Accumulation &       & 7563.8 & 936.1 & 1423.8 &       & 1653.2 &       &       &       &       & 733.0 & \textbf{12309.8} \\
+			\hline
+			\sffamily\textbf{12} & \sffamily\textbf{Total} & \textbf{47859.9} & \textbf{43253.0} & \textbf{11720.7} & \textbf{21342.8} & \textbf{6202.7} & \textbf{19269.7} & \textbf{79633.1} & \textbf{94775.6} & \textbf{14506.5} & \textbf{8531.2} & \textbf{12309.8} &   \\
+			\Xhline{1.5pt}
+		\end{tabular}%
+	}
+	\label{tab:MACROSAMValues}%
+\end{table}%
+
+
+
+\begin{table}[!h]
+	\renewcommand{\arraystretch}{1.175}
+	\centering
+	\caption{Matrice de Comptabilité Sociale Financière (FSAM) de Madagascar.  Année 2019. En Milliards d'Ariary.}
+	\begin{tabular}{@{\vrule width 1.5pt}|c|c@{\vrule width 1.5pt}|r|r|r|r|r|@{\vrule width 1.5pt}r|r|@{\vrule width 1.5pt}r|r|@{\vrule width 1.5pt}}
+		\Xcline{3-11}{1.5pt}    \multicolumn{1}{r}{} &       & \multicolumn{1}{c|}{\sffamily\textbf{F}} & \multicolumn{1}{c|}{\sffamily\textbf{F}} & \multicolumn{1}{c|}{\sffamily\textbf{F}} & \multicolumn{1}{c|}{\sffamily\textbf{F}} & \multicolumn{1}{c|@{\vrule width 1.5pt}}{\sffamily\textbf{F}} & \multicolumn{1}{c|}{\sffamily\textbf{K}} & \multicolumn{1}{c|@{\vrule width 1.5pt}}{\sffamily\textbf{K}} & \multicolumn{1}{c|}{\sffamily\textbf{OTH}} & \multicolumn{1}{c|@{\vrule width 1.5pt}}{\sffamily\textbf{OTH}} \\
+		\cline{3-11}    \multicolumn{1}{r}{} &       & \multicolumn{1}{c|}{\sffamily{DFIN}} & \multicolumn{1}{c|}{\sffamily{FFIN}} & \multicolumn{1}{c|}{\sffamily{FFDI}} & \multicolumn{1}{c|}{\sffamily{GFIN}} & \multicolumn{1}{c|@{\vrule width 1.5pt}}{\sffamily{PFIN}} & \multicolumn{1}{c|}{\sffamily{KGAIN}} & \multicolumn{1}{c|@{\vrule width 1.5pt}}{\sffamily{KTRA}} & \multicolumn{1}{c|}{\sffamily{ACC}} & \multicolumn{1}{c|@{\vrule width 1.5pt}}{\sffamily{\textbf{TOT}}} \\
+		\Xhline{1.5pt}
+		\sffamily\textbf{F}     & \sffamily{DFIN}  &       &       &       &       & 835.7 &       &       &       & \textbf{835.7} \\
+		\hline
+		\sffamily\textbf{F}     & \sffamily{FFIN}  & -511.7 &       &       & 234.4 &       & 0.7   &       & 1653.2 & \textbf{1376.7} \\
+		\hline
+		\sffamily\textbf{F}     & \sffamily{FFDI}  &       & 1350.4 &       &       & 366.7 &       &       &       & \textbf{1717.1} \\
+		\hline
+		\sffamily\textbf{F}     & \sffamily{GFIN}  & -25.0 & 889.5 &       &       & 66.7  &       & 1221.7 & 936.1 & \textbf{3089.0} \\
+		\hline
+		\sffamily\textbf{F}     & \sffamily{PFIN}  & 1173.5 & -2085.0 & 1717.1 &       &       & 198.1 & 0.0   & 8987.6 & \textbf{9991.4} \\
+		\Xhline{1.5pt}
+		\sffamily\textbf{K}     & \sffamily{KGAIN\mbox{ }} & 198.8 &       &       &       &       &       &       &       & \textbf{198.8} \\
+		\hline
+		\sffamily\textbf{K}     & \sffamily{KTRA}  &       & 1221.7 &       &       &       &       &       &       & \textbf{1221.7} \\
+		\Xhline{1.5pt}
+		\sffamily\textbf{OTH}   & \sffamily{ACC}   &       &       &       & 2854.6 & 8722.3 &       &       &       & \textbf{11576.9} \\
+		\hline
+		\sffamily\textbf{OTH}   & \sffamily\textbf{TOT}   & \textbf{835.7} & \textbf{1376.7} & \textbf{1717.1} & \textbf{3089.0} & \textbf{9991.4} & \textbf{198.8} & \textbf{1221.7} & \textbf{ 11576.9} & \\
+		\Xhline{1.5pt}
+	\end{tabular}%
+	\label{tab:FSAMValues}%
+\end{table}%
+
+

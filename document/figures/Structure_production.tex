@@ -1,0 +1,36 @@
+% Source - https://tex.stackexchange.com/a/722843
+% Posted by Zarko
+% Retrieved 2026-08-31, License - CC BY-SA 4.0
+
+\usetikzlibrary{arrows.meta}
+\tikzset{every label/.style = {font=\bfseries\normalsize,  text=black,
+		inner sep=1pt }}
+
+  
+	
+	\begin{forest}
+		for tree = {
+			draw, 
+			s sep=5mm, 
+			l sep=15mm,
+%			edge={thick,-Latex},
+		}
+		[{$\XS_j$}, label={[yshift=-5pt]below:{Leontief}}
+		[{$\CI_j$}, label={[yshift=-5pt]below:{Leontief}},s sep=2.5mm
+		[{$\DI_{{\agr},j}$}]
+		[{$\DI_{{\food},j}$}]
+		[{$\DI_{{\othind},j}$}]
+		[{$\DI_{{\petr},j}$}]
+		[{$\DI_{{\ser},j}$}]
+		[{$\DI_{{\pub},j}$}]
+		[{$\DI_{{\othntr},j}$}]
+		]        
+		[{$\VA_j$}, label={[yshift=-5pt]below:{Cobb-Douglas}},s sep=2.5mm,
+		[{$\LD_j$}]
+		[{$\KD_j$}]        
+		]    
+		]
+		]
+%		\draw[-Latex, semitransparent] (f) -- (c);
+	\end{forest}
+

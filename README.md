@@ -1,6 +1,6 @@
 # Modèle d'Équilibre Général Calculable - EXTER-MADA
 
-Ce projet vise à modéliser et simuler l'impact de politiques économiques et de chocs macroéconomiques à Madagascar à l'aide d'un modèle d'équilibre général calculable (MEGC) fondé sur le cadre pédagogique EXTER et enrichi par les structures du modèle PEP. Le projet s'appuie sur la Matrice de Comptabilité Sociale (MCS) issue du TRE 2019 de l'INSTAT.
+Ce projet vise à modéliser et simuler l'impact de politiques économiques et de chocs macroéconomiques à Madagascar à l'aide d'un modèle d'équilibre général calculable (MEGC) fondé sur le cadre pédagogique EXTER et enrichi par les structures du modèle PEP. Le projet s'appuie sur la Matrice de Comptabilité Sociale (MIDISAM) issue du TRE 2019 de l'INSTAT.
 
 ## Structure du projet
 
