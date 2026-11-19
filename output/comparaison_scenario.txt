@@ -1,6 +1,6 @@
 RAPPORT ANALYTIQUE : COMPARAISON DES SCENARIOS
 
- DATE:11/11/26                         HEURE:15:41:41
+ DATE:11/19/26                         HEURE:21:12:11
 
 
 DESCRIPTION                                           SYMBOLE                                  BASE     SIMULATIOM     VARIATION
@@ -14,387 +14,387 @@ DESCRIPTION                                           SYMBOLE                   
 
 COMPTE DES MENAGES
  Menages urbains
-   Ressources/Emplois tot.                            YH                                  13155.679      13155.679          0.000
+   Ressources/Emplois tot.                            YH(HUR)                             13155.679      12919.243         -1.797
 
    Ressources
-     Revenus du Travail                               YHL                                 10487.856      10487.856          0.000
-     Revenus du Capital                               YHK                                  1091.937       1091.937          0.000
-     Transferts recus                                 YHTR                                 1575.885       1575.885          0.000
+     Revenus du Travail                               YHL(HUR)                            10487.856      10323.922         -1.563
+     Revenus du Capital                               YHK(HUR)                             1091.937       1059.834         -2.940
+     Transferts recus                                 YHTR(HUR)                            1575.885       1535.488         -2.563
 
    Emplois
-     Impots sur le revenu                             TDH                                   298.774        298.774          0.000
-     Prelevements non fiscaux                         NTXH(HUR)                             137.194        137.194          0.000
-     Consommation Finale                              CTH                                 10339.215      10339.215          0.000
-     Epargne                                          SH                                   2380.496       2380.496          0.000
+     Impots sur le revenu                             TDH(HUR)                              298.774        293.404         -1.797
+     Prelevements non fiscaux                         NTXH(HUR)                             137.194        134.729         -1.797
+     Consommation Finale                              CTH(HUR)                            10339.215      10153.397         -1.797
+     Epargne                                          SH(HUR)                              2380.496       2337.713         -1.797
 
  Menages ruraux
-   Ressources/Emplois tot.                            YH                                  30097.353      30097.353          0.000
+   Ressources/Emplois tot.                            YH(HRU)                             30097.353      29351.978         -2.477
 
    Ressources
-     Revenus du Travail                               YHL                                  8794.802       8794.802          0.000
-     Revenus du Capital                               YHK                                  7147.537       7147.537          0.000
-     Transferts recus                                 YHTR                                14155.014      14155.014          0.000
+     Revenus du Travail                               YHL(HRU)                             8794.802       8657.331         -1.563
+     Revenus du Capital                               YHK(HRU)                             7147.537       6937.395         -2.940
+     Transferts recus                                 YHTR(HRU)                           14155.014      13757.252         -2.810
 
    Emplois
-     Impots sur le revenu                             TDH                                   250.543        250.543          0.000
-     Prelevements non fiscaux                         NTXH(HRU)                             318.005        318.005          0.000
-     Consommation Finale                              CTH                                 24345.519      24345.519          0.000
-     Epargne                                          SH                                   5183.286       5183.286          0.000
+     Impots sur le revenu                             TDH(HRU)                              250.543        244.338         -2.477
+     Prelevements non fiscaux                         NTXH(HRU)                             318.005        310.129         -2.477
+     Consommation Finale                              CTH(HRU)                            24345.519      23742.592         -2.477
+     Epargne                                          SH(HRU)                              5183.286       5054.919         -2.477
 
 =================================================================================================================================
 
 COMPTE DES SOCIETES
-   Ressources/Emplois tot.                            YF                                  21342.822      21342.822          0.000
+   Ressources/Emplois tot.                            YF                                  21342.822      20733.236         -2.856
 
    Ressources
-     Transf. recus du RDM                             E*TRA(firm,row)                      1189.735       1189.735          0.000
-     Transf. recus de l'Adm. centrale                 TRA(firm,gvt)                        1535.923       1535.923          0.000
-     Revenu du capital                                YFK                                 18617.164      18617.164          0.000
+     Transf. recus du RDM                             E*TRA(firm,row)                      1189.735       1162.571         -2.283
+     Transf. recus de l'Adm. centrale                 TRA(firm,gvt)                        1535.923       1500.855         -2.283
+     Revenu du capital                                YFK                                 18617.164      18069.809         -2.940
 
    Emplois
-     Impots sur le revenu                             TDF                                   944.861        944.861          0.000
-     Autres impots indirects                          TIF                                   158.606        158.606          0.000
-     Autres droits de douanes                         TIMF                                  578.196        578.196          0.000
-     Prelevements fiscaux                             NTXF                                  119.659        119.659          0.000
-     Transf. aux autres APU et ISBLSM                 TRA(ngo,firm)                        4331.065       4331.065          0.000
-     Transf. aux Menages urbains                      TRA(HUR,firm)                         770.915        770.915          0.000
-     Transf. aux Menages ruraux                       TRA(HRU,firm)                       13015.714      13015.714          0.000
-     Epargne                                          SF                                   1423.806       1423.806          0.000
+     Impots sur le revenu                             TDF                                   944.861        917.874         -2.856
+     Autres impots indirects                          TIF                                   158.606        154.076         -2.856
+     Autres droits de douanes                         TIMF                                  578.196        561.682         -2.856
+     Prelevements fiscaux                             NTXF                                  119.659        116.241         -2.856
+     Transf. aux autres APU et ISBLSM                 TRA(ngo,firm)                        4331.065       4207.362         -2.856
+     Transf. aux Menages urbains                      TRA(HUR,firm)                         770.915        748.896         -2.856
+     Transf. aux Menages ruraux                       TRA(HRU,firm)                       13015.714      12643.964         -2.856
+     Epargne                                          SF                                   1423.806       1383.140         -2.856
 
 =================================================================================================================================
 
 COMPTE DE l'ADMINISTRATION CENTRALE
-   Ressources/Emplois tot.                            YG                                   6137.296       6137.296          0.000
+   Ressources/Emplois tot.                            YG                                   6137.296       6110.799         -0.432
 
    Ressources
      Impots indirects
-       Agriculture                                    TI(AGR)                                76.955         76.955          0.000
-       Alimentation                                   TI(FOOD)                              516.073        516.073          0.000
-       Autres industries                              TI(OTHIND)                            260.753        260.753          0.000
+       Agriculture                                    TI(AGR)                                76.955         75.509         -1.879
+       Alimentation                                   TI(FOOD)                              516.073        504.397         -2.263
+       Autres industries                              TI(OTHIND)                            260.753        272.890          4.654
        Produits petroliers                            TI(PETR)                                0.000          0.000          0.000
-       Service                                        TI(SER)                               372.985        372.985          0.000
-       Autres impots indirects                        TIF                                   158.606        158.606          0.000
+       Service                                        TI(SER)                               372.985        356.108         -4.525
+       Autres impots indirects                        TIF                                   158.606        154.076         -2.856
 
      Droits de douanes
-       Agriculture                                    TIM(AGR)                               26.331         26.331          0.000
-       Alimentation                                   TIM(FOOD)                             297.759        297.759          0.000
-       Autres industries                              TIM(OTHIND)                          1220.459       1220.459          0.000
-       Produits petroliers                            TIM(PETR)                             625.596        625.596          0.000
+       Agriculture                                    TIM(AGR)                               26.331         26.066         -1.009
+       Alimentation                                   TIM(FOOD)                             297.759        293.615         -1.392
+       Autres industries                              TIM(OTHIND)                          1220.459       1282.905          5.117
+       Produits petroliers                            TIM(PETR)                             625.596        630.844          0.839
        Service                                        TIM(SER)                                0.000          0.000          0.000
-       Autres droits de douanes                       TIMF                                  578.196        578.196          0.000
+       Autres droits de douanes                       TIMF                                  578.196        561.682         -2.856
 
      Impots sur le revenu
-       Menages urbains                                TDH(HUR)                              298.774        298.774          0.000
-       Menages ruraux                                 TDH(HRU)                              250.543        250.543          0.000
-       Societes                                       TDF                                   944.861        944.861          0.000
+       Menages urbains                                TDH(HUR)                              298.774        293.404         -1.797
+       Menages ruraux                                 TDH(HRU)                              250.543        244.338         -2.477
+       Societes                                       TDF                                   944.861        917.874         -2.856
 
-     Revenu des transferts                            YGTRA                                 365.104        365.104          0.000
-       Reste du monde                                 E*TRA(gvt,row)                        365.104        365.104          0.000
+     Revenu des transferts                            YGTRA                                 365.104        356.768         -2.283
+       Reste du monde                                 E*TRA(gvt,row)                        365.104        356.768         -2.283
 
-     Revenu des recettes non fiscales                 YGNTX                                 144.301        144.301          0.000
-       Societes                                       NTXF                                  119.659        119.659          0.000
-       Menages urbains                                NTXH(HUR)                               7.427          7.427          0.000
-       Menages ruraux                                 NTXH(HRU)                              17.215         17.215          0.000
+     Revenu des recettes non fiscales                 YGNTX                                 144.301        140.324         -2.756
+       Societes                                       NTXF                                  119.659        116.241         -2.856
+       Menages urbains                                NTXH(HUR)                               7.427          7.294         -1.797
+       Menages ruraux                                 NTXH(HRU)                              17.215         16.789         -2.477
 
    Emplois
-     Transf. aux Menages urbains                      TRA(HUR,gvt)                          257.537        257.537          0.000
-     Transf. aux Menages ruraux                       TRA(HRU,gvt)                          364.500        364.500          0.000
-     Transf. aux Autres APU et aux ISBLSM             TRA(ngo,gvt)                          754.849        754.849          0.000
-     Transf. aux Entreprises                          TRA(firm,gvt)                        1535.923       1535.923          0.000
-     Transf. au RDM                                   E*TRA(row,gvt)                        106.819        106.819          0.000
-     Budget de consommation publique                  CTG                                  2181.554       2181.554          0.000
-     Epargne publique                                 SG                                    936.114        936.114          0.000
+     Transf. aux Menages urbains                      TRA(HUR,gvt)                          257.537        251.657         -2.283
+     Transf. aux Menages ruraux                       TRA(HRU,gvt)                          364.500        356.178         -2.283
+     Transf. aux Autres APU et aux ISBLSM             TRA(ngo,gvt)                          754.849        737.614         -2.283
+     Transf. aux Entreprises                          TRA(firm,gvt)                        1535.923       1500.855         -2.283
+     Transf. au RDM                                   E*TRA(row,gvt)                        106.819        104.380         -2.283
+     Budget de consommation publique                  CTG                                  2181.554       1963.399        -10.000
+     Epargne publique                                 SG                                    936.114       1196.717         27.839
 
 =================================================================================================================================
 
 COMPTE DES AUTRES APU ET DES ISBLSM
-   Ressources/Emplois tot.                            YNGO                                 5583.361       5583.361          0.000
+   Ressources/Emplois tot.                            YNGO                                 5583.361       5431.116         -2.727
 
    Ressources
-     Transf. recus du de l'adm. centrale              TRA(ngo,gvt)                          754.849        754.849          0.000
-     Transf. recus du RDM                             E*TRA(row,gvt)                         66.891         66.891          0.000
-     Transf. recus des Soc.                           TRA(ngo,firm)                        4331.065       4331.065          0.000
-     Revenus non fiscaux venant des menages           NTXHH(ngo)                            430.556        430.556          0.000
+     Transf. recus du de l'adm. centrale              TRA(ngo,gvt)                          754.849        737.614         -2.283
+     Transf. recus du RDM                             E*TRA(row,gvt)                         66.891         65.364         -2.283
+     Transf. recus des Soc.                           TRA(ngo,firm)                        4331.065       4207.362         -2.856
+     Revenus non fiscaux venant des menages           NTXHH(ngo)                            430.556        420.775         -2.272
 
    Emplois
-     Transf. aux Menages urbains                      TRA(HUR,ngo)                           22.968         22.968          0.000
-     Transf. aux Menages ruraux                       TRA(HRU,ngo)                           32.507         32.507          0.000
-     Budget de consommation                           CTNGO                                5527.886       5527.886          0.000
+     Transf. aux Menages urbains                      TRA(HUR,ngo)                           22.968         22.443         -2.283
+     Transf. aux Menages ruraux                       TRA(HRU,ngo)                           32.507         31.765         -2.283
+     Budget de consommation                           CTNGO                                5527.886       5376.907         -2.731
      Epargne                                          SNGO                                    0.000          0.000          0.000
 
 =================================================================================================================================
 
 COMPTE DU RESTE DU MONDE
-   Ressources/Emplois tot.                            E*YROW                              19269.694      19269.694          0.000
+   Ressources/Emplois tot.                            E*YROW                              19269.694      19548.035          1.444
 
    Ressources
-     Remuner. des employes non-residents              E*YROWL                               108.004        108.004          0.000
-     Remuner. du capital des non-residents            E*YROWK                              1612.605       1612.605          0.000
-     Transf. recus de l'Adm. cent.                    E*TRA(row,gvt)                        106.819     *                   0.000
-     Importations de biens et services                E*SUM[tr, PWM(tr)*IM(tr)]           23150.341      23150.341          0.000
+     Remuner. des employes non-residents              E*YROWL                               108.004        106.316         -1.563
+     Remuner. du capital des non-residents            E*YROWK                              1612.605       1565.194         -2.940
+     Transf. recus de l'Adm. cent.                    E*TRA(row,gvt)                        106.819        104.380         -2.283
+     Importations de biens et services                E*SUM[tr, PWM(tr)*IM(tr)]           23150.341      23512.549          1.565
 
    Emplois
-     Remuner. des employes residents                  E*W_R*LD_R                             96.288         96.288          0.000
+     Remuner. des employes residents                  E*W_R*LD_R                             96.288         94.226         -2.141
      Remuner. du capital des residents                E*R_R*KD_R                            125.311        125.311          0.000
-     Transf. aux Menages urbains                      E*TRA(HUR,row)                        524.466        524.466          0.000
-     Transf. aux Menages ruraux                       E*TRA(HRU,row)                        742.293        742.293          0.000
-     Transf. a l'Adm. centrale                        E*TRA(gvt,row)                        365.104        365.104          0.000
-     Transf. aux autres APU et aux ISBLSM             E*TRA(ngo,row)                         66.891         66.891          0.000
-     Transf. aux Entreprises                          E*TRA(firm,row)                      1189.735       1189.735          0.000
-     Exportations de biens et services                E*SUM[tr, PWE(tr)*EX(tr)]           14506.455      14506.455          0.000
+     Transf. aux Menages urbains                      E*TRA(HUR,row)                        524.466        512.491         -2.283
+     Transf. aux Menages ruraux                       E*TRA(HRU,row)                        742.293        725.345         -2.283
+     Transf. a l'Adm. centrale                        E*TRA(gvt,row)                        365.104        356.768         -2.283
+     Transf. aux autres APU et aux ISBLSM             E*TRA(ngo,row)                         66.891         65.364         -2.283
+     Transf. aux Entreprises                          E*TRA(firm,row)                      1189.735       1162.571         -2.283
+     Exportations de biens et services                E*SUM[tr, PWE(tr)*EX(tr)]           14506.455      14852.806          2.388
      Epargne                                          E*SROW                               1653.152       1653.152          0.000
 
 =================================================================================================================================
 
 COMPTE NATIONAUX
  Valeurs reelles
-   PIB reel aux prix de base                          PIB_BP_reel                         47638.306      47638.306          0.000
-   PIB reel aux prix du marche                        PIB_MP_reel                         51035.217      51035.217          0.000
+   PIB reel aux prix de base                          PIB_BP_reel                         47638.306      47644.920          0.014
+   PIB reel aux prix du marche                        PIB_MP_reel                         51035.217      51109.519          0.146
 
-   Agriculture                                        XS(AGR)                             16841.161      16841.161          0.000
-     Valeur ajoutee                                   VA(AGR)                             11715.773      11715.773          0.000
-       Travail                                        LD(AGR)                              7546.905       7546.905          0.000
+   Agriculture                                        XS(AGR)                             16841.161      16881.349          0.239
+     Valeur ajoutee                                   VA(AGR)                             11715.773      11743.730          0.239
+       Travail                                        LD(AGR)                              7546.905       7574.880          0.371
        Capital                                        KD(AGR)                              4168.868       4168.868          0.000
 
-     Consommation intermediaire                       CI(AGR)                              4211.516       4211.516          0.000
-       Agriculture                                    DI(AGR,AGR)                          3226.629       3226.629          0.000
-       Alimentation                                   DI(FOOD,AGR)                          197.987        197.987          0.000
-       Autres industries                              DI(OTHIND,AGR)                        611.025        611.025          0.000
-       Produits petroliers                            DI(PETR,AGR)                           35.725         35.725          0.000
-       Service                                        DI(SER,AGR)                           140.151        140.151          0.000
+     Consommation intermediaire                       CI(AGR)                              4211.516       4221.566          0.239
+       Agriculture                                    DI(AGR,AGR)                          3226.629       3234.328          0.239
+       Alimentation                                   DI(FOOD,AGR)                          197.987        198.459          0.239
+       Autres industries                              DI(OTHIND,AGR)                        611.025        612.483          0.239
+       Produits petroliers                            DI(PETR,AGR)                           35.725         35.810          0.239
+       Service                                        DI(SER,AGR)                           140.151        140.485          0.239
 
-     Cons. finale des Menages urbains                 CH(AGR,HUR)                          2174.189       2174.189          0.000
-     Cons. finale des Menages ruraux                  CH(AGR,HRU)                          4823.919       4823.919          0.000
+     Cons. finale des Menages urbains                 CH(AGR,HUR)                          2174.189       2179.765          0.256
+     Cons. finale des Menages ruraux                  CH(AGR,HRU)                          4823.919       4802.835         -0.437
      Investissement                                   INV(AGR)                                0.000          0.000          0.000
      Variation de stocks                              VSTK(AGR)                           -2094.813      -2094.813          0.000
-     Exportations                                     EX(AGR)                               954.953        954.953          0.000
-     Importations                                     IM(AGR)                               197.495        197.495          0.000
+     Exportations                                     EX(AGR)                               954.953        964.490          0.999
+     Importations                                     IM(AGR)                               197.495        195.503         -1.009
 
-   Alimentation                                       XS(FOOD)                            10433.222      10433.222          0.000
-     Valeur ajoutee                                   VA(FOOD)                             2935.183       2935.183          0.000
-       Travail                                        LD(FOOD)                             1449.593       1449.593          0.000
+   Alimentation                                       XS(FOOD)                            10433.222      10487.978          0.525
+     Valeur ajoutee                                   VA(FOOD)                             2935.183       2950.587          0.525
+       Travail                                        LD(FOOD)                             1449.593       1465.039          1.066
        Capital                                        KD(FOOD)                             1485.590       1485.590          0.000
 
-     Consommation intermediaire                       CI(FOOD)                             6201.253       6201.253          0.000
-       Agriculture                                    DI(AGR,FOOD)                         5534.628       5534.628          0.000
-       Alimentation                                   DI(FOOD,FOOD)                         386.318        386.318          0.000
-       Autres industries                              DI(OTHIND,FOOD)                       175.911        175.911          0.000
-       Produits petroliers                            DI(PETR,FOOD)                          24.777         24.777          0.000
-       Service                                        DI(SER,FOOD)                           79.619         79.619          0.000
+     Consommation intermediaire                       CI(FOOD)                             6201.253       6233.799          0.525
+       Agriculture                                    DI(AGR,FOOD)                         5534.628       5563.675          0.525
+       Alimentation                                   DI(FOOD,FOOD)                         386.318        388.346          0.525
+       Autres industries                              DI(OTHIND,FOOD)                       175.911        176.834          0.525
+       Produits petroliers                            DI(PETR,FOOD)                          24.777         24.908          0.525
+       Service                                        DI(SER,FOOD)                           79.619         80.037          0.525
 
-     Cons. finale des Menages urbains                 CH(FOOD,HUR)                         3191.645       3191.645          0.000
-     Cons. finale des Menages ruraux                  CH(FOOD,HRU)                         8199.123       8199.123          0.000
+     Cons. finale des Menages urbains                 CH(FOOD,HUR)                         3191.645       3203.125          0.360
+     Cons. finale des Menages ruraux                  CH(FOOD,HRU)                         8199.123       8171.691         -0.335
      Investissement                                   INV(FOOD)                               0.000          0.000          0.000
      Variation de stocks                              VSTK(FOOD)                           -542.300       -542.300          0.000
-     Exportations                                     EX(FOOD)                             2651.014       2651.014          0.000
-     Importations                                     IM(FOOD)                             2208.056       2208.056          0.000
+     Exportations                                     EX(FOOD)                             2651.014       2687.658          1.382
+     Importations                                     IM(FOOD)                             2208.056       2177.326         -1.392
 
-   Autres industries                                  XS(OTHIND)                           9751.427       9751.427          0.000
-     Valeur ajoutee                                   VA(OTHIND)                           4726.836       4726.836          0.000
-       Travail                                        LD(OTHIND)                           2334.434       2334.434          0.000
+   Autres industries                                  XS(OTHIND)                           9751.427      10153.952          4.128
+     Valeur ajoutee                                   VA(OTHIND)                           4726.836       4921.953          4.128
+       Travail                                        LD(OTHIND)                           2334.434       2533.679          8.535
        Capital                                        KD(OTHIND)                           2392.402       2392.402          0.000
 
-     Consommation intermediaire                       CI(OTHIND)                           4028.737       4028.737          0.000
-       Agriculture                                    DI(AGR,OTHIND)                         67.499         67.499          0.000
-       Alimentation                                   DI(FOOD,OTHIND)                         4.079          4.079          0.000
-       Autres industries                              DI(OTHIND,OTHIND)                    2411.834       2411.834          0.000
-       Produits petroliers                            DI(PETR,OTHIND)                       368.604        368.604          0.000
-       Service                                        DI(SER,OTHIND)                       1176.720       1176.720          0.000
+     Consommation intermediaire                       CI(OTHIND)                           4028.737       4195.037          4.128
+       Agriculture                                    DI(AGR,OTHIND)                         67.499         70.285          4.128
+       Alimentation                                   DI(FOOD,OTHIND)                         4.079          4.248          4.128
+       Autres industries                              DI(OTHIND,OTHIND)                    2411.834       2511.391          4.128
+       Produits petroliers                            DI(PETR,OTHIND)                       368.604        383.819          4.128
+       Service                                        DI(SER,OTHIND)                       1176.720       1225.293          4.128
 
-     Cons. finale des Menages urbains                 CH(OTHIND,HUR)                        917.906        917.906          0.000
-     Cons. finale des Menages ruraux                  CH(OTHIND,HRU)                       2036.577       2036.577          0.000
-     Investissement                                   INV(OTHIND)                          2152.151       2152.151          0.000
-     Variation de stocks                              VSTK(OTHIND)                         2144.520       2144.520          0.000
-     Exportations                                     EX(OTHIND)                           5620.145       5620.145          0.000
-     Importations                                     IM(OTHIND)                           9235.580       9235.580          0.000
+     Cons. finale des Menages urbains                 CH(OTHIND,HUR)                        917.906        901.993         -1.734
+     Cons. finale des Menages ruraux                  CH(OTHIND,HRU)                       2036.577       1987.428         -2.413
+     Investissement                                   INV(OTHIND)                          2152.151       1933.530        -10.158
+     Variation de stocks                              VSTK(OTHIND)                         2144.520       2993.749         39.600
+     Exportations                                     EX(OTHIND)                           5620.145       5832.684          3.782
+     Importations                                     IM(OTHIND)                           9235.580       9708.130          5.117
 
-   Service                                            XS(SER)                             34897.883      34897.883          0.000
-     Valeur ajoutee                                   VA(SER)                             20941.261      20941.261          0.000
-       Travail                                        LD(SER)                               644.190        644.190          0.000
+   Service                                            XS(SER)                             34897.883      34863.858         -0.097
+     Valeur ajoutee                                   VA(SER)                             20941.261      20920.843         -0.097
+       Travail                                        LD(SER)                               644.190        624.082         -3.121
        Capital                                        KD(SER)                             20297.071      20297.071          0.000
 
-     Consommation intermediaire                       CI(SER)                             12075.170      12075.170          0.000
-       Agriculture                                    DI(AGR,SER)                            77.443         77.443          0.000
-       Alimentation                                   DI(FOOD,SER)                          187.884        187.884          0.000
-       Autres industries                              DI(OTHIND,SER)                       3451.199       3451.199          0.000
-       Produits petroliers                            DI(PETR,SER)                         1018.787       1018.787          0.000
-       Service                                        DI(SER,SER)                          7339.856       7339.856          0.000
+     Consommation intermediaire                       CI(SER)                             12075.170      12063.396         -0.097
+       Agriculture                                    DI(AGR,SER)                            77.443         77.368         -0.097
+       Alimentation                                   DI(FOOD,SER)                          187.884        187.701         -0.097
+       Autres industries                              DI(OTHIND,SER)                       3451.199       3447.834         -0.097
+       Produits petroliers                            DI(PETR,SER)                         1018.787       1017.794         -0.097
+       Service                                        DI(SER,SER)                          7339.856       7332.700         -0.097
 
-     Cons. finale des Menages urbains                 CH(SER,HUR)                          2483.342       2483.342          0.000
-     Cons. finale des Menages ruraux                  CH(SER,HRU)                          5509.843       5509.843          0.000
-     Investissement                                   INV(SER)                             7973.469       7973.469          0.000
-     Exportations                                     EX(SER)                              5001.855       5001.855          0.000
-     Importations                                     IM(SER)                              3466.186       3466.186          0.000
+     Cons. finale des Menages urbains                 CH(SER,HUR)                          2483.342       2535.545          2.102
+     Cons. finale des Menages ruraux                  CH(SER,HRU)                          5509.843       5586.751          1.396
+     Investissement                                   INV(SER)                             7973.469       7443.121         -6.651
+     Exportations                                     EX(SER)                              5001.855       5087.152          1.705
+     Importations                                     IM(SER)                              3466.186       3336.650         -3.737
 
-   Administration publique                            XS(PUB)                              2181.554       2181.554          0.000
-     Valeur ajoutee                                   VA(PUB)                              1867.592       1867.592          0.000
-       Travail                                        LD(PUB)                              1867.592       1867.592          0.000
+   Administration publique                            XS(PUB)                              2181.554       1998.064         -8.411
+     Valeur ajoutee                                   VA(PUB)                              1867.592       1710.509         -8.411
+       Travail                                        LD(PUB)                              1867.592       1710.509         -8.411
 
-     Consommation intermediaire                       CI(PUB)                               282.645        282.645          0.000
-       Agriculture                                    DI(AGR,PUB)                             0.120          0.120          0.000
-       Alimentation                                   DI(FOOD,PUB)                            0.008          0.008          0.000
-       Autres industries                              DI(OTHIND,PUB)                         52.639         52.639          0.000
-       Service                                        DI(SER,PUB)                           210.878        210.878          0.000
+     Consommation intermediaire                       CI(PUB)                               282.645        258.872         -8.411
+       Agriculture                                    DI(AGR,PUB)                             0.120          0.110         -8.411
+       Alimentation                                   DI(FOOD,PUB)                            0.008          0.007         -8.411
+       Autres industries                              DI(OTHIND,PUB)                         52.639         48.211         -8.411
+       Service                                        DI(SER,PUB)                           210.878        193.141         -8.411
 
-   Autres services non marchands                      XS(OTHNTR)                           5527.886       5527.886          0.000
-     Valeur ajoutee                                   VA(OTHNTR)                           5451.660       5451.660          0.000
-       Travail                                        LD(OTHNTR)                           5451.660       5451.660          0.000
+   Autres services non marchands                      XS(OTHNTR)                           5527.886       5463.584         -1.163
+     Valeur ajoutee                                   VA(OTHNTR)                           5451.660       5388.245         -1.163
+       Travail                                        LD(OTHNTR)                           5451.660       5388.245         -1.163
 
-     Consommation intermediaire                       CI(OTHNTR)                             68.623         68.623          0.000
-       Agriculture                                    DI(AGR,OTHNTR)                          0.029          0.029          0.000
-       Alimentation                                   DI(FOOD,OTHNTR)                         0.002          0.002          0.000
-       Autres industries                              DI(OTHIND,OTHNTR)                      12.780         12.780          0.000
-       Service                                        DI(SER,OTHNTR)                         51.198         51.198          0.000
+     Consommation intermediaire                       CI(OTHNTR)                             68.623         67.824         -1.163
+       Agriculture                                    DI(AGR,OTHNTR)                          0.029          0.029         -1.163
+       Alimentation                                   DI(FOOD,OTHNTR)                         0.002          0.002         -1.163
+       Autres industries                              DI(OTHIND,OTHNTR)                      12.780         12.631         -1.163
+       Service                                        DI(SER,OTHNTR)                         51.198         50.603         -1.163
 
-   Cons. fin. de l'Adm. Centrale                      CG                                   2181.554       2181.554          0.000
-   Cons. fin. des autres APU et des ISBLSM            CNGO                                 5527.886       5527.886          0.000
+   Cons. fin. de l'Adm. Centrale                      CG                                   2181.554       1998.064         -8.411
+   Cons. fin. des autres APU et des ISBLSM            CNGO                                 5527.886       5463.584         -1.163
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
  Valeurs nominales
-   PIB aux prix de base                               PIB_BP                              47638.306      47638.306          0.000
-   PIB aux prix du marche                             PIB_MP                              51035.217      51035.217          0.000
-   PIB aux prix du marche (approche revenue)          PIB_IB                              51035.217      51035.217          0.000
-   PIB aux prix du marche (approche demande)          PIB_FD                              51035.217      51035.217          0.000
+   PIB aux prix de base                               PIB_BP                              47638.306      46500.263         -2.389
+   PIB aux prix du marche                             PIB_MP                              51035.217      49942.597         -2.141
+   PIB aux prix du marche (approche revenue)          PIB_IB                              51035.217      49942.597         -2.141
+   PIB aux prix du marche (approche demande)          PIB_FD                              51035.217      49942.597         -2.141
 
-   Cons. tot. finale des Menages urbains              CTH(HUR)                            10339.215      10339.215          0.000
-   Cons. tot. finale des Menages ruraux               CTH(HRU)                            24345.519      24345.519          0.000
+   Cons. tot. finale des Menages urbains              CTH(HUR)                            10339.215      10153.397         -1.797
+   Cons. tot. finale des Menages ruraux               CTH(HRU)                            24345.519      23742.592         -2.477
 
-   Investissement total                               IT                                  11576.853      11576.853          0.000
-   Formation Brute de Capital Fixe                    FBCF                                10843.863      10843.863          0.000
+   Investissement total                               IT                                  11576.853      11625.641          0.421
+   Formation Brute de Capital Fixe                    FBCF                                10843.863       9736.006        -10.216
 
-   Agriculture                                        P(AGR)*XS(AGR)                      16841.161      16841.161          0.000
-     Valeur ajoutee                                   PVA(AGR)*VA(AGR)                    11715.773      11715.773          0.000
-       Travail                                        W*LD(AGR)                            7546.905       7546.905          0.000
-       Capital                                        R(AGR)*KD(AGR)                       4168.868       4168.868          0.000
+   Agriculture                                        P(AGR)*XS(AGR)                      16841.161      16620.459         -1.310
+     Valeur ajoutee                                   PVA(AGR)*VA(AGR)                    11715.773      11574.498         -1.206
+       Travail                                        W*LD(AGR)                            7546.905       7455.900         -1.206
+       Capital                                        R(AGR)*KD(AGR)                       4168.868       4118.598         -1.206
 
-     Consommation intermediaire                       PCI(AGR)*CI(AGR)                     5125.388       5125.388          0.000
-       Agriculture                                    PC(AGR)*DI(AGR,AGR)                  3883.825       3883.825          0.000
-       Alimentation                                   PC(AGR)*DI(FOOD,AGR)                  248.988        248.988          0.000
-       Autres industries                              PC(AGR)*DI(OTHIND,AGR)                789.665        789.665          0.000
-       Produits petroliers                            PC(AGR)*DI(PETR,AGR)                   61.195         61.195          0.000
-       Service                                        PC(AGR)*DI(SER,AGR)                   141.716        141.716          0.000
+     Consommation intermediaire                       PCI(AGR)*CI(AGR)                     5125.388       5045.961         -1.550
+       Agriculture                                    PC(AGR)*DI(AGR,AGR)                  3883.825       3813.346         -1.815
+       Alimentation                                   PC(AGR)*DI(FOOD,AGR)                  248.988        244.218         -1.916
+       Autres industries                              PC(AGR)*DI(OTHIND,AGR)                789.665        791.037          0.174
+       Produits petroliers                            PC(AGR)*DI(PETR,AGR)                   61.195         60.732         -0.756
+       Service                                        PC(AGR)*DI(SER,AGR)                   141.716        136.629         -3.590
 
-     Cons. finale des Menages urbains                 PC(AGR)*CH(AGR,HUR)                  2617.025       2617.025          0.000
-     Cons. finale des Menages ruraux                  PC(AGR)*CH(AGR,HRU)                  5806.450       5806.450          0.000
+     Cons. finale des Menages urbains                 PC(AGR)*CH(AGR,HUR)                  2617.025       2569.992         -1.797
+     Cons. finale des Menages ruraux                  PC(AGR)*CH(AGR,HRU)                  5806.450       5662.651         -2.477
      Investissement                                   PC(AGR)*INV(AGR)                        0.000          0.000          0.000
-     Variation de stocks                              PC(AGR)*VSTK(AGR)                   -2521.482      -2521.482          0.000
-     Exportations                                     PE(AGR)*EX(AGR)                       954.953        954.953          0.000
-     Importations                                     PM(AGR)*IM(AGR)                       263.796        263.796          0.000
+     Variation de stocks                              PC(AGR)*VSTK(AGR)                   -2521.482      -2469.831         -2.048
+     Exportations                                     PE(AGR)*EX(AGR)                       954.953        964.490          0.999
+     Importations                                     PM(AGR)*IM(AGR)                       263.796        259.663         -1.567
 
-   Alimentation                                       P(FOOD)*XS(FOOD)                    10433.222      10433.222          0.000
-     Valeur ajoutee                                   PVA(FOOD)*VA(FOOD)                   2935.183       2935.183          0.000
-       Travail                                        W*LD(FOOD)                           1449.593       1449.593          0.000
-       Capital                                        R(FOOD)*KD(FOOD)                     1485.590       1485.590          0.000
+   Alimentation                                       P(FOOD)*XS(FOOD)                    10433.222      10305.915         -1.220
+     Valeur ajoutee                                   PVA(FOOD)*VA(FOOD)                   2935.183       2919.864         -0.522
+       Travail                                        W*LD(FOOD)                           1449.593       1442.028         -0.522
+       Capital                                        R(FOOD)*KD(FOOD)                     1485.590       1477.836         -0.522
 
-     Consommation intermediaire                       PCI(FOOD)*CI(FOOD)                   7498.039       7498.039          0.000
-       Agriculture                                    PC(FOOD)*DI(AGR,FOOD)                6661.915       6661.915          0.000
-       Alimentation                                   PC(FOOD)*DI(FOOD,FOOD)                485.833        485.833          0.000
-       Autres industries                              PC(FOOD)*DI(OTHIND,FOOD)              227.341        227.341          0.000
-       Produits petroliers                            PC(FOOD)*DI(PETR,FOOD)                 42.442         42.442          0.000
-       Service                                        PC(FOOD)*DI(SER,FOOD)                  80.508         80.508          0.000
+     Consommation intermediaire                       PCI(FOOD)*CI(FOOD)                   7498.039       7386.051         -1.494
+       Agriculture                                    PC(FOOD)*DI(AGR,FOOD)                6661.915       6559.698         -1.534
+       Alimentation                                   PC(FOOD)*DI(FOOD,FOOD)                485.833        477.887         -1.636
+       Autres industries                              PC(FOOD)*DI(OTHIND,FOOD)              227.341        228.386          0.460
+       Produits petroliers                            PC(FOOD)*DI(PETR,FOOD)                 42.442         42.242         -0.473
+       Service                                        PC(FOOD)*DI(SER,FOOD)                  80.508         77.840         -3.314
 
-     Cons. finale des Menages urbains                 PC(FOOD)*CH(FOOD,HUR)                4013.805       4013.805          0.000
-     Cons. finale des Menages ruraux                  PC(FOOD)*CH(FOOD,HRU)               10311.198      10311.198          0.000
+     Cons. finale des Menages urbains                 PC(FOOD)*CH(FOOD,HUR)                4013.805       3941.668         -1.797
+     Cons. finale des Menages ruraux                  PC(FOOD)*CH(FOOD,HRU)               10311.198      10055.836         -2.477
      Investissement                                   PC(FOOD)*INV(FOOD)                      0.000          0.000          0.000
-     Variation de stocks                              PC(FOOD)*VSTK(FOOD)                  -681.995       -681.995          0.000
-     Exportations                                     PE(FOOD)*EX(FOOD)                    2651.014       2651.014          0.000
-     Importations                                     PM(FOOD)*IM(FOOD)                    3026.873       3026.873          0.000
+     Variation de stocks                              PC(FOOD)*VSTK(FOOD)                  -681.995       -667.338         -2.149
+     Exportations                                     PE(FOOD)*EX(FOOD)                    2651.014       2687.658          1.382
+     Importations                                     PM(FOOD)*IM(FOOD)                    3026.873       2968.578         -1.926
 
-   Autres industries                                  P(OTHIND)*XS(OTHIND)                 9751.427       9751.427          0.000
-     Valeur ajoutee                                   PVA(OTHIND)*VA(OTHIND)               4726.836       4726.836          0.000
-       Travail                                        W*LD(OTHIND)                         2334.434       2334.434          0.000
-       Capital                                        R(OTHIND)*KD(OTHIND)                 2392.402       2392.402          0.000
+   Autres industries                                  P(OTHIND)*XS(OTHIND)                 9751.427      10223.902          4.845
+     Valeur ajoutee                                   PVA(OTHIND)*VA(OTHIND)               4726.836       5049.693          6.830
+       Travail                                        W*LD(OTHIND)                         2334.434       2493.882          6.830
+       Capital                                        R(OTHIND)*KD(OTHIND)                 2392.402       2555.810          6.830
 
-     Consommation intermediaire                       PCI(OTHIND)*CI(OTHIND)               5024.591       5024.591          0.000
-       Agriculture                                    PC(OTHIND)*DI(AGR,OTHIND)              81.247         81.247          0.000
-       Alimentation                                   PC(OTHIND)*DI(FOOD,OTHIND)              5.130          5.130          0.000
-       Autres industries                              PC(OTHIND)*DI(OTHIND,OTHIND)         3116.962       3116.962          0.000
-       Produits petroliers                            PC(OTHIND)*DI(PETR,OTHIND)            631.392        631.392          0.000
-       Service                                        PC(OTHIND)*DI(SER,OTHIND)            1189.860       1189.860          0.000
+     Consommation intermediaire                       PCI(OTHIND)*CI(OTHIND)               5024.591       5174.209          2.978
+       Agriculture                                    PC(OTHIND)*DI(AGR,OTHIND)              81.247         82.868          1.995
+       Alimentation                                   PC(OTHIND)*DI(FOOD,OTHIND)              5.130          5.227          1.890
+       Autres industries                              PC(OTHIND)*DI(OTHIND,OTHIND)         3116.962       3243.524          4.060
+       Produits petroliers                            PC(OTHIND)*DI(PETR,OTHIND)            631.392        650.932          3.095
+       Service                                        PC(OTHIND)*DI(SER,OTHIND)            1189.860       1191.658          0.151
 
-     Cons. finale des Menages urbains                 PC(OTHIND)*CH(OTHIND,HUR)            1186.266       1186.266          0.000
-     Cons. finale des Menages ruraux                  PC(OTHIND)*CH(OTHIND,HRU)            2631.994       2631.994          0.000
-     Investissement                                   PC(OTHIND)*INV(OTHIND)               2781.358       2781.358          0.000
-     Variation de stocks                              PC(OTHIND)*VSTK(OTHIND)              2771.496       2771.496          0.000
-     Exportations                                     PE(OTHIND)*EX(OTHIND)                5620.145       5620.145          0.000
-     Importations                                     PM(OTHIND)*IM(OTHIND)               12355.181      12355.181          0.000
+     Cons. finale des Menages urbains                 PC(OTHIND)*CH(OTHIND,HUR)            1186.266       1164.946         -1.797
+     Cons. finale des Menages ruraux                  PC(OTHIND)*CH(OTHIND,HRU)            2631.994       2566.812         -2.477
+     Investissement                                   PC(OTHIND)*INV(OTHIND)               2781.358       2497.202        -10.216
+     Variation de stocks                              PC(OTHIND)*VSTK(OTHIND)              2771.496       3866.501         39.510
+     Exportations                                     PE(OTHIND)*EX(OTHIND)                5620.145       5832.684          3.782
+     Importations                                     PM(OTHIND)*IM(OTHIND)               12355.181      12917.262          4.549
 
-   Service                                            P(SER)*XS(SER)                      34897.883      34897.883          0.000
-     Valeur ajoutee                                   PVA(SER)*VA(SER)                    20941.261      20941.261          0.000
-       Travail                                        W*LD(SER)                             644.190        644.190          0.000
-       Capital                                        R(SER)*KD(SER)                      20297.071      20297.071          0.000
+   Service                                            P(SER)*XS(SER)                      34897.883      33601.640         -3.714
+     Valeur ajoutee                                   PVA(SER)*VA(SER)                    20941.261      19968.957         -4.643
+       Travail                                        W*LD(SER)                             644.190        614.280         -4.643
+       Capital                                        R(SER)*KD(SER)                      20297.071      19354.677         -4.643
 
-     Consommation intermediaire                       PCI(SER)*CI(SER)                    13956.622      13956.622          0.000
-       Agriculture                                    PC(SER)*DI(AGR,SER)                    93.217         93.217          0.000
-       Alimentation                                   PC(SER)*DI(FOOD,SER)                  236.283        236.283          0.000
-       Autres industries                              PC(SER)*DI(OTHIND,SER)               4460.197       4460.197          0.000
-       Produits petroliers                            PC(SER)*DI(PETR,SER)                 1745.109       1745.109          0.000
-       Service                                        PC(SER)*DI(SER,SER)                  7421.817       7421.817          0.000
+     Consommation intermediaire                       PCI(SER)*CI(SER)                    13956.622      13632.684         -2.321
+       Agriculture                                    PC(SER)*DI(AGR,SER)                    93.217         91.218         -2.144
+       Alimentation                                   PC(SER)*DI(FOOD,SER)                  236.283        230.979         -2.245
+       Autres industries                              PC(SER)*DI(OTHIND,SER)               4460.197       4452.962         -0.162
+       Produits petroliers                            PC(SER)*DI(PETR,SER)                 1745.109       1726.110         -1.089
+       Service                                        PC(SER)*DI(SER,SER)                  7421.817       7131.414         -3.913
 
-     Cons. finale des Menages urbains                 PC(SER)*CH(SER,HUR)                  2511.072       2511.072          0.000
-     Cons. finale des Menages ruraux                  PC(SER)*CH(SER,HRU)                  5571.369       5571.369          0.000
-     Investissement                                   PC(SER)*INV(SER)                     8062.505       8062.505          0.000
-     Exportations                                     PE(SER)*EX(SER)                      5001.855       5001.855          0.000
-     Importations                                     PM(SER)*IM(SER)                      3504.891       3504.891          0.000
+     Cons. finale des Menages urbains                 PC(SER)*CH(SER,HUR)                  2511.072       2465.943         -1.797
+     Cons. finale des Menages ruraux                  PC(SER)*CH(SER,HRU)                  5571.369       5433.392         -2.477
+     Investissement                                   PC(SER)*INV(SER)                     8062.505       7238.804        -10.216
+     Exportations                                     PE(SER)*EX(SER)                      5001.855       5087.152          1.705
+     Importations                                     PM(SER)*IM(SER)                      3504.891       3373.909         -3.737
 
-   Administration publique                            P(PUB)*XS(PUB)                       2181.554       2181.554          0.000
-     Valeur ajoutee                                   PVA(PUB)*VA(PUB)                     1867.592       1867.592          0.000
-       Travail                                        W*LD(PUB)                            1867.592       1867.592          0.000
+   Administration publique                            P(PUB)*XS(PUB)                       2181.554       1963.399        -10.000
+     Valeur ajoutee                                   PVA(PUB)*VA(PUB)                     1867.592       1683.642         -9.850
+       Travail                                        W*LD(PUB)                            1867.592       1683.642         -9.850
 
-     Consommation intermediaire                       PCI(PUB)*CI(PUB)                      313.962        313.962          0.000
-       Agriculture                                    PC(PUB)*DI(AGR,PUB)                     0.145          0.145          0.000
-       Alimentation                                   PC(PUB)*DI(FOOD,PUB)                    0.010          0.010          0.000
-       Autres industries                              PC(PUB)*DI(OTHIND,PUB)                 68.028         68.028          0.000
-       Service                                        PC(PUB)*DI(SER,PUB)                   213.233        213.233          0.000
+     Consommation intermediaire                       PCI(PUB)*CI(PUB)                      313.962        279.757        -10.895
+       Agriculture                                    PC(PUB)*DI(AGR,PUB)                     0.145          0.130        -10.287
+       Alimentation                                   PC(PUB)*DI(FOOD,PUB)                    0.010          0.009        -10.379
+       Autres industries                              PC(PUB)*DI(OTHIND,PUB)                 68.028         62.266         -8.470
+       Service                                        PC(PUB)*DI(SER,PUB)                   213.233        187.839        -11.909
 
-   Cons. fin. de l'Adm. Centrale                      CTG                                  2181.554       2181.554          0.000
-   Cons. fin. des autres APU et des ISBLSM            CTNGO                                5527.886       5527.886          0.000
+   Cons. fin. de l'Adm. Centrale                      CTG                                  2181.554       1963.399        -10.000
+   Cons. fin. des autres APU et des ISBLSM            CTNGO                                5527.886       5376.907         -2.731
 
-   Autres services non marchands                      P(OTHNTR)*XS(OTHNTR)                 5527.886       5527.886          0.000
-     Valeur ajoutee                                   PVA(OTHNTR)*VA(OTHNTR)               5451.660       5451.660          0.000
-       Travail                                        W*LD(OTHNTR)                         5451.660       5451.660          0.000
+   Autres services non marchands                      P(OTHNTR)*XS(OTHNTR)                 5527.886       5376.907         -2.731
+     Valeur ajoutee                                   PVA(OTHNTR)*VA(OTHNTR)               5451.660       5303.611         -2.716
+       Travail                                        W*LD(OTHNTR)                         5451.660       5303.611         -2.716
 
-     Consommation intermediaire                       PCI(OTHNTR)*CI(OTHNTR)                 76.226         76.226          0.000
-       Agriculture                                    PC(OTHNTR)*DI(AGR,OTHNTR)               0.035          0.035          0.000
-       Alimentation                                   PC(OTHNTR)*DI(FOOD,OTHNTR)              0.002          0.002          0.000
-       Autres industries                              PC(OTHNTR)*DI(OTHIND,OTHNTR)           16.516         16.516          0.000
-       Service                                        PC(OTHNTR)*DI(SER,OTHNTR)              51.770         51.770          0.000
+     Consommation intermediaire                       PCI(OTHNTR)*CI(OTHNTR)                 76.226         73.296         -3.843
+       Agriculture                                    PC(OTHNTR)*DI(AGR,OTHNTR)               0.035          0.034         -3.188
+       Alimentation                                   PC(OTHNTR)*DI(FOOD,OTHNTR)              0.002          0.002         -3.287
+       Autres industries                              PC(OTHNTR)*DI(OTHIND,OTHNTR)           16.516         16.314         -1.227
+       Service                                        PC(OTHNTR)*DI(SER,OTHNTR)              51.770         49.214         -4.938
 
-   Cons. fin. de l'Adm. Centrale                      CTG                                  2181.554       2181.554          0.000
-   Cons. fin. des autres APU et des ISBLSM            CTNGO                                5527.886       5527.886          0.000
+   Cons. fin. de l'Adm. Centrale                      CTG                                  2181.554       1963.399        -10.000
+   Cons. fin. des autres APU et des ISBLSM            CTNGO                                5527.886       5376.907         -2.731
 
 =================================================================================================================================
 
 SYSTEME DES PRIX
    Prix du producteur                                 P
-     Agriculture                                      P(AGR)                                  1.000          1.000          0.000
-     Alimentation                                     P(FOOD)                                 1.000          1.000          0.000
-     Autres industries                                P(OTHIND)                               1.000          1.000          0.000
-     Service                                          P(SER)                                  1.000          1.000          0.000
-     Administration publique                          P(PUB)                                  1.000          1.000          0.000
-     Autres services non marchands                    P(OTHNTR)                               1.000          1.000          0.000
+     Agriculture                                      P(AGR)                                  1.000          0.985         -1.545
+     Alimentation                                     P(FOOD)                                 1.000          0.983         -1.736
+     Autres industries                                P(OTHIND)                               1.000          1.007          0.689
+     Service                                          P(SER)                                  1.000          0.964         -3.620
+     Administration publique                          P(PUB)                                  1.000          0.983         -1.735
+     Autres services non marchands                    P(OTHNTR)                               1.000          0.984         -1.586
 
    Prix sur le marche local (hors taxes et marges)    PL
-     Agriculture                                      PL(AGR)                                 1.000          1.000          0.000
-     Alimentation                                     PL(FOOD)                                1.000          1.000          0.000
-     Autres industries                                PL(OTHIND)                              1.000          1.000          0.000
+     Agriculture                                      PL(AGR)                                 1.000          0.983         -1.730
+     Alimentation                                     PL(FOOD)                                1.000          0.977         -2.330
+     Autres industries                                PL(OTHIND)                              1.000          1.019          1.864
      Produits petroliers                              PL(PETR)                                1.000          1.000          0.000
-     Service                                          PL(SER)                                 1.000          1.000          0.000
+     Service                                          PL(SER)                                 1.000          0.957         -4.254
 
    Prix du bien domestique (hors marges)              PPD
-     Agriculture                                      PPD(AGR)                                1.005          1.005          0.000
-     Alimentation                                     PPD(FOOD)                               1.037          1.037          0.000
-     Autres industries                                PPD(OTHIND)                             1.015          1.015          0.000
+     Agriculture                                      PPD(AGR)                                1.005          0.987         -1.730
+     Alimentation                                     PPD(FOOD)                               1.037          1.012         -2.330
+     Autres industries                                PPD(OTHIND)                             1.015          1.034          1.864
      Produits petroliers                              PPD(PETR)                               1.000          1.000          0.000
-     Service                                          PPD(SER)                                1.011          1.011          0.000
+     Service                                          PPD(SER)                                1.011          0.968         -4.254
 
    Prix du bien domestique (y.c. marges)              PD
-     Agriculture                                      PD(AGR)                                 1.202          1.202          0.000
-     Alimentation                                     PD(FOOD)                                1.231          1.231          0.000
-     Autres industries                                PD(OTHIND)                              1.204          1.204          0.000
-     Produits petroliers                              PD(PETR)                                1.445          1.445          0.000
-     Service                                          PD(SER)                                 1.011          1.011          0.000
+     Agriculture                                      PD(AGR)                                 1.202          1.177         -2.072
+     Alimentation                                     PD(FOOD)                                1.231          1.199         -2.565
+     Autres industries                                PD(OTHIND)                              1.204          1.215          0.972
+     Produits petroliers                              PD(PETR)                                1.445          1.428         -1.176
+     Service                                          PD(SER)                                 1.011          0.968         -4.254
 
    Prix du bien importe (hors marges)                 PPM
      Agriculture                                      PPM(AGR)                                1.139          1.139          0.000
@@ -404,18 +404,18 @@ SYSTEME DES PRIX
      Service                                          PPM(SER)                                1.011          1.011          0.000
 
    Prix du bien importe (y.c. marges)                 PM
-     Agriculture                                      PM(AGR)                                 1.336          1.336          0.000
-     Alimentation                                     PM(FOOD)                                1.371          1.371          0.000
-     Autres industries                                PM(OTHIND)                              1.338          1.338          0.000
-     Produits petroliers                              PM(PETR)                                1.713          1.713          0.000
+     Agriculture                                      PM(AGR)                                 1.336          1.328         -0.564
+     Alimentation                                     PM(FOOD)                                1.371          1.363         -0.542
+     Autres industries                                PM(OTHIND)                              1.338          1.331         -0.540
+     Produits petroliers                              PM(PETR)                                1.713          1.696         -0.992
      Service                                          PM(SER)                                 1.011          1.011          0.000
 
    Prix du bien composite                             PC
-     Agriculture                                      PC(AGR)                                 1.204          1.204          0.000
-     Alimentation                                     PC(FOOD)                                1.258          1.258          0.000
-     Autres industries                                PC(OTHIND)                              1.292          1.292          0.000
-     Produits petroliers                              PC(PETR)                                1.713          1.713          0.000
-     Service                                          PC(SER)                                 1.011          1.011          0.000
+     Agriculture                                      PC(AGR)                                 1.204          1.179         -2.048
+     Alimentation                                     PC(FOOD)                                1.258          1.231         -2.149
+     Autres industries                                PC(OTHIND)                              1.292          1.292         -0.065
+     Produits petroliers                              PC(PETR)                                1.713          1.696         -0.992
+     Service                                          PC(SER)                                 1.011          0.973         -3.819
 
    Prix a l'exportation                               PE
      Agriculture                                      PE(AGR)                                 1.000          1.000          0.000
@@ -425,33 +425,33 @@ SYSTEME DES PRIX
      Service                                          PE(SER)                                 1.000          1.000          0.000
 
    Prix de la Valeur Ajoutee                          PVA
-     Agriculture                                      PVA(AGR)                                1.000          1.000          0.000
-     Alimentation                                     PVA(FOOD)                               1.000          1.000          0.000
-     Autres industries                                PVA(OTHIND)                             1.000          1.000          0.000
-     Service                                          PVA(SER)                                1.000          1.000          0.000
-     Administration publique                          PVA(PUB)                                1.000          1.000          0.000
-     Autres services non marchands                    PVA(OTHNTR)                             1.000          1.000          0.000
+     Agriculture                                      PVA(AGR)                                1.000          0.986         -1.441
+     Alimentation                                     PVA(FOOD)                               1.000          0.990         -1.041
+     Autres industries                                PVA(OTHIND)                             1.000          1.026          2.595
+     Service                                          PVA(SER)                                1.000          0.955         -4.550
+     Administration publique                          PVA(PUB)                                1.000          0.984         -1.571
+     Autres services non marchands                    PVA(OTHNTR)                             1.000          0.984         -1.571
 
    Prix de la cons. intermediaire                     PCI
-     Branche Agriculture                              PCI(AGR)                                1.217          1.217          0.000
-     Branche Alimentation                             PCI(FOOD)                               1.209          1.209          0.000
-     Branche Autres industries                        PCI(OTHIND)                             1.247          1.247          0.000
-     Branche Service                                  PCI(SER)                                1.156          1.156          0.000
-     Branche Administration publique                  PCI(PUB)                                1.111          1.111          0.000
-     Branche Autres services non marchands            PCI(OTHNTR)                             1.111          1.111          0.000
+     Branche Agriculture                              PCI(AGR)                                1.217          1.195         -1.784
+     Branche Alimentation                             PCI(FOOD)                               1.209          1.185         -2.008
+     Branche Autres industries                        PCI(OTHIND)                             1.247          1.233         -1.105
+     Branche Service                                  PCI(SER)                                1.156          1.130         -2.226
+     Branche Administration publique                  PCI(PUB)                                1.111          1.081         -2.712
+     Branche Autres services non marchands            PCI(OTHNTR)                             1.111          1.081         -2.712
 
    Prix des Facteurs de production
-     Remuneration des salaries                        W                                       1.000          1.000          0.000
+     Remuneration des salaries                        W                                       1.000          0.984         -1.571
      Remuneration du capital                          R
-       Agriculture                                    R(AGR)                                  1.000          1.000          0.000
-       Alimentation                                   R(FOOD)                                 1.000          1.000          0.000
-       Autres industries                              R(OTHIND)                               1.000          1.000          0.000
-       Service                                        R(SER)                                  1.000          1.000          0.000
+       Agriculture                                    R(AGR)                                  1.000          0.988         -1.206
+       Alimentation                                   R(FOOD)                                 1.000          0.995         -0.522
+       Autres industries                              R(OTHIND)                               1.000          1.068          6.830
+       Service                                        R(SER)                                  1.000          0.954         -4.643
 
    Indicateurs de prix agreges
-     Deflateur du PIB                                 PIXPIB                                  1.000          1.000          0.000
-     Indice des prix a la cons.                       PIXCON                                  1.000          1.000          0.000
-     Deflateur investissement                         PIXINV                                  1.000          1.000          0.000
+     Deflateur du PIB                                 PIXPIB                                  1.000          0.976         -2.402
+     Indice des prix a la cons.                       PIXCON                                  1.000          0.977         -2.283
+     Deflateur investissement                         PIXINV                                  1.000          0.971         -2.870
 
    Prix mondiaux et indicateurs de change
      Taux de change nominal                           e                                       1.000          1.000          0.000
@@ -549,12 +549,13 @@ Elasticite d'indexation des transferts                eta                      1
 Part des autres APU et ISBLSM dans la dep. cons. pub. mu_CTNGO                 0.130
 
 Parametres du secteur des produits petroliers :
-  Part de l'offre allouee a la demande domestique     mu_D                     0.639
-  Part de l'offre allouee a la reexportation          mu_E                     0.119
+   Part de l'offre allouee a la demande domestique    mu_D                     0.639
+   Part de l'offre allouee a la reexportation         mu_E                     0.119
+   Part dans le PIB des rev. sal. des trav. nat. a l'emu_LD                    0.002
 
 Cle de repartition des ressources non fisc. des menages :
-  Part captee par l'Administration centrale           sntx_gvt                 0.054
-  Part captee par les autres APU et les ISBLSM        sntx_ngo                 0.946
+   Part captee par l'Administration centrale          sntx_gvt                 0.054
+   Part captee par les autres APU et les ISBLSM       sntx_ngo                 0.946
 
 6. PARAMETRES DU BLOC FINANCIER
 Vitesse de circulation de la monnaie                  vel                      4.031
@@ -569,20 +570,20 @@ BLOC FINANCIER
 --------------
 
 FINANCE PUBLIQUE
-Epargne publique                                      SG                                    936.114        936.114          0.000
-Investissement publique                               INVG                                 2854.585       2854.585          0.000
+Epargne publique                                      SG                                    936.114       1196.717         27.839
+Investissement publique                               INVG                                 2854.585       3134.701          9.813
    Fin. interieur                                     DINVG                                 748.697        748.697          0.000
-   Fin. exterieur                                     E*FINVG                              2105.889       2105.889          0.000
+   Fin. exterieur                                     E*FINVG                              2105.889       2386.004         13.302
      Transf. de capital                               E*KTRAG                              1221.709       1221.709          0.000
-     Pret projet                                      E*D_NFDG_PRJ                          884.180        884.180          0.000
-Besoin de financement                                 BRG                                  1918.472       1918.472          0.000
+     Pret projet                                      E*D_NFDG_PRJ                          884.180       1164.295         31.681
+Besoin de financement                                 BRG                                  1918.472       1937.984          1.017
 Financement externe
-   Pret projet                                        E*D_NFDG_PRJ                          884.180        884.180          0.000
+   Pret projet                                        E*D_NFDG_PRJ                          884.180       1164.295         31.681
    Pret programme                                     E*D_NFDG_PRG                            5.358          5.358          0.000
    Amortissement (-)                                  E*AMORTG                              234.436        234.436          0.000
 Financement interne
-   Fin. bancaire                                      D_DCG                                 -25.013        -25.013          0.000
-   Fin. non bancaire                                  D_BG                                   66.674         66.674          0.000
+   Fin. bancaire                                      D_DCG                                 -25.013       -284.045       1035.576
+   Fin. non bancaire                                  D_BG                                   66.674         65.103         -2.357
 
 BALANCE DES PAIEMENTS
 Balance courante                                      E*CAB                               -1653.152      -1653.152          0.000
@@ -594,36 +595,36 @@ Compte financier
      Entrant                                          E*FDI_IN                             1717.116       1717.116          0.000
      Sortant                                          E*FDI_OUT                             366.716        366.716          0.000
    Financement
-     Public                                           E*D_NFDG                              655.102        655.102          0.000
-     Prive                                            E*D_NFDP                            -2084.969      -2084.969          0.000
-Balance globale (var. des reserves)                   E*D_RES                              -510.910       -510.910          0.000
+     Public                                           E*D_NFDG                              655.102        935.217         42.759
+     Prive                                            E*D_NFDP                            -2084.969      -2345.982         12.519
+Balance globale (var. des reserves)                   E*D_RES                              -510.910       -491.808         -3.739
 
 SITUATION MONETAIRE
 (Flux)
- Masse monetaire                                      D_MD                                  835.706        835.706          0.000
-   Avoirs exterieurs nets                             ER*D_RES                             -511.659       -511.659          0.000
+ Masse monetaire                                      D_MD                                  835.706        564.681        -32.431
+   Avoirs exterieurs nets                             ER*D_RES                             -511.659       -492.529         -3.739
    Avoirs interieurs nets
-     Credit bancaire au sect. pub.                    D_DCG                                 -25.013        -25.013          0.000
-     Credit bancaire au sect. prive                   D_DCP                                1173.537       1173.537          0.000
+     Credit bancaire au sect. pub.                    D_DCG                                 -25.013       -284.045       1035.576
+     Credit bancaire au sect. prive                   D_DCP                                1173.537       1142.413         -2.652
 (Stock)
- Masse monetaire                                      MD = MS                             12659.329      12659.329          0.000
-   Avoirs exterieurs nets                             ER*RES                               4614.206       4614.206          0.000
+ Masse monetaire                                      MD = MS                             12659.329      12388.304         -2.141
+   Avoirs exterieurs nets                             ER*RES                               4614.206       4633.336          0.415
    Avoirs interieurs nets
-     Credit bancaire au sect. pub.                    DCG                                  2074.187       2074.187          0.000
-     Credit bancaire au secteur prive                 DCP                                  5970.937       5970.937          0.000
+     Credit bancaire au sect. pub.                    DCG                                  2074.187       1815.155        -12.488
+     Credit bancaire au secteur prive                 DCP                                  5970.937       5939.813         -0.521
 
 DETTE PUBLIQUE
-Dette publique totale                                 DEBTG                               15405.963      15405.963          0.000
-   Dette publique ext.                                ER*NFDG                             11749.427      11749.427          0.000
-   Dette publique int.                                NDDG                                 3656.537       3656.537          0.000
+Dette publique totale                                 DEBTG                               15405.963      15425.886          0.129
+   Dette publique ext.                                ER*NFDG                             11749.427      12029.952          2.388
+   Dette publique int.                                NDDG                                 3656.537       3395.934         -7.127
 
 INDICATEURS
-Deficit budgetaire                                    DEFG_PIB                               -3.759         -3.759          0.000
-Taux de pression fiscale                              YGTX_PIB                               11.027         11.027          0.000
-Taux de croissance                                    growth_PIB                              0.000          0.000          0.000
-Reserves en mois d'importations                       mu_RES                                  3.170          3.170          0.000
-Taux d'endettement                                    DEBTG_PIB                              30.187         30.187          0.000
-Depenses totales                                      TOTG_PIB                               15.785         15.785          0.000
+Deficit budgetaire                                    DEFG_PIB                               -3.759         -3.880         -0.121
+Taux de pression fiscale                              YGTX_PIB                               11.027         11.240          0.213
+Taux de croissance                                    growth_PIB                              0.000          0.146          0.146
+Reserves en mois d'importations                       mu_RES                                  3.170          3.124         -0.046
+Taux d'endettement                                    DEBTG_PIB                              30.187         30.887          0.700
+Depenses totales                                      TOTG_PIB                               15.785         16.116          0.331
 
 ===============================================================================================================================================================
 

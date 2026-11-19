@@ -656,20 +656,20 @@ PUT "===========================================================================
 PUT "COMPTE DES MENAGES" /;
 LOOP(h,
    PUT @2 h.te(h) /;
-   PUT @4 "Ressources/Emplois tot."                 @55 "YH"                    @90 valYH(h,'base'):>10:3                   @105 valYH(h,'sim'):>10:3                   @120 valYH(h,'var'):>10:3 /;
+   PUT @4 "Ressources/Emplois tot."                 @55 "YH(" h.TL:0 ")"        @90 valYH(h,'base'):>10:3                   @105 valYH(h,'sim'):>10:3                   @120 valYH(h,'var'):>10:3 /;
    PUT /;
    
    PUT @4 "Ressources"                             /;
-   PUT @6 "Revenus du Travail"                      @55 "YHL"                   @90 valYHL(h,'base'):>10:3                  @105 valYHL(h,'sim'):>10:3                  @120 valYHL(h,'var'):>10:3 /;
-   PUT @6 "Revenus du Capital"                      @55 "YHK"                   @90 valYHK(h,'base'):>10:3                  @105 valYHK(h,'sim'):>10:3                  @120 valYHK(h,'var'):>10:3 /;
-   PUT @6 "Transferts recus"                        @55 "YHTR"                  @90 valYHTRA(h,'base'):>10:3                @105 valYHTRA(h,'sim'):>10:3                @120 valYHTRA(h,'var'):>10:3 /;
+   PUT @6 "Revenus du Travail"                      @55 "YHL(" h.TL:0 ")"       @90 valYHL(h,'base'):>10:3                  @105 valYHL(h,'sim'):>10:3                  @120 valYHL(h,'var'):>10:3 /;
+   PUT @6 "Revenus du Capital"                      @55 "YHK(" h.TL:0 ")"       @90 valYHK(h,'base'):>10:3                  @105 valYHK(h,'sim'):>10:3                  @120 valYHK(h,'var'):>10:3 /;
+   PUT @6 "Transferts recus"                        @55 "YHTR(" h.TL:0 ")"      @90 valYHTRA(h,'base'):>10:3                @105 valYHTRA(h,'sim'):>10:3                @120 valYHTRA(h,'var'):>10:3 /;
    PUT /;
    
    PUT @4 "Emplois"                                /;
-   PUT @6 "Impots sur le revenu"                    @55 "TDH"                   @90 valTDH(h,'base'):>10:3                  @105 valTDH(h,'sim'):>10:3                  @120 valTDH(h,'var'):>10:3 /;
+   PUT @6 "Impots sur le revenu"                    @55 "TDH(" h.TL:0 ")"       @90 valTDH(h,'base'):>10:3                  @105 valTDH(h,'sim'):>10:3                  @120 valTDH(h,'var'):>10:3 /;
    PUT @6 "Prelevements non fiscaux"                @55 "NTXH(" h.TL:0 ")"      @90 valNTXH(h,'base'):>10:3                 @105 valNTXH(h,'sim'):>10:3                 @120 valNTXH(h,'var'):>10:3 /;
-   PUT @6 "Consommation Finale"                     @55 "CTH"                   @90 valCTH(h,'base'):>10:3                  @105 valCTH(h,'sim'):>10:3                  @120 valCTH(h,'var'):>10:3 /; 
-   PUT @6 "Epargne"                                 @55 "SH"                    @90 valSH(h,'base'):>10:3                   @105 valSH(h,'sim'):>10:3                   @120 valSH(h,'var'):>10:3 /;
+   PUT @6 "Consommation Finale"                     @55 "CTH(" h.TL:0 ")"       @90 valCTH(h,'base'):>10:3                  @105 valCTH(h,'sim'):>10:3                  @120 valCTH(h,'var'):>10:3 /; 
+   PUT @6 "Epargne"                                 @55 "SH(" h.TL:0 ")"        @90 valSH(h,'base'):>10:3                   @105 valSH(h,'sim'):>10:3                   @120 valSH(h,'var'):>10:3 /;
    PUT /;
 );
 
@@ -775,7 +775,7 @@ PUT /;
 PUT @4 "Ressources"     /;
 PUT @6 "Remuner. des employes non-residents"        @55 "E*YROWL"                               @90 (ValE('base')*valYROWL('base')):>10:3               @105 (ValE('sim')*valYROWL('sim')):>10:3                @120 ([{ValE('var')/100 + 1}*{valYROWL('var')/100 + 1} - 1]*100):>10:3 /;
 PUT @6 "Remuner. du capital des non-residents"      @55 "E*YROWK"                               @90 (ValE('base')*valYROWK('base')):>10:3               @105 (ValE('sim')*valYROWK('sim')):>10:3                @120 ([{ValE('var')/100 + 1}*{valYROWK('var')/100 + 1} - 1]*100):>10:3 /;
-PUT @6 "Transf. recus de l'Adm. cent."              @55 "E*TRA(row,gvt)"                        @90 (ValE('base')*valTRA('row','gvt','base')):>10:3     @105 (ValE('sim')*valTRA('row','gvt','sim')):>1         @120 ([{ValE('var')/100 + 1}*{valTRA('row','gvt','var')/100 + 1} - 1]*100):>10:3 /;
+PUT @6 "Transf. recus de l'Adm. cent."              @55 "E*TRA(row,gvt)"                        @90 (ValE('base')*valTRA('row','gvt','base')):>10:3     @105 (ValE('sim')*valTRA('row','gvt','sim')):>10:3      @120 ([{ValE('var')/100 + 1}*{valTRA('row','gvt','var')/100 + 1} - 1]*100):>10:3 /;
 PUT @6 "Importations de biens et services"          @55 "E*SUM[tr, PWM(tr)*IM(tr)]"             @90 valIMTOT('base'):>10:3                              @105 valIMTOT('sim'):>10:3                              @120 valIMTOT('var'):>10:3 /;
 PUT /;
 
@@ -1090,19 +1090,20 @@ PUT /;
 PUT "6. AUTRES PARAMETRES" /;
 PUT                                                                                         @75 "Valeur":>10 /;
 PUT "Elasticite d'indexation des transferts"                        @55 "eta"               @75 eta:>10:3 /;
-PUT "Part des autres APU et ISBLSM dans la dep. cons. pub."         @55 "mu_CTNGO"             @75 mu_CTNGO:>10:3 /;
+PUT "Part des autres APU et ISBLSM dans la dep. cons. pub."         @55 "mu_CTNGO"          @75 mu_CTNGO:>10:3 /;
 PUT /;
 
 * Parametres du secteur petrolier
 PUT "Parametres du secteur des produits petroliers :" /;
-PUT "  Part de l'offre allouee a la demande domestique"             @55 "mu_D"              @75 mu_D:>10:3 /;
-PUT "  Part de l'offre allouee a la reexportation"                  @55 "mu_E"              @75 mu_E:>10:3 /;
+PUT @4 "Part de l'offre allouee a la demande domestique"            @55 "mu_D"              @75 mu_D:>10:3 /;
+PUT @4 "Part de l'offre allouee a la reexportation"                 @55 "mu_E"              @75 mu_E:>10:3 /;
+PUT @4 "Part dans le PIB des rev. sal. des trav. nat. a l'etr."     @55 "mu_LD"             @75 mu_LD:>10:3 /;
 PUT /;
 
 * Cle de repartition des ressources non fiscales
 PUT "Cle de repartition des ressources non fisc. des menages :" /;
-PUT "  Part captee par l'Administration centrale"                   @55 "sntx_gvt"          @75 sntx('gvt'):>10:3 /;
-PUT "  Part captee par les autres APU et les ISBLSM"                @55 "sntx_ngo"          @75 sntx('ngo'):>10:3 /;
+PUT @4 "Part captee par l'Administration centrale"                  @55 "sntx_gvt"          @75 sntx('gvt'):>10:3 /;
+PUT @4 "Part captee par les autres APU et les ISBLSM"               @55 "sntx_ngo"          @75 sntx('ngo'):>10:3 /;
 PUT /;
 
 PUT "6. PARAMETRES DU BLOC FINANCIER" /;
