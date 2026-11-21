@@ -38,7 +38,8 @@ PARAMETER
     valLD_nom(i,scen)       "Valeur nominale de la masse salariale de la branche j(i)"
     valLD_R(scen)           "Demande de travail du RDM"
     valLEON(scen)           "Variable de bouclage (Equilibre du marche des services - Loi de Walras)"
-    valLS(scen)             "Offre totale de travail de l'economie"
+    valLS(scen)             "Offre totale de travail resident"
+    valLS_R(scen)           "Offre totale de travail non resident"
     valMRGCOM(bns,scen)     "Volume des services de marge commerciale pour le produit bns"
     valMRGTRP(bns,scen)     "Volume des services de marge de transport pour le produit bns"
     valNTXF(scen)           "Recettes non fiscales provenant des Societes"
@@ -186,6 +187,7 @@ PARAMETER
     valLD_R('base')         = LD_RO;
     valLEON('base')         = QO('ser') - SUM[h, CHO('ser',h)] - DITO('ser')- SUM[bns, MRGCOMO(bns)] - SUM[bns, MRGTRPO(bns)] - INVO('ser');
     valLS('base')           = LSO;
+    valLS_R('base')         = LS_RO;
     valMRGCOM(bns,'base')   = MRGCOMO(bns);
     valMRGTRP(bns,'base')   = MRGTRPO(bns);
     valNTXF('base')         = NTXFO;
@@ -329,6 +331,7 @@ PARAMETER
     valLD_R('sim')          = LD_R.l;
     valLEON('sim')          = LEON.l;
     valLS('sim')            = LS.l;
+    valLS_R('sim')          = LS_R.L;
     valMRGCOM(bns,'sim')    = MRGCOM.l(bns);
     valMRGTRP(bns,'sim')    = MRGTRP.l(bns);
     valNTXF('sim')          = NTXF.l;
@@ -475,6 +478,7 @@ valLD_nom(j,'var')      $valLD_nom(j,'base')        = (valLD_nom(j,'sim')       
 valLD_R('var')          $valLD_R('base')            = (valLD_R('sim')           / valLD_R('base')           - 1) * 100;               
 valLEON('var')                                      = (valLEON('sim')           - valLEON('base')              )      ;               
 valLS('var')            $valLS('base')              = (valLS('sim')             / valLS('base')             - 1) * 100;   
+valLS_R('var')          $valLS_R('base')            = (valLS_R('sim')           / valLS_R('base')           - 1) * 100;   
 valMRGCOM(bns,'var')    $valMRGCOM(bns,'base')      = (valMRGCOM(bns,'sim')     / valMRGCOM(bns,'base')     - 1) * 100;                                   
 valMRGTRP(bns,'var')    $valMRGTRP(bns,'base')      = (valMRGTRP(bns,'sim')     / valMRGTRP(bns,'base')     - 1) * 100;                                   
 valNTXF('var')          $valNTXF('base')            = (valNTXF('sim')           / valNTXF('base')           - 1) * 100;               
@@ -838,11 +842,15 @@ LOOP(ntr,
         PUT @8 trj.TE(trj)                          @55 "DI(" trj.TL:0 "," ntr.TL:0 ")"         @90 valDI(trj,ntr,'base'):>10:3      @105 valDI(trj,ntr,'sim'):>10:3   @120 valDI(trj,ntr,'var'):>10:3 /;
     );
     PUt /;
-);
-PUT @4 "Cons. fin. de l'Adm. Centrale"              @55 "CG"                                    @90 valCG('base'):>10:3             @105 valCG('sim'):>10:3          @120 valCG('var'):>10:3 /;
-PUT @4 "Cons. fin. des autres APU et des ISBLSM"    @55 "CNGO"                                  @90 valCNGO('base'):>10:3           @105 valCNGO('sim'):>10:3        @120 valCNGO('var'):>10:3 /;
+
+IF(sameas(ntr, 'pub'),    
+PUT @4 "Cons. finale de l'Adm. Centrale"            @55 "CG"                                    @90 valCG('base'):>10:3             @105 valCG('sim'):>10:3          @120 valCG('var'):>10:3 /;
 PUT /;
-    
+ELSE
+PUT @4 "Cons. finale des autres APU et des ISBLSM"  @55 "CNGO"                                  @90 valCNGO('base'):>10:3           @105 valCNGO('sim'):>10:3        @120 valCNGO('var'):>10:3 /;
+PUT /;
+);
+); 
         
 PUT "---------------------------------------------------------------------------------------------------------------------------------" //;
 PUT @2 "Valeurs nominales" /;
@@ -894,10 +902,14 @@ LOOP(ntr,
         PUT @8 trj.TE(trj)                          @55 "PC(" ntr.TL:0 ")*DI(" trj.TL:0 "," ntr.TL:0 ")"    @90 valDI_nom(trj,ntr,'base'):>10:3  @105 valDI_nom(trj,ntr,'sim'):>10:3 @120 valDI_nom(trj,ntr,'var'):>10:3 /;
     );
     PUt /;
-    
-PUT @4 "Cons. fin. de l'Adm. Centrale"              @55 "CTG"                                               @90 valCTG('base'):>10:3             @105 valCTG('sim'):>10:3          @120 valCTG('var'):>10:3 /;
-PUT @4 "Cons. fin. des autres APU et des ISBLSM"    @55 "CTNGO"                                             @90 valCTNGO('base'):>10:3           @105 valCTNGO('sim'):>10:3        @120 valCTNGO('var'):>10:3 /;
+
+IF(sameas(ntr, 'pub'),        
+PUT @4 "Cons. finale de l'Adm. Centrale"            @55 "CTG"                                               @90 valCTG('base'):>10:3             @105 valCTG('sim'):>10:3          @120 valCTG('var'):>10:3 /;
 PUT /;
+ELSE
+PUT @4 "Cons. finale des autres APU et des ISBLSM"  @55 "CTNGO"                                             @90 valCTNGO('base'):>10:3           @105 valCTNGO('sim'):>10:3        @120 valCTNGO('var'):>10:3 /;
+PUT /;
+);
 );
 
 PUT "=================================================================================================================================" //;
@@ -1090,6 +1102,7 @@ PUT /;
 PUT "6. AUTRES PARAMETRES" /;
 PUT                                                                                         @75 "Valeur":>10 /;
 PUT "Elasticite d'indexation des transferts"                        @55 "eta"               @75 eta:>10:3 /;
+PUT "Elasticite-salaire du travail resident a l'etranger"           @55 "eta_LD_R"          @75 eta:>10:3 /;
 PUT "Part des autres APU et ISBLSM dans la dep. cons. pub."         @55 "mu_CTNGO"          @75 mu_CTNGO:>10:3 /;
 PUT /;
 
@@ -1097,7 +1110,6 @@ PUT /;
 PUT "Parametres du secteur des produits petroliers :" /;
 PUT @4 "Part de l'offre allouee a la demande domestique"            @55 "mu_D"              @75 mu_D:>10:3 /;
 PUT @4 "Part de l'offre allouee a la reexportation"                 @55 "mu_E"              @75 mu_E:>10:3 /;
-PUT @4 "Part dans le PIB des rev. sal. des trav. nat. a l'etr."     @55 "mu_LD"             @75 mu_LD:>10:3 /;
 PUT /;
 
 * Cle de repartition des ressources non fiscales

@@ -150,7 +150,6 @@ PARAMETER
     mu_CTNGO            "Part des autres APU et des ISBLSM dans la depense de consommation finale totale"
     mu_D                "Part de l'offre de produits petroliers allouee a la demande domestique"
     mu_E                "Part de l'offre de produits petroliers allouee a la reexportation"
-    mu_LD               "Part dans le PIB des revenus salariaux des travailleurs nationaux a l'etranger"
     gamma_CH(tr,h)      "Part du produit tr dans les depenses totales de consommation du menage h"
     gamma_INV(tr)       "Part du produit tr dans les depenses totales d'investissement"
     io(j)               "Coefficient (Leontief - consommation intermediaire totale)"
@@ -195,11 +194,12 @@ PARAMETER
     IMO(tr)             "Importations du produit tr"
     INVO(tr)            "Demande finale en produit tr pour fins d investissement"
     KDO(trj)            "Demande de capital de la branche trj"
-    KD_RO               "Remuneration nominale du capital versee par le RDM"
+    KD_RO               "Demande de capital adressee au RDM"
     KSO(trj)            "Offre de capital dans la branche trj"
     LDO(i)              "Demande de travail de la branche j(i)"
-    LD_RO               "Demande de travail du RDM"
-    LSO                 "Offre totale de travail"
+    LD_RO               "Demande de travail adressee au RDM"
+    LSO                 "Offre totale de travail resident"
+    LS_RO               "Offre totale de travail non resident"
     MRGCOMO(bns)        "Marge de commercialisation du produit bns"
     MRGTRPO(bns)        "Marge de transport du produit bns"  
     PIB_MP_reelO        "PIB reel aux prix du marche"
@@ -577,7 +577,8 @@ TABLE AUTRE2(*,tr) Autres donnees par produit
  
  PVAO(j)        = {PO(j)*XSO(j) - PCIO(j)*CIO(j)}/VAO(j);
   
- LSO            = LD_RO + SUM[j, LDO(j)];
+ LSO            = SUM[j, LDO(j)];
+ LS_RO          = LD_RO;
  KSO(trj)       = KDO(trj);
 
 * PIXPIBO        = SUM[j, PVAO(j)*VAO(j)]/SUM[j, PVAO(j)*VAO(j)];
@@ -664,8 +665,6 @@ TABLE AUTRE2(*,tr) Autres donnees par produit
                     + PCO('ser')*INVO('ser') + eO*SUM[tr, PWEO(tr)*EXO(tr)]
                     - eO*SUM[tr, PWMO(tr)*IMO(tr)];
                     
- mu_LD           = eO*W_RO*LD_RO/PIB_MPO;
-
                     
 ** --- AUTRES VARIABLES REELLES ---
 
@@ -746,7 +745,7 @@ TABLE AUTRE2(*,tr) Autres donnees par produit
     g_ER,           gamma_CH,       gamma_INV,
     io,
     lambda,         lambda_R,       lambda_TRA,     
-    mu_CTNGO        mu_D,           mu_E,           mu_LD,
+    mu_CTNGO        mu_D,           mu_E,
     ntyf,           ntyh,
     phi,            psi,            psi_BG,         psi_DCP,        psi_EX       
     rho_E,          rho_M,          
@@ -775,11 +774,12 @@ VARIABLES
     IM(tr)          "Importations du produit tr"
     INV(tr)         "Demande finale en produit tr pour fins d investissement"
     KD(trj)         "Demande de capital de la branche tr"
-    KD_R            "Deamnde de capital du RDM"
+    KD_R            "Demande de capital adressee au RDM"
     KS(trj)         "Offre de capital dans la branche tr"
     LD(i)           "Demande de travail de la branche j(i)"
-    LD_R            "Demande de travail du RDM"
-    LS              "Offre totale de travail"
+    LD_R            "Demande de travail adressee au RDM"
+    LS              "Offre totale de travail domestique"
+    LS_R            "Offre totale de travail non resident"
     MRGCOM(bns)     "Marge de commercialisation du produit bns"
     MRGTRP(bns)     "Marge de transport du produit bns"
     PIB_MP_reel     "Produit Interieur Brut aux prix du marche"
@@ -967,60 +967,60 @@ EQUATIONS
 ** --- BLOC RESTE DU MONDE ---
     EQ41            "Revenu total du Reste du Monde"
     EQ42            "Revenu salarial du Reste du Monde"
-    EQ43            "Revenus salariaux des travailleurs nationaux à l'etranger"
-    EQ44            "Revenu du capital du Reste du Monde"
-    EQ45            "Epargne du Reste du monde"
-    EQ46            "Balance courante"
+    EQ43            "Revenu du capital du Reste du Monde"
+    EQ44            "Epargne du Reste du monde"
+    EQ45            "Balance courante"
 
 ** --- BLOC TRANSFERTS ---
-    EQ47(agd)       "Transferts du RDM aux agents domestiques"
-    EQ48(agngvt)    "Transferts de l'Administration centrale aux autres agents"
-    EQ49(h)         "Transferts des societes au menage h"
-    EQ50(h)         "Transferts des autres APU et des ISBLSM au menage h"
-    EQ51            "Transferts des societes aux autres APU et aux ISBLSM"
+    EQ46(agd)       "Transferts du RDM aux agents domestiques"
+    EQ47(agngvt)    "Transferts de l'Administration centrale aux autres agents"
+    EQ48(h)         "Transferts des societes au menage h"
+    EQ49(h)         "Transferts des autres APU et des ISBLSM au menage h"
+    EQ50            "Transferts des societes aux autres APU et aux ISBLSM"
     
 ** --- BLOC DEMANDES ---
-    EQ52            "Consommation finale de l'Administration centrale"
-    EQ53            "Consommation finale des autres APU et des ISBLSM"
-    EQ54(tr,h)      "Consommation du menage h en produit tr"
-    EQ55            "Formation Brute de Capitale Fixe"
-    EQ56(tr)        "Demande en produit tr pour fins d'investissement"
-    EQ57(tr)        "Demande intermediaire en produit tr"
-    EQ58            "Demande interieur de produits petroliers"
-    EQ59(bns)       "Marge de commercialisation du produit bns"
-    EQ60(bns)       "Marge de transport du produit bns"
+    EQ51            "Consommation finale de l'Administration centrale"
+    EQ52            "Consommation finale des autres APU et des ISBLSM"
+    EQ53(tr,h)      "Consommation du menage h en produit tr"
+    EQ54            "Formation Brute de Capitale Fixe"
+    EQ55(tr)        "Demande en produit tr pour fins d'investissement"
+    EQ56(tr)        "Demande intermediaire en produit tr"
+    EQ57            "Demande interieur de produits petroliers"
+    EQ58(bns)       "Marge de commercialisation du produit bns"
+    EQ59(bns)       "Marge de transport du produit bns"
  
 ** --- BLOC COMMERCE INTERNATIONAL ---
-    EQ61(trj)       "CET entre exportations et ventes sur le marche interieur"
-    EQ62(trj)       "Offre relative derivee de la CET (EX et DS)"
-    EQ63            "Exportations de produits petroliers"
-    EQ64(trj)       "CES entre importations et achats sur le marche interieur"
-    EQ65(trj)       "Demande relative derivee de la CES (IM et DD)"
-    EQ66            "Importations de produits petroliers"
+    EQ60(trj)       "CET entre exportations et ventes sur le marche interieur"
+    EQ61(trj)       "Offre relative derivee de la CET (EX et DS)"
+    EQ62            "Exportations de produits petroliers"
+    EQ63(trj)       "CES entre importations et achats sur le marche interieur"
+    EQ64(trj)       "Demande relative derivee de la CES (IM et DD)"
+    EQ65            "Importations de produits petroliers"
 
 ** --- BLOC PRIX ---
-    EQ67(j)         "Prix au producteur et Prix de la valeur ajoutee de la branche j"
-    EQ68(j)         "Indice de prix des consommations intermedaires de la branche j"
-    EQ69(tr)        "Prix interieurs du produit tr incluant les taxes indirectes (hors marges)"
-    EQ70(bns)       "Prix interieurs du produit bns incluant les taxes indirectes (marges comprises)"
-    EQ71            "Prix interieurs du service ser incluant les taxes indirectes (hors marges)"
-    EQ72(tr)        "Prix des produits importes tr (incluant taxes - hors marges)"
-    EQ73(bns)       "Prix des produits importes bns (incluant taxes - marges comprises)"
-    EQ74            "Prix des services importes (incluant taxes - hors marges)"
-    EQ75(tr)        "Prix du produit composite bns (incluant marges)"
-    EQ76(tr)        "Prix a l'exportations"
-    EQ77(trj)       "Prix au producteur (ligne)"
-    EQ78            "Indice de prix (deflateur du PIB)"
-    EQ79            "Indice des prix a la consommation"
-    EQ80            "Indice des prix a l investissement"
+    EQ66(j)         "Prix au producteur et Prix de la valeur ajoutee de la branche j"
+    EQ67(j)         "Indice de prix des consommations intermedaires de la branche j"
+    EQ68(tr)        "Prix interieurs du produit tr incluant les taxes indirectes (hors marges)"
+    EQ69(bns)       "Prix interieurs du produit bns incluant les taxes indirectes (marges comprises)"
+    EQ70            "Prix interieurs du service ser incluant les taxes indirectes (hors marges)"
+    EQ71(tr)        "Prix des produits importes tr (incluant taxes - hors marges)"
+    EQ72(bns)       "Prix des produits importes bns (incluant taxes - marges comprises)"
+    EQ73            "Prix des services importes (incluant taxes - hors marges)"
+    EQ74(tr)        "Prix du produit composite bns (incluant marges)"
+    EQ75(tr)        "Prix a l'exportations"
+    EQ76(trj)       "Prix au producteur (ligne)"
+    EQ77            "Indice de prix (deflateur du PIB)"
+    EQ78            "Indice des prix a la consommation"
+    EQ79            "Indice des prix a l investissement"
 
 ** --- BLOC EQUILIBRE ---
-    EQ81(npbns)     "Absorption domestique"
-    EQ82            "Equilibre sur le marche des produits petroliers"
-    EQ83            "Production de service publique"
-    EQ84            "Production d'autres services non marchands"
-    EQ85(tr)        "Equilibre sur le marche interieur"
-    EQ86            "Equilibre sur le marche du travail"
+    EQ80(npbns)     "Absorption domestique"
+    EQ81            "Equilibre sur le marche des produits petroliers"
+    EQ82            "Production de service publique"
+    EQ83            "Production d'autres services non marchands"
+    EQ84(tr)        "Equilibre sur le marche interieur"
+    EQ85            "Equilibre sur le marche du travail domestique"
+    EQ86            "Equilibre sur le marche du travail etranger"
     EQ87(trj)       "Equilibre sur le marche du capital"
     EQ88            "Equilibre epargne-investissement"
 
@@ -1173,112 +1173,112 @@ EQUATIONS
 
  EQ42..         e*YROWL                 =e= {1 - SUM[h, phi(h)]}*{e*W_R*LD_R + SUM[j, W*LD(j)]};
  
- EQ43..         e*W_R*LD_R              =e= mu_LD*PIB_MP;
+ EQ43..         e*YROWK                 =e= lambda_R*{e*R_R*KD_R + SUM[trj, R(trj)*KD(trj)]};
 
- EQ44..         e*YROWK                 =e= lambda_R*{e*R_R*KD_R + SUM[trj, R(trj)*KD(trj)]};
-
- EQ45..         SROW                    =e= YROW - SUM[tr, PWE(tr)*EX(tr)]
+ EQ44..         SROW                    =e= YROW - SUM[tr, PWE(tr)*EX(tr)]
                                             - W_R*LD_R - R_R*KD_R
                                             - SUM[agd, TRA(agd,'row')];
 
- EQ46..         CAB                     =e= -SROW;
+ EQ45..         CAB                     =e= -SROW;
  
  
 
 ** --- BLOC TRANSFERTS ---
- EQ47(agd)..    TRA(agd,'row')          =e= PIXCON**eta*TRAO(agd,'row');
+ EQ46(agd)..    TRA(agd,'row')          =e= PIXCON**eta*TRAO(agd,'row');
  
- EQ48(agngvt).. TRA(agngvt,'gvt')       =e= PIXCON**eta*TRAO(agngvt,'gvt');
+ EQ47(agngvt).. TRA(agngvt,'gvt')       =e= PIXCON**eta*TRAO(agngvt,'gvt');
 
- EQ49(h)..      TRA(h,'firm')           =e= lambda_TRA(h,'firm')*YDF;
+ EQ48(h)..      TRA(h,'firm')           =e= lambda_TRA(h,'firm')*YDF;
 
- EQ50(h)..      TRA(h,'ngo')            =e= PIXCON**eta*TRAO(h,'ngo');
+ EQ49(h)..      TRA(h,'ngo')            =e= PIXCON**eta*TRAO(h,'ngo');
 
- EQ51..         TRA('ngo','firm')       =e= lambda_TRA('ngo','firm')*YDF;
+ EQ50..         TRA('ngo','firm')       =e= lambda_TRA('ngo','firm')*YDF;
 
 
 ** --- BLOC DEMANDE ---
- EQ52..         P('pub')*CG             =e= CTG;
+ EQ51..         P('pub')*CG             =e= CTG;
  
- EQ53..         P('othntr')*CNGO        =e= CTNGO;
+ EQ52..         P('othntr')*CNGO        =e= CTNGO;
 
- EQ54(tr,h)..   PC(tr)*CH(tr,h)         =e= gamma_CH(tr,h)*CTH(h);
+ EQ53(tr,h)..   PC(tr)*CH(tr,h)         =e= gamma_CH(tr,h)*CTH(h);
 
- EQ55..         FBCF                    =e= IT - SUM[bns, PC(bns)*VSTK(bns)];
+ EQ54..         FBCF                    =e= IT - SUM[bns, PC(bns)*VSTK(bns)];
 
- EQ56(tr)..     INV(tr)*PC(tr)          =e= gamma_INV(tr)*FBCF;
+ EQ55(tr)..     INV(tr)*PC(tr)          =e= gamma_INV(tr)*FBCF;
 
- EQ57(tr)..     DIT(tr)                 =e= SUM[j, DI(tr,j)];
+ EQ56(tr)..     DIT(tr)                 =e= SUM[j, DI(tr,j)];
  
- EQ58..         mu_D*Q('petr')          =e= SUM[h, CH('petr', h)] + DIT('petr') + INV('petr');
+ EQ57..         mu_D*Q('petr')          =e= SUM[h, CH('petr', h)] + DIT('petr') + INV('petr');
 
- EQ59(bns)..    MRGCOM(bns)             =e= tmgc(bns)*{DD(bns) + IM(bns)};
+ EQ58(bns)..    MRGCOM(bns)             =e= tmgc(bns)*{DD(bns) + IM(bns)};
 
- EQ60(bns)..    MRGTRP(bns)             =e= tmgt(bns)*{DD(bns) + IM(bns)};
+ EQ59(bns)..    MRGTRP(bns)             =e= tmgt(bns)*{DD(bns) + IM(bns)};
  
 
 ** --- BLOC COMMERCE INTERNATIONAL ---
- EQ61(trj)..    XS(trj)                 =e= A_E(trj)*{beta_E(trj)*EX(trj)**rho_E(trj)
+ EQ60(trj)..    XS(trj)                 =e= A_E(trj)*{beta_E(trj)*EX(trj)**rho_E(trj)
                                             + [1 - beta_E(trj)]*DX(trj)**rho_E(trj)}**[1/rho_E(trj)];
 
- EQ62(trj)..    EX(trj)                 =e= {PE(trj)/(SUM[tr, theta(tr,trj)*PL(tr)])*[1 - beta_E(trj)]/beta_E(trj)}
+ EQ61(trj)..    EX(trj)                 =e= {PE(trj)/(SUM[tr, theta(tr,trj)*PL(tr)])*[1 - beta_E(trj)]/beta_E(trj)}
                                             **sigma_E(trj)*DX(trj);
                                             
- EQ63..         EX('petr')              =e= mu_E*Q('petr');                                            
+ EQ62..         EX('petr')              =e= mu_E*Q('petr');                                            
                                                                                                                      
- EQ64(trj)..    Q(trj)                  =e= A_M(trj)*{beta_M(trj)*IM(trj)**(-rho_M(trj))
+ EQ63(trj)..    Q(trj)                  =e= A_M(trj)*{beta_M(trj)*IM(trj)**(-rho_M(trj))
                                             + [1 - beta_M(trj)]*DD(trj)**(-rho_M(trj))}**[-1/rho_M(trj)];
                                       
- EQ65(trj)..    IM(trj)                 =e= {PD(trj)/PM(trj)*beta_M(trj)/[1 - beta_M(trj)]}**sigma_M(trj)*DD(trj);
+ EQ64(trj)..    IM(trj)                 =e= {PD(trj)/PM(trj)*beta_M(trj)/[1 - beta_M(trj)]}**sigma_M(trj)*DD(trj);
  
- EQ66..         IM('petr')              =e= Q('petr') ;
+ EQ65..         IM('petr')              =e= Q('petr') ;
 
 
 ** --- BLOC PRIX ---
- EQ67(j)..      P(j)*XS(j)              =e= PVA(j)*VA(j) + PCI(j)*CI(j);
+ EQ66(j)..      P(j)*XS(j)              =e= PVA(j)*VA(j) + PCI(j)*CI(j);
 
- EQ68(j)..      PCI(j)*CI(j)            =e= SUM[tr, PC(tr)*DI(tr,j)];
+ EQ67(j)..      PCI(j)*CI(j)            =e= SUM[tr, PC(tr)*DI(tr,j)];
 
- EQ69(tr)..     PPD(tr)                 =e= {1 + tx(tr)}*PL(tr);
+ EQ68(tr)..     PPD(tr)                 =e= {1 + tx(tr)}*PL(tr);
 
- EQ70(bns)..    PD(bns)                 =e= PPD(bns) +  {1 + tx(bns)}*{tmgc(bns) + tmgt(bns)}*PC('ser');
+ EQ69(bns)..    PD(bns)                 =e= PPD(bns) +  {1 + tx(bns)}*{tmgc(bns) + tmgt(bns)}*PC('ser');
 
- EQ71..         PD('ser')               =e= PPD('ser');
+ EQ70..         PD('ser')               =e= PPD('ser');
 
- EQ72(tr)..     PPM(tr)                 =e= {1 + tx(tr)}*{1 + tm(tr)}*e*PWM(tr);
+ EQ71(tr)..     PPM(tr)                 =e= {1 + tx(tr)}*{1 + tm(tr)}*e*PWM(tr);
 
- EQ73(bns)..    PM(bns)                 =e= PPM(bns) + {1 + tx(bns)}*{tmgc(bns) + tmgt(bns)}*PC('ser');
+ EQ72(bns)..    PM(bns)                 =e= PPM(bns) + {1 + tx(bns)}*{tmgc(bns) + tmgt(bns)}*PC('ser');
 
- EQ74..         PM('ser')               =e= PPM('ser');
+ EQ73..         PM('ser')               =e= PPM('ser');
 
- EQ75(tr)..     PC(tr)*Q(tr)            =e= PD(tr)*DD(tr) + PM(tr)*IM(tr);
+ EQ74(tr)..     PC(tr)*Q(tr)            =e= PD(tr)*DD(tr) + PM(tr)*IM(tr);
 
- EQ76(tr)..     PE(tr)                  =e= e*PWE(tr);
+ EQ75(tr)..     PE(tr)                  =e= e*PWE(tr);
 
- EQ77(trj)..    P(trj)*XS(trj)          =e= SUM[tr, PL(tr)*DS(tr,trj)] + PE(trj)*EX(trj);
+ EQ76(trj)..    P(trj)*XS(trj)          =e= SUM[tr, PL(tr)*DS(tr,trj)] + PE(trj)*EX(trj);
 
- EQ78..         PIXPIB                  =e= SUM[j, PVA(j)*VAO(j)]/
+ EQ77..         PIXPIB                  =e= SUM[j, PVA(j)*VAO(j)]/
                                             SUM[j, PVAO(j)*VAO(j)];
 
- EQ79..         PIXCON                  =e= SUM[tr, PC(tr)*SUM[h, CHO(tr,h)]]/
+ EQ78..         PIXCON                  =e= SUM[tr, PC(tr)*SUM[h, CHO(tr,h)]]/
                                             SUM[tr, PCO(tr)*SUM[h, CHO(tr,h)]]; 
 
- EQ80..         PIXINV                  =e= PROD[tr, (PC(tr)/PCO(tr))**gamma_INV(tr)];
+ EQ79..         PIXINV                  =e= PROD[tr, (PC(tr)/PCO(tr))**gamma_INV(tr)];
  
 
 ** --- BLOC EQUILIBRE ---
- EQ81(npbns)..  Q(npbns)                =e= SUM[h, CH(npbns,h)]  + DIT(npbns)  + INV(npbns)  + VSTK(npbns) ;
+ EQ80(npbns)..  Q(npbns)                =e= SUM[h, CH(npbns,h)]  + DIT(npbns)  + INV(npbns)  + VSTK(npbns) ;
 
- EQ82..         PC('petr')*Q('petr')    =e= PC('petr')*{SUM[h, CH('petr',h)] + DIT('petr') + INV('petr') + VSTK('petr')} + PE('petr')*EX('petr');
+ EQ81..         PC('petr')*Q('petr')    =e= PC('petr')*{SUM[h, CH('petr',h)] + DIT('petr') + INV('petr') + VSTK('petr')} + PE('petr')*EX('petr');
  
- EQ83..         XS('pub')               =e= CG;
+ EQ82..         XS('pub')               =e= CG;
 
- EQ84..         XS('othntr')            =e= CNGO;
+ EQ83..         XS('othntr')            =e= CNGO;
 
- EQ85(tr)..     SUM[trj, DS(tr,trj)]    =e= DD(tr);
+ EQ84(tr)..     SUM[trj, DS(tr,trj)]    =e= DD(tr);
 
- EQ86..         LS                      =e= LD_R + SUM[j, LD(j)];
+ EQ85..         LS                      =e= SUM[j, LD(j)];
  
+ EQ86..         LS_R                    =e= LD_R;
+  
  EQ87(trj)..    KS(trj)                 =e= KD(trj);
 
  EQ88..         IT                      =e= SUM[h, SH(h)] + SF + SG + SNGO + e*SROW;
@@ -1393,6 +1393,7 @@ EQUATIONS
  LD.L(j)        = LDO(j);
  LD_R.L         = LD_RO; 
  LS.L           = LSO;
+ LS_R.L         = LS_RO;
  MRGCOM.L(bns)  = MRGCOMO(bns);
  MRGTRP.L(bns)  = MRGTRPO(bns);
  PIB_MP_reel.L  = PIB_MP_reelO;
@@ -1527,8 +1528,9 @@ EQUATIONS
  KS.fx(trj)     = KSO(trj);
  KD_R.fx        = KD_RO;
  
-** L'offre totale de travail est fixe
+** L'offre totale de travail (domestique, non resident) est fixe
  LS.fx          = LSO;
+ LS_R.fx        = LS_RO;
  
 ** Les prix mondiaux sont exogenes
  PWE.fx(tr)     = PWEO(tr);
@@ -1589,7 +1591,7 @@ DISPLAY
     FBCF_reelO, FBCF_reel.L,
     IMO, IM.L, INVO, INV.L,
     KD_RO, KD_R.L, KDO, KD.L, KSO, KS.L,
-    LD_RO, LD_R.L, LDO, LD.L, LSO, LS.L,     
+    LD_RO, LD_R.L, LDO, LD.L, LSO, LS.L, LS_RO, LS_R.L,     
     MRGCOMO, MRGCOM.L, MRGTRPO, MRGTRP.L,
     PIB_MP_reelO, PIB_MP_reel.L, PIB_BP_reelO, PIB_BP_reel.L,
     QO, Q.L,

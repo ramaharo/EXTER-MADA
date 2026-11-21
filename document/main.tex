@@ -798,14 +798,12 @@
 					
 	\end{enumerate}
 	
-	\redparagraph{Bloc Reste du Monde}\hfill \textcolor{Fuchsia}{\textbf{6}}
+	\redparagraph{Bloc Reste du Monde}\hfill \textcolor{Fuchsia}{\textbf{5}}
 	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume,  ref=\textbf{eq\arabic*}]	
 			
 		\item $\YROW =  \YROWL + \YROWK +\sum_{\tr}^{} \PWM_{\tr}\cdot\IM_{tr} + \TRA_{\row,\gvt}$ \hfill 1
 		
 		\item $e\cdot\YROWL = \left(1 -\sum_{h}\phi_h\right)\cdot \left(e\cdot  W^R\cdot\LD^R + \sum_{j}^{} W\cdot\LD_{j}\right) $\hfill 1
-		
-		\item $e\cdot  W^R\cdot\LD^R = \mu^{\LD}\cdot\PIB^{\mathit{MP}} $\hfill 1
 		
 		\item $e\cdot\YROWK = \lambda^R\cdot \left(e\cdot R^R\cdot\KD^R + \sum_{\trj}^{} R_{\trj}\cdot\KD_{\trj}\right) $\hfill 1
 		
@@ -851,6 +849,7 @@
 		\item $\MRGCOM_{\bns} = \tmgc_{\bns} \cdot \left(\DD_{\bns} + \IM_{\bns}\right)$ \label{it:MGCOM}  \hfill 4
 		
 		\item $\MRGTRP_{\bns} = \tmgt_{\bns} \cdot \left( \DD_{\bns} + \IM_{\bns}\right)$  \label{it:MGTRP} \hfill 4
+		
 				
 	\end{enumerate}
 	
@@ -905,7 +904,7 @@
 		
 	\end{enumerate}
 	
-	\redparagraph{Bloc Équilibre}\hfill \textcolor{Fuchsia}{\textbf{17}} 
+	\redparagraph{Bloc Équilibre}\hfill \textcolor{Fuchsia}{\textbf{18}} 
 	\begin{enumerate}[itemsep=2pt,label=\textbf{eq\arabic*}.,resume,  ref=\textbf{eq\arabic*}]
 		
 		\item $Q_{\npbns} = \sum_{h} \CH_{\npbns,h} + \DIT_{\npbns} + \INV_{\npbns} +  \VSTK_{\npbns}$  \label{it:Qpetr}\hfill 3
@@ -918,8 +917,10 @@
 		
 		\item $\sum_{\trj}\DS_{\tr,\trj} = \DD_{\tr}$ \hfill 5
 		
-		\item $\LS = \LD^R+\sum_{j}\LD_j$ \label{it:LS}\hfill 1
+		\item $\LS = \sum_{j}\LD_j$ \label{it:LS}\hfill 1
 		
+		\item $\LS^R = \LD^R$ \label{it:LS_R}\hfill 1
+				
 		\item $\KS_{\trj} = \KD_{\trj}$ \label{it:KS}\hfill 4
 		
 		\item $\IT  = \sum_{h}\SH_h + \SF + \SG + \SNGO + e\cdot\SROW $  \label{it:IT}\hfill 1
@@ -1037,8 +1038,8 @@
 	\end{enumerate}
 	
 	\subsection{Liste des variables}
-	\redparagraph{Variables en volume}\hfill \textcolor{Fuchsia}{\textbf{148}} 
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.0pt]
+	\redparagraph{Variables en volume}\hfill \textcolor{Fuchsia}{\textbf{149}} 
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=9.7pt]
 		\item[$\CG$] 			Consommation réelle finale de l'Administration centrale 		\hfill 1
 		\item[$\CH_{\tr,h}$]	Consommation du ménage $h$ en produit $\tr$ 					\hfill 10
 		\item[$\CI_j$]      	Consommation intermédiaire totale de la branche $j$ 			\hfill 6
@@ -1054,11 +1055,12 @@
 		\item[$\IM_{\tr}$]		Importations du produit $\tr$ 	\hfill 5
 		\item[$\INV_{\tr}$]		Demande finale en produit $\tr$ pour fins d'investissement 	\hfill 5
 		\item[$\KD_{\trj}$]		Demande de capital de la branche $\trj$ 		\hfill 4
-		\item[$\KD^R$]			Demande de capital du Reste du monde 	\hfill 1
+		\item[$\KD^R$]			Demande de capital adressée au Reste du monde 	\hfill 1
 		\item[$\KS_{\trj}$]		Offre de capital dans la branche $\trj$ 		\hfill 4
 		\item[$\LD_{j}$]		Demande de travail de la branche $j$ 		\hfill 6
-		\item[$\LD^R$]			Demande de travail du Reste du monde 	\hfill 1
-		\item[$\LS$]			Offre totale de travail  				\hfill 1
+		\item[$\LD^R$]			Demande de travail adressée au Reste du monde 	\hfill 1
+		\item[$\LS$]			Offre totale de travail résident				\hfill 1
+				\item[$\LS^R$]			Offre totale de travail non résident				\hfill 1
 		\item[$\MRGCOM_{\bns}$]	Marge commerciale du produit $\bns$ 	\hfill 4
 		\item[$\MRGTRP_{\bns}$]	Marge de transport du produit $\bns$ 	\hfill 4
 		\item[$\PIB^{\mathit{MP}_\mathit{reel}}$] Produit Intérieur Brut (PIB) aux prix du marche \hfill 1
@@ -1070,7 +1072,7 @@
 	\end{description}
 	%		
 	\redparagraph{Prix}\hfill \textcolor{Fuchsia}{\textbf{74}} 
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.0pt]
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=9.7pt]
 		\item[$e$]			Taux de change nominal 					\hfill 1
 		\item[$P_j$]		Prix au producteur de la branche $j$ 	\hfill 6
 		\item[$\PC_{\tr}$]	Prix du produit composite $\tr$ 		\hfill 5
@@ -1094,7 +1096,7 @@
 	\end{description}
 	%		
 	\redparagraph{Variables nominales}\hfill \textcolor{Fuchsia}{\textbf{74}} 
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.0pt]	
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=9.7pt]	
 		\item[$\CAB$]	Solde du compte courant (en devises)				\hfill 1
 		\item[$\CTH_h$]	Budget de consommation du ménage $h$ 	\hfill 2
 		\item[$\CTG$]	Budget de consommation finale de l'Administration centrale	\hfill 1
@@ -1144,7 +1146,7 @@
 	\end{description}
 	
 	\redparagraph{Variables financières}\hfill \textcolor{Fuchsia}{\textbf{34}} 
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.0pt]
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=9.7pt]
 		\item[$\AMORTG$]          Amortissement de la dette publique (en devises)	\hfill 1
 		\item[$\BRG$]             Besoin de financement du secteur publique	\hfill 1
 		\item[$\DCG$]             Crédits bancaires au secteur publique (Stock)	\hfill 1
@@ -1188,29 +1190,29 @@
 		
 		\item[$\LEONF$] Équilibre sur le marché financier \hfill 1
 		
-		\hfill \textcolor{Fuchsia}{$\overline{\textbf{Total: 332}}$}
+		\hfill \textcolor{Fuchsia}{$\overline{\textbf{Total: 333}}$}
 	\end{description}
 	%		
-	\redparagraph{Variables exogènes (fermeture)}\hfill \textcolor{Fuchsia}{\textbf{33}}\\
-	\textcolor{Fuchsia}{\textbf{Bloc réel}}\hfill \textcolor{Fuchsia}{\textbf{25}}
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.0pt]	
+	\redparagraph{Variables exogènes (fermeture)}\hfill \textcolor{Fuchsia}{\textbf{34}}\\
+	\textcolor{Fuchsia}{\textbf{Bloc réel}}\hfill \textcolor{Fuchsia}{\textbf{26}}
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=9.7pt]	
 		\item[$\CAB$]			Solde du compte courant  (en devises)			\hfill 1
 		\item[$e$]				Taux de change nominal (moyenne période)				\hfill 1
 		\item[$\CTG$]			Budget de consommation finale de l'Administration centrale	\hfill 1
 		\item[$\KD_{\trj}$]		Demande de capital de la branche $\trj$ 		\hfill 4
 		\item[$\KD^R$]			Demande de capital du Reste du monde 	\hfill 1
-		\item[$\LS$]			Offre totale de travail  	\hfill 1
+		\item[$\LS$]			Offre totale de travail résident 	\hfill 1
+				\item[$\LS^R$]			Offre totale de travail non résident 	\hfill 1
 		\item[$\PL_{\petr}$]	Prix du produit $\petr$ sur le marché local (hors taxes et hors marges)	\hfill 1
 		\item[$\PWE_{\tr}$]		Prix mondial (en devises) du produit exporté $\tr$ 		\hfill 5
 		\item[$\PWM_{\tr}$]		Prix mondial (en devises) du produit importé $\tr$ 		\hfill 5
 		\item[$R^R$]			Taux de rémunération du capital du Reste du monde (en devises) 	\hfill 1
 		\item[$\SNG$]			Épargne des autres APU et des ISBLSM 	\hfill 1
 		\item[$\VSTK_{\underset{\neq \othind}{\npbns}}$]	Variation de stocks du produit $\npbns$ hors $\othind$	\hfill 2
-		\item[$W^R$]			Taux de salaire des travailleurs du Reste du monde (en devises)\hfill 1
 	\end{description}
 	
 	\noindent\textcolor{Fuchsia}{\textbf{Bloc financier}}\hfill \textcolor{Fuchsia}{\textbf{8}}
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.0pt]	
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=9.7pt]	
 		\item[$\DINVG$]           Investissement public sur financement intérieur	\hfill 1
 		\item[$\KTRAG$]            Transferts de capital reçus par le secteur publique (Dons en capital; en devises)	\hfill 1
 		\item[$\AMORTG$]          Amortissement de la dette publique extérieure (en devises)	\hfill 1
@@ -1225,7 +1227,7 @@
 	
 	
 	\redparagraph{Données d'initialisation}
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.0pt]    
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=9.7pt]    
 		\item[$\RES_{\mathit{-1}}$] Stock de réserves internationales (Avoirs extérieurs nets; en devises, fin de l'année précédant la base)
 		\item[$\DCG_{-1}$] Crédits bancaires au secteur public (Stock de fin d'année précédente)    
 		\item[$\DCP_{-1}$] Crédits bancaires au secteur privé (Stock de fin d'année précédente)    
@@ -1236,7 +1238,7 @@
 	
 	
 	\subsection{Liste des paramètres}
-	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.0pt]
+	\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries AAAAAAAA},parsep=10.5pt]
 		\item[$A_{\tr}$] Paramètre d'échelle (Cobb-Douglas - \textit{}fonction de production)
 		
 		\item[$A_{\trj}^E$] Paramètre d'échelle (CET -  fonction de production)
@@ -1270,8 +1272,6 @@
 		\item[$\mu^D$] Part de l'offre de produits pétroliers allouée à la demande domestique
 		
 		\item[$\mu^E$] Part de l'offre de produits pétroliers allouée à la réexportation
-		
-		\item[$\mu^{\LD}$] Part dans le PIB des revenus salariaux des travailleurs nationaux à l'étranger
 		
 		\item[$\ntyf$] Propension des Sociétés à verser des recettes non fiscales
 		
@@ -1591,8 +1591,8 @@
 			Désignation & Notation & \multicolumn{1}{r @{}}{Valeur} \\
 			\midrule
 			Élasticité d'indexation des transferts[*]  & $\eta$ & 1.000\\[0.5ex]
-			Part des autres APU et ISBLSM dans la dép.~de cons.~finale publique & $\mu^{\CTNGO}$ & 0.130 \\[0.5ex]
-			Part dans le PIB des revenus salariaux des travailleurs nationaux à l'étranger & $\mu^{\LD}$ & 0.002 \\[1.ex]
+			Part des autres APU et ISBLSM dans la dép.~de cons.~finale totale & $\mu^{\CTNGO}$ & 0.130 \\[0.5ex]
+
 			
 			\multicolumn{3}{@{}l}{\textit{Paramètres du secteur des produits pétroliers :}} \\[0.5ex]
 			\quad Part de l'offre allouée à la demande domestique & $\mu^D$ & 0.639 \\
@@ -1610,7 +1610,7 @@
 		\Centering
 		\small
 		\noindent
-		\textbf{Source}: Calculés à partir de la MIDISAM. [*] \cite{Decaluweetal2013}		
+		\textbf{Source}: Calculés à partir de la MIDISAM. [*] \cite{Decaluweetal2013}.
 	\end{table}
 	
 		\begin{table}[H]
@@ -1663,7 +1663,7 @@
 		\Centering
 		\small
 		\noindent
-		\textbf{Source}: Cadrage macroéconomique 2019 (\textit{Ministère de l'Économie et des Finances})
+		\textbf{Source}: Cadrage macroéconomique 2019 (\textit{Ministère de l'Économie et des Finances}.)
 	\end{table}%
 	
 	\begin{thebibliography}{99}	
